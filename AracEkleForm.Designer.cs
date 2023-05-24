@@ -63,6 +63,7 @@
             aracEkleBTN.TabIndex = 0;
             aracEkleBTN.Text = "Araç Ekleme İşlemleri";
             aracEkleBTN.UseVisualStyleBackColor = true;
+            aracEkleBTN.Click += aracEkleBTN_Click;
             // 
             // crudBTN
             // 
@@ -72,6 +73,7 @@
             crudBTN.TabIndex = 1;
             crudBTN.Text = "Araç CRUD İşlemleri";
             crudBTN.UseVisualStyleBackColor = true;
+            crudBTN.Click += crudBTN_Click;
             // 
             // aracKiralamaBTN
             // 
@@ -81,6 +83,7 @@
             aracKiralamaBTN.TabIndex = 2;
             aracKiralamaBTN.Text = "Araç Kiralama İşlemleri";
             aracKiralamaBTN.UseVisualStyleBackColor = true;
+            aracKiralamaBTN.Click += aracKiralamaBTN_Click;
             // 
             // aracFiyatBTN
             // 
@@ -90,6 +93,7 @@
             aracFiyatBTN.TabIndex = 3;
             aracFiyatBTN.Text = "Araç Fiyat İşlemleri";
             aracFiyatBTN.UseVisualStyleBackColor = true;
+            aracFiyatBTN.Click += aracFiyatBTN_Click;
             // 
             // profilBTN
             // 
@@ -99,6 +103,7 @@
             profilBTN.TabIndex = 4;
             profilBTN.Text = "Kullanıcı İşlemleri";
             profilBTN.UseVisualStyleBackColor = true;
+            profilBTN.Click += profilBTN_Click;
             // 
             // cikisBTN
             // 
@@ -108,6 +113,7 @@
             cikisBTN.TabIndex = 5;
             cikisBTN.Text = "Çıkış Yap";
             cikisBTN.UseVisualStyleBackColor = true;
+            cikisBTN.Click += cikisBTN_Click;
             // 
             // ekleBTN
             // 
@@ -319,6 +325,7 @@
             Name = "AracEkleForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Araç Ekleme Formu";
+            Load += AracEkleForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

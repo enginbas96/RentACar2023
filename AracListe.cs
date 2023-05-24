@@ -21,5 +21,10 @@ namespace RentACar2023
         {
 
         }
+
+        private void cikisBTN_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

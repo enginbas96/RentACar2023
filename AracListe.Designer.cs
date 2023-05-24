@@ -31,7 +31,7 @@
             veriGoruntuleyici = new DataGridView();
             label1 = new Label();
             textBox1 = new TextBox();
-            button1 = new Button();
+            cikisBTN = new Button();
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             SuspendLayout();
             // 
@@ -63,21 +63,22 @@
             textBox1.Size = new Size(157, 32);
             textBox1.TabIndex = 9;
             // 
-            // button1
+            // cikisBTN
             // 
-            button1.Location = new Point(948, 374);
-            button1.Name = "button1";
-            button1.Size = new Size(157, 43);
-            button1.TabIndex = 10;
-            button1.Text = "Çıkış";
-            button1.UseVisualStyleBackColor = true;
+            cikisBTN.Location = new Point(948, 374);
+            cikisBTN.Name = "cikisBTN";
+            cikisBTN.Size = new Size(157, 43);
+            cikisBTN.TabIndex = 10;
+            cikisBTN.Text = "Çıkış";
+            cikisBTN.UseVisualStyleBackColor = true;
+            cikisBTN.Click += cikisBTN_Click;
             // 
             // AracListe
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1119, 653);
-            Controls.Add(button1);
+            Controls.Add(cikisBTN);
             Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(veriGoruntuleyici);
@@ -98,6 +99,6 @@
         private DataGridView veriGoruntuleyici;
         private Label label1;
         private TextBox textBox1;
-        private Button button1;
+        private Button cikisBTN;
     }
 }
