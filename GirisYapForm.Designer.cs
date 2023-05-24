@@ -29,107 +29,107 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GirisYapForm));
-            button1 = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            linkLabel1 = new LinkLabel();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            GirisYapButton = new Button();
+            KullaniciAdiLabel = new Label();
+            SifreLabel = new Label();
+            GirisYapKullaniciAdiTextBox = new TextBox();
+            GirisYapSifreTextBox = new TextBox();
+            SifreUnuttumLinkLabel = new LinkLabel();
+            KullaniciPictureBox = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)KullaniciPictureBox).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // GirisYapButton
             // 
-            button1.Location = new Point(308, 326);
-            button1.Name = "button1";
-            button1.Size = new Size(192, 41);
-            button1.TabIndex = 0;
-            button1.Text = "Giriş Yap";
-            button1.UseVisualStyleBackColor = true;
+            GirisYapButton.Location = new Point(308, 326);
+            GirisYapButton.Name = "GirisYapButton";
+            GirisYapButton.Size = new Size(192, 41);
+            GirisYapButton.TabIndex = 0;
+            GirisYapButton.Text = "Giriş Yap";
+            GirisYapButton.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // KullaniciAdiLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(129, 196);
-            label1.Name = "label1";
-            label1.Size = new Size(152, 31);
-            label1.TabIndex = 1;
-            label1.Text = "Kullanıcı Adı: ";
+            KullaniciAdiLabel.AutoSize = true;
+            KullaniciAdiLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            KullaniciAdiLabel.Location = new Point(129, 196);
+            KullaniciAdiLabel.Name = "KullaniciAdiLabel";
+            KullaniciAdiLabel.Size = new Size(152, 31);
+            KullaniciAdiLabel.TabIndex = 1;
+            KullaniciAdiLabel.Text = "Kullanıcı Adı: ";
             // 
-            // label2
+            // SifreLabel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(211, 257);
-            label2.Name = "label2";
-            label2.Size = new Size(70, 31);
-            label2.TabIndex = 2;
-            label2.Text = "Şifre: ";
-            label2.Click += label2_Click;
+            SifreLabel.AutoSize = true;
+            SifreLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            SifreLabel.Location = new Point(211, 257);
+            SifreLabel.Name = "SifreLabel";
+            SifreLabel.Size = new Size(70, 31);
+            SifreLabel.TabIndex = 2;
+            SifreLabel.Text = "Şifre: ";
+            SifreLabel.Click += label2_Click;
             // 
-            // textBox1
+            // GirisYapKullaniciAdiTextBox
             // 
-            textBox1.Location = new Point(308, 202);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(192, 27);
-            textBox1.TabIndex = 3;
+            GirisYapKullaniciAdiTextBox.Location = new Point(308, 202);
+            GirisYapKullaniciAdiTextBox.Name = "GirisYapKullaniciAdiTextBox";
+            GirisYapKullaniciAdiTextBox.Size = new Size(192, 27);
+            GirisYapKullaniciAdiTextBox.TabIndex = 3;
             // 
-            // textBox2
+            // GirisYapSifreTextBox
             // 
-            textBox2.Location = new Point(308, 263);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(192, 27);
-            textBox2.TabIndex = 4;
+            GirisYapSifreTextBox.Location = new Point(308, 263);
+            GirisYapSifreTextBox.Name = "GirisYapSifreTextBox";
+            GirisYapSifreTextBox.Size = new Size(192, 27);
+            GirisYapSifreTextBox.TabIndex = 4;
             // 
-            // linkLabel1
+            // SifreUnuttumLinkLabel
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(324, 386);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(165, 20);
-            linkLabel1.TabIndex = 5;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Şifrenizi Mi Unuttunuz? ";
+            SifreUnuttumLinkLabel.AutoSize = true;
+            SifreUnuttumLinkLabel.Location = new Point(324, 386);
+            SifreUnuttumLinkLabel.Name = "SifreUnuttumLinkLabel";
+            SifreUnuttumLinkLabel.Size = new Size(165, 20);
+            SifreUnuttumLinkLabel.TabIndex = 5;
+            SifreUnuttumLinkLabel.TabStop = true;
+            SifreUnuttumLinkLabel.Text = "Şifrenizi Mi Unuttunuz? ";
             // 
-            // pictureBox1
+            // KullaniciPictureBox
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(308, 36);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(192, 131);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            KullaniciPictureBox.Image = (Image)resources.GetObject("KullaniciPictureBox.Image");
+            KullaniciPictureBox.Location = new Point(308, 36);
+            KullaniciPictureBox.Name = "KullaniciPictureBox";
+            KullaniciPictureBox.Size = new Size(192, 131);
+            KullaniciPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            KullaniciPictureBox.TabIndex = 6;
+            KullaniciPictureBox.TabStop = false;
             // 
             // GirisYapForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(pictureBox1);
-            Controls.Add(linkLabel1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(KullaniciPictureBox);
+            Controls.Add(SifreUnuttumLinkLabel);
+            Controls.Add(GirisYapSifreTextBox);
+            Controls.Add(GirisYapKullaniciAdiTextBox);
+            Controls.Add(SifreLabel);
+            Controls.Add(KullaniciAdiLabel);
+            Controls.Add(GirisYapButton);
             Name = "GirisYapForm";
             Text = "Giriş Yap";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)KullaniciPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private Label label1;
-        private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private LinkLabel linkLabel1;
-        private PictureBox pictureBox1;
+        private Button GirisYapButton;
+        private Label KullaniciAdiLabel;
+        private Label SifreLabel;
+        private TextBox GirisYapKullaniciAdiTextBox;
+        private TextBox GirisYapSifreTextBox;
+        private LinkLabel SifreUnuttumLinkLabel;
+        private PictureBox KullaniciPictureBox;
     }
 }
