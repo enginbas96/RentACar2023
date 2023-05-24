@@ -28,22 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            comboBox2 = new ComboBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            comboBox1 = new ComboBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            aracEkleBTN = new Button();
+            crudBTN = new Button();
+            aracKiralamaBTN = new Button();
+            aracFiyatBTN = new Button();
+            profilBTN = new Button();
+            cikisBTN = new Button();
+            ekleBTN = new Button();
+            vitesCB = new ComboBox();
+            kmText = new TextBox();
+            renkText = new TextBox();
+            hasarText = new TextBox();
+            yakitTuruCB = new ComboBox();
+            modelText = new TextBox();
+            markaText = new TextBox();
+            plakaText = new TextBox();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
@@ -53,150 +52,143 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            koltukSayiCB = new ComboBox();
             SuspendLayout();
             // 
-            // button1
+            // aracEkleBTN
             // 
-            button1.Location = new Point(11, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(177, 47);
-            button1.TabIndex = 0;
-            button1.Text = "Araç Ekleme İşlemleri";
-            button1.UseVisualStyleBackColor = true;
+            aracEkleBTN.Location = new Point(12, 12);
+            aracEkleBTN.Name = "aracEkleBTN";
+            aracEkleBTN.Size = new Size(177, 47);
+            aracEkleBTN.TabIndex = 0;
+            aracEkleBTN.Text = "Araç Ekleme İşlemleri";
+            aracEkleBTN.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // crudBTN
             // 
-            button2.Location = new Point(195, 12);
-            button2.Name = "button2";
-            button2.Size = new Size(177, 47);
-            button2.TabIndex = 1;
-            button2.Text = "Araç CRUD İşlemleri";
-            button2.UseVisualStyleBackColor = true;
+            crudBTN.Location = new Point(196, 12);
+            crudBTN.Name = "crudBTN";
+            crudBTN.Size = new Size(177, 47);
+            crudBTN.TabIndex = 1;
+            crudBTN.Text = "Araç CRUD İşlemleri";
+            crudBTN.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // aracKiralamaBTN
             // 
-            button3.Location = new Point(378, 12);
-            button3.Name = "button3";
-            button3.Size = new Size(177, 47);
-            button3.TabIndex = 2;
-            button3.Text = "Araç Kiralama İşlemleri";
-            button3.UseVisualStyleBackColor = true;
+            aracKiralamaBTN.Location = new Point(379, 12);
+            aracKiralamaBTN.Name = "aracKiralamaBTN";
+            aracKiralamaBTN.Size = new Size(177, 47);
+            aracKiralamaBTN.TabIndex = 2;
+            aracKiralamaBTN.Text = "Araç Kiralama İşlemleri";
+            aracKiralamaBTN.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // aracFiyatBTN
             // 
-            button4.Location = new Point(561, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(177, 47);
-            button4.TabIndex = 3;
-            button4.Text = "Araç Fiyat İşlemleri";
-            button4.UseVisualStyleBackColor = true;
+            aracFiyatBTN.Location = new Point(562, 12);
+            aracFiyatBTN.Name = "aracFiyatBTN";
+            aracFiyatBTN.Size = new Size(177, 47);
+            aracFiyatBTN.TabIndex = 3;
+            aracFiyatBTN.Text = "Araç Fiyat İşlemleri";
+            aracFiyatBTN.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // profilBTN
             // 
-            button5.Location = new Point(744, 12);
-            button5.Name = "button5";
-            button5.Size = new Size(177, 47);
-            button5.TabIndex = 4;
-            button5.Text = "Kullanıcı İşlemleri";
-            button5.UseVisualStyleBackColor = true;
+            profilBTN.Location = new Point(745, 12);
+            profilBTN.Name = "profilBTN";
+            profilBTN.Size = new Size(177, 47);
+            profilBTN.TabIndex = 4;
+            profilBTN.Text = "Kullanıcı İşlemleri";
+            profilBTN.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // cikisBTN
             // 
-            button6.Location = new Point(927, 12);
-            button6.Name = "button6";
-            button6.Size = new Size(177, 47);
-            button6.TabIndex = 5;
-            button6.Text = "Çıkış Yap";
-            button6.UseVisualStyleBackColor = true;
+            cikisBTN.Location = new Point(928, 12);
+            cikisBTN.Name = "cikisBTN";
+            cikisBTN.Size = new Size(177, 47);
+            cikisBTN.TabIndex = 5;
+            cikisBTN.Text = "Çıkış Yap";
+            cikisBTN.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // ekleBTN
             // 
-            button7.Location = new Point(601, 446);
-            button7.Name = "button7";
-            button7.Size = new Size(240, 69);
-            button7.TabIndex = 37;
-            button7.Text = "Aracı Ekle";
-            button7.UseVisualStyleBackColor = true;
+            ekleBTN.Location = new Point(50, 534);
+            ekleBTN.Name = "ekleBTN";
+            ekleBTN.Size = new Size(322, 86);
+            ekleBTN.TabIndex = 15;
+            ekleBTN.Text = "Aracı Ekle";
+            ekleBTN.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // vitesCB
             // 
-            comboBox2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(691, 326);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(150, 33);
-            comboBox2.TabIndex = 36;
+            vitesCB.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            vitesCB.FormattingEnabled = true;
+            vitesCB.Location = new Point(222, 467);
+            vitesCB.Name = "vitesCB";
+            vitesCB.Size = new Size(150, 33);
+            vitesCB.TabIndex = 14;
             // 
-            // textBox7
+            // kmText
             // 
-            textBox7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox7.Location = new Point(691, 278);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(150, 34);
-            textBox7.TabIndex = 35;
+            kmText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            kmText.Location = new Point(222, 378);
+            kmText.Name = "kmText";
+            kmText.Size = new Size(150, 34);
+            kmText.TabIndex = 12;
             // 
-            // textBox6
+            // renkText
             // 
-            textBox6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox6.Location = new Point(691, 237);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(150, 34);
-            textBox6.TabIndex = 34;
+            renkText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            renkText.Location = new Point(222, 337);
+            renkText.Name = "renkText";
+            renkText.Size = new Size(150, 34);
+            renkText.TabIndex = 11;
             // 
-            // textBox5
+            // hasarText
             // 
-            textBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(691, 196);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(150, 34);
-            textBox5.TabIndex = 33;
+            hasarText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            hasarText.Location = new Point(222, 287);
+            hasarText.Name = "hasarText";
+            hasarText.Size = new Size(150, 34);
+            hasarText.TabIndex = 10;
             // 
-            // textBox4
+            // yakitTuruCB
             // 
-            textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(287, 366);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(150, 34);
-            textBox4.TabIndex = 32;
+            yakitTuruCB.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            yakitTuruCB.FormattingEnabled = true;
+            yakitTuruCB.Location = new Point(222, 245);
+            yakitTuruCB.Name = "yakitTuruCB";
+            yakitTuruCB.Size = new Size(150, 33);
+            yakitTuruCB.TabIndex = 9;
             // 
-            // comboBox1
+            // modelText
             // 
-            comboBox1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(287, 324);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(150, 33);
-            comboBox1.TabIndex = 31;
+            modelText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            modelText.Location = new Point(222, 199);
+            modelText.Name = "modelText";
+            modelText.Size = new Size(150, 34);
+            modelText.TabIndex = 8;
             // 
-            // textBox3
+            // markaText
             // 
-            textBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(287, 278);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(150, 34);
-            textBox3.TabIndex = 30;
+            markaText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            markaText.Location = new Point(222, 158);
+            markaText.Name = "markaText";
+            markaText.Size = new Size(150, 34);
+            markaText.TabIndex = 7;
             // 
-            // textBox2
+            // plakaText
             // 
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(287, 237);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 34);
-            textBox2.TabIndex = 29;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(287, 196);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 34);
-            textBox1.TabIndex = 28;
+            plakaText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            plakaText.Location = new Point(222, 117);
+            plakaText.Name = "plakaText";
+            plakaText.Size = new Size(150, 34);
+            plakaText.TabIndex = 6;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(544, 322);
+            label9.Location = new Point(75, 463);
             label9.Name = "label9";
             label9.Size = new Size(141, 32);
             label9.TabIndex = 27;
@@ -206,7 +198,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(519, 280);
+            label8.Location = new Point(50, 421);
             label8.Name = "label8";
             label8.Size = new Size(166, 32);
             label8.TabIndex = 26;
@@ -216,7 +208,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(616, 238);
+            label7.Location = new Point(147, 379);
             label7.Name = "label7";
             label7.Size = new Size(69, 32);
             label7.TabIndex = 25;
@@ -226,7 +218,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(600, 196);
+            label6.Location = new Point(131, 337);
             label6.Name = "label6";
             label6.Size = new Size(85, 32);
             label6.TabIndex = 24;
@@ -236,7 +228,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(125, 366);
+            label5.Location = new Point(60, 287);
             label5.Name = "label5";
             label5.Size = new Size(157, 32);
             label5.TabIndex = 23;
@@ -246,7 +238,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(143, 325);
+            label4.Location = new Point(78, 246);
             label4.Name = "label4";
             label4.Size = new Size(138, 32);
             label4.TabIndex = 22;
@@ -256,7 +248,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(179, 280);
+            label3.Location = new Point(114, 201);
             label3.Name = "label3";
             label3.Size = new Size(102, 32);
             label3.TabIndex = 21;
@@ -266,7 +258,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(182, 238);
+            label2.Location = new Point(117, 159);
             label2.Name = "label2";
             label2.Size = new Size(99, 32);
             label2.TabIndex = 20;
@@ -276,27 +268,36 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(193, 196);
+            label1.Location = new Point(128, 117);
             label1.Name = "label1";
             label1.Size = new Size(88, 32);
             label1.TabIndex = 19;
             label1.Text = "Plaka : ";
+            // 
+            // koltukSayiCB
+            // 
+            koltukSayiCB.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            koltukSayiCB.FormattingEnabled = true;
+            koltukSayiCB.Location = new Point(223, 423);
+            koltukSayiCB.Name = "koltukSayiCB";
+            koltukSayiCB.Size = new Size(150, 33);
+            koltukSayiCB.TabIndex = 13;
             // 
             // AracEkleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1119, 653);
-            Controls.Add(button7);
-            Controls.Add(comboBox2);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(koltukSayiCB);
+            Controls.Add(ekleBTN);
+            Controls.Add(vitesCB);
+            Controls.Add(kmText);
+            Controls.Add(renkText);
+            Controls.Add(hasarText);
+            Controls.Add(yakitTuruCB);
+            Controls.Add(modelText);
+            Controls.Add(markaText);
+            Controls.Add(plakaText);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -306,36 +307,39 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(cikisBTN);
+            Controls.Add(profilBTN);
+            Controls.Add(aracFiyatBTN);
+            Controls.Add(aracKiralamaBTN);
+            Controls.Add(crudBTN);
+            Controls.Add(aracEkleBTN);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "AracEkleForm";
-            Text = "Genel İşlem Formu";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Araç Ekleme Formu";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private ComboBox comboBox2;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private ComboBox comboBox1;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private Button aracEkleBTN;
+        private Button crudBTN;
+        private Button aracKiralamaBTN;
+        private Button aracFiyatBTN;
+        private Button profilBTN;
+        private Button cikisBTN;
+        private Button ekleBTN;
+        private ComboBox vitesCB;
+        private TextBox kmText;
+        private TextBox renkText;
+        private TextBox hasarText;
+        private ComboBox yakitTuruCB;
+        private TextBox modelText;
+        private TextBox markaText;
+        private TextBox plakaText;
         private Label label9;
         private Label label8;
         private Label label7;
@@ -345,5 +349,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private ComboBox koltukSayiCB;
     }
 }

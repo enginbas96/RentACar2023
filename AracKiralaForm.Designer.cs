@@ -28,152 +28,152 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            button9 = new Button();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
-            textBox16 = new TextBox();
-            textBox15 = new TextBox();
-            textBox14 = new TextBox();
-            textBox13 = new TextBox();
+            cikisBTN = new Button();
+            profilBTN = new Button();
+            aracFiyatBTN = new Button();
+            aracKiralamaBTN = new Button();
+            crudBTN = new Button();
+            aracEkleBTN = new Button();
+            kiralaBTN = new Button();
+            teslimTarihi = new DateTimePicker();
+            kiralamaTarihi = new DateTimePicker();
+            telefonText = new TextBox();
+            soyadText = new TextBox();
+            adText = new TextBox();
+            tcText = new TextBox();
             label25 = new Label();
             label24 = new Label();
             label23 = new Label();
             label22 = new Label();
             label21 = new Label();
             label20 = new Label();
-            comboBox6 = new ComboBox();
+            plakaCB = new ComboBox();
             label19 = new Label();
             SuspendLayout();
             // 
-            // button6
+            // cikisBTN
             // 
-            button6.Location = new Point(952, 58);
-            button6.Name = "button6";
-            button6.Size = new Size(177, 47);
-            button6.TabIndex = 21;
-            button6.Text = "Çıkış Yap";
-            button6.UseVisualStyleBackColor = true;
+            cikisBTN.Location = new Point(928, 12);
+            cikisBTN.Name = "cikisBTN";
+            cikisBTN.Size = new Size(177, 47);
+            cikisBTN.TabIndex = 5;
+            cikisBTN.Text = "Çıkış Yap";
+            cikisBTN.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // profilBTN
             // 
-            button5.Location = new Point(769, 58);
-            button5.Name = "button5";
-            button5.Size = new Size(177, 47);
-            button5.TabIndex = 20;
-            button5.Text = "Kullanıcı İşlemleri";
-            button5.UseVisualStyleBackColor = true;
+            profilBTN.Location = new Point(745, 12);
+            profilBTN.Name = "profilBTN";
+            profilBTN.Size = new Size(177, 47);
+            profilBTN.TabIndex = 4;
+            profilBTN.Text = "Kullanıcı İşlemleri";
+            profilBTN.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // aracFiyatBTN
             // 
-            button4.Location = new Point(586, 58);
-            button4.Name = "button4";
-            button4.Size = new Size(177, 47);
-            button4.TabIndex = 19;
-            button4.Text = "Araç Fiyat İşlemleri";
-            button4.UseVisualStyleBackColor = true;
+            aracFiyatBTN.Location = new Point(562, 12);
+            aracFiyatBTN.Name = "aracFiyatBTN";
+            aracFiyatBTN.Size = new Size(177, 47);
+            aracFiyatBTN.TabIndex = 3;
+            aracFiyatBTN.Text = "Araç Fiyat İşlemleri";
+            aracFiyatBTN.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // aracKiralamaBTN
             // 
-            button3.Location = new Point(403, 58);
-            button3.Name = "button3";
-            button3.Size = new Size(177, 47);
-            button3.TabIndex = 18;
-            button3.Text = "Araç Kiralama İşlemleri";
-            button3.UseVisualStyleBackColor = true;
+            aracKiralamaBTN.Location = new Point(379, 12);
+            aracKiralamaBTN.Name = "aracKiralamaBTN";
+            aracKiralamaBTN.Size = new Size(177, 47);
+            aracKiralamaBTN.TabIndex = 2;
+            aracKiralamaBTN.Text = "Araç Kiralama İşlemleri";
+            aracKiralamaBTN.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // crudBTN
             // 
-            button2.Location = new Point(220, 58);
-            button2.Name = "button2";
-            button2.Size = new Size(177, 47);
-            button2.TabIndex = 17;
-            button2.Text = "Araç CRUD İşlemleri";
-            button2.UseVisualStyleBackColor = true;
+            crudBTN.Location = new Point(196, 12);
+            crudBTN.Name = "crudBTN";
+            crudBTN.Size = new Size(177, 47);
+            crudBTN.TabIndex = 1;
+            crudBTN.Text = "Araç CRUD İşlemleri";
+            crudBTN.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // aracEkleBTN
             // 
-            button1.Location = new Point(36, 58);
-            button1.Name = "button1";
-            button1.Size = new Size(177, 47);
-            button1.TabIndex = 16;
-            button1.Text = "Araç Ekleme İşlemleri";
-            button1.UseVisualStyleBackColor = true;
+            aracEkleBTN.Location = new Point(12, 12);
+            aracEkleBTN.Name = "aracEkleBTN";
+            aracEkleBTN.Size = new Size(177, 47);
+            aracEkleBTN.TabIndex = 0;
+            aracEkleBTN.Text = "Araç Ekleme İşlemleri";
+            aracEkleBTN.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // kiralaBTN
             // 
-            button9.Location = new Point(509, 602);
-            button9.Margin = new Padding(3, 4, 3, 4);
-            button9.Name = "button9";
-            button9.Size = new Size(151, 65);
-            button9.TabIndex = 36;
-            button9.Text = "Kirala";
-            button9.UseVisualStyleBackColor = true;
+            kiralaBTN.Location = new Point(45, 454);
+            kiralaBTN.Margin = new Padding(3, 4, 3, 4);
+            kiralaBTN.Name = "kiralaBTN";
+            kiralaBTN.Size = new Size(330, 65);
+            kiralaBTN.TabIndex = 13;
+            kiralaBTN.Text = "Kirala";
+            kiralaBTN.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker2
+            // teslimTarihi
             // 
-            dateTimePicker2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker2.Location = new Point(509, 522);
-            dateTimePicker2.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(150, 32);
-            dateTimePicker2.TabIndex = 35;
+            teslimTarihi.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            teslimTarihi.Location = new Point(224, 404);
+            teslimTarihi.Margin = new Padding(3, 4, 3, 4);
+            teslimTarihi.Name = "teslimTarihi";
+            teslimTarihi.Size = new Size(150, 32);
+            teslimTarihi.TabIndex = 12;
             // 
-            // dateTimePicker1
+            // kiralamaTarihi
             // 
-            dateTimePicker1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(509, 479);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(150, 32);
-            dateTimePicker1.TabIndex = 34;
+            kiralamaTarihi.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            kiralamaTarihi.Location = new Point(224, 361);
+            kiralamaTarihi.Margin = new Padding(3, 4, 3, 4);
+            kiralamaTarihi.Name = "kiralamaTarihi";
+            kiralamaTarihi.Size = new Size(150, 32);
+            kiralamaTarihi.TabIndex = 11;
             // 
-            // textBox16
+            // telefonText
             // 
-            textBox16.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox16.Location = new Point(509, 439);
-            textBox16.Margin = new Padding(3, 4, 3, 4);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(150, 32);
-            textBox16.TabIndex = 33;
+            telefonText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            telefonText.Location = new Point(224, 321);
+            telefonText.Margin = new Padding(3, 4, 3, 4);
+            telefonText.Name = "telefonText";
+            telefonText.Size = new Size(150, 32);
+            telefonText.TabIndex = 10;
             // 
-            // textBox15
+            // soyadText
             // 
-            textBox15.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox15.Location = new Point(509, 391);
-            textBox15.Margin = new Padding(3, 4, 3, 4);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(150, 32);
-            textBox15.TabIndex = 32;
+            soyadText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            soyadText.Location = new Point(224, 273);
+            soyadText.Margin = new Padding(3, 4, 3, 4);
+            soyadText.Name = "soyadText";
+            soyadText.Size = new Size(150, 32);
+            soyadText.TabIndex = 9;
             // 
-            // textBox14
+            // adText
             // 
-            textBox14.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox14.Location = new Point(509, 342);
-            textBox14.Margin = new Padding(3, 4, 3, 4);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(150, 32);
-            textBox14.TabIndex = 31;
+            adText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            adText.Location = new Point(224, 224);
+            adText.Margin = new Padding(3, 4, 3, 4);
+            adText.Name = "adText";
+            adText.Size = new Size(150, 32);
+            adText.TabIndex = 8;
             // 
-            // textBox13
+            // tcText
             // 
-            textBox13.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox13.Location = new Point(509, 298);
-            textBox13.Margin = new Padding(3, 4, 3, 4);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(150, 32);
-            textBox13.TabIndex = 30;
+            tcText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            tcText.Location = new Point(223, 180);
+            tcText.Margin = new Padding(3, 4, 3, 4);
+            tcText.Name = "tcText";
+            tcText.Size = new Size(150, 32);
+            tcText.TabIndex = 7;
             // 
             // label25
             // 
             label25.AutoSize = true;
             label25.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label25.Location = new Point(355, 523);
+            label25.Location = new Point(70, 405);
             label25.Name = "label25";
             label25.Size = new Size(163, 32);
             label25.TabIndex = 28;
@@ -183,7 +183,7 @@
             // 
             label24.AutoSize = true;
             label24.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label24.Location = new Point(330, 480);
+            label24.Location = new Point(45, 362);
             label24.Name = "label24";
             label24.Size = new Size(187, 32);
             label24.TabIndex = 27;
@@ -193,7 +193,7 @@
             // 
             label23.AutoSize = true;
             label23.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label23.Location = new Point(368, 438);
+            label23.Location = new Point(83, 320);
             label23.Name = "label23";
             label23.Size = new Size(151, 32);
             label23.TabIndex = 26;
@@ -203,7 +203,7 @@
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label22.Location = new Point(408, 390);
+            label22.Location = new Point(123, 272);
             label22.Name = "label22";
             label22.Size = new Size(104, 32);
             label22.TabIndex = 25;
@@ -213,7 +213,7 @@
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label21.Location = new Point(440, 340);
+            label21.Location = new Point(155, 222);
             label21.Name = "label21";
             label21.Size = new Size(68, 32);
             label21.TabIndex = 24;
@@ -223,26 +223,26 @@
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label20.Location = new Point(350, 296);
+            label20.Location = new Point(52, 178);
             label20.Name = "label20";
             label20.Size = new Size(171, 32);
             label20.TabIndex = 23;
             label20.Text = "TC Kimlik No : ";
             // 
-            // comboBox6
+            // plakaCB
             // 
-            comboBox6.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(509, 251);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(150, 33);
-            comboBox6.TabIndex = 29;
+            plakaCB.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            plakaCB.FormattingEnabled = true;
+            plakaCB.Location = new Point(224, 133);
+            plakaCB.Name = "plakaCB";
+            plakaCB.Size = new Size(150, 33);
+            plakaCB.TabIndex = 6;
             // 
             // label19
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label19.Location = new Point(421, 250);
+            label19.Location = new Point(136, 132);
             label19.Name = "label19";
             label19.Size = new Size(88, 32);
             label19.TabIndex = 22;
@@ -252,55 +252,59 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1294, 775);
-            Controls.Add(button9);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox16);
-            Controls.Add(textBox15);
-            Controls.Add(textBox14);
-            Controls.Add(textBox13);
+            ClientSize = new Size(1119, 653);
+            Controls.Add(kiralaBTN);
+            Controls.Add(teslimTarihi);
+            Controls.Add(kiralamaTarihi);
+            Controls.Add(telefonText);
+            Controls.Add(soyadText);
+            Controls.Add(adText);
+            Controls.Add(tcText);
             Controls.Add(label25);
             Controls.Add(label24);
             Controls.Add(label23);
             Controls.Add(label22);
             Controls.Add(label21);
             Controls.Add(label20);
-            Controls.Add(comboBox6);
+            Controls.Add(plakaCB);
             Controls.Add(label19);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button3);
-            Controls.Add(button4);
-            Controls.Add(button1);
-            Controls.Add(button2);
+            Controls.Add(cikisBTN);
+            Controls.Add(profilBTN);
+            Controls.Add(aracKiralamaBTN);
+            Controls.Add(aracFiyatBTN);
+            Controls.Add(aracEkleBTN);
+            Controls.Add(crudBTN);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "AracKiralaForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AracKiralaForm";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private Button button9;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox16;
-        private TextBox textBox15;
-        private TextBox textBox14;
-        private TextBox textBox13;
+        private Button cikisBTN;
+        private Button profilBTN;
+        private Button aracFiyatBTN;
+        private Button aracKiralamaBTN;
+        private Button crudBTN;
+        private Button aracEkleBTN;
+        private Button kiralaBTN;
+        private DateTimePicker teslimTarihi;
+        private DateTimePicker kiralamaTarihi;
+        private TextBox telefonText;
+        private TextBox soyadText;
+        private TextBox adText;
+        private TextBox tcText;
         private Label label25;
         private Label label24;
         private Label label23;
         private Label label22;
         private Label label21;
         private Label label20;
-        private ComboBox comboBox6;
+        private ComboBox plakaCB;
         private Label label19;
     }
 }

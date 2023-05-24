@@ -28,91 +28,199 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            cikisBTN = new Button();
+            profilBTN = new Button();
+            aracFiyatBTN = new Button();
+            aracKiralamaBTN = new Button();
+            crudBTN = new Button();
+            aracEkleBTN = new Button();
+            veriGoruntuleyici = new DataGridView();
+            label19 = new Label();
+            plakaText = new TextBox();
+            anlikFiyatText = new TextBox();
+            label1 = new Label();
+            yeniFiyatText = new TextBox();
+            label2 = new Label();
+            guncelleBTN = new Button();
+            ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             SuspendLayout();
             // 
-            // button6
+            // cikisBTN
             // 
-            button6.Location = new Point(953, 31);
-            button6.Name = "button6";
-            button6.Size = new Size(177, 47);
-            button6.TabIndex = 6;
-            button6.Text = "Çıkış Yap";
-            button6.UseVisualStyleBackColor = true;
+            cikisBTN.Location = new Point(928, 12);
+            cikisBTN.Name = "cikisBTN";
+            cikisBTN.Size = new Size(177, 47);
+            cikisBTN.TabIndex = 5;
+            cikisBTN.Text = "Çıkış Yap";
+            cikisBTN.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // profilBTN
             // 
-            button5.Location = new Point(770, 31);
-            button5.Name = "button5";
-            button5.Size = new Size(177, 47);
-            button5.TabIndex = 4;
-            button5.Text = "Kullanıcı İşlemleri";
-            button5.UseVisualStyleBackColor = true;
+            profilBTN.Location = new Point(745, 12);
+            profilBTN.Name = "profilBTN";
+            profilBTN.Size = new Size(177, 47);
+            profilBTN.TabIndex = 4;
+            profilBTN.Text = "Kullanıcı İşlemleri";
+            profilBTN.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // aracFiyatBTN
             // 
-            button4.Location = new Point(587, 31);
-            button4.Name = "button4";
-            button4.Size = new Size(177, 47);
-            button4.TabIndex = 3;
-            button4.Text = "Araç Fiyat İşlemleri";
-            button4.UseVisualStyleBackColor = true;
+            aracFiyatBTN.Location = new Point(562, 12);
+            aracFiyatBTN.Name = "aracFiyatBTN";
+            aracFiyatBTN.Size = new Size(177, 47);
+            aracFiyatBTN.TabIndex = 3;
+            aracFiyatBTN.Text = "Araç Fiyat İşlemleri";
+            aracFiyatBTN.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // aracKiralamaBTN
             // 
-            button3.Location = new Point(404, 31);
-            button3.Name = "button3";
-            button3.Size = new Size(177, 47);
-            button3.TabIndex = 2;
-            button3.Text = "Araç Kiralama İşlemleri";
-            button3.UseVisualStyleBackColor = true;
+            aracKiralamaBTN.Location = new Point(379, 12);
+            aracKiralamaBTN.Name = "aracKiralamaBTN";
+            aracKiralamaBTN.Size = new Size(177, 47);
+            aracKiralamaBTN.TabIndex = 2;
+            aracKiralamaBTN.Text = "Araç Kiralama İşlemleri";
+            aracKiralamaBTN.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // crudBTN
             // 
-            button2.Location = new Point(221, 31);
-            button2.Name = "button2";
-            button2.Size = new Size(177, 47);
-            button2.TabIndex = 1;
-            button2.Text = "Araç CRUD İşlemleri";
-            button2.UseVisualStyleBackColor = true;
+            crudBTN.Location = new Point(196, 12);
+            crudBTN.Name = "crudBTN";
+            crudBTN.Size = new Size(177, 47);
+            crudBTN.TabIndex = 1;
+            crudBTN.Text = "Araç CRUD İşlemleri";
+            crudBTN.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // aracEkleBTN
             // 
-            button1.Location = new Point(37, 31);
-            button1.Name = "button1";
-            button1.Size = new Size(177, 47);
-            button1.TabIndex = 0;
-            button1.Text = "Araç Ekleme İşlemleri";
-            button1.UseVisualStyleBackColor = true;
+            aracEkleBTN.Location = new Point(12, 12);
+            aracEkleBTN.Name = "aracEkleBTN";
+            aracEkleBTN.Size = new Size(177, 47);
+            aracEkleBTN.TabIndex = 0;
+            aracEkleBTN.Text = "Araç Ekleme İşlemleri";
+            aracEkleBTN.UseVisualStyleBackColor = true;
+            // 
+            // veriGoruntuleyici
+            // 
+            veriGoruntuleyici.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            veriGoruntuleyici.Location = new Point(12, 75);
+            veriGoruntuleyici.Name = "veriGoruntuleyici";
+            veriGoruntuleyici.RowHeadersWidth = 51;
+            veriGoruntuleyici.RowTemplate.Height = 29;
+            veriGoruntuleyici.Size = new Size(1093, 270);
+            veriGoruntuleyici.TabIndex = 6;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.Location = new Point(90, 405);
+            label19.Name = "label19";
+            label19.Size = new Size(88, 32);
+            label19.TabIndex = 1009;
+            label19.Text = "Plaka : ";
+            // 
+            // plakaText
+            // 
+            plakaText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            plakaText.Location = new Point(184, 407);
+            plakaText.Margin = new Padding(3, 4, 3, 4);
+            plakaText.Name = "plakaText";
+            plakaText.Size = new Size(150, 32);
+            plakaText.TabIndex = 7;
+            // 
+            // anlikFiyatText
+            // 
+            anlikFiyatText.Enabled = false;
+            anlikFiyatText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            anlikFiyatText.Location = new Point(184, 447);
+            anlikFiyatText.Margin = new Padding(3, 4, 3, 4);
+            anlikFiyatText.Name = "anlikFiyatText";
+            anlikFiyatText.Size = new Size(150, 32);
+            anlikFiyatText.TabIndex = 8;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(36, 445);
+            label1.Name = "label1";
+            label1.Size = new Size(149, 32);
+            label1.TabIndex = 1015;
+            label1.Text = "Anlık Fiyatı : ";
+            // 
+            // yeniFiyatText
+            // 
+            yeniFiyatText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            yeniFiyatText.Location = new Point(184, 487);
+            yeniFiyatText.Margin = new Padding(3, 4, 3, 4);
+            yeniFiyatText.Name = "yeniFiyatText";
+            yeniFiyatText.Size = new Size(150, 32);
+            yeniFiyatText.TabIndex = 9;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(44, 485);
+            label2.Name = "label2";
+            label2.Size = new Size(134, 32);
+            label2.TabIndex = 1017;
+            label2.Text = "Yeni Fiyat : ";
+            // 
+            // guncelleBTN
+            // 
+            guncelleBTN.Location = new Point(44, 550);
+            guncelleBTN.Name = "guncelleBTN";
+            guncelleBTN.Size = new Size(290, 73);
+            guncelleBTN.TabIndex = 10;
+            guncelleBTN.Text = "Fiyatı Güncelle";
+            guncelleBTN.UseVisualStyleBackColor = true;
             // 
             // AracFiyatForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1173, 700);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            ClientSize = new Size(1119, 653);
+            Controls.Add(guncelleBTN);
+            Controls.Add(yeniFiyatText);
+            Controls.Add(label2);
+            Controls.Add(anlikFiyatText);
+            Controls.Add(label1);
+            Controls.Add(plakaText);
+            Controls.Add(label19);
+            Controls.Add(veriGoruntuleyici);
+            Controls.Add(cikisBTN);
+            Controls.Add(profilBTN);
+            Controls.Add(aracFiyatBTN);
+            Controls.Add(aracKiralamaBTN);
+            Controls.Add(crudBTN);
+            Controls.Add(aracEkleBTN);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "AracFiyatForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AracFiyatForm";
+            ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button cikisBTN;
+        private Button profilBTN;
+        private Button aracFiyatBTN;
+        private Button aracKiralamaBTN;
+        private Button crudBTN;
+        private Button aracEkleBTN;
+        private DataGridView veriGoruntuleyici;
+        private Label label19;
+        private TextBox plakaText;
+        private TextBox anlikFiyatText;
+        private Label label1;
+        private TextBox yeniFiyatText;
+        private Label label2;
+        private Button guncelleBTN;
     }
 }

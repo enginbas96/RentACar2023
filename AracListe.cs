@@ -16,5 +16,10 @@ namespace RentACar2023
         {
             InitializeComponent();
         }
+
+        private void AracListe_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
