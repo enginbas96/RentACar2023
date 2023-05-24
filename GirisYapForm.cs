@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RentACar2023
 {
-    public partial class Anasayfa : Form
+    public partial class GirisYapForm : Form
     {
-        public Anasayfa()
+        public GirisYapForm()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace RentACar2023
 {
-    partial class Anasayfa
+    partial class GirisYapForm
     {
         /// <summary>
         /// Required designer variable.
