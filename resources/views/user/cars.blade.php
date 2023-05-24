@@ -38,20 +38,20 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{route('user_homepage')}}" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-                <li class="nav-item active"><a href="{{route('user_cars')}}" class="nav-link">Cars</a></li>
+                <li class="nav-item"><a href="{{route('user_cars')}}" class="nav-link">Cars</a></li>
                 <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item active"><a href="{{route('user_contact')}}" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <!-- END nav -->
 
-<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url{{asset('img/user/bg_3.jpg')}};" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url({{asset('img/user/bg_3.jpg')}});" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -69,7 +69,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url{{asset('img/user/car-1.jpg')}};">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{asset('img/user/car-1.jpg')}});">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
@@ -83,7 +83,7 @@
             </div>
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url{{asset('img/user/car-2.jpg')}};">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{asset('img/user/car-2.jpg')}});">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Range Rover</a></h2>
@@ -97,7 +97,7 @@
             </div>
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url{{asset('img/user/car-3.jpg')}};">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{asset('img/user/car-3.jpg')}});">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
@@ -112,7 +112,7 @@
 
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url{{asset('img/user/car-4.jpg')}};">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{asset('img/user/car-4.jpg')}});">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
@@ -126,7 +126,7 @@
             </div>
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url{{asset('img/user/car-5.jpg')}};">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{asset('img/user/car-5.jpg')}});">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Range Rover</a></h2>
@@ -140,7 +140,7 @@
             </div>
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url{{asset('img/user/car-6.jpg')}};">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{asset('img/user/car-6.jpg')}});">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
@@ -155,7 +155,7 @@
 
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url{{asset('img/user/car-7.jpg')}};">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{asset('img/user/car-7.jpg')}});">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
@@ -169,7 +169,7 @@
             </div>
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url{{asset('img/user/car-8.jpg')}};">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{asset('img/user/car-8.jpg')}});">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Range Rover</a></h2>
@@ -183,7 +183,7 @@
             </div>
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url{{asset('img/user/car-9.jpg')}};">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{asset('img/user/car-9.jpg')}});">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
@@ -198,7 +198,7 @@
 
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url{{asset('imagcuser/ar-10.jpg')}};">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{asset('img/user/car-10.jpg')}});">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
@@ -212,7 +212,7 @@
             </div>
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url{{asset('imagcuser/ar-11.jpg')}};">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{asset('img/user/car-11.jpg')}});">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Range Rover</a></h2>
@@ -226,7 +226,7 @@
             </div>
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url{{asset('imagcuser/ar-12.jpg')}};">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{asset('img/user/car-12.jpg')}});">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>

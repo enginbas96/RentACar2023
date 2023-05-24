@@ -10,4 +10,8 @@ class CarsController extends Controller
     public function index(){
         return view('user.cars');
     }
+
+    public function carDetail(){
+        return view('user.car_detail');
+    }
 }
