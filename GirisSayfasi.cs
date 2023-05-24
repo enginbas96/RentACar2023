@@ -40,5 +40,10 @@ namespace RentACar2023
         {
 
         }
+
+        private void ÝslemTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

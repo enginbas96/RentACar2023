@@ -66,9 +66,10 @@
             İslemTextBox.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             İslemTextBox.Location = new Point(240, 290);
             İslemTextBox.Name = "İslemTextBox";
-            İslemTextBox.Size = new Size(319, 24);
+            İslemTextBox.Size = new Size(308, 24);
             İslemTextBox.TabIndex = 2;
-            İslemTextBox.Text = "Lütfen Yapmak İstediğiniz İşlemi Seçiniz";
+            İslemTextBox.Text = "Lütfen Yapmak İstediğiniz İşlemi Seçin";
+            İslemTextBox.TextChanged += İslemTextBox_TextChanged;
             // 
             // AraclariListeleButton
             // 
