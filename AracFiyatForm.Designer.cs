@@ -31,9 +31,11 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AracFiyatForm));
             cikisBTN = new Button();
+            cikisyap_imglist = new ImageList(components);
             profilBTN = new Button();
             aracFiyatBTN = new Button();
             aracKiralamaBTN = new Button();
+            arabaimglist = new ImageList(components);
             crudBTN = new Button();
             aracEkleBTN = new Button();
             veriGoruntuleyici = new DataGridView();
@@ -44,7 +46,10 @@
             yeniFiyatText = new TextBox();
             label2 = new Label();
             guncelleBTN = new Button();
-            cikisyap_imglist = new ImageList(components);
+            aracekleme_imglist = new ImageList(components);
+            rentacar_imglist = new ImageList(components);
+            fiyat_imglist = new ImageList(components);
+            ımageList1 = new ImageList(components);
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             SuspendLayout();
             // 
@@ -53,69 +58,103 @@
             cikisBTN.ImageAlign = ContentAlignment.MiddleLeft;
             cikisBTN.ImageKey = "cikisyap.png";
             cikisBTN.ImageList = cikisyap_imglist;
-            cikisBTN.Location = new Point(928, 12);
+            cikisBTN.Location = new Point(994, 12);
             cikisBTN.Name = "cikisBTN";
-            cikisBTN.Size = new Size(130, 47);
+            cikisBTN.Size = new Size(111, 47);
             cikisBTN.TabIndex = 5;
             cikisBTN.Text = "Çıkış Yap";
             cikisBTN.TextAlign = ContentAlignment.MiddleRight;
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
             // 
+            // cikisyap_imglist
+            // 
+            cikisyap_imglist.ColorDepth = ColorDepth.Depth32Bit;
+            cikisyap_imglist.ImageStream = (ImageListStreamer)resources.GetObject("cikisyap_imglist.ImageStream");
+            cikisyap_imglist.TransparentColor = Color.Transparent;
+            cikisyap_imglist.Images.SetKeyName(0, "cikisyap.png");
+            // 
             // profilBTN
             // 
-            profilBTN.Location = new Point(745, 12);
+            profilBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            profilBTN.ImageKey = "kullanici.png";
+            profilBTN.ImageList = ımageList1;
+            profilBTN.Location = new Point(829, 12);
             profilBTN.Name = "profilBTN";
-            profilBTN.Size = new Size(161, 47);
+            profilBTN.Size = new Size(159, 47);
             profilBTN.TabIndex = 4;
             profilBTN.Text = "Kullanıcı İşlemleri";
+            profilBTN.TextAlign = ContentAlignment.MiddleRight;
             profilBTN.UseVisualStyleBackColor = true;
             profilBTN.Click += profilBTN_Click;
             // 
             // aracFiyatBTN
             // 
-            aracFiyatBTN.Location = new Point(562, 12);
+            aracFiyatBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            aracFiyatBTN.ImageKey = "pngegg (4).png";
+            aracFiyatBTN.ImageList = fiyat_imglist;
+            aracFiyatBTN.Location = new Point(646, 12);
             aracFiyatBTN.Name = "aracFiyatBTN";
             aracFiyatBTN.Size = new Size(177, 47);
             aracFiyatBTN.TabIndex = 3;
             aracFiyatBTN.Text = "Araç Fiyat İşlemleri";
+            aracFiyatBTN.TextAlign = ContentAlignment.MiddleRight;
             aracFiyatBTN.UseVisualStyleBackColor = true;
             aracFiyatBTN.Click += aracFiyatBTN_Click;
             // 
             // aracKiralamaBTN
             // 
-            aracKiralamaBTN.Location = new Point(379, 12);
+            aracKiralamaBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            aracKiralamaBTN.ImageKey = "icon-rent-car.jpg";
+            aracKiralamaBTN.ImageList = rentacar_imglist;
+            aracKiralamaBTN.Location = new Point(420, 12);
             aracKiralamaBTN.Name = "aracKiralamaBTN";
-            aracKiralamaBTN.Size = new Size(177, 47);
+            aracKiralamaBTN.Size = new Size(220, 47);
             aracKiralamaBTN.TabIndex = 2;
             aracKiralamaBTN.Text = "Araç Kiralama İşlemleri";
+            aracKiralamaBTN.TextAlign = ContentAlignment.MiddleRight;
             aracKiralamaBTN.UseVisualStyleBackColor = true;
             aracKiralamaBTN.Click += aracKiralamaBTN_Click;
             // 
+            // arabaimglist
+            // 
+            arabaimglist.ColorDepth = ColorDepth.Depth32Bit;
+            arabaimglist.ImageStream = (ImageListStreamer)resources.GetObject("arabaimglist.ImageStream");
+            arabaimglist.TransparentColor = Color.Transparent;
+            arabaimglist.Images.SetKeyName(0, "pngegg (2).png");
+            // 
             // crudBTN
             // 
-            crudBTN.Location = new Point(196, 12);
+            crudBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            crudBTN.ImageKey = "pngegg (2).png";
+            crudBTN.ImageList = arabaimglist;
+            crudBTN.Location = new Point(218, 12);
             crudBTN.Name = "crudBTN";
-            crudBTN.Size = new Size(177, 47);
+            crudBTN.Size = new Size(196, 47);
             crudBTN.TabIndex = 1;
             crudBTN.Text = "Araç CRUD İşlemleri";
+            crudBTN.TextAlign = ContentAlignment.MiddleRight;
             crudBTN.UseVisualStyleBackColor = true;
             crudBTN.Click += crudBTN_Click;
             // 
             // aracEkleBTN
             // 
+            aracEkleBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            aracEkleBTN.ImageKey = "pngegg (1).png";
+            aracEkleBTN.ImageList = aracekleme_imglist;
             aracEkleBTN.Location = new Point(12, 12);
             aracEkleBTN.Name = "aracEkleBTN";
-            aracEkleBTN.Size = new Size(177, 47);
+            aracEkleBTN.Size = new Size(200, 47);
             aracEkleBTN.TabIndex = 0;
             aracEkleBTN.Text = "Araç Ekleme İşlemleri";
+            aracEkleBTN.TextAlign = ContentAlignment.MiddleRight;
             aracEkleBTN.UseVisualStyleBackColor = true;
             aracEkleBTN.Click += aracEkleBTN_Click;
             // 
             // veriGoruntuleyici
             // 
             veriGoruntuleyici.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            veriGoruntuleyici.Location = new Point(12, 75);
+            veriGoruntuleyici.Location = new Point(14, 80);
             veriGoruntuleyici.Name = "veriGoruntuleyici";
             veriGoruntuleyici.RowHeadersWidth = 51;
             veriGoruntuleyici.RowTemplate.Height = 29;
@@ -189,17 +228,40 @@
             guncelleBTN.Text = "Fiyatı Güncelle";
             guncelleBTN.UseVisualStyleBackColor = true;
             // 
-            // cikisyap_imglist
+            // aracekleme_imglist
             // 
-            cikisyap_imglist.ColorDepth = ColorDepth.Depth32Bit;
-            cikisyap_imglist.ImageStream = (ImageListStreamer)resources.GetObject("cikisyap_imglist.ImageStream");
-            cikisyap_imglist.TransparentColor = Color.Transparent;
-            cikisyap_imglist.Images.SetKeyName(0, "cikisyap.png");
+            aracekleme_imglist.ColorDepth = ColorDepth.Depth32Bit;
+            aracekleme_imglist.ImageStream = (ImageListStreamer)resources.GetObject("aracekleme_imglist.ImageStream");
+            aracekleme_imglist.TransparentColor = Color.Transparent;
+            aracekleme_imglist.Images.SetKeyName(0, "pngegg (1).png");
+            // 
+            // rentacar_imglist
+            // 
+            rentacar_imglist.ColorDepth = ColorDepth.Depth32Bit;
+            rentacar_imglist.ImageStream = (ImageListStreamer)resources.GetObject("rentacar_imglist.ImageStream");
+            rentacar_imglist.TransparentColor = Color.Transparent;
+            rentacar_imglist.Images.SetKeyName(0, "icon-rent-car.jpg");
+            // 
+            // fiyat_imglist
+            // 
+            fiyat_imglist.ColorDepth = ColorDepth.Depth32Bit;
+            fiyat_imglist.ImageStream = (ImageListStreamer)resources.GetObject("fiyat_imglist.ImageStream");
+            fiyat_imglist.TransparentColor = Color.Transparent;
+            fiyat_imglist.Images.SetKeyName(0, "pngegg (4).png");
+            // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "kullanici.png");
             // 
             // AracFiyatForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
             Controls.Add(guncelleBTN);
             Controls.Add(yeniFiyatText);
@@ -244,5 +306,10 @@
         private Label label2;
         private Button guncelleBTN;
         private ImageList cikisyap_imglist;
+        private ImageList arabaimglist;
+        private ImageList aracekleme_imglist;
+        private ImageList fiyat_imglist;
+        private ImageList rentacar_imglist;
+        private ImageList ımageList1;
     }
 }
