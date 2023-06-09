@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AracFiyatForm));
             cikisBTN = new Button();
             profilBTN = new Button();
             aracFiyatBTN = new Button();
@@ -42,16 +44,21 @@
             yeniFiyatText = new TextBox();
             label2 = new Label();
             guncelleBTN = new Button();
+            cikisyap_imglist = new ImageList(components);
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             SuspendLayout();
             // 
             // cikisBTN
             // 
+            cikisBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            cikisBTN.ImageKey = "cikisyap.png";
+            cikisBTN.ImageList = cikisyap_imglist;
             cikisBTN.Location = new Point(928, 12);
             cikisBTN.Name = "cikisBTN";
-            cikisBTN.Size = new Size(177, 47);
+            cikisBTN.Size = new Size(130, 47);
             cikisBTN.TabIndex = 5;
             cikisBTN.Text = "Çıkış Yap";
+            cikisBTN.TextAlign = ContentAlignment.MiddleRight;
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
             // 
@@ -59,7 +66,7 @@
             // 
             profilBTN.Location = new Point(745, 12);
             profilBTN.Name = "profilBTN";
-            profilBTN.Size = new Size(177, 47);
+            profilBTN.Size = new Size(161, 47);
             profilBTN.TabIndex = 4;
             profilBTN.Text = "Kullanıcı İşlemleri";
             profilBTN.UseVisualStyleBackColor = true;
@@ -182,6 +189,13 @@
             guncelleBTN.Text = "Fiyatı Güncelle";
             guncelleBTN.UseVisualStyleBackColor = true;
             // 
+            // cikisyap_imglist
+            // 
+            cikisyap_imglist.ColorDepth = ColorDepth.Depth32Bit;
+            cikisyap_imglist.ImageStream = (ImageListStreamer)resources.GetObject("cikisyap_imglist.ImageStream");
+            cikisyap_imglist.TransparentColor = Color.Transparent;
+            cikisyap_imglist.Images.SetKeyName(0, "cikisyap.png");
+            // 
             // AracFiyatForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -229,5 +243,6 @@
         private TextBox yeniFiyatText;
         private Label label2;
         private Button guncelleBTN;
+        private ImageList cikisyap_imglist;
     }
 }
