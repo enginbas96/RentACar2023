@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SifremiUnuttum));
             label1 = new Label();
             label2 = new Label();
@@ -36,6 +37,7 @@
             pictureBox1 = new PictureBox();
             linkLabel1 = new LinkLabel();
             button1 = new Button();
+            ımageList1 = new ImageList(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -43,11 +45,16 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(133, 186);
+            label1.ImageAlign = ContentAlignment.MiddleLeft;
+            label1.ImageKey = "kullanici.png";
+            label1.ImageList = ımageList1;
+            label1.Location = new Point(108, 190);
             label1.Name = "label1";
-            label1.Size = new Size(152, 31);
+            label1.Size = new Size(176, 31);
             label1.TabIndex = 0;
-            label1.Text = "Kullanıcı Adı: ";
+            label1.Text = "    Kullanıcı Adı: ";
+            label1.TextAlign = ContentAlignment.MiddleRight;
+            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -108,6 +115,13 @@
             button1.Text = "Giriş Sayfasına Dön";
             button1.UseVisualStyleBackColor = true;
             // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "kullanici.png");
+            // 
             // SifremiUnuttum
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -139,5 +153,6 @@
         private PictureBox pictureBox1;
         private LinkLabel linkLabel1;
         private Button button1;
+        private ImageList ımageList1;
     }
 }
