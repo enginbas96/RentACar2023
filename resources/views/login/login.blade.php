@@ -49,37 +49,56 @@
                         </div>
                         <div class="text sign-up-text">Hesabınız yok mu? <label for="flip">Hemen kaydolun</label></div>
                     </div>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </form>
             </div>
             <div class="signup-form">
                 <div class="title">Kaydol</div>
-                <form action="#">
+                <form method="post" action="{{route('user_register')}}">
+                    @csrf
                     <div class="input-boxes">
                         <div class="input-box">
                             <i class="fas fa-user"></i>
-                            <input type="text" placeholder="İsminizi giriniz.." required>
+                            <input type="text" name="name" placeholder="İsminizi giriniz.." required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-envelope"></i>
-                            <input type="text" placeholder="Soyisminizi giriniz.." required>
+                            <input type="text" name="surname" placeholder="Soyisminizi giriniz.." required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="TC giriniz.." required>
+                            <input type="text" name="TC" placeholder="TC giriniz.." required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Şifrenizi giriniz.." required>
+                            <input type="password" name="password" placeholder="Şifrenizi giriniz.." required>
                         </div>
                         <div class="input-box">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Telefon numaranızı giriniz.." required>
+                            <input type="text" name="tel_no" placeholder="Telefon numaranızı giriniz.." required>
                         </div>
                         <div class="button input-box">
                             <input type="submit" value="Kaydol">
                         </div>
                         <div class="text sign-up-text">Zaten hesabınız var mı? <label for="flip">Giriş yapın</label></div>
                     </div>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </form>
             </div>
         </div>
