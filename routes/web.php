@@ -40,7 +40,7 @@ Route::get('/anasayfa',[HomePageController::class,'index'])->name('user_homepage
 Route::get('/iletişim',[ContactController::class,'index'])->name('user_contact');
 Route::get('/araç-rezerve',[CarBookController::class,'index'])->name('user_car_book');
 Route::get('/hakkında',[AboutController::class,'index'])->name('user_about');
-Route::get('/araba-detayı',[CarsController::class,'carDetail'])->name('user_car_detail');
+Route::get('/araba-detayı/{id}',[CarsController::class,'carDetail'])->name('user_car_detail');
 Route::get('/arabalar',[CarsController::class,'index'])->name('user_cars');
 Route::post('/login-post',[UserLoginController::class,'login'])->name('user_login');
 Route::post('/register',[UserLoginController::class,'register'])->name('user_register');

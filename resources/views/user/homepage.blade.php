@@ -82,8 +82,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-                <span class="subheading">What we offer</span>
-                <h2 class="mb-2">Feeatured Vehicles</h2>
+                <h2 class="mb-2">Önerilen Araçlar</h2>
             </div>
         </div>
         <div class="row">
@@ -100,7 +99,7 @@
                                     <span class="cat">{{$car->model}}</span>
                                     <p class="price ml-auto">₺500 <span>/günlük</span></p>
                                 </div>
-                                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Rezerve et</a> <a href="#" class="btn btn-secondary py-2 ml-1">Detaylar</a></p>
+                                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Rezerve et</a> <a href="{{route('user_car_detail', $car->id)}}" class="btn btn-secondary py-2 ml-1">Detaylar</a></p>
                             </div>
                         </div>
                     </div>

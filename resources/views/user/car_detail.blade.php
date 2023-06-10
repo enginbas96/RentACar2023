@@ -106,10 +106,10 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="car-details">
-                    <div class="img rounded" style="background-image: url({{asset('img/user/bg_1.jpg')}});"></div>
+                    <div class="img rounded" style="background-image: url({{asset($car->img_url)}});"></div>
                     <div class="text text-center">
-                        <span class="subheading">Cheverolet</span>
-                        <h2>Mercedes Grand Sedan</h2>
+                        <h2>{{$car->marka}}</h2>
+                        <span class="subheading">{{$car->model}}</span>
                     </div>
                 </div>
             </div>
@@ -188,7 +188,7 @@
                             <div class="text">
                                 <h3 class="heading mb-0 pl-3">
                                     Yakıt
-                                    <span>Benzin</span>
+                                    <span>{{$car->yakit_turu}}</span>
                                 </h3>
                             </div>
                         </div>
@@ -210,54 +210,25 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end"
-                         style="background-image: url({{asset('img/user/car-1.jpg')}});">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <div class="d-flex mb-3">
-                            <span class="cat">Cheverolet</span>
-                            <p class="price ml-auto">$500 <span>/day</span></p>
+            @foreach($cars as $car)
+                <div class="col-md-4">
+                    <div class="car-wrap rounded ftco-animate">
+                        <div class="img rounded d-flex align-items-end"
+                             style="background-image: url({{asset($car->img_url)}});">
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Rezerve et</a> <a
-                                href="car-single.html" class="btn btn-secondary py-2 ml-1">Detaylar</a></p>
+                        <div class="text">
+                            <h2 class="mb-0"><a href="car-single.html">{{$car->marka}}</a></h2>
+                            <div class="d-flex mb-3">
+                                <span class="cat">{{$car->model}}</span>
+                                <p class="price ml-auto">$500 <span>/günlük</span></p>
+                            </div>
+                            <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Rezerve et</a>
+                                <a
+                                    href="{{route('user_car_detail', $car->id)}}" class="btn btn-secondary py-2 ml-1">Detaylar</a></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end"
-                         style="background-image: url({{asset('img/user/car-2.jpg')}});">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a href="car-single.html">Range Rover</a></h2>
-                        <div class="d-flex mb-3">
-                            <span class="cat">Subaru</span>
-                            <p class="price ml-auto">$500 <span>/day</span></p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <a
-                                href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end"
-                         style="background-image: url({{asset('img/user/car-3.jpg')}});">
-                    </div>
-                    <div class="text">
-                        <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-                        <div class="d-flex mb-3">
-                            <span class="cat">Cheverolet</span>
-                            <p class="price ml-auto">$500 <span>/day</span></p>
-                        </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <a
-                                href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a></p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
@@ -272,7 +243,9 @@
                 <button type="submit">Yorum Yap</button>
             </form>
             <div id="comment-list">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ea earum fuga pariatur perspiciatis veniam, vitae. Modi nihil reiciendis similique temporibus? Ea fugiat minus necessitatibus nihil nisi nobis perspiciatis ut?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ea earum fuga pariatur perspiciatis
+                    veniam, vitae. Modi nihil reiciendis similique temporibus? Ea fugiat minus necessitatibus nihil nisi
+                    nobis perspiciatis ut?</p>
             </div>
         </div>
     </div>

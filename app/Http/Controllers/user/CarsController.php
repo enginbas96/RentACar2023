@@ -13,7 +13,9 @@ class CarsController extends Controller
         return view('user.cars', compact('cars'));
     }
 
-    public function carDetail(){
-        return view('user.car_detail');
+    public function carDetail($id){
+        $car = Car::find($id);
+        $cars = Car::inRandomOrder()->limit(3)->get();
+        return view('user.car_detail',compact('car','cars'));
     }
 }
