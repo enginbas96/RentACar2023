@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AracCrudForm));
             cikisBTN = new Button();
+            ımageList1 = new ImageList(components);
             profilBTN = new Button();
             aracFiyatBTN = new Button();
             aracKiralamaBTN = new Button();
@@ -58,7 +59,6 @@
             label12 = new Label();
             label10 = new Label();
             label11 = new Label();
-            ımageList1 = new ImageList(components);
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             SuspendLayout();
             // 
@@ -75,6 +75,20 @@
             cikisBTN.TextAlign = ContentAlignment.MiddleRight;
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
+            // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "kullanici.png");
+            ımageList1.Images.SetKeyName(1, "cikisyap.png");
+            ımageList1.Images.SetKeyName(2, "icon-rent-car.jpg");
+            ımageList1.Images.SetKeyName(3, "pngegg (1).png");
+            ımageList1.Images.SetKeyName(4, "pngegg (2).png");
+            ımageList1.Images.SetKeyName(5, "pngegg (4).png");
+            ımageList1.Images.SetKeyName(6, "pngegg (5).png");
+            ımageList1.Images.SetKeyName(7, "pngegg (8).png");
             // 
             // profilBTN
             // 
@@ -159,24 +173,33 @@
             // 
             guncelleRB.AutoSize = true;
             guncelleRB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            guncelleRB.Location = new Point(920, 531);
+            guncelleRB.ImageAlign = ContentAlignment.MiddleLeft;
+            guncelleRB.ImageKey = "pngegg (8).png";
+            guncelleRB.ImageList = ımageList1;
+            guncelleRB.Location = new Point(900, 531);
             guncelleRB.Name = "guncelleRB";
-            guncelleRB.Size = new Size(157, 32);
+            guncelleRB.Size = new Size(197, 40);
             guncelleRB.TabIndex = 17;
             guncelleRB.TabStop = true;
             guncelleRB.Text = "Aracı Güncelle";
+            guncelleRB.TextAlign = ContentAlignment.MiddleRight;
+            guncelleRB.TextImageRelation = TextImageRelation.ImageBeforeText;
             guncelleRB.UseVisualStyleBackColor = true;
             // 
             // silRB
             // 
             silRB.AutoSize = true;
             silRB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            silRB.Location = new Point(793, 531);
+            silRB.ImageAlign = ContentAlignment.MiddleLeft;
+            silRB.ImageKey = "pngegg (5).png";
+            silRB.ImageList = ımageList1;
+            silRB.Location = new Point(761, 535);
             silRB.Name = "silRB";
-            silRB.Size = new Size(103, 32);
+            silRB.Size = new Size(133, 32);
             silRB.TabIndex = 16;
             silRB.TabStop = true;
             silRB.Text = "Aracı Sil";
+            silRB.TextImageRelation = TextImageRelation.ImageBeforeText;
             silRB.UseVisualStyleBackColor = true;
             // 
             // vitesCB
@@ -353,18 +376,6 @@
             label11.Size = new Size(88, 32);
             label11.TabIndex = 1008;
             label11.Text = "Plaka : ";
-            // 
-            // ımageList1
-            // 
-            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
-            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
-            ımageList1.TransparentColor = Color.Transparent;
-            ımageList1.Images.SetKeyName(0, "kullanici.png");
-            ımageList1.Images.SetKeyName(1, "cikisyap.png");
-            ımageList1.Images.SetKeyName(2, "icon-rent-car.jpg");
-            ımageList1.Images.SetKeyName(3, "pngegg (1).png");
-            ımageList1.Images.SetKeyName(4, "pngegg (2).png");
-            ımageList1.Images.SetKeyName(5, "pngegg (4).png");
             // 
             // AracCrudForm
             // 

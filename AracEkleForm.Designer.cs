@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AracEkleForm));
             aracEkleBTN = new Button();
             crudBTN = new Button();
             aracKiralamaBTN = new Button();
@@ -53,75 +55,104 @@
             label2 = new Label();
             label1 = new Label();
             koltukSayiCB = new ComboBox();
+            ımageList1 = new ImageList(components);
             SuspendLayout();
             // 
             // aracEkleBTN
             // 
-            aracEkleBTN.Location = new Point(12, 12);
+            aracEkleBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            aracEkleBTN.ImageKey = "pngegg (1).png";
+            aracEkleBTN.ImageList = ımageList1;
+            aracEkleBTN.Location = new Point(17, 12);
             aracEkleBTN.Name = "aracEkleBTN";
-            aracEkleBTN.Size = new Size(177, 47);
+            aracEkleBTN.Size = new Size(190, 47);
             aracEkleBTN.TabIndex = 0;
             aracEkleBTN.Text = "Araç Ekleme İşlemleri";
+            aracEkleBTN.TextAlign = ContentAlignment.MiddleRight;
             aracEkleBTN.UseVisualStyleBackColor = true;
             aracEkleBTN.Click += aracEkleBTN_Click;
             // 
             // crudBTN
             // 
-            crudBTN.Location = new Point(196, 12);
+            crudBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            crudBTN.ImageKey = "pngegg (2).png";
+            crudBTN.ImageList = ımageList1;
+            crudBTN.Location = new Point(213, 12);
             crudBTN.Name = "crudBTN";
-            crudBTN.Size = new Size(177, 47);
+            crudBTN.Size = new Size(186, 47);
             crudBTN.TabIndex = 1;
             crudBTN.Text = "Araç CRUD İşlemleri";
+            crudBTN.TextAlign = ContentAlignment.MiddleRight;
             crudBTN.UseVisualStyleBackColor = true;
             crudBTN.Click += crudBTN_Click;
             // 
             // aracKiralamaBTN
             // 
-            aracKiralamaBTN.Location = new Point(379, 12);
+            aracKiralamaBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            aracKiralamaBTN.ImageKey = "icon-rent-car.jpg";
+            aracKiralamaBTN.ImageList = ımageList1;
+            aracKiralamaBTN.Location = new Point(405, 12);
             aracKiralamaBTN.Name = "aracKiralamaBTN";
-            aracKiralamaBTN.Size = new Size(177, 47);
+            aracKiralamaBTN.Size = new Size(204, 47);
             aracKiralamaBTN.TabIndex = 2;
             aracKiralamaBTN.Text = "Araç Kiralama İşlemleri";
+            aracKiralamaBTN.TextAlign = ContentAlignment.MiddleRight;
             aracKiralamaBTN.UseVisualStyleBackColor = true;
             aracKiralamaBTN.Click += aracKiralamaBTN_Click;
             // 
             // aracFiyatBTN
             // 
-            aracFiyatBTN.Location = new Point(562, 12);
+            aracFiyatBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            aracFiyatBTN.ImageKey = "pngegg (4).png";
+            aracFiyatBTN.ImageList = ımageList1;
+            aracFiyatBTN.Location = new Point(615, 12);
             aracFiyatBTN.Name = "aracFiyatBTN";
             aracFiyatBTN.Size = new Size(177, 47);
             aracFiyatBTN.TabIndex = 3;
             aracFiyatBTN.Text = "Araç Fiyat İşlemleri";
+            aracFiyatBTN.TextAlign = ContentAlignment.MiddleRight;
             aracFiyatBTN.UseVisualStyleBackColor = true;
             aracFiyatBTN.Click += aracFiyatBTN_Click;
             // 
             // profilBTN
             // 
-            profilBTN.Location = new Point(745, 12);
+            profilBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            profilBTN.ImageKey = "kullanici.png";
+            profilBTN.ImageList = ımageList1;
+            profilBTN.Location = new Point(798, 12);
             profilBTN.Name = "profilBTN";
-            profilBTN.Size = new Size(177, 47);
+            profilBTN.Size = new Size(166, 47);
             profilBTN.TabIndex = 4;
             profilBTN.Text = "Kullanıcı İşlemleri";
+            profilBTN.TextAlign = ContentAlignment.MiddleRight;
             profilBTN.UseVisualStyleBackColor = true;
             profilBTN.Click += profilBTN_Click;
             // 
             // cikisBTN
             // 
-            cikisBTN.Location = new Point(928, 12);
+            cikisBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            cikisBTN.ImageKey = "cikisyap.png";
+            cikisBTN.ImageList = ımageList1;
+            cikisBTN.Location = new Point(970, 12);
             cikisBTN.Name = "cikisBTN";
-            cikisBTN.Size = new Size(177, 47);
+            cikisBTN.Size = new Size(120, 47);
             cikisBTN.TabIndex = 5;
             cikisBTN.Text = "Çıkış Yap";
+            cikisBTN.TextAlign = ContentAlignment.MiddleRight;
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
             // 
             // ekleBTN
             // 
-            ekleBTN.Location = new Point(50, 534);
+            ekleBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            ekleBTN.ImageKey = "aracekle.png";
+            ekleBTN.ImageList = ımageList1;
+            ekleBTN.Location = new Point(233, 520);
             ekleBTN.Name = "ekleBTN";
-            ekleBTN.Size = new Size(322, 86);
+            ekleBTN.Size = new Size(127, 48);
             ekleBTN.TabIndex = 15;
             ekleBTN.Text = "Aracı Ekle";
+            ekleBTN.TextAlign = ContentAlignment.MiddleRight;
             ekleBTN.UseVisualStyleBackColor = true;
             // 
             // vitesCB
@@ -289,10 +320,26 @@
             koltukSayiCB.Size = new Size(150, 33);
             koltukSayiCB.TabIndex = 13;
             // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "cikisyap.png");
+            ımageList1.Images.SetKeyName(1, "icon-rent-car.jpg");
+            ımageList1.Images.SetKeyName(2, "kullanici.png");
+            ımageList1.Images.SetKeyName(3, "pngegg (1).png");
+            ımageList1.Images.SetKeyName(4, "pngegg (2).png");
+            ımageList1.Images.SetKeyName(5, "pngegg (4).png");
+            ımageList1.Images.SetKeyName(6, "icon-rent-car.jpg");
+            ımageList1.Images.SetKeyName(7, "aracekle.png");
+            // 
             // AracEkleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
             Controls.Add(koltukSayiCB);
             Controls.Add(ekleBTN);
@@ -357,5 +404,6 @@
         private Label label2;
         private Label label1;
         private ComboBox koltukSayiCB;
+        private ImageList ımageList1;
     }
 }
