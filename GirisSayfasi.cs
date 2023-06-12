@@ -33,8 +33,8 @@ namespace RentACar2023
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AracEkleForm form2 = new AracEkleForm(); 
-            form2.Show(); 
+            AracEkleForm form2 = new AracEkleForm();
+            form2.Show();
             this.Hide();
         }
 
