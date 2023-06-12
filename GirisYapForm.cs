@@ -21,5 +21,10 @@ namespace RentACar2023
         {
 
         }
+
+        private void GirisYapForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

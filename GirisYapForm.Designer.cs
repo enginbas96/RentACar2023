@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GirisYapForm));
             GirisYapButton = new Button();
             KullaniciAdiLabel = new Label();
@@ -36,16 +37,21 @@
             GirisYapSifreTextBox = new TextBox();
             SifreUnuttumLinkLabel = new LinkLabel();
             KullaniciPictureBox = new PictureBox();
+            ımageList1 = new ImageList(components);
             ((System.ComponentModel.ISupportInitialize)KullaniciPictureBox).BeginInit();
             SuspendLayout();
             // 
             // GirisYapButton
             // 
-            GirisYapButton.Location = new Point(308, 326);
+            GirisYapButton.ImageAlign = ContentAlignment.MiddleLeft;
+            GirisYapButton.ImageKey = "cikisyap.png";
+            GirisYapButton.ImageList = ımageList1;
+            GirisYapButton.Location = new Point(343, 315);
             GirisYapButton.Name = "GirisYapButton";
-            GirisYapButton.Size = new Size(192, 41);
+            GirisYapButton.Size = new Size(124, 41);
             GirisYapButton.TabIndex = 0;
             GirisYapButton.Text = "Giriş Yap";
+            GirisYapButton.TextAlign = ContentAlignment.MiddleRight;
             GirisYapButton.UseVisualStyleBackColor = true;
             // 
             // KullaniciAdiLabel
@@ -103,6 +109,13 @@
             KullaniciPictureBox.TabIndex = 6;
             KullaniciPictureBox.TabStop = false;
             // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "cikisyap.png");
+            // 
             // GirisYapForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -117,6 +130,7 @@
             Controls.Add(GirisYapButton);
             Name = "GirisYapForm";
             Text = "Giriş Yap";
+            Load += GirisYapForm_Load;
             ((System.ComponentModel.ISupportInitialize)KullaniciPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -131,5 +145,6 @@
         private TextBox GirisYapSifreTextBox;
         private LinkLabel SifreUnuttumLinkLabel;
         private PictureBox KullaniciPictureBox;
+        private ImageList ımageList1;
     }
 }
