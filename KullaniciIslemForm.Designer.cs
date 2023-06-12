@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KullaniciIslemForm));
             cikisBTN = new Button();
             profilBTN = new Button();
             aracFiyatBTN = new Button();
@@ -50,6 +52,7 @@
             textBox5 = new TextBox();
             label5 = new Label();
             button9 = new Button();
+            ımageList1 = new ImageList(components);
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -57,61 +60,85 @@
             // 
             // cikisBTN
             // 
-            cikisBTN.Location = new Point(928, 12);
+            cikisBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            cikisBTN.ImageKey = "cikisyap.png";
+            cikisBTN.ImageList = ımageList1;
+            cikisBTN.Location = new Point(966, 12);
             cikisBTN.Name = "cikisBTN";
-            cikisBTN.Size = new Size(177, 47);
+            cikisBTN.Size = new Size(122, 47);
             cikisBTN.TabIndex = 5;
             cikisBTN.Text = "Çıkış Yap";
+            cikisBTN.TextAlign = ContentAlignment.MiddleRight;
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
             // 
             // profilBTN
             // 
-            profilBTN.Location = new Point(745, 12);
+            profilBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            profilBTN.ImageKey = "kullanici.png";
+            profilBTN.ImageList = ımageList1;
+            profilBTN.Location = new Point(794, 12);
             profilBTN.Name = "profilBTN";
-            profilBTN.Size = new Size(177, 47);
+            profilBTN.Size = new Size(166, 47);
             profilBTN.TabIndex = 4;
             profilBTN.Text = "Kullanıcı İşlemleri";
+            profilBTN.TextAlign = ContentAlignment.MiddleRight;
             profilBTN.UseVisualStyleBackColor = true;
             profilBTN.Click += profilBTN_Click;
             // 
             // aracFiyatBTN
             // 
-            aracFiyatBTN.Location = new Point(562, 12);
+            aracFiyatBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            aracFiyatBTN.ImageKey = "pngegg (4).png";
+            aracFiyatBTN.ImageList = ımageList1;
+            aracFiyatBTN.Location = new Point(611, 12);
             aracFiyatBTN.Name = "aracFiyatBTN";
             aracFiyatBTN.Size = new Size(177, 47);
             aracFiyatBTN.TabIndex = 3;
             aracFiyatBTN.Text = "Araç Fiyat İşlemleri";
+            aracFiyatBTN.TextAlign = ContentAlignment.MiddleRight;
             aracFiyatBTN.UseVisualStyleBackColor = true;
             aracFiyatBTN.Click += aracFiyatBTN_Click;
             // 
             // aracKiralamaBTN
             // 
-            aracKiralamaBTN.Location = new Point(379, 12);
+            aracKiralamaBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            aracKiralamaBTN.ImageKey = "icon-rent-car.jpg";
+            aracKiralamaBTN.ImageList = ımageList1;
+            aracKiralamaBTN.Location = new Point(404, 12);
             aracKiralamaBTN.Name = "aracKiralamaBTN";
-            aracKiralamaBTN.Size = new Size(177, 47);
+            aracKiralamaBTN.Size = new Size(201, 47);
             aracKiralamaBTN.TabIndex = 2;
             aracKiralamaBTN.Text = "Araç Kiralama İşlemleri";
+            aracKiralamaBTN.TextAlign = ContentAlignment.MiddleRight;
             aracKiralamaBTN.UseVisualStyleBackColor = true;
             aracKiralamaBTN.Click += aracKiralamaBTN_Click;
             // 
             // crudBTN
             // 
-            crudBTN.Location = new Point(196, 12);
+            crudBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            crudBTN.ImageKey = "pngegg (2).png";
+            crudBTN.ImageList = ımageList1;
+            crudBTN.Location = new Point(210, 12);
             crudBTN.Name = "crudBTN";
-            crudBTN.Size = new Size(177, 47);
+            crudBTN.Size = new Size(188, 47);
             crudBTN.TabIndex = 1;
             crudBTN.Text = "Araç CRUD İşlemleri";
+            crudBTN.TextAlign = ContentAlignment.MiddleRight;
             crudBTN.UseVisualStyleBackColor = true;
             crudBTN.Click += crudBTN_Click;
             // 
             // aracEkleBTN
             // 
+            aracEkleBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            aracEkleBTN.ImageKey = "pngegg (1).png";
+            aracEkleBTN.ImageList = ımageList1;
             aracEkleBTN.Location = new Point(12, 12);
             aracEkleBTN.Name = "aracEkleBTN";
-            aracEkleBTN.Size = new Size(177, 47);
+            aracEkleBTN.Size = new Size(192, 47);
             aracEkleBTN.TabIndex = 0;
             aracEkleBTN.Text = "Araç Ekleme İşlemleri";
+            aracEkleBTN.TextAlign = ContentAlignment.MiddleRight;
             aracEkleBTN.UseVisualStyleBackColor = true;
             aracEkleBTN.Click += aracEkleBTN_Click;
             // 
@@ -147,11 +174,15 @@
             // 
             // button7
             // 
-            button7.Location = new Point(35, 233);
+            button7.ImageAlign = ContentAlignment.MiddleLeft;
+            button7.ImageKey = "kullanicisil.png";
+            button7.ImageList = ımageList1;
+            button7.Location = new Point(64, 233);
             button7.Name = "button7";
-            button7.Size = new Size(211, 52);
+            button7.Size = new Size(145, 52);
             button7.TabIndex = 7;
             button7.Text = "Kullanıcıyı Sil";
+            button7.TextAlign = ContentAlignment.MiddleRight;
             button7.UseVisualStyleBackColor = true;
             // 
             // groupBox2
@@ -206,11 +237,15 @@
             // 
             // button8
             // 
-            button8.Location = new Point(38, 233);
+            button8.ImageAlign = ContentAlignment.MiddleLeft;
+            button8.ImageKey = "pngegg (7).png";
+            button8.ImageList = ımageList1;
+            button8.Location = new Point(65, 233);
             button8.Name = "button8";
-            button8.Size = new Size(211, 52);
+            button8.Size = new Size(150, 52);
             button8.TabIndex = 10;
             button8.Text = "Şifre Değiştir";
+            button8.TextAlign = ContentAlignment.MiddleRight;
             button8.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -265,12 +300,32 @@
             // 
             // button9
             // 
-            button9.Location = new Point(38, 233);
+            button9.ImageAlign = ContentAlignment.MiddleLeft;
+            button9.ImageKey = "pngegg.png";
+            button9.ImageList = ımageList1;
+            button9.Location = new Point(61, 233);
             button9.Name = "button9";
-            button9.Size = new Size(211, 52);
+            button9.Size = new Size(166, 52);
             button9.TabIndex = 13;
             button9.Text = "Kullanıcı Oluştur";
+            button9.TextAlign = ContentAlignment.MiddleRight;
             button9.UseVisualStyleBackColor = true;
+            // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "kullanici.png");
+            ımageList1.Images.SetKeyName(1, "add-group (1).png");
+            ımageList1.Images.SetKeyName(2, "cikisyap.png");
+            ımageList1.Images.SetKeyName(3, "icon-rent-car.jpg");
+            ımageList1.Images.SetKeyName(4, "pngegg (1).png");
+            ımageList1.Images.SetKeyName(5, "pngegg (2).png");
+            ımageList1.Images.SetKeyName(6, "pngegg (4).png");
+            ımageList1.Images.SetKeyName(7, "pngegg.png");
+            ımageList1.Images.SetKeyName(8, "pngegg (7).png");
+            ımageList1.Images.SetKeyName(9, "kullanicisil.png");
             // 
             // KullaniciIslemForm
             // 
@@ -326,5 +381,6 @@
         private TextBox textBox5;
         private Label label5;
         private Button button9;
+        private ImageList ımageList1;
     }
 }
