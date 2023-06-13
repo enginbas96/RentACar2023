@@ -33,11 +33,15 @@
             cikisBTN = new Button();
             cikisyap_imglist = new ImageList(components);
             profilBTN = new Button();
+            ımageList1 = new ImageList(components);
             aracFiyatBTN = new Button();
+            fiyat_imglist = new ImageList(components);
             aracKiralamaBTN = new Button();
+            rentacar_imglist = new ImageList(components);
             arabaimglist = new ImageList(components);
             crudBTN = new Button();
             aracEkleBTN = new Button();
+            aracekleme_imglist = new ImageList(components);
             veriGoruntuleyici = new DataGridView();
             label19 = new Label();
             plakaText = new TextBox();
@@ -46,10 +50,6 @@
             yeniFiyatText = new TextBox();
             label2 = new Label();
             guncelleBTN = new Button();
-            aracekleme_imglist = new ImageList(components);
-            rentacar_imglist = new ImageList(components);
-            fiyat_imglist = new ImageList(components);
-            ımageList1 = new ImageList(components);
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             SuspendLayout();
             // 
@@ -88,6 +88,14 @@
             profilBTN.UseVisualStyleBackColor = true;
             profilBTN.Click += profilBTN_Click;
             // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "kullanici.png");
+            ımageList1.Images.SetKeyName(1, "pngegg (7).png");
+            // 
             // aracFiyatBTN
             // 
             aracFiyatBTN.ImageAlign = ContentAlignment.MiddleLeft;
@@ -102,6 +110,13 @@
             aracFiyatBTN.UseVisualStyleBackColor = true;
             aracFiyatBTN.Click += aracFiyatBTN_Click;
             // 
+            // fiyat_imglist
+            // 
+            fiyat_imglist.ColorDepth = ColorDepth.Depth32Bit;
+            fiyat_imglist.ImageStream = (ImageListStreamer)resources.GetObject("fiyat_imglist.ImageStream");
+            fiyat_imglist.TransparentColor = Color.Transparent;
+            fiyat_imglist.Images.SetKeyName(0, "pngegg (4).png");
+            // 
             // aracKiralamaBTN
             // 
             aracKiralamaBTN.ImageAlign = ContentAlignment.MiddleLeft;
@@ -115,6 +130,13 @@
             aracKiralamaBTN.TextAlign = ContentAlignment.MiddleRight;
             aracKiralamaBTN.UseVisualStyleBackColor = true;
             aracKiralamaBTN.Click += aracKiralamaBTN_Click;
+            // 
+            // rentacar_imglist
+            // 
+            rentacar_imglist.ColorDepth = ColorDepth.Depth32Bit;
+            rentacar_imglist.ImageStream = (ImageListStreamer)resources.GetObject("rentacar_imglist.ImageStream");
+            rentacar_imglist.TransparentColor = Color.Transparent;
+            rentacar_imglist.Images.SetKeyName(0, "icon-rent-car.jpg");
             // 
             // arabaimglist
             // 
@@ -150,6 +172,13 @@
             aracEkleBTN.TextAlign = ContentAlignment.MiddleRight;
             aracEkleBTN.UseVisualStyleBackColor = true;
             aracEkleBTN.Click += aracEkleBTN_Click;
+            // 
+            // aracekleme_imglist
+            // 
+            aracekleme_imglist.ColorDepth = ColorDepth.Depth32Bit;
+            aracekleme_imglist.ImageStream = (ImageListStreamer)resources.GetObject("aracekleme_imglist.ImageStream");
+            aracekleme_imglist.TransparentColor = Color.Transparent;
+            aracekleme_imglist.Images.SetKeyName(0, "pngegg (1).png");
             // 
             // veriGoruntuleyici
             // 
@@ -221,46 +250,21 @@
             // 
             // guncelleBTN
             // 
-            guncelleBTN.Location = new Point(44, 550);
+            guncelleBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            guncelleBTN.ImageKey = "pngegg (7).png";
+            guncelleBTN.ImageList = ımageList1;
+            guncelleBTN.Location = new Point(184, 539);
             guncelleBTN.Name = "guncelleBTN";
-            guncelleBTN.Size = new Size(290, 73);
+            guncelleBTN.Size = new Size(150, 56);
             guncelleBTN.TabIndex = 10;
             guncelleBTN.Text = "Fiyatı Güncelle";
+            guncelleBTN.TextAlign = ContentAlignment.MiddleRight;
             guncelleBTN.UseVisualStyleBackColor = true;
-            // 
-            // aracekleme_imglist
-            // 
-            aracekleme_imglist.ColorDepth = ColorDepth.Depth32Bit;
-            aracekleme_imglist.ImageStream = (ImageListStreamer)resources.GetObject("aracekleme_imglist.ImageStream");
-            aracekleme_imglist.TransparentColor = Color.Transparent;
-            aracekleme_imglist.Images.SetKeyName(0, "pngegg (1).png");
-            // 
-            // rentacar_imglist
-            // 
-            rentacar_imglist.ColorDepth = ColorDepth.Depth32Bit;
-            rentacar_imglist.ImageStream = (ImageListStreamer)resources.GetObject("rentacar_imglist.ImageStream");
-            rentacar_imglist.TransparentColor = Color.Transparent;
-            rentacar_imglist.Images.SetKeyName(0, "icon-rent-car.jpg");
-            // 
-            // fiyat_imglist
-            // 
-            fiyat_imglist.ColorDepth = ColorDepth.Depth32Bit;
-            fiyat_imglist.ImageStream = (ImageListStreamer)resources.GetObject("fiyat_imglist.ImageStream");
-            fiyat_imglist.TransparentColor = Color.Transparent;
-            fiyat_imglist.Images.SetKeyName(0, "pngegg (4).png");
-            // 
-            // ımageList1
-            // 
-            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
-            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
-            ımageList1.TransparentColor = Color.Transparent;
-            ımageList1.Images.SetKeyName(0, "kullanici.png");
             // 
             // AracFiyatForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
             Controls.Add(guncelleBTN);

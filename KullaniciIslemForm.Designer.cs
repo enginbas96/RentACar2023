@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KullaniciIslemForm));
             cikisBTN = new Button();
+            ımageList1 = new ImageList(components);
             profilBTN = new Button();
             aracFiyatBTN = new Button();
             aracKiralamaBTN = new Button();
@@ -52,7 +53,6 @@
             textBox5 = new TextBox();
             label5 = new Label();
             button9 = new Button();
-            ımageList1 = new ImageList(components);
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -71,6 +71,22 @@
             cikisBTN.TextAlign = ContentAlignment.MiddleRight;
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
+            // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "kullanici.png");
+            ımageList1.Images.SetKeyName(1, "add-group (1).png");
+            ımageList1.Images.SetKeyName(2, "cikisyap.png");
+            ımageList1.Images.SetKeyName(3, "icon-rent-car.jpg");
+            ımageList1.Images.SetKeyName(4, "pngegg (1).png");
+            ımageList1.Images.SetKeyName(5, "pngegg (2).png");
+            ımageList1.Images.SetKeyName(6, "pngegg (4).png");
+            ımageList1.Images.SetKeyName(7, "pngegg.png");
+            ımageList1.Images.SetKeyName(8, "pngegg (7).png");
+            ımageList1.Images.SetKeyName(9, "kullanicisil.png");
             // 
             // profilBTN
             // 
@@ -311,26 +327,12 @@
             button9.TextAlign = ContentAlignment.MiddleRight;
             button9.UseVisualStyleBackColor = true;
             // 
-            // ımageList1
-            // 
-            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
-            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
-            ımageList1.TransparentColor = Color.Transparent;
-            ımageList1.Images.SetKeyName(0, "kullanici.png");
-            ımageList1.Images.SetKeyName(1, "add-group (1).png");
-            ımageList1.Images.SetKeyName(2, "cikisyap.png");
-            ımageList1.Images.SetKeyName(3, "icon-rent-car.jpg");
-            ımageList1.Images.SetKeyName(4, "pngegg (1).png");
-            ımageList1.Images.SetKeyName(5, "pngegg (2).png");
-            ımageList1.Images.SetKeyName(6, "pngegg (4).png");
-            ımageList1.Images.SetKeyName(7, "pngegg.png");
-            ımageList1.Images.SetKeyName(8, "pngegg (7).png");
-            ımageList1.Images.SetKeyName(9, "kullanicisil.png");
-            // 
             // KullaniciIslemForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
