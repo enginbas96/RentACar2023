@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AracKiralaForm));
             cikisBTN = new Button();
             profilBTN = new Button();
             aracFiyatBTN = new Button();
@@ -49,74 +51,102 @@
             label20 = new Label();
             plakaCB = new ComboBox();
             label19 = new Label();
+            ımageList1 = new ImageList(components);
             SuspendLayout();
             // 
             // cikisBTN
             // 
-            cikisBTN.Location = new Point(928, 12);
+            cikisBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            cikisBTN.ImageKey = "cikisyap.png";
+            cikisBTN.ImageList = ımageList1;
+            cikisBTN.Location = new Point(975, 12);
             cikisBTN.Name = "cikisBTN";
-            cikisBTN.Size = new Size(177, 47);
+            cikisBTN.Size = new Size(116, 47);
             cikisBTN.TabIndex = 5;
             cikisBTN.Text = "Çıkış Yap";
+            cikisBTN.TextAlign = ContentAlignment.MiddleRight;
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
             // 
             // profilBTN
             // 
-            profilBTN.Location = new Point(745, 12);
+            profilBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            profilBTN.ImageKey = "kullanici.png";
+            profilBTN.ImageList = ımageList1;
+            profilBTN.Location = new Point(807, 12);
             profilBTN.Name = "profilBTN";
-            profilBTN.Size = new Size(177, 47);
+            profilBTN.Size = new Size(162, 47);
             profilBTN.TabIndex = 4;
             profilBTN.Text = "Kullanıcı İşlemleri";
+            profilBTN.TextAlign = ContentAlignment.MiddleRight;
             profilBTN.UseVisualStyleBackColor = true;
             profilBTN.Click += profilBTN_Click;
             // 
             // aracFiyatBTN
             // 
-            aracFiyatBTN.Location = new Point(562, 12);
+            aracFiyatBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            aracFiyatBTN.ImageKey = "pngegg (4).png";
+            aracFiyatBTN.ImageList = ımageList1;
+            aracFiyatBTN.Location = new Point(623, 12);
             aracFiyatBTN.Name = "aracFiyatBTN";
-            aracFiyatBTN.Size = new Size(177, 47);
+            aracFiyatBTN.Size = new Size(178, 47);
             aracFiyatBTN.TabIndex = 3;
             aracFiyatBTN.Text = "Araç Fiyat İşlemleri";
+            aracFiyatBTN.TextAlign = ContentAlignment.MiddleRight;
             aracFiyatBTN.UseVisualStyleBackColor = true;
             aracFiyatBTN.Click += aracFiyatBTN_Click;
             // 
             // aracKiralamaBTN
             // 
-            aracKiralamaBTN.Location = new Point(379, 12);
+            aracKiralamaBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            aracKiralamaBTN.ImageKey = "icon-rent-car.jpg";
+            aracKiralamaBTN.ImageList = ımageList1;
+            aracKiralamaBTN.Location = new Point(413, 12);
             aracKiralamaBTN.Name = "aracKiralamaBTN";
-            aracKiralamaBTN.Size = new Size(177, 47);
+            aracKiralamaBTN.Size = new Size(204, 47);
             aracKiralamaBTN.TabIndex = 2;
             aracKiralamaBTN.Text = "Araç Kiralama İşlemleri";
+            aracKiralamaBTN.TextAlign = ContentAlignment.MiddleRight;
             aracKiralamaBTN.UseVisualStyleBackColor = true;
             aracKiralamaBTN.Click += aracKiralamaBTN_Click;
             // 
             // crudBTN
             // 
-            crudBTN.Location = new Point(196, 12);
+            crudBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            crudBTN.ImageKey = "pngegg (2).png";
+            crudBTN.ImageList = ımageList1;
+            crudBTN.Location = new Point(218, 12);
             crudBTN.Name = "crudBTN";
-            crudBTN.Size = new Size(177, 47);
+            crudBTN.Size = new Size(189, 47);
             crudBTN.TabIndex = 1;
             crudBTN.Text = "Araç CRUD İşlemleri";
+            crudBTN.TextAlign = ContentAlignment.MiddleRight;
             crudBTN.UseVisualStyleBackColor = true;
             crudBTN.Click += crudBTN_Click;
             // 
             // aracEkleBTN
             // 
-            aracEkleBTN.Location = new Point(12, 12);
+            aracEkleBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            aracEkleBTN.ImageKey = "pngegg (1).png";
+            aracEkleBTN.ImageList = ımageList1;
+            aracEkleBTN.Location = new Point(21, 12);
             aracEkleBTN.Name = "aracEkleBTN";
-            aracEkleBTN.Size = new Size(177, 47);
+            aracEkleBTN.Size = new Size(191, 47);
             aracEkleBTN.TabIndex = 0;
             aracEkleBTN.Text = "Araç Ekleme İşlemleri";
+            aracEkleBTN.TextAlign = ContentAlignment.MiddleRight;
             aracEkleBTN.UseVisualStyleBackColor = true;
             aracEkleBTN.Click += aracEkleBTN_Click;
             // 
             // kiralaBTN
             // 
-            kiralaBTN.Location = new Point(45, 454);
+            kiralaBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            kiralaBTN.ImageKey = "pngegg (10).png";
+            kiralaBTN.ImageList = ımageList1;
+            kiralaBTN.Location = new Point(118, 493);
             kiralaBTN.Margin = new Padding(3, 4, 3, 4);
             kiralaBTN.Name = "kiralaBTN";
-            kiralaBTN.Size = new Size(330, 65);
+            kiralaBTN.Size = new Size(241, 65);
             kiralaBTN.TabIndex = 13;
             kiralaBTN.Text = "Kirala";
             kiralaBTN.UseVisualStyleBackColor = true;
@@ -124,7 +154,7 @@
             // teslimTarihi
             // 
             teslimTarihi.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            teslimTarihi.Location = new Point(224, 404);
+            teslimTarihi.Location = new Point(228, 441);
             teslimTarihi.Margin = new Padding(3, 4, 3, 4);
             teslimTarihi.Name = "teslimTarihi";
             teslimTarihi.Size = new Size(150, 32);
@@ -133,7 +163,7 @@
             // kiralamaTarihi
             // 
             kiralamaTarihi.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            kiralamaTarihi.Location = new Point(224, 361);
+            kiralamaTarihi.Location = new Point(228, 389);
             kiralamaTarihi.Margin = new Padding(3, 4, 3, 4);
             kiralamaTarihi.Name = "kiralamaTarihi";
             kiralamaTarihi.Size = new Size(150, 32);
@@ -142,7 +172,7 @@
             // telefonText
             // 
             telefonText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            telefonText.Location = new Point(224, 321);
+            telefonText.Location = new Point(228, 340);
             telefonText.Margin = new Padding(3, 4, 3, 4);
             telefonText.Name = "telefonText";
             telefonText.Size = new Size(150, 32);
@@ -151,7 +181,7 @@
             // soyadText
             // 
             soyadText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            soyadText.Location = new Point(224, 273);
+            soyadText.Location = new Point(228, 288);
             soyadText.Margin = new Padding(3, 4, 3, 4);
             soyadText.Name = "soyadText";
             soyadText.Size = new Size(150, 32);
@@ -160,7 +190,7 @@
             // adText
             // 
             adText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            adText.Location = new Point(224, 224);
+            adText.Location = new Point(228, 243);
             adText.Margin = new Padding(3, 4, 3, 4);
             adText.Name = "adText";
             adText.Size = new Size(150, 32);
@@ -169,7 +199,7 @@
             // tcText
             // 
             tcText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            tcText.Location = new Point(223, 180);
+            tcText.Location = new Point(228, 198);
             tcText.Margin = new Padding(3, 4, 3, 4);
             tcText.Name = "tcText";
             tcText.Size = new Size(150, 32);
@@ -179,7 +209,7 @@
             // 
             label25.AutoSize = true;
             label25.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label25.Location = new Point(70, 405);
+            label25.Location = new Point(59, 441);
             label25.Name = "label25";
             label25.Size = new Size(163, 32);
             label25.TabIndex = 28;
@@ -189,7 +219,7 @@
             // 
             label24.AutoSize = true;
             label24.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label24.Location = new Point(45, 362);
+            label24.Location = new Point(35, 389);
             label24.Name = "label24";
             label24.Size = new Size(187, 32);
             label24.TabIndex = 27;
@@ -199,7 +229,7 @@
             // 
             label23.AutoSize = true;
             label23.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label23.Location = new Point(83, 320);
+            label23.Location = new Point(71, 340);
             label23.Name = "label23";
             label23.Size = new Size(151, 32);
             label23.TabIndex = 26;
@@ -209,7 +239,7 @@
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label22.Location = new Point(123, 272);
+            label22.Location = new Point(118, 288);
             label22.Name = "label22";
             label22.Size = new Size(104, 32);
             label22.TabIndex = 25;
@@ -219,7 +249,7 @@
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label21.Location = new Point(155, 222);
+            label21.Location = new Point(154, 243);
             label21.Name = "label21";
             label21.Size = new Size(68, 32);
             label21.TabIndex = 24;
@@ -229,7 +259,7 @@
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label20.Location = new Point(52, 178);
+            label20.Location = new Point(51, 198);
             label20.Name = "label20";
             label20.Size = new Size(171, 32);
             label20.TabIndex = 23;
@@ -239,7 +269,7 @@
             // 
             plakaCB.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             plakaCB.FormattingEnabled = true;
-            plakaCB.Location = new Point(224, 133);
+            plakaCB.Location = new Point(228, 150);
             plakaCB.Name = "plakaCB";
             plakaCB.Size = new Size(150, 33);
             plakaCB.TabIndex = 6;
@@ -248,16 +278,31 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label19.Location = new Point(136, 132);
+            label19.Location = new Point(134, 150);
             label19.Name = "label19";
             label19.Size = new Size(88, 32);
             label19.TabIndex = 22;
             label19.Text = "Plaka : ";
             // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "cikisyap.png");
+            ımageList1.Images.SetKeyName(1, "icon-rent-car.jpg");
+            ımageList1.Images.SetKeyName(2, "kullanici.png");
+            ımageList1.Images.SetKeyName(3, "pngegg (1).png");
+            ımageList1.Images.SetKeyName(4, "pngegg (2).png");
+            ımageList1.Images.SetKeyName(5, "pngegg (4).png");
+            ımageList1.Images.SetKeyName(6, "pngegg (10).png");
+            // 
             // AracKiralaForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
             Controls.Add(kiralaBTN);
             Controls.Add(teslimTarihi);
@@ -313,5 +358,6 @@
         private Label label20;
         private ComboBox plakaCB;
         private Label label19;
+        private ImageList ımageList1;
     }
 }
