@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\user;
 
+use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -21,7 +22,12 @@ class UserLoginController extends Controller
         if ($user) {
             $hashedPassword = $user->password;
             if (Hash::check($password, $hashedPassword)) {
-                return redirect()->route('user_homepage');
+                session(["user_id" => $user->id]);
+//                $inputs = [
+//                    'id'=>$user->id,
+//                ];
+//                return redirect()->route('user_homepage', Helper::encryptInputs($inputs)); -> url'e gönderdiğim user id'yi hashlememe yarıyor.
+                  return redirect()->route('user_homepage');
             } else {
                 return redirect()->route('login');
             }
