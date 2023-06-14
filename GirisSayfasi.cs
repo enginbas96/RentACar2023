@@ -40,7 +40,9 @@ namespace RentACar2023
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            AracListe form2 = new AracListe();
+            form2.Show();
+            this.Hide();
         }
 
         private void ÝslemTextBox_TextChanged(object sender, EventArgs e)
