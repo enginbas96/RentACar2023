@@ -8,4 +8,32 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="DataSet1.cs" />
+    <Compile Remove="DataSet1.Designer.cs" />
+    <Compile Remove="Form1.cs" />
+    <Compile Remove="Form1.Designer.cs" />
+    <Compile Remove="SifremiUnuttum.cs" />
+    <Compile Remove="SifremiUnuttum.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Form1.resx" />
+    <EmbeddedResource Remove="SifremiUnuttum.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Database1.mdf" />
+    <None Remove="Database1_log.ldf" />
+    <None Remove="DataSet1.xsc" />
+    <None Remove="DataSet1.xsd" />
+    <None Remove="DataSet1.xss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.7" />
+    <PackageReference Include="MySql.Data" Version="8.0.33" />
+    <PackageReference Include="MySqlConnector" Version="2.2.6" />
+  </ItemGroup>
+
 </Project>
