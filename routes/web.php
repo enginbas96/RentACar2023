@@ -38,7 +38,8 @@ Route::get('/add-cars',[AdminCarsController::class,'addCarsView'])->name('add_ca
 /*User Pages*/
 Route::get('/anasayfa',[HomePageController::class,'index'])->name('user_homepage');
 Route::get('/iletişim',[ContactController::class,'index'])->name('user_contact');
-Route::get('/araç-rezerve',[CarBookController::class,'index'])->name('user_car_book');
+Route::get('/araç-rezerve/{id}',[CarBookController::class,'index'])->name('user_car_book');
+Route::post('/araç-rezerve-post/{id}',[CarBookController::class,'carBook'])->name('user_car_book_post');
 Route::get('/hakkında',[AboutController::class,'index'])->name('user_about');
 Route::get('/araba-detayı/{id}',[CarsController::class,'carDetail'])->name('user_car_detail');
 Route::get('/arabalar',[CarsController::class,'index'])->name('user_cars');

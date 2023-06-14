@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{asset('user/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
 </head>
-<body>
+<body onload="showTime()">
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
@@ -41,10 +41,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="{{route('user_homepage')}}" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="{{route('user_about')}}" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li class="nav-item"><a href="{{route('user_cars')}}" class="nav-link">Cars</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                 <li class="nav-item active"><a href="{{route('user_contact')}}" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -72,44 +69,44 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-4 d-flex align-items-center" style="margin-left: 50px">
-                        <form action="#" class="request-form ftco-animate bg-primary">
+                        <form action="{{route('user_car_book_post',$car->id)}}" method="post" class="request-form ftco-animate bg-primary">
+                            @csrf
                             <h2>Rezerve Et</h2>
                             <div class="form-group">
                                 <label for="" class="label">Kiralanan Tarih</label>
-                                <input type="date" class="form-control">
+                                <input type="date" name="kiralanan_tarih" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="" class="label">Kiralanan Saat</label>
-                                <select name="cars" id="cars">
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
-                                </select>
+                                <input type="time" name="kiralanan_saat" id="time">
                             </div>
                             <div class="d-flex">
                                 <div class="form-group mr-2">
                                     <label for="" class="label">Teslim Tarihi</label>
-                                    <input type="date" class="form-control" id="book_pick_date" placeholder="Date">
+                                    <input type="date" name="teslim_tarihi" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="" class="label">Teslimat Saati</label>
-                                <select name="cars" id="cars">
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
-                                </select>
+                                <input type="time" name="teslim_saati" id="time">
                             </div>
                             <div class="form-group">
-                                <input type="submit" value="Rent A Car Now" class="btn btn-secondary py-3 px-4">
+                                <input type="submit" value="Rezerve Et" class="btn btn-secondary py-3 px-4">
                             </div>
+                            @if($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                         </form>
                     </div>
                     <div class="col-md-5 d-flex">
                         <div class="services w-100">
-                            <img style="width: 600px; height: 450px" src="{{asset('img/user/car-1.jpg')}}" alt="">
+                            <img style="width: 600px; height: 450px" src="{{asset($car->img_url)}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -117,6 +114,9 @@
         </div>
     </div>
 </section>
+
+
+
 
 <footer class="ftco-footer ftco-bg-dark ftco-section">
     <div class="container">
