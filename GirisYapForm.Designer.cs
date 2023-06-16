@@ -53,6 +53,7 @@
             GirisYapButton.Text = "Giriş Yap";
             GirisYapButton.TextAlign = ContentAlignment.MiddleRight;
             GirisYapButton.UseVisualStyleBackColor = true;
+            GirisYapButton.Click += GirisYapButton_Click;
             // 
             // ımageList1
             // 
@@ -80,7 +81,6 @@
             SifreLabel.Size = new Size(70, 31);
             SifreLabel.TabIndex = 2;
             SifreLabel.Text = "Şifre: ";
-            SifreLabel.Click += label2_Click;
             // 
             // GirisYapKullaniciAdiTextBox
             // 
