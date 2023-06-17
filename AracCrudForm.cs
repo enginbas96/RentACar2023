@@ -85,5 +85,15 @@ namespace RentACar2023
         {
             Application.Exit();
         }
+
+        private void islemBTN_Click(object sender, EventArgs e)
+        {
+            if (plakaText.Text == "" || markaText.Text == "" || modelText.Text == "" || yakitTuruCB.Text == "" || hasarText.Text == ""
+                || renkText.Text == "" || kmText.Text == "" || koltukSayiCB.Text == "" || vitesCB.Text == "")
+
+            {
+                MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.");
+            }
+        }
     }
 }

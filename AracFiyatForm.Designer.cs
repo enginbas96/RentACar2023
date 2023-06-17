@@ -260,6 +260,7 @@
             guncelleBTN.Text = "Fiyatı Güncelle";
             guncelleBTN.TextAlign = ContentAlignment.MiddleRight;
             guncelleBTN.UseVisualStyleBackColor = true;
+            guncelleBTN.Click += guncelleBTN_Click;
             // 
             // AracFiyatForm
             // 

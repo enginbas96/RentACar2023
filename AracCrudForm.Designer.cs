@@ -168,6 +168,7 @@
             islemBTN.TabIndex = 18;
             islemBTN.Text = "Yapılacak İşlemi Seçiniz";
             islemBTN.UseVisualStyleBackColor = true;
+            islemBTN.Click += islemBTN_Click;
             // 
             // guncelleRB
             // 
@@ -178,7 +179,7 @@
             guncelleRB.ImageList = ımageList1;
             guncelleRB.Location = new Point(900, 531);
             guncelleRB.Name = "guncelleRB";
-            guncelleRB.Size = new Size(197, 40);
+            guncelleRB.Size = new Size(187, 32);
             guncelleRB.TabIndex = 17;
             guncelleRB.TabStop = true;
             guncelleRB.Text = "Aracı Güncelle";

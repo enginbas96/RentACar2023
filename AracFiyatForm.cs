@@ -85,5 +85,13 @@ namespace RentACar2023
         {
             Application.Exit();
         }
+
+        private void guncelleBTN_Click(object sender, EventArgs e)
+        {
+            if(plakaText.Text == "" || yeniFiyatText.Text == "" || anlikFiyatText.Text == "") 
+            {
+                MessageBox.Show("Eksik bilgi girişi");
+            }
+        }
     }
 }

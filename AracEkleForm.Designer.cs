@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AracEkleForm));
             aracEkleBTN = new Button();
+            ımageList1 = new ImageList(components);
             crudBTN = new Button();
             aracKiralamaBTN = new Button();
             aracFiyatBTN = new Button();
@@ -55,7 +56,6 @@
             label2 = new Label();
             label1 = new Label();
             koltukSayiCB = new ComboBox();
-            ımageList1 = new ImageList(components);
             SuspendLayout();
             // 
             // aracEkleBTN
@@ -71,6 +71,20 @@
             aracEkleBTN.TextAlign = ContentAlignment.MiddleRight;
             aracEkleBTN.UseVisualStyleBackColor = true;
             aracEkleBTN.Click += aracEkleBTN_Click;
+            // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "cikisyap.png");
+            ımageList1.Images.SetKeyName(1, "icon-rent-car.jpg");
+            ımageList1.Images.SetKeyName(2, "kullanici.png");
+            ımageList1.Images.SetKeyName(3, "pngegg (1).png");
+            ımageList1.Images.SetKeyName(4, "pngegg (2).png");
+            ımageList1.Images.SetKeyName(5, "pngegg (4).png");
+            ımageList1.Images.SetKeyName(6, "icon-rent-car.jpg");
+            ımageList1.Images.SetKeyName(7, "aracekle.png");
             // 
             // crudBTN
             // 
@@ -154,6 +168,7 @@
             ekleBTN.Text = "Aracı Ekle";
             ekleBTN.TextAlign = ContentAlignment.MiddleRight;
             ekleBTN.UseVisualStyleBackColor = true;
+            ekleBTN.Click += ekleBTN_Click;
             // 
             // vitesCB
             // 
@@ -319,20 +334,6 @@
             koltukSayiCB.Name = "koltukSayiCB";
             koltukSayiCB.Size = new Size(150, 33);
             koltukSayiCB.TabIndex = 13;
-            // 
-            // ımageList1
-            // 
-            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
-            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
-            ımageList1.TransparentColor = Color.Transparent;
-            ımageList1.Images.SetKeyName(0, "cikisyap.png");
-            ımageList1.Images.SetKeyName(1, "icon-rent-car.jpg");
-            ımageList1.Images.SetKeyName(2, "kullanici.png");
-            ımageList1.Images.SetKeyName(3, "pngegg (1).png");
-            ımageList1.Images.SetKeyName(4, "pngegg (2).png");
-            ımageList1.Images.SetKeyName(5, "pngegg (4).png");
-            ımageList1.Images.SetKeyName(6, "icon-rent-car.jpg");
-            ımageList1.Images.SetKeyName(7, "aracekle.png");
             // 
             // AracEkleForm
             // 

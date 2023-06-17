@@ -38,21 +38,21 @@
             crudBTN = new Button();
             aracEkleBTN = new Button();
             groupBox1 = new GroupBox();
-            textBox1 = new TextBox();
+            kadiDelete = new TextBox();
             label1 = new Label();
-            button7 = new Button();
+            kullaniciSilBTN = new Button();
             groupBox2 = new GroupBox();
-            textBox3 = new TextBox();
+            yeniSifre = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
+            kadiSifre = new TextBox();
             label2 = new Label();
-            button8 = new Button();
+            sifreDegistirBTN = new Button();
             groupBox3 = new GroupBox();
-            textBox4 = new TextBox();
+            sifre = new TextBox();
             label4 = new Label();
-            textBox5 = new TextBox();
+            kadiCreate = new TextBox();
             label5 = new Label();
-            button9 = new Button();
+            kullaniciOlusturBTN = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -160,9 +160,9 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(kadiDelete);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(button7);
+            groupBox1.Controls.Add(kullaniciSilBTN);
             groupBox1.Location = new Point(24, 155);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(338, 336);
@@ -170,13 +170,13 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Kullanıcı Sil";
             // 
-            // textBox1
+            // kadiDelete
             // 
-            textBox1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(35, 86);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(211, 32);
-            textBox1.TabIndex = 6;
+            kadiDelete.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            kadiDelete.Location = new Point(35, 86);
+            kadiDelete.Name = "kadiDelete";
+            kadiDelete.Size = new Size(211, 32);
+            kadiDelete.TabIndex = 6;
             // 
             // label1
             // 
@@ -188,26 +188,27 @@
             label1.TabIndex = 1;
             label1.Text = "Kullanıcı Adı";
             // 
-            // button7
+            // kullaniciSilBTN
             // 
-            button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.ImageKey = "kullanicisil.png";
-            button7.ImageList = ımageList1;
-            button7.Location = new Point(64, 233);
-            button7.Name = "button7";
-            button7.Size = new Size(145, 52);
-            button7.TabIndex = 7;
-            button7.Text = "Kullanıcıyı Sil";
-            button7.TextAlign = ContentAlignment.MiddleRight;
-            button7.UseVisualStyleBackColor = true;
+            kullaniciSilBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            kullaniciSilBTN.ImageKey = "kullanicisil.png";
+            kullaniciSilBTN.ImageList = ımageList1;
+            kullaniciSilBTN.Location = new Point(64, 233);
+            kullaniciSilBTN.Name = "kullaniciSilBTN";
+            kullaniciSilBTN.Size = new Size(145, 52);
+            kullaniciSilBTN.TabIndex = 7;
+            kullaniciSilBTN.Text = "Kullanıcıyı Sil";
+            kullaniciSilBTN.TextAlign = ContentAlignment.MiddleRight;
+            kullaniciSilBTN.UseVisualStyleBackColor = true;
+            kullaniciSilBTN.Click += kullaniciSilBTN_Click;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox3);
+            groupBox2.Controls.Add(yeniSifre);
             groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(kadiSifre);
             groupBox2.Controls.Add(label2);
-            groupBox2.Controls.Add(button8);
+            groupBox2.Controls.Add(sifreDegistirBTN);
             groupBox2.Location = new Point(390, 155);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(338, 336);
@@ -215,13 +216,13 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Şifre Değiştir";
             // 
-            // textBox3
+            // yeniSifre
             // 
-            textBox3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(38, 168);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(211, 32);
-            textBox3.TabIndex = 9;
+            yeniSifre.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            yeniSifre.Location = new Point(38, 168);
+            yeniSifre.Name = "yeniSifre";
+            yeniSifre.Size = new Size(211, 32);
+            yeniSifre.TabIndex = 9;
             // 
             // label3
             // 
@@ -233,13 +234,13 @@
             label3.TabIndex = 3;
             label3.Text = "Yeni Şifre";
             // 
-            // textBox2
+            // kadiSifre
             // 
-            textBox2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(38, 86);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(211, 32);
-            textBox2.TabIndex = 8;
+            kadiSifre.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            kadiSifre.Location = new Point(38, 86);
+            kadiSifre.Name = "kadiSifre";
+            kadiSifre.Size = new Size(211, 32);
+            kadiSifre.TabIndex = 8;
             // 
             // label2
             // 
@@ -251,26 +252,27 @@
             label2.TabIndex = 1;
             label2.Text = "Kullanıcı Adı";
             // 
-            // button8
+            // sifreDegistirBTN
             // 
-            button8.ImageAlign = ContentAlignment.MiddleLeft;
-            button8.ImageKey = "pngegg (7).png";
-            button8.ImageList = ımageList1;
-            button8.Location = new Point(65, 233);
-            button8.Name = "button8";
-            button8.Size = new Size(150, 52);
-            button8.TabIndex = 10;
-            button8.Text = "Şifre Değiştir";
-            button8.TextAlign = ContentAlignment.MiddleRight;
-            button8.UseVisualStyleBackColor = true;
+            sifreDegistirBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            sifreDegistirBTN.ImageKey = "pngegg (7).png";
+            sifreDegistirBTN.ImageList = ımageList1;
+            sifreDegistirBTN.Location = new Point(65, 233);
+            sifreDegistirBTN.Name = "sifreDegistirBTN";
+            sifreDegistirBTN.Size = new Size(150, 52);
+            sifreDegistirBTN.TabIndex = 10;
+            sifreDegistirBTN.Text = "Şifre Değiştir";
+            sifreDegistirBTN.TextAlign = ContentAlignment.MiddleRight;
+            sifreDegistirBTN.UseVisualStyleBackColor = true;
+            sifreDegistirBTN.Click += sifreDegistirBTN_Click;
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(textBox4);
+            groupBox3.Controls.Add(sifre);
             groupBox3.Controls.Add(label4);
-            groupBox3.Controls.Add(textBox5);
+            groupBox3.Controls.Add(kadiCreate);
             groupBox3.Controls.Add(label5);
-            groupBox3.Controls.Add(button9);
+            groupBox3.Controls.Add(kullaniciOlusturBTN);
             groupBox3.Location = new Point(756, 155);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(338, 336);
@@ -278,13 +280,13 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Kullanıcı Oluştur";
             // 
-            // textBox4
+            // sifre
             // 
-            textBox4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(38, 168);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(211, 32);
-            textBox4.TabIndex = 12;
+            sifre.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            sifre.Location = new Point(38, 168);
+            sifre.Name = "sifre";
+            sifre.Size = new Size(211, 32);
+            sifre.TabIndex = 12;
             // 
             // label4
             // 
@@ -296,13 +298,13 @@
             label4.TabIndex = 3;
             label4.Text = "Şifre";
             // 
-            // textBox5
+            // kadiCreate
             // 
-            textBox5.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(38, 86);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(211, 32);
-            textBox5.TabIndex = 11;
+            kadiCreate.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            kadiCreate.Location = new Point(38, 86);
+            kadiCreate.Name = "kadiCreate";
+            kadiCreate.Size = new Size(211, 32);
+            kadiCreate.TabIndex = 11;
             // 
             // label5
             // 
@@ -314,18 +316,19 @@
             label5.TabIndex = 1;
             label5.Text = "Kullanıcı Adı";
             // 
-            // button9
+            // kullaniciOlusturBTN
             // 
-            button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.ImageKey = "pngegg.png";
-            button9.ImageList = ımageList1;
-            button9.Location = new Point(61, 233);
-            button9.Name = "button9";
-            button9.Size = new Size(166, 52);
-            button9.TabIndex = 13;
-            button9.Text = "Kullanıcı Oluştur";
-            button9.TextAlign = ContentAlignment.MiddleRight;
-            button9.UseVisualStyleBackColor = true;
+            kullaniciOlusturBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            kullaniciOlusturBTN.ImageKey = "pngegg.png";
+            kullaniciOlusturBTN.ImageList = ımageList1;
+            kullaniciOlusturBTN.Location = new Point(61, 233);
+            kullaniciOlusturBTN.Name = "kullaniciOlusturBTN";
+            kullaniciOlusturBTN.Size = new Size(166, 52);
+            kullaniciOlusturBTN.TabIndex = 13;
+            kullaniciOlusturBTN.Text = "Kullanıcı Oluştur";
+            kullaniciOlusturBTN.TextAlign = ContentAlignment.MiddleRight;
+            kullaniciOlusturBTN.UseVisualStyleBackColor = true;
+            kullaniciOlusturBTN.Click += kullaniciOlusturBTN_Click;
             // 
             // KullaniciIslemForm
             // 
@@ -368,21 +371,21 @@
         private Button crudBTN;
         private Button aracEkleBTN;
         private GroupBox groupBox1;
-        private Button button7;
+        private Button kullaniciSilBTN;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox kadiDelete;
         private GroupBox groupBox2;
-        private TextBox textBox3;
+        private TextBox yeniSifre;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox kadiSifre;
         private Label label2;
-        private Button button8;
+        private Button sifreDegistirBTN;
         private GroupBox groupBox3;
-        private TextBox textBox4;
+        private TextBox sifre;
         private Label label4;
-        private TextBox textBox5;
+        private TextBox kadiCreate;
         private Label label5;
-        private Button button9;
+        private Button kullaniciOlusturBTN;
         private ImageList ımageList1;
     }
 }

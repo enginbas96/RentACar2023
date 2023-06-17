@@ -85,6 +85,19 @@ namespace RentACar2023
         {
             Application.Exit();
         }
+
+        private void kiralaBTN_Click(object sender, EventArgs e)
+        {
+            if (plakaCB.Text == "" || tcText.Text == "" || adText.Text == "" || soyadText.Text == "" || telefonText.Text == "")
+
+            {
+                MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.");
+            }
+            if (kiralamaTarihi.Value >= teslimTarihi.Value) 
+            {
+                MessageBox.Show("Tarihler arasında tutarsızlık var");
+            }
+        }
     }
 
 

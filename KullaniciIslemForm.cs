@@ -84,5 +84,30 @@ namespace RentACar2023
         {
             Application.Exit();
         }
+
+        private void kullaniciSilBTN_Click(object sender, EventArgs e)
+        {
+            if (kadiDelete.Text == "")
+            {
+                MessageBox.Show("Silinecek kullanıcı adını giriniz");
+            }
+        }
+
+        private void sifreDegistirBTN_Click(object sender, EventArgs e)
+        {
+            if (kadiSifre.Text == "" || yeniSifre.Text == "")
+            {
+                MessageBox.Show("Boş alan bırakmayınız.");
+            }
+        }
+
+        private void kullaniciOlusturBTN_Click(object sender, EventArgs e)
+        {
+            if(kadiCreate.Text == "" || sifre.Text == "") 
+            {
+                MessageBox.Show("Boş alan bırakma 2");
+
+            }
+        }
     }
 }

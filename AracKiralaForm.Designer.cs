@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AracKiralaForm));
             cikisBTN = new Button();
+            ımageList1 = new ImageList(components);
             profilBTN = new Button();
             aracFiyatBTN = new Button();
             aracKiralamaBTN = new Button();
@@ -51,7 +52,6 @@
             label20 = new Label();
             plakaCB = new ComboBox();
             label19 = new Label();
-            ımageList1 = new ImageList(components);
             SuspendLayout();
             // 
             // cikisBTN
@@ -67,6 +67,19 @@
             cikisBTN.TextAlign = ContentAlignment.MiddleRight;
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
+            // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "cikisyap.png");
+            ımageList1.Images.SetKeyName(1, "icon-rent-car.jpg");
+            ımageList1.Images.SetKeyName(2, "kullanici.png");
+            ımageList1.Images.SetKeyName(3, "pngegg (1).png");
+            ımageList1.Images.SetKeyName(4, "pngegg (2).png");
+            ımageList1.Images.SetKeyName(5, "pngegg (4).png");
+            ımageList1.Images.SetKeyName(6, "pngegg (10).png");
             // 
             // profilBTN
             // 
@@ -150,6 +163,7 @@
             kiralaBTN.TabIndex = 13;
             kiralaBTN.Text = "Kirala";
             kiralaBTN.UseVisualStyleBackColor = true;
+            kiralaBTN.Click += kiralaBTN_Click;
             // 
             // teslimTarihi
             // 
@@ -283,19 +297,6 @@
             label19.Size = new Size(88, 32);
             label19.TabIndex = 22;
             label19.Text = "Plaka : ";
-            // 
-            // ımageList1
-            // 
-            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
-            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
-            ımageList1.TransparentColor = Color.Transparent;
-            ımageList1.Images.SetKeyName(0, "cikisyap.png");
-            ımageList1.Images.SetKeyName(1, "icon-rent-car.jpg");
-            ımageList1.Images.SetKeyName(2, "kullanici.png");
-            ımageList1.Images.SetKeyName(3, "pngegg (1).png");
-            ımageList1.Images.SetKeyName(4, "pngegg (2).png");
-            ımageList1.Images.SetKeyName(5, "pngegg (4).png");
-            ımageList1.Images.SetKeyName(6, "pngegg (10).png");
             // 
             // AracKiralaForm
             // 
