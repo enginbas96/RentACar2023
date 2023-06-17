@@ -56,6 +56,7 @@
             label2 = new Label();
             label1 = new Label();
             koltukSayiCB = new ComboBox();
+            adtext = new Label();
             SuspendLayout();
             // 
             // aracEkleBTN
@@ -335,6 +336,15 @@
             koltukSayiCB.Size = new Size(150, 33);
             koltukSayiCB.TabIndex = 13;
             // 
+            // adtext
+            // 
+            adtext.AutoSize = true;
+            adtext.Location = new Point(579, 534);
+            adtext.Name = "adtext";
+            adtext.Size = new Size(58, 20);
+            adtext.TabIndex = 28;
+            adtext.Text = "label10";
+            // 
             // AracEkleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -342,6 +352,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
+            Controls.Add(adtext);
             Controls.Add(koltukSayiCB);
             Controls.Add(ekleBTN);
             Controls.Add(vitesCB);
@@ -406,5 +417,6 @@
         private Label label1;
         private ComboBox koltukSayiCB;
         private ImageList ımageList1;
+        private Label adtext;
     }
 }

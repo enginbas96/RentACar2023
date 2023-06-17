@@ -17,6 +17,12 @@ namespace RentACar2023
             InitializeComponent();
         }
 
+        public AracEkleForm(String kullaniciAdi)
+        {
+            InitializeComponent();
+            adtext.Text = kullaniciAdi;
+        }
+
         private void AracEkleForm_Load(object sender, EventArgs e)
         {
             aracEkleBTN.Enabled = false;
@@ -88,11 +94,11 @@ namespace RentACar2023
 
         private void ekleBTN_Click(object sender, EventArgs e)
         {
-            if(plakaText.Text == "" || markaText.Text == "" || modelText.Text == "" || yakitTuruCB.Text == "" || hasarText.Text == ""
-                || renkText.Text == "" || kmText.Text =="" || koltukSayiCB.Text == "" || vitesCB.Text == "")
+            if (plakaText.Text == "" || markaText.Text == "" || modelText.Text == "" || yakitTuruCB.Text == "" || hasarText.Text == ""
+                || renkText.Text == "" || kmText.Text == "" || koltukSayiCB.Text == "" || vitesCB.Text == "")
 
             {
-                MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.");            
+                MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.");
             }
         }
     }

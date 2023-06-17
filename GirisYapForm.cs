@@ -35,7 +35,7 @@ namespace RentACar2023
             MySqlDataReader tara = sorgu.ExecuteReader();
             if (tara.Read())
             {
-                AracEkleForm aracEkle = new AracEkleForm();
+                AracEkleForm aracEkle = new AracEkleForm(kullaniciAdi);
                 aracEkle.Show();
                 cnn.Close();
                 this.Close();
