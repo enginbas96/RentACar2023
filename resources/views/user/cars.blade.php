@@ -63,7 +63,7 @@
 
 <section class="ftco-section bg-light">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-md-center">
             @foreach($cars as $car)
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
@@ -75,7 +75,7 @@
                             <span class="cat">{{$car->model}}</span>
                             <p class="price ml-auto">$500 <span>/day</span></p>
                         </div>
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Rezerve et</a> <a href="{{route('user_car_detail', $car->id)}}" class="btn btn-secondary py-2 ml-1">Detaylar</a></p>
+                        <p class="d-flex mb-0 d-block"><a href="{{route('user_car_book', $car->id)}}" class="btn btn-primary py-2 mr-1">Rezerve et</a> <a href="{{route('user_car_detail', $car->id)}}" class="btn btn-secondary py-2 ml-1">Detaylar</a></p>
                     </div>
                 </div>
             </div>
