@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Hash;
 
 class UserLoginController extends Controller
 {
+    public function index(){
+        return view('login.login');
+    }
+
     public function login(Request $request)
     {
         $request->validate([
@@ -22,6 +26,7 @@ class UserLoginController extends Controller
         if ($user) {
             $hashedPassword = $user->password;
             if (Hash::check($password, $hashedPassword)) {
+                $request->session()->regenerate();
                 session(["user_id" => $user->id]);
 //                $inputs = [
 //                    'id'=>$user->id,
