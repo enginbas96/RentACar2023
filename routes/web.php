@@ -26,16 +26,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[LoginController::class,'index'])->name('login');
+
 
 /*Admin Pages*/
-Route::get('/dashboard',[AdminController::class,'index'])->name('admin_dashboard');
-Route::get('/profile',[ProfileController::class,'index'])->name('admin_profile');
-Route::get('/users',[UserController::class,'index'])->name('admin_users');
-Route::get('/admin-cars',[AdminCarsController::class,'index'])->name('admin_cars');
-Route::get('/add-cars',[AdminCarsController::class,'addCarsView'])->name('add_cars');
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::post('/admin-login-post', [LoginController::class, 'login'])->name('admin_login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('admin_logout');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('admin_dashboard');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('admin_profile');
+    Route::get('/users', [UserController::class, 'index'])->name('admin_users');
+    Route::get('/admin-cars', [AdminCarsController::class, 'index'])->name('admin_cars');
+});
 
 /*User Pages*/
+Route::get('/user-login',[UserLoginController::class,'index'])->name('user_login_page');
 Route::get('/anasayfa',[HomePageController::class,'index'])->name('user_homepage');
 Route::get('/iletişim',[ContactController::class,'index'])->name('user_contact');
 Route::get('/araç-rezerve/{id}',[CarBookController::class,'index'])->name('user_car_book');
