@@ -72,13 +72,10 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-                <li class="nav-item active"><a href="car.html" class="nav-link">Cars</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="{{route('user_homepage')}}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{route('user_about')}}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{route('user_cars')}}" class="nav-link">Cars</a></li>
+                <li class="nav-item active"><a href="{{route('user_contact')}}" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </div>
@@ -109,7 +106,7 @@
                     <div class="img rounded" style="background-image: url({{asset($car->img_url)}});"></div>
                     <div class="text text-center">
                         <h2>{{$car->marka}}</h2>
-                        <span class="subheading">{{$car->model}}</span>
+                        <span class="subheading"></span>
                     </div>
                 </div>
             </div>
@@ -124,7 +121,7 @@
                             <div class="text">
                                 <h3 class="heading mb-0 pl-3">
                                     Kilometre
-                                    <span>40,000</span>
+                                    <span>{{$car->km}}</span>
                                 </h3>
                             </div>
                         </div>
@@ -140,7 +137,7 @@
                             <div class="text">
                                 <h3 class="heading mb-0 pl-3">
                                     Vites
-                                    <span>Otomatik</span>
+                                    <span>{{$car->vites}}</span>
                                 </h3>
                             </div>
                         </div>
@@ -156,7 +153,7 @@
                             <div class="text">
                                 <h3 class="heading mb-0 pl-3">
                                     Koltuk Sayısı
-                                    <span>5 Koltuk</span>
+                                    <span>{{$car->koltuk_sayisi}} koltuk</span>
                                 </h3>
                             </div>
                         </div>
@@ -172,7 +169,7 @@
                             <div class="text">
                                 <h3 class="heading mb-0 pl-3">
                                     Model
-                                    <span>2018</span>
+                                    <span>{{$car->model}}</span>
                                 </h3>
                             </div>
                         </div>
@@ -209,7 +206,7 @@
                 <h2 class="mb-2">İlgili Araçlar</h2>
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-md-center">
             @foreach($cars as $car)
                 <div class="col-md-4">
                     <div class="car-wrap rounded ftco-animate">
@@ -222,7 +219,7 @@
                                 <span class="cat">{{$car->model}}</span>
                                 <p class="price ml-auto">$500 <span>/günlük</span></p>
                             </div>
-                            <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Rezerve et</a>
+                            <p class="d-flex mb-0 d-block"><a href="{{route('user_car_book', $car->id)}}" class="btn btn-primary py-2 mr-1">Rezerve et</a>
                                 <a
                                     href="{{route('user_car_detail', $car->id)}}" class="btn btn-secondary py-2 ml-1">Detaylar</a></p>
                         </div>
