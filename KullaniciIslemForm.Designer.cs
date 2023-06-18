@@ -53,6 +53,10 @@
             kadiCreate = new TextBox();
             label5 = new Label();
             kullaniciOlusturBTN = new Button();
+            adTXT = new TextBox();
+            label6 = new Label();
+            soyadTXT = new TextBox();
+            label7 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -268,6 +272,10 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(soyadTXT);
+            groupBox3.Controls.Add(label7);
+            groupBox3.Controls.Add(adTXT);
+            groupBox3.Controls.Add(label6);
             groupBox3.Controls.Add(sifre);
             groupBox3.Controls.Add(label4);
             groupBox3.Controls.Add(kadiCreate);
@@ -282,37 +290,37 @@
             // 
             // sifre
             // 
-            sifre.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            sifre.Location = new Point(38, 168);
+            sifre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            sifre.Location = new Point(26, 115);
             sifre.Name = "sifre";
-            sifre.Size = new Size(211, 32);
+            sifre.Size = new Size(211, 30);
             sifre.TabIndex = 12;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(32, 134);
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(26, 84);
             label4.Name = "label4";
-            label4.Size = new Size(62, 32);
+            label4.Size = new Size(51, 28);
             label4.TabIndex = 3;
             label4.Text = "Şifre";
             // 
             // kadiCreate
             // 
-            kadiCreate.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            kadiCreate.Location = new Point(38, 86);
+            kadiCreate.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            kadiCreate.Location = new Point(26, 54);
             kadiCreate.Name = "kadiCreate";
-            kadiCreate.Size = new Size(211, 32);
+            kadiCreate.Size = new Size(211, 30);
             kadiCreate.TabIndex = 11;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(30, 52);
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(26, 21);
             label5.Name = "label5";
-            label5.Size = new Size(145, 32);
+            label5.Size = new Size(120, 28);
             label5.TabIndex = 1;
             label5.Text = "Kullanıcı Adı";
             // 
@@ -321,7 +329,7 @@
             kullaniciOlusturBTN.ImageAlign = ContentAlignment.MiddleLeft;
             kullaniciOlusturBTN.ImageKey = "pngegg.png";
             kullaniciOlusturBTN.ImageList = ımageList1;
-            kullaniciOlusturBTN.Location = new Point(61, 233);
+            kullaniciOlusturBTN.Location = new Point(58, 278);
             kullaniciOlusturBTN.Name = "kullaniciOlusturBTN";
             kullaniciOlusturBTN.Size = new Size(166, 52);
             kullaniciOlusturBTN.TabIndex = 13;
@@ -329,6 +337,42 @@
             kullaniciOlusturBTN.TextAlign = ContentAlignment.MiddleRight;
             kullaniciOlusturBTN.UseVisualStyleBackColor = true;
             kullaniciOlusturBTN.Click += kullaniciOlusturBTN_Click;
+            // 
+            // adTXT
+            // 
+            adTXT.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            adTXT.Location = new Point(26, 176);
+            adTXT.Name = "adTXT";
+            adTXT.Size = new Size(211, 30);
+            adTXT.TabIndex = 15;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(26, 145);
+            label6.Name = "label6";
+            label6.Size = new Size(37, 28);
+            label6.TabIndex = 14;
+            label6.Text = "Ad";
+            // 
+            // soyadTXT
+            // 
+            soyadTXT.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            soyadTXT.Location = new Point(26, 241);
+            soyadTXT.Name = "soyadTXT";
+            soyadTXT.Size = new Size(211, 30);
+            soyadTXT.TabIndex = 17;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(26, 209);
+            label7.Name = "label7";
+            label7.Size = new Size(67, 28);
+            label7.TabIndex = 16;
+            label7.Text = "Soyad";
             // 
             // KullaniciIslemForm
             // 
@@ -387,5 +431,9 @@
         private Label label5;
         private Button kullaniciOlusturBTN;
         private ImageList ımageList1;
+        private TextBox soyadTXT;
+        private Label label7;
+        private TextBox adTXT;
+        private Label label6;
     }
 }

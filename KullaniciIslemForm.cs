@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace RentACar2023
 {
@@ -89,7 +90,25 @@ namespace RentACar2023
         {
             if (kadiDelete.Text == "")
             {
-                MessageBox.Show("Silinecek kullanıcı adını giriniz");
+                MessageBox.Show("Kullanıcı adını doldurunuz.");
+            }
+            else
+            {
+                string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+                MySqlConnection cnn = new MySqlConnection(myConnectionString);
+                cnn.Open();
+
+                String kullaniciAdi = kadiDelete.Text;
+                MySqlCommand sorgu = new MySqlCommand("DELETE FROM employees WHERE kullanici_adi= '" + kullaniciAdi + "'", cnn);
+                MySqlDataReader tara = sorgu.ExecuteReader();
+                MessageBox.Show("Kullanıcı silindi.");
+                kadiDelete.Text = "";
+                cnn.Close();
+                /*if (tara.Read())
+                {
+                    
+                    cnn.Close();
+                }*/
             }
         }
 
@@ -99,14 +118,39 @@ namespace RentACar2023
             {
                 MessageBox.Show("Boş alan bırakmayınız.");
             }
+            else 
+            {
+                string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+                MySqlConnection cnn = new MySqlConnection(myConnectionString);
+                cnn.Open();
+
+                MySqlCommand sorgu = new MySqlCommand("UPDATE employees SET sifre ='"+yeniSifre.Text +"' WHERE kullanici_adi ='"+kadiSifre.Text+"' ", cnn);
+                sorgu.ExecuteNonQuery();
+                MessageBox.Show("Şifre Değiştirildi");
+                cnn.Close();
+
+
+
+            }
         }
 
         private void kullaniciOlusturBTN_Click(object sender, EventArgs e)
         {
-            if(kadiCreate.Text == "" || sifre.Text == "") 
+            if (kadiCreate.Text == "" || sifre.Text == "" || adTXT.Text =="" || soyadTXT.Text == "")
             {
-                MessageBox.Show("Boş alan bırakma 2");
+                MessageBox.Show("Boş alanları doldurup tekrar deneyiniz.");
 
+            }
+            else
+            {
+                string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+                MySqlConnection cnn = new MySqlConnection(myConnectionString);
+                cnn.Open();
+
+                MySqlCommand sorgu = new MySqlCommand("INSERT INTO employees(name, surname, kullanici_adi, sifre, isAdmin) VALUES('"+adTXT.Text+"','"+soyadTXT.Text+"','"+kadiCreate.Text+"','"+sifre.Text+"','1')", cnn);
+                sorgu.ExecuteNonQuery();
+                MessageBox.Show("Kullanıcı Oluşturuldu.");
+                cnn.Close();
             }
         }
     }
