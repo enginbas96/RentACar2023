@@ -11,6 +11,7 @@
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Nucleo Icons -->
     <link href="{{asset('admin/css/nucleo-icons.css')}}" rel="stylesheet" />
     <link href="{{asset('admin/css/nucleo-svg.css')}}" rel="stylesheet" />
@@ -95,7 +96,9 @@
                     <li class="nav-item d-flex align-items-center">
                         <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
                             <i class="fa fa-user me-sm-1"></i>
-                            <span class="d-sm-inline d-none">Profil İsmi</span>
+                            @auth()
+                                <span class="d-sm-inline d-none">{{ $username }}</span>
+                            @endauth
                         </a>
                     </li>
                     <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -108,83 +111,12 @@
                         </a>
                     </li>
                     <li class="nav-item px-3 d-flex align-items-center">
-                        <a href="javascript:;" class="nav-link text-white p-0">
-                            <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+                        <a href="{{route('admin_logout')}}" class="nav-link text-white p-0">
+                            <i class="fa-solid fa-arrow-right-from-bracket fixed-plugin-button-nav cursor-pointer"></i>
                         </a>
                     </li>
-                    <li class="nav-item dropdown pe-2 d-flex align-items-center">
-                        <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-bell cursor-pointer"></i>
-                        </a>
-                        <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-                            <li class="mb-2">
-                                <a class="dropdown-item border-radius-md" href="javascript:;">
-                                    <div class="d-flex py-1">
-                                        <div class="my-auto">
-                                            <img src="{{asset('img/team-2.jpg')}}" class="avatar avatar-sm  me-3 ">
-                                        </div>
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="text-sm font-weight-normal mb-1">
-                                                <span class="font-weight-bold">New message</span> from Laur
-                                            </h6>
-                                            <p class="text-xs text-secondary mb-0">
-                                                <i class="fa fa-clock me-1"></i>
-                                                13 minutes ago
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="dropdown-item border-radius-md" href="javascript:;">
-                                    <div class="d-flex py-1">
-                                        <div class="my-auto">
-                                            <img src="{{asset('img/small-logos/logo-spotify.svg')}}" class="avatar avatar-sm bg-gradient-dark  me-3 ">
-                                        </div>
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="text-sm font-weight-normal mb-1">
-                                                <span class="font-weight-bold">New album</span> by Travis Scott
-                                            </h6>
-                                            <p class="text-xs text-secondary mb-0">
-                                                <i class="fa fa-clock me-1"></i>
-                                                1 day
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item border-radius-md" href="javascript:;">
-                                    <div class="d-flex py-1">
-                                        <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
-                                            <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                <title>credit-card</title>
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                                        <g transform="translate(1716.000000, 291.000000)">
-                                                            <g transform="translate(453.000000, 454.000000)">
-                                                                <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
-                                                                <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </g>
-                                            </svg>
-                                        </div>
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="text-sm font-weight-normal mb-1">
-                                                Payment successfully completed
-                                            </h6>
-                                            <p class="text-xs text-secondary mb-0">
-                                                <i class="fa fa-clock me-1"></i>
-                                                2 days
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                </ul>
+                </li>
                 </ul>
             </div>
         </div>
@@ -200,7 +132,7 @@
                                 <div class="numbers">
                                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Toplam Araç Sayısı</p>
                                     <h5 class="font-weight-bolder">
-                                        $53,000
+                                        {{$carsCount}}
                                     </h5>
                                 </div>
                             </div>
@@ -221,7 +153,7 @@
                                 <div class="numbers">
                                     <p class="text-sm mb-0 text-uppercase font-weight-bold" style="width: 1000px">Kiralanan Araç Sayısı</p>
                                     <h5 class="font-weight-bolder">
-                                        2,300
+                                        {{$rentCarCount}}
                                     </h5>
                                 </div>
                             </div>
@@ -242,7 +174,7 @@
                                 <div class="numbers">
                                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Kullanıcı Sayısı</p>
                                     <h5 class="font-weight-bolder">
-                                        +3,462
+                                        {{$userCount}}
                                     </h5>
                                 </div>
                             </div>
@@ -256,63 +188,64 @@
                 </div>
             </div>
         </div>
-                        <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+        <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row mt-6">
+        <div class="col-lg-8 mb-lg-0 mb-4">
+            <div class="card ">
+                <div class="card-header pb-0 p-3">
+                    <div class="d-flex justify-content-between">
+                        <h6 class="mb-2">Kiralanan Araçlar</h6>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row mt-6">
-            <div class="col-lg-8 mb-lg-0 mb-4">
-                <div class="card ">
-                    <div class="card-header pb-0 p-3">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="mb-2">Kiralanan Araçlar</h6>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table align-items-center ">
-                            <tbody>
+                <div class="table-responsive">
+                    <table class="table align-items-center ">
+                        <tbody>
+                        @foreach($rentCars as $rentCar)
                             <tr>
                                 <td class="w-30">
                                     <div class="d-flex px-2 py-1 align-items-center">
                                         <div>
-                                            <img src="{{asset('img/icons/flags/US.png')}}" alt="Country flag">
+                                            <img src="{{asset($rentCar->getCar->img_url)}}" style="width: 40px; height: 40px" alt="Country flag">
                                         </div>
                                         <div class="ms-4">
                                             <p class="text-xs font-weight-bold mb-0">Araba(Marka):</p>
-                                            <h6 class="text-sm mb-0">United States</h6>
+                                            <h6 class="text-sm mb-0">{{$rentCar->getCar->marka}}</h6>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="text-center">
                                         <p class="text-xs font-weight-bold mb-0">Model:</p>
-                                        <h6 class="text-sm mb-0">2500</h6>
+                                        <h6 class="text-sm mb-0">{{$rentCar->getCar->model}}</h6>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="text-center">
                                         <p class="text-xs font-weight-bold mb-0">Kiralayan Adı:</p>
-                                        <h6 class="text-sm mb-0">$230,900</h6>
+                                        <h6 class="text-sm mb-0">{{$rentCar->getUser->name." ".$rentCar->getUser->surname}}</h6>
                                     </div>
                                 </td>
                                 <td class="align-middle text-sm">
                                     <div class="col text-center">
                                         <p class="text-xs font-weight-bold mb-0">Kiralama Tarihi:</p>
-                                        <h6 class="text-sm mb-0">29.9%</h6>
+                                        <h6 class="text-sm mb-0">{{$rentCar->start_time}}</h6>
                                     </div>
                                 </td>
                                 <td class="align-middle text-sm">
                                     <div class="col text-center">
                                         <p class="text-xs font-weight-bold mb-0">Teslim Tarihi:</p>
-                                        <h6 class="text-sm mb-0">29.9%</h6>
+                                        <h6 class="text-sm mb-0">{{$rentCar->end_time}}</h6>
                                     </div>
                                 </td>
                                 <td class="align-middle text-sm">
@@ -321,13 +254,13 @@
                                     </div>
                                 </td>
                             </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
 </main>
