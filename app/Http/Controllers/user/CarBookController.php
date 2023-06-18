@@ -36,6 +36,9 @@ class CarBookController extends Controller
             $carStatus->start_time = $start_time;
             $carStatus->end_time = $end_time;
             $carStatus->save();
+            $car = Car::find($id);
+            $car->isRent = 1;
+            $car->save();
             return redirect()->route('user_cars');
         }
 
