@@ -43,11 +43,8 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="{{route('user_homepage')}}" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li class="nav-item"><a href="{{route('user_about')}}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{route('user_cars')}}" class="nav-link">Cars</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                 <li class="nav-item active"><a href="{{route('user_contact')}}" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -99,7 +96,7 @@
                                     <span class="cat">{{$car->model}}</span>
                                     <p class="price ml-auto">₺500 <span>/günlük</span></p>
                                 </div>
-                                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Rezerve et</a> <a href="{{route('user_car_detail', $car->id)}}" class="btn btn-secondary py-2 ml-1">Detaylar</a></p>
+                                <p class="d-flex mb-0 d-block"><a href="{{route('user_car_book', $car->id)}}" class="btn btn-primary py-2 mr-1">Rezerve et</a> <a href="{{route('user_car_detail', $car->id)}}" class="btn btn-secondary py-2 ml-1">Detaylar</a></p>
                             </div>
                         </div>
                     </div>
