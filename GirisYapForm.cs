@@ -35,7 +35,7 @@ namespace RentACar2023
                 AracEkleForm aracEkle = new AracEkleForm(GirisYapKullaniciAdiTextBox.Text);
                 aracEkle.Show();
                 cnn.Close();
-                this.Close();
+                this.Hide();
             }
         }
 

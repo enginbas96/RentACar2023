@@ -28,31 +28,31 @@ namespace RentACar2023
             {
                 AracEkleForm form = new AracEkleForm();
                 form.Show();
-                this.Close();
+                this.Hide();
             }
             else if (sayfa == "crudIslem")
             {
                 AracCrudForm form = new AracCrudForm();
                 form.Show();
-                this.Close();
+                this.Hide();
             }
             else if (sayfa == "fiyatIslem")
             {
                 AracFiyatForm form = new AracFiyatForm();
                 form.Show();
-                this.Close();
+                this.Hide();
             }
             else if (sayfa == "kiralama")
             {
                 AracKiralaForm form = new AracKiralaForm();
                 form.Show();
-                this.Close();
+                this.Hide();
             }
             else if (sayfa == "profil")
             {
                 KullaniciIslemForm form = new KullaniciIslemForm();
                 form.Show();
-                this.Close();
+                this.Hide();
             }
         }
         private void crudBTN_Click(object sender, EventArgs e)

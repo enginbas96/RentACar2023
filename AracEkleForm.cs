@@ -20,7 +20,7 @@ namespace RentACar2023
         public AracEkleForm(String kullaniciAdi)
         {
             InitializeComponent();
-            adtext.Text = kullaniciAdi;
+            adtext.Text = kullaniciAdi + " olarak işlem yapmaktasınız.";
         }
 
         private void AracEkleForm_Load(object sender, EventArgs e)
@@ -34,31 +34,31 @@ namespace RentACar2023
             {
                 AracEkleForm form = new AracEkleForm();
                 form.Show();
-                this.Close();
+                this.Hide();
             }
             else if (sayfa == "crudIslem")
             {
                 AracCrudForm form = new AracCrudForm();
                 form.Show();
-                this.Close();
+                this.Hide();
             }
             else if (sayfa == "fiyatIslem")
             {
                 AracFiyatForm form = new AracFiyatForm();
                 form.Show();
-                this.Close();
+                this.Hide();
             }
             else if (sayfa == "kiralama")
             {
                 AracKiralaForm form = new AracKiralaForm();
                 form.Show();
-                this.Close();
+                this.Hide();
             }
             else if (sayfa == "profil")
             {
                 KullaniciIslemForm form = new KullaniciIslemForm();
                 form.Show();
-                this.Close();
+                this.Hide();
             }
         }
 
@@ -100,6 +100,11 @@ namespace RentACar2023
             {
                 MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.");
             }
+        }
+
+        private void AracEkleForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
