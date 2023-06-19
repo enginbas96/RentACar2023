@@ -173,6 +173,7 @@
             // guncelleRB
             // 
             guncelleRB.AutoSize = true;
+            guncelleRB.Enabled = false;
             guncelleRB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guncelleRB.ImageAlign = ContentAlignment.MiddleLeft;
             guncelleRB.ImageKey = "pngegg (8).png";
@@ -186,10 +187,12 @@
             guncelleRB.TextAlign = ContentAlignment.MiddleRight;
             guncelleRB.TextImageRelation = TextImageRelation.ImageBeforeText;
             guncelleRB.UseVisualStyleBackColor = true;
+            guncelleRB.CheckedChanged += guncelleRB_CheckedChanged;
             // 
             // silRB
             // 
             silRB.AutoSize = true;
+            silRB.Enabled = false;
             silRB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             silRB.ImageAlign = ContentAlignment.MiddleLeft;
             silRB.ImageKey = "pngegg (5).png";
@@ -202,9 +205,11 @@
             silRB.Text = "Aracı Sil";
             silRB.TextImageRelation = TextImageRelation.ImageBeforeText;
             silRB.UseVisualStyleBackColor = true;
+            silRB.CheckedChanged += silRB_CheckedChanged;
             // 
             // vitesCB
             // 
+            vitesCB.Enabled = false;
             vitesCB.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             vitesCB.FormattingEnabled = true;
             vitesCB.Location = new Point(551, 488);
@@ -214,6 +219,7 @@
             // 
             // koltukSayiCB
             // 
+            koltukSayiCB.Enabled = false;
             koltukSayiCB.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             koltukSayiCB.FormattingEnabled = true;
             koltukSayiCB.Location = new Point(551, 446);
@@ -223,6 +229,7 @@
             // 
             // yakitTuruCB
             // 
+            yakitTuruCB.Enabled = false;
             yakitTuruCB.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             yakitTuruCB.FormattingEnabled = true;
             yakitTuruCB.Location = new Point(162, 490);
@@ -232,6 +239,7 @@
             // 
             // veriGoruntuleyici
             // 
+            veriGoruntuleyici.AllowUserToAddRows = false;
             veriGoruntuleyici.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             veriGoruntuleyici.Location = new Point(16, 74);
             veriGoruntuleyici.Name = "veriGoruntuleyici";
@@ -239,6 +247,7 @@
             veriGoruntuleyici.RowTemplate.Height = 29;
             veriGoruntuleyici.Size = new Size(1093, 270);
             veriGoruntuleyici.TabIndex = 6;
+            veriGoruntuleyici.CellClick += veriGoruntuleyici_CellClick;
             // 
             // hasarText
             // 
@@ -266,6 +275,7 @@
             // 
             // modelText
             // 
+            modelText.Enabled = false;
             modelText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             modelText.Location = new Point(162, 444);
             modelText.Name = "modelText";
@@ -274,6 +284,7 @@
             // 
             // markaText
             // 
+            markaText.Enabled = false;
             markaText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             markaText.Location = new Point(162, 402);
             markaText.Name = "markaText";
@@ -282,6 +293,7 @@
             // 
             // plakaText
             // 
+            plakaText.Enabled = false;
             plakaText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             plakaText.Location = new Point(162, 360);
             plakaText.Name = "plakaText";
