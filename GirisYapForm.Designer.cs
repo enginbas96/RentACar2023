@@ -105,6 +105,7 @@
             SifreUnuttumLinkLabel.TabIndex = 5;
             SifreUnuttumLinkLabel.TabStop = true;
             SifreUnuttumLinkLabel.Text = "Şifrenizi Mi Unuttunuz? ";
+            SifreUnuttumLinkLabel.LinkClicked += SifreUnuttumLinkLabel_LinkClicked;
             // 
             // KullaniciPictureBox
             // 
@@ -120,7 +121,6 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(KullaniciPictureBox);
@@ -130,7 +130,11 @@
             Controls.Add(SifreLabel);
             Controls.Add(KullaniciAdiLabel);
             Controls.Add(GirisYapButton);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "GirisYapForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Giriş Yap";
             Load += GirisYapForm_Load;
             ((System.ComponentModel.ISupportInitialize)KullaniciPictureBox).EndInit();

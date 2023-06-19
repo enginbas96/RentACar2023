@@ -28,82 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSifremiUnuttum));
-            button1 = new Button();
-            button2 = new Button();
+            sifreGetirBTN = new Button();
+            girisSayfaBTN = new Button();
             label1 = new Label();
             label2 = new Label();
             kullaniciaditextbox = new TextBox();
             Kurtarmakodutextbox = new TextBox();
             SuspendLayout();
             // 
-            // button1
+            // sifreGetirBTN
             // 
-            button1.Location = new Point(380, 311);
-            button1.Name = "button1";
-            button1.Size = new Size(126, 57);
-            button1.TabIndex = 0;
-            button1.Text = "Şifremi Getir";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            sifreGetirBTN.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            sifreGetirBTN.Location = new Point(256, 312);
+            sifreGetirBTN.Name = "sifreGetirBTN";
+            sifreGetirBTN.Size = new Size(318, 73);
+            sifreGetirBTN.TabIndex = 0;
+            sifreGetirBTN.Text = "Şifremi Getir";
+            sifreGetirBTN.UseVisualStyleBackColor = true;
+            sifreGetirBTN.Click += sifreGetirBTN_Click;
             // 
-            // button2
+            // girisSayfaBTN
             // 
-            button2.Location = new Point(171, 311);
-            button2.Name = "button2";
-            button2.Size = new Size(123, 57);
-            button2.TabIndex = 1;
-            button2.Text = "Giriş Sayfasına Dön";
-            button2.UseVisualStyleBackColor = true;
+            girisSayfaBTN.Location = new Point(632, 12);
+            girisSayfaBTN.Name = "girisSayfaBTN";
+            girisSayfaBTN.Size = new Size(156, 45);
+            girisSayfaBTN.TabIndex = 1;
+            girisSayfaBTN.Text = "Giriş Sayfasına Dön";
+            girisSayfaBTN.UseVisualStyleBackColor = true;
+            girisSayfaBTN.Click += girisSayfaBTN_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Cooper Black", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(154, 171);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(216, 159);
             label1.Name = "label1";
-            label1.Size = new Size(129, 20);
+            label1.Size = new Size(185, 41);
             label1.TabIndex = 2;
             label1.Text = "Kullanıcı Adı:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Cooper Black", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(130, 232);
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(179, 222);
             label2.Name = "label2";
-            label2.Size = new Size(153, 20);
+            label2.Size = new Size(222, 41);
             label2.TabIndex = 3;
             label2.Text = "Kurtarma Kodu:";
             // 
             // kullaniciaditextbox
             // 
-            kullaniciaditextbox.Location = new Point(328, 168);
+            kullaniciaditextbox.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            kullaniciaditextbox.Location = new Point(407, 159);
             kullaniciaditextbox.Name = "kullaniciaditextbox";
-            kullaniciaditextbox.Size = new Size(199, 27);
+            kullaniciaditextbox.Size = new Size(199, 43);
             kullaniciaditextbox.TabIndex = 4;
             // 
             // Kurtarmakodutextbox
             // 
-            Kurtarmakodutextbox.Location = new Point(328, 229);
+            Kurtarmakodutextbox.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            Kurtarmakodutextbox.Location = new Point(407, 222);
             Kurtarmakodutextbox.Name = "Kurtarmakodutextbox";
-            Kurtarmakodutextbox.Size = new Size(199, 27);
+            Kurtarmakodutextbox.Size = new Size(199, 43);
             Kurtarmakodutextbox.TabIndex = 5;
             // 
             // FormSifremiUnuttum
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(Kurtarmakodutextbox);
             Controls.Add(kullaniciaditextbox);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(girisSayfaBTN);
+            Controls.Add(sifreGetirBTN);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormSifremiUnuttum";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Şifremi Unuttum";
             ResumeLayout(false);
             PerformLayout();
@@ -111,8 +117,8 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button sifreGetirBTN;
+        private Button girisSayfaBTN;
         private Label label1;
         private Label label2;
         private TextBox kullaniciaditextbox;

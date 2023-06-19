@@ -17,7 +17,14 @@ namespace RentACar2023
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void girisSayfaBTN_Click(object sender, EventArgs e)
+        {
+            GirisYapForm form = new GirisYapForm();
+            form.Show();
+            this.Hide();
+        }
+
+        private void sifreGetirBTN_Click(object sender, EventArgs e)
         {
 
         }

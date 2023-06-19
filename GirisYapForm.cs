@@ -21,14 +21,14 @@ namespace RentACar2023
 
         private void GirisYapForm_Load(object sender, EventArgs e)
         {
-            
+
         }
         private void GirisYapButton_Click(object sender, EventArgs e)
         {
             string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
-            MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + GirisYapKullaniciAdiTextBox.Text + "' AND sifre ='"+ GirisYapSifreTextBox.Text + "'",cnn );
+            MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + GirisYapKullaniciAdiTextBox.Text + "' AND sifre ='" + GirisYapSifreTextBox.Text + "'", cnn);
             MySqlDataReader tara = sorgu.ExecuteReader();
             if (tara.Read())
             {
@@ -38,6 +38,11 @@ namespace RentACar2023
                 this.Hide();
             }
         }
-
+        private void SifreUnuttumLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormSifremiUnuttum sifreUnut = new FormSifremiUnuttum();
+            sifreUnut.Show();
+            this.Hide();
+        }
     }
 }
