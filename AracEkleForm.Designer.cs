@@ -167,8 +167,10 @@
             // 
             // vitesCB
             // 
+            vitesCB.DropDownStyle = ComboBoxStyle.DropDownList;
             vitesCB.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             vitesCB.FormattingEnabled = true;
+            vitesCB.Items.AddRange(new object[] { "Otomatik", "Yarı Otomatik", "Manuel" });
             vitesCB.Location = new Point(784, 307);
             vitesCB.Name = "vitesCB";
             vitesCB.Size = new Size(217, 46);
@@ -200,8 +202,10 @@
             // 
             // yakitTuruCB
             // 
+            yakitTuruCB.DropDownStyle = ComboBoxStyle.DropDownList;
             yakitTuruCB.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             yakitTuruCB.FormattingEnabled = true;
+            yakitTuruCB.Items.AddRange(new object[] { "Benzin", "Dizel", "Elektirikli", "Hibrit" });
             yakitTuruCB.Location = new Point(263, 306);
             yakitTuruCB.Name = "yakitTuruCB";
             yakitTuruCB.Size = new Size(216, 46);
@@ -323,8 +327,10 @@
             // 
             // koltukSayiCB
             // 
+            koltukSayiCB.DropDownStyle = ComboBoxStyle.DropDownList;
             koltukSayiCB.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             koltukSayiCB.FormattingEnabled = true;
+            koltukSayiCB.Items.AddRange(new object[] { "2", "4", "5" });
             koltukSayiCB.Location = new Point(784, 251);
             koltukSayiCB.Name = "koltukSayiCB";
             koltukSayiCB.Size = new Size(216, 46);

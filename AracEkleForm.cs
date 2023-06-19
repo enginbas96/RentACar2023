@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace RentACar2023
 {
@@ -99,6 +100,36 @@ namespace RentACar2023
 
             {
                 MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.");
+            }
+            else
+            {
+                string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+                MySqlConnection cnn = new MySqlConnection(myConnectionString);
+                cnn.Open();
+                MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE plaka= '" + plakaText.Text + "'", cnn);
+                MySqlDataReader tara = sorgu.ExecuteReader();
+                if (tara.Read())
+                {
+                    MessageBox.Show("Bu plakaya ait bir araç zaten var.");
+                    cnn.Close();
+                }
+                else
+                {
+                    cnn.Close();
+                    cnn.Open();
+                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO cars(plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi, img_url, isRent) VALUES('" + plakaText.Text + "','" + markaText.Text + "','" + modelText.Text + "','" + yakitTuruCB.Text + "','" + renkText.Text + "','" + hasarText.Text + "','" + kmText.Text + "','" + vitesCB.Text + "','" + koltukSayiCB.Text + "','null','0')", cnn);
+                    sorgu1.ExecuteNonQuery();
+                    MessageBox.Show("Yeni araba veritabanına eklendi.");
+                    cnn.Close();
+                }
+
+
+
+
+
+
+
+
             }
         }
 
