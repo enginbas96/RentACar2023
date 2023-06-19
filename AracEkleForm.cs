@@ -21,7 +21,6 @@ namespace RentACar2023
         public AracEkleForm(String kullaniciAdi)
         {
             InitializeComponent();
-            adtext.Text = kullaniciAdi + " olarak işlem yapmaktasınız.";
         }
 
         private void AracEkleForm_Load(object sender, EventArgs e)
@@ -122,14 +121,6 @@ namespace RentACar2023
                     MessageBox.Show("Yeni araba veritabanına eklendi.");
                     cnn.Close();
                 }
-
-
-
-
-
-
-
-
             }
         }
 
