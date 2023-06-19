@@ -37,42 +37,44 @@
             aracKiralamaBTN = new Button();
             crudBTN = new Button();
             aracEkleBTN = new Button();
-            groupBox1 = new GroupBox();
-            kadiDelete = new TextBox();
+            silGB = new GroupBox();
+            deleteKullaniciAdi = new TextBox();
             label1 = new Label();
             kullaniciSilBTN = new Button();
-            groupBox2 = new GroupBox();
-            yeniSifre = new TextBox();
+            sifreDegistirGB = new GroupBox();
+            sifreDegisSifre = new TextBox();
             label3 = new Label();
-            kadiSifre = new TextBox();
+            sifreDegisKullaniciAdi = new TextBox();
             label2 = new Label();
             sifreDegistirBTN = new Button();
-            groupBox3 = new GroupBox();
-            sifre = new TextBox();
+            olusturGB = new GroupBox();
+            olusturSoyad = new TextBox();
+            label7 = new Label();
+            olusturAd = new TextBox();
+            label6 = new Label();
+            olusturSifre = new TextBox();
             label4 = new Label();
-            kadiCreate = new TextBox();
+            olusturKullaniciAdi = new TextBox();
             label5 = new Label();
             kullaniciOlusturBTN = new Button();
-            adTXT = new TextBox();
-            label6 = new Label();
-            soyadTXT = new TextBox();
-            label7 = new Label();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
+            silRB = new RadioButton();
+            sifreDegistirRB = new RadioButton();
+            olusturRB = new RadioButton();
+            silGB.SuspendLayout();
+            sifreDegistirGB.SuspendLayout();
+            olusturGB.SuspendLayout();
             SuspendLayout();
             // 
             // cikisBTN
             // 
             cikisBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            cikisBTN.ImageKey = "cikisyap.png";
+            cikisBTN.ImageKey = "(yok)";
             cikisBTN.ImageList = ımageList1;
             cikisBTN.Location = new Point(966, 12);
             cikisBTN.Name = "cikisBTN";
             cikisBTN.Size = new Size(122, 47);
             cikisBTN.TabIndex = 5;
             cikisBTN.Text = "Çıkış Yap";
-            cikisBTN.TextAlign = ContentAlignment.MiddleRight;
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
             // 
@@ -95,98 +97,93 @@
             // profilBTN
             // 
             profilBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            profilBTN.ImageKey = "kullanici.png";
+            profilBTN.ImageKey = "(yok)";
             profilBTN.ImageList = ımageList1;
             profilBTN.Location = new Point(794, 12);
             profilBTN.Name = "profilBTN";
             profilBTN.Size = new Size(166, 47);
             profilBTN.TabIndex = 4;
             profilBTN.Text = "Kullanıcı İşlemleri";
-            profilBTN.TextAlign = ContentAlignment.MiddleRight;
             profilBTN.UseVisualStyleBackColor = true;
             profilBTN.Click += profilBTN_Click;
             // 
             // aracFiyatBTN
             // 
             aracFiyatBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            aracFiyatBTN.ImageKey = "pngegg (4).png";
+            aracFiyatBTN.ImageKey = "(yok)";
             aracFiyatBTN.ImageList = ımageList1;
             aracFiyatBTN.Location = new Point(611, 12);
             aracFiyatBTN.Name = "aracFiyatBTN";
             aracFiyatBTN.Size = new Size(177, 47);
             aracFiyatBTN.TabIndex = 3;
             aracFiyatBTN.Text = "Araç Fiyat İşlemleri";
-            aracFiyatBTN.TextAlign = ContentAlignment.MiddleRight;
             aracFiyatBTN.UseVisualStyleBackColor = true;
             aracFiyatBTN.Click += aracFiyatBTN_Click;
             // 
             // aracKiralamaBTN
             // 
             aracKiralamaBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            aracKiralamaBTN.ImageKey = "icon-rent-car.jpg";
+            aracKiralamaBTN.ImageKey = "(yok)";
             aracKiralamaBTN.ImageList = ımageList1;
             aracKiralamaBTN.Location = new Point(404, 12);
             aracKiralamaBTN.Name = "aracKiralamaBTN";
             aracKiralamaBTN.Size = new Size(201, 47);
             aracKiralamaBTN.TabIndex = 2;
             aracKiralamaBTN.Text = "Araç Kiralama İşlemleri";
-            aracKiralamaBTN.TextAlign = ContentAlignment.MiddleRight;
             aracKiralamaBTN.UseVisualStyleBackColor = true;
             aracKiralamaBTN.Click += aracKiralamaBTN_Click;
             // 
             // crudBTN
             // 
             crudBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            crudBTN.ImageKey = "pngegg (2).png";
+            crudBTN.ImageKey = "(yok)";
             crudBTN.ImageList = ımageList1;
             crudBTN.Location = new Point(210, 12);
             crudBTN.Name = "crudBTN";
             crudBTN.Size = new Size(188, 47);
             crudBTN.TabIndex = 1;
             crudBTN.Text = "Araç CRUD İşlemleri";
-            crudBTN.TextAlign = ContentAlignment.MiddleRight;
             crudBTN.UseVisualStyleBackColor = true;
             crudBTN.Click += crudBTN_Click;
             // 
             // aracEkleBTN
             // 
             aracEkleBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            aracEkleBTN.ImageKey = "pngegg (1).png";
+            aracEkleBTN.ImageKey = "(yok)";
             aracEkleBTN.ImageList = ımageList1;
             aracEkleBTN.Location = new Point(12, 12);
             aracEkleBTN.Name = "aracEkleBTN";
             aracEkleBTN.Size = new Size(192, 47);
             aracEkleBTN.TabIndex = 0;
             aracEkleBTN.Text = "Araç Ekleme İşlemleri";
-            aracEkleBTN.TextAlign = ContentAlignment.MiddleRight;
             aracEkleBTN.UseVisualStyleBackColor = true;
             aracEkleBTN.Click += aracEkleBTN_Click;
             // 
-            // groupBox1
+            // silGB
             // 
-            groupBox1.Controls.Add(kadiDelete);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(kullaniciSilBTN);
-            groupBox1.Location = new Point(24, 155);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(338, 336);
-            groupBox1.TabIndex = 12;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Kullanıcı Sil";
+            silGB.Controls.Add(deleteKullaniciAdi);
+            silGB.Controls.Add(label1);
+            silGB.Controls.Add(kullaniciSilBTN);
+            silGB.Location = new Point(24, 155);
+            silGB.Name = "silGB";
+            silGB.Size = new Size(338, 399);
+            silGB.TabIndex = 12;
+            silGB.TabStop = false;
+            silGB.Text = "Kullanıcı Sil";
             // 
-            // kadiDelete
+            // deleteKullaniciAdi
             // 
-            kadiDelete.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            kadiDelete.Location = new Point(35, 86);
-            kadiDelete.Name = "kadiDelete";
-            kadiDelete.Size = new Size(211, 32);
-            kadiDelete.TabIndex = 6;
+            deleteKullaniciAdi.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteKullaniciAdi.Location = new Point(60, 186);
+            deleteKullaniciAdi.Name = "deleteKullaniciAdi";
+            deleteKullaniciAdi.Size = new Size(211, 32);
+            deleteKullaniciAdi.TabIndex = 6;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(27, 51);
+            label1.Location = new Point(54, 150);
             label1.Name = "label1";
             label1.Size = new Size(145, 32);
             label1.TabIndex = 1;
@@ -195,62 +192,61 @@
             // kullaniciSilBTN
             // 
             kullaniciSilBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            kullaniciSilBTN.ImageKey = "kullanicisil.png";
+            kullaniciSilBTN.ImageKey = "(yok)";
             kullaniciSilBTN.ImageList = ımageList1;
-            kullaniciSilBTN.Location = new Point(64, 233);
+            kullaniciSilBTN.Location = new Point(87, 338);
             kullaniciSilBTN.Name = "kullaniciSilBTN";
             kullaniciSilBTN.Size = new Size(145, 52);
             kullaniciSilBTN.TabIndex = 7;
             kullaniciSilBTN.Text = "Kullanıcıyı Sil";
-            kullaniciSilBTN.TextAlign = ContentAlignment.MiddleRight;
             kullaniciSilBTN.UseVisualStyleBackColor = true;
             kullaniciSilBTN.Click += kullaniciSilBTN_Click;
             // 
-            // groupBox2
+            // sifreDegistirGB
             // 
-            groupBox2.Controls.Add(yeniSifre);
-            groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(kadiSifre);
-            groupBox2.Controls.Add(label2);
-            groupBox2.Controls.Add(sifreDegistirBTN);
-            groupBox2.Location = new Point(390, 155);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(338, 336);
-            groupBox2.TabIndex = 13;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Şifre Değiştir";
+            sifreDegistirGB.Controls.Add(sifreDegisSifre);
+            sifreDegistirGB.Controls.Add(label3);
+            sifreDegistirGB.Controls.Add(sifreDegisKullaniciAdi);
+            sifreDegistirGB.Controls.Add(label2);
+            sifreDegistirGB.Controls.Add(sifreDegistirBTN);
+            sifreDegistirGB.Location = new Point(390, 155);
+            sifreDegistirGB.Name = "sifreDegistirGB";
+            sifreDegistirGB.Size = new Size(338, 399);
+            sifreDegistirGB.TabIndex = 13;
+            sifreDegistirGB.TabStop = false;
+            sifreDegistirGB.Text = "Şifre Değiştir";
             // 
-            // yeniSifre
+            // sifreDegisSifre
             // 
-            yeniSifre.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            yeniSifre.Location = new Point(38, 168);
-            yeniSifre.Name = "yeniSifre";
-            yeniSifre.Size = new Size(211, 32);
-            yeniSifre.TabIndex = 9;
+            sifreDegisSifre.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            sifreDegisSifre.Location = new Point(60, 218);
+            sifreDegisSifre.Name = "sifreDegisSifre";
+            sifreDegisSifre.Size = new Size(211, 32);
+            sifreDegisSifre.TabIndex = 9;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(32, 134);
+            label3.Location = new Point(54, 184);
             label3.Name = "label3";
             label3.Size = new Size(113, 32);
             label3.TabIndex = 3;
             label3.Text = "Yeni Şifre";
             // 
-            // kadiSifre
+            // sifreDegisKullaniciAdi
             // 
-            kadiSifre.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            kadiSifre.Location = new Point(38, 86);
-            kadiSifre.Name = "kadiSifre";
-            kadiSifre.Size = new Size(211, 32);
-            kadiSifre.TabIndex = 8;
+            sifreDegisKullaniciAdi.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            sifreDegisKullaniciAdi.Location = new Point(60, 136);
+            sifreDegisKullaniciAdi.Name = "sifreDegisKullaniciAdi";
+            sifreDegisKullaniciAdi.Size = new Size(211, 32);
+            sifreDegisKullaniciAdi.TabIndex = 8;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(30, 52);
+            label2.Location = new Point(52, 102);
             label2.Name = "label2";
             label2.Size = new Size(145, 32);
             label2.TabIndex = 1;
@@ -259,131 +255,170 @@
             // sifreDegistirBTN
             // 
             sifreDegistirBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            sifreDegistirBTN.ImageKey = "pngegg (7).png";
+            sifreDegistirBTN.ImageKey = "(yok)";
             sifreDegistirBTN.ImageList = ımageList1;
-            sifreDegistirBTN.Location = new Point(65, 233);
+            sifreDegistirBTN.Location = new Point(83, 338);
             sifreDegistirBTN.Name = "sifreDegistirBTN";
             sifreDegistirBTN.Size = new Size(150, 52);
             sifreDegistirBTN.TabIndex = 10;
             sifreDegistirBTN.Text = "Şifre Değiştir";
-            sifreDegistirBTN.TextAlign = ContentAlignment.MiddleRight;
             sifreDegistirBTN.UseVisualStyleBackColor = true;
             sifreDegistirBTN.Click += sifreDegistirBTN_Click;
             // 
-            // groupBox3
+            // olusturGB
             // 
-            groupBox3.Controls.Add(soyadTXT);
-            groupBox3.Controls.Add(label7);
-            groupBox3.Controls.Add(adTXT);
-            groupBox3.Controls.Add(label6);
-            groupBox3.Controls.Add(sifre);
-            groupBox3.Controls.Add(label4);
-            groupBox3.Controls.Add(kadiCreate);
-            groupBox3.Controls.Add(label5);
-            groupBox3.Controls.Add(kullaniciOlusturBTN);
-            groupBox3.Location = new Point(756, 155);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(338, 336);
-            groupBox3.TabIndex = 14;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Kullanıcı Oluştur";
+            olusturGB.Controls.Add(olusturSoyad);
+            olusturGB.Controls.Add(label7);
+            olusturGB.Controls.Add(olusturAd);
+            olusturGB.Controls.Add(label6);
+            olusturGB.Controls.Add(olusturSifre);
+            olusturGB.Controls.Add(label4);
+            olusturGB.Controls.Add(olusturKullaniciAdi);
+            olusturGB.Controls.Add(label5);
+            olusturGB.Controls.Add(kullaniciOlusturBTN);
+            olusturGB.Location = new Point(756, 155);
+            olusturGB.Name = "olusturGB";
+            olusturGB.Size = new Size(338, 399);
+            olusturGB.TabIndex = 14;
+            olusturGB.TabStop = false;
+            olusturGB.Text = "Kullanıcı Oluştur";
             // 
-            // sifre
+            // olusturSoyad
             // 
-            sifre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            sifre.Location = new Point(26, 115);
-            sifre.Name = "sifre";
-            sifre.Size = new Size(211, 30);
-            sifre.TabIndex = 12;
+            olusturSoyad.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            olusturSoyad.Location = new Point(62, 286);
+            olusturSoyad.Name = "olusturSoyad";
+            olusturSoyad.Size = new Size(211, 32);
+            olusturSoyad.TabIndex = 17;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(55, 251);
+            label7.Name = "label7";
+            label7.Size = new Size(79, 32);
+            label7.TabIndex = 16;
+            label7.Text = "Soyad";
+            // 
+            // olusturAd
+            // 
+            olusturAd.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            olusturAd.Location = new Point(62, 211);
+            olusturAd.Name = "olusturAd";
+            olusturAd.Size = new Size(211, 32);
+            olusturAd.TabIndex = 15;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(55, 176);
+            label6.Name = "label6";
+            label6.Size = new Size(43, 32);
+            label6.TabIndex = 14;
+            label6.Text = "Ad";
+            // 
+            // olusturSifre
+            // 
+            olusturSifre.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            olusturSifre.Location = new Point(62, 136);
+            olusturSifre.Name = "olusturSifre";
+            olusturSifre.Size = new Size(211, 32);
+            olusturSifre.TabIndex = 12;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(26, 84);
+            label4.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(55, 101);
             label4.Name = "label4";
-            label4.Size = new Size(51, 28);
+            label4.Size = new Size(62, 32);
             label4.TabIndex = 3;
             label4.Text = "Şifre";
             // 
-            // kadiCreate
+            // olusturKullaniciAdi
             // 
-            kadiCreate.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            kadiCreate.Location = new Point(26, 54);
-            kadiCreate.Name = "kadiCreate";
-            kadiCreate.Size = new Size(211, 30);
-            kadiCreate.TabIndex = 11;
+            olusturKullaniciAdi.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            olusturKullaniciAdi.Location = new Point(62, 61);
+            olusturKullaniciAdi.Name = "olusturKullaniciAdi";
+            olusturKullaniciAdi.Size = new Size(211, 32);
+            olusturKullaniciAdi.TabIndex = 11;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(26, 21);
+            label5.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(55, 26);
             label5.Name = "label5";
-            label5.Size = new Size(120, 28);
+            label5.Size = new Size(145, 32);
             label5.TabIndex = 1;
             label5.Text = "Kullanıcı Adı";
             // 
             // kullaniciOlusturBTN
             // 
             kullaniciOlusturBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            kullaniciOlusturBTN.ImageKey = "pngegg.png";
+            kullaniciOlusturBTN.ImageKey = "(yok)";
             kullaniciOlusturBTN.ImageList = ımageList1;
-            kullaniciOlusturBTN.Location = new Point(58, 278);
+            kullaniciOlusturBTN.Location = new Point(84, 338);
             kullaniciOlusturBTN.Name = "kullaniciOlusturBTN";
             kullaniciOlusturBTN.Size = new Size(166, 52);
             kullaniciOlusturBTN.TabIndex = 13;
             kullaniciOlusturBTN.Text = "Kullanıcı Oluştur";
-            kullaniciOlusturBTN.TextAlign = ContentAlignment.MiddleRight;
             kullaniciOlusturBTN.UseVisualStyleBackColor = true;
             kullaniciOlusturBTN.Click += kullaniciOlusturBTN_Click;
             // 
-            // adTXT
+            // silRB
             // 
-            adTXT.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            adTXT.Location = new Point(26, 176);
-            adTXT.Name = "adTXT";
-            adTXT.Size = new Size(211, 30);
-            adTXT.TabIndex = 15;
+            silRB.AutoSize = true;
+            silRB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            silRB.Location = new Point(24, 96);
+            silRB.Name = "silRB";
+            silRB.Size = new Size(132, 32);
+            silRB.TabIndex = 15;
+            silRB.TabStop = true;
+            silRB.Text = "Kullanıcı Sil";
+            silRB.UseVisualStyleBackColor = true;
+            silRB.CheckedChanged += silRB_CheckedChanged;
             // 
-            // label6
+            // sifreDegistirRB
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(26, 145);
-            label6.Name = "label6";
-            label6.Size = new Size(37, 28);
-            label6.TabIndex = 14;
-            label6.Text = "Ad";
+            sifreDegistirRB.AutoSize = true;
+            sifreDegistirRB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            sifreDegistirRB.Location = new Point(390, 96);
+            sifreDegistirRB.Name = "sifreDegistirRB";
+            sifreDegistirRB.Size = new Size(145, 32);
+            sifreDegistirRB.TabIndex = 16;
+            sifreDegistirRB.TabStop = true;
+            sifreDegistirRB.Text = "Şifre Değiştir";
+            sifreDegistirRB.UseVisualStyleBackColor = true;
+            sifreDegistirRB.CheckedChanged += sifreDegistirRB_CheckedChanged;
             // 
-            // soyadTXT
+            // olusturRB
             // 
-            soyadTXT.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            soyadTXT.Location = new Point(26, 241);
-            soyadTXT.Name = "soyadTXT";
-            soyadTXT.Size = new Size(211, 30);
-            soyadTXT.TabIndex = 17;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(26, 209);
-            label7.Name = "label7";
-            label7.Size = new Size(67, 28);
-            label7.TabIndex = 16;
-            label7.Text = "Soyad";
+            olusturRB.AutoSize = true;
+            olusturRB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            olusturRB.Location = new Point(756, 96);
+            olusturRB.Name = "olusturRB";
+            olusturRB.Size = new Size(175, 32);
+            olusturRB.TabIndex = 17;
+            olusturRB.TabStop = true;
+            olusturRB.Text = "Kullanıcı Oluştur";
+            olusturRB.UseVisualStyleBackColor = true;
+            olusturRB.CheckedChanged += olusturRB_CheckedChanged;
             // 
             // KullaniciIslemForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
-            Controls.Add(groupBox3);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            Controls.Add(olusturRB);
+            Controls.Add(sifreDegistirRB);
+            Controls.Add(silRB);
+            Controls.Add(olusturGB);
+            Controls.Add(sifreDegistirGB);
+            Controls.Add(silGB);
             Controls.Add(cikisBTN);
             Controls.Add(profilBTN);
             Controls.Add(aracFiyatBTN);
@@ -396,14 +431,16 @@
             Name = "KullaniciIslemForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Kullanıcı İşlem Formu";
+            FormClosed += KullaniciIslemForm_FormClosed;
             Load += KullaniciIslemForm_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            silGB.ResumeLayout(false);
+            silGB.PerformLayout();
+            sifreDegistirGB.ResumeLayout(false);
+            sifreDegistirGB.PerformLayout();
+            olusturGB.ResumeLayout(false);
+            olusturGB.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -414,26 +451,29 @@
         private Button aracKiralamaBTN;
         private Button crudBTN;
         private Button aracEkleBTN;
-        private GroupBox groupBox1;
+        private GroupBox silGB;
         private Button kullaniciSilBTN;
         private Label label1;
-        private TextBox kadiDelete;
-        private GroupBox groupBox2;
-        private TextBox yeniSifre;
+        private TextBox deleteKullaniciAdi;
+        private GroupBox sifreDegistirGB;
+        private TextBox sifreDegisSifre;
         private Label label3;
-        private TextBox kadiSifre;
+        private TextBox sifreDegisKullaniciAdi;
         private Label label2;
         private Button sifreDegistirBTN;
-        private GroupBox groupBox3;
-        private TextBox sifre;
+        private GroupBox olusturGB;
+        private TextBox olusturSifre;
         private Label label4;
-        private TextBox kadiCreate;
+        private TextBox olusturKullaniciAdi;
         private Label label5;
         private Button kullaniciOlusturBTN;
         private ImageList ımageList1;
-        private TextBox soyadTXT;
+        private TextBox olusturSoyad;
         private Label label7;
-        private TextBox adTXT;
+        private TextBox olusturAd;
         private Label label6;
+        private RadioButton silRB;
+        private RadioButton sifreDegistirRB;
+        private RadioButton olusturRB;
     }
 }
