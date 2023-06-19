@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace RentACar2023
 {
@@ -16,12 +18,10 @@ namespace RentACar2023
         {
             InitializeComponent();
         }
-
         private void AracFiyatForm_Load(object sender, EventArgs e)
         {
-            aracFiyatBTN.Enabled = false;
+            veriYukleyici();
         }
-
         private void SayfaYonlendir(String sayfa)
         {
             if (sayfa == "aracEkle")
@@ -88,10 +88,96 @@ namespace RentACar2023
 
         private void guncelleBTN_Click(object sender, EventArgs e)
         {
-            if(plakaText.Text == "" || yeniFiyatText.Text == "" || anlikFiyatText.Text == "") 
+            if (plakaText.Text == "")
             {
-                MessageBox.Show("Eksik bilgi girişi");
+                MessageBox.Show("Lütfen aracınızı seçiniz.");
             }
+            else if (yeniFiyatText.Text == "")
+            {
+                MessageBox.Show("Lütfen yeni fiyat alanını doldurunuz.");
+            }
+            else
+            {
+                string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+                MySqlConnection cnn = new MySqlConnection(myConnectionString);
+                cnn.Open();
+                if (gunlukDegisimRB.Checked == true)
+                {
+                    float haftalikFiyat = float.Parse(yeniFiyatText.Text) * 6;
+                    MySqlCommand sorgu = new MySqlCommand("UPDATE prices SET daily_price ='" + yeniFiyatText.Text + "',weekly_price ='" + haftalikFiyat + "'  WHERE arac_id ='" + plakaText.Text + "' ", cnn);
+                    sorgu.ExecuteNonQuery();
+                    MessageBox.Show("Günlük fiyatınız başarıyla değiştirildi.");
+                    cnn.Close();
+                    veriYukleyici();
+                    veriTemizle();
+                }
+                else if (kmBasinaDegisimRB.Checked == true)
+                {
+                    float haftalikFiyat = float.Parse(yeniFiyatText.Text) * 6;
+                    MySqlCommand sorgu = new MySqlCommand("UPDATE prices SET daily_km_limit ='" + yeniFiyatText.Text + "' WHERE arac_id ='" + plakaText.Text + "' ", cnn);
+                    sorgu.ExecuteNonQuery();
+                    MessageBox.Show("Kilometre başına fiyatınız başarıyla değiştirildi.");
+                    cnn.Close();
+                    veriYukleyici();
+                    veriTemizle();
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen önce yapmak istediğiniz işlemi seçiniz");
+                    cnn.Close();
+                }
+            }
+        }
+
+        public void veriGoruntuleyici_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = veriGoruntuleyici.Rows[e.RowIndex];
+            plakaText.Text = row.Cells[0].Value.ToString();
+            gunlukFiyatText.Text = row.Cells[1].Value.ToString();
+            haftalikFiyatText.Text = row.Cells[2].Value.ToString();
+            kmBasinaText.Text = row.Cells[3].Value.ToString();
+            gunlukDegisimRB.Enabled = true;
+            kmBasinaDegisimRB.Enabled = true;
+        }
+        void veriYukleyici()
+        {
+            aracFiyatBTN.Enabled = false;
+            veriGoruntuleyici.ReadOnly = true;
+            veriGoruntuleyici.AllowUserToDeleteRows = false;
+            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            MySqlConnection cnn = new MySqlConnection(myConnectionString);
+            cnn.Open();
+            MySqlCommand sorgu = new MySqlCommand("SELECT arac_id, daily_price, weekly_price, daily_km_limit  FROM prices ", cnn);
+            MySqlDataAdapter DA = new MySqlDataAdapter(sorgu);
+            DataTable DT = new DataTable();
+            DT.Clear();
+            DA.Fill(DT);
+            veriGoruntuleyici.DataSource = DT;
+            cnn.Close();
+            veriGoruntuleyici.Columns[0].HeaderText = "Arac Plakası";
+            veriGoruntuleyici.Columns[1].HeaderText = "Günlük fiyat";
+            veriGoruntuleyici.Columns[2].HeaderText = "Haftalık Fiyat";
+            veriGoruntuleyici.Columns[3].HeaderText = "Günlük Kilometre Sınırı";
+            veriGoruntuleyici.Columns[0].Width = 273;
+            veriGoruntuleyici.Columns[1].Width = 273;
+            veriGoruntuleyici.Columns[2].Width = 273;
+            veriGoruntuleyici.Columns[3].Width = 220;
+        }
+        void veriTemizle()
+        {
+            plakaText.Clear();
+            haftalikFiyatText.Clear();
+            gunlukFiyatText.Clear();
+            kmBasinaText.Clear();
+            yeniFiyatText.Clear();
+            gunlukDegisimRB.Checked = false;
+            kmBasinaDegisimRB.Checked = false;
+            gunlukDegisimRB.Enabled = false;
+            kmBasinaDegisimRB.Enabled = false;
+        }
+        private void AracFiyatForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -45,25 +45,29 @@
             veriGoruntuleyici = new DataGridView();
             label19 = new Label();
             plakaText = new TextBox();
-            anlikFiyatText = new TextBox();
+            gunlukFiyatText = new TextBox();
             label1 = new Label();
             yeniFiyatText = new TextBox();
             label2 = new Label();
             guncelleBTN = new Button();
+            haftalikFiyatText = new TextBox();
+            label3 = new Label();
+            kmBasinaText = new TextBox();
+            label4 = new Label();
+            gunlukDegisimRB = new RadioButton();
+            kmBasinaDegisimRB = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             SuspendLayout();
             // 
             // cikisBTN
             // 
-            cikisBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            cikisBTN.ImageKey = "cikisyap.png";
+            cikisBTN.ImageKey = "(yok)";
             cikisBTN.ImageList = cikisyap_imglist;
             cikisBTN.Location = new Point(994, 12);
             cikisBTN.Name = "cikisBTN";
             cikisBTN.Size = new Size(111, 47);
             cikisBTN.TabIndex = 5;
             cikisBTN.Text = "Çıkış Yap";
-            cikisBTN.TextAlign = ContentAlignment.MiddleRight;
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
             // 
@@ -77,14 +81,13 @@
             // profilBTN
             // 
             profilBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            profilBTN.ImageKey = "kullanici.png";
+            profilBTN.ImageKey = "(yok)";
             profilBTN.ImageList = ımageList1;
             profilBTN.Location = new Point(829, 12);
             profilBTN.Name = "profilBTN";
             profilBTN.Size = new Size(159, 47);
             profilBTN.TabIndex = 4;
             profilBTN.Text = "Kullanıcı İşlemleri";
-            profilBTN.TextAlign = ContentAlignment.MiddleRight;
             profilBTN.UseVisualStyleBackColor = true;
             profilBTN.Click += profilBTN_Click;
             // 
@@ -99,14 +102,13 @@
             // aracFiyatBTN
             // 
             aracFiyatBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            aracFiyatBTN.ImageKey = "pngegg (4).png";
+            aracFiyatBTN.ImageKey = "(yok)";
             aracFiyatBTN.ImageList = fiyat_imglist;
             aracFiyatBTN.Location = new Point(646, 12);
             aracFiyatBTN.Name = "aracFiyatBTN";
             aracFiyatBTN.Size = new Size(177, 47);
             aracFiyatBTN.TabIndex = 3;
             aracFiyatBTN.Text = "Araç Fiyat İşlemleri";
-            aracFiyatBTN.TextAlign = ContentAlignment.MiddleRight;
             aracFiyatBTN.UseVisualStyleBackColor = true;
             aracFiyatBTN.Click += aracFiyatBTN_Click;
             // 
@@ -120,14 +122,13 @@
             // aracKiralamaBTN
             // 
             aracKiralamaBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            aracKiralamaBTN.ImageKey = "icon-rent-car.jpg";
+            aracKiralamaBTN.ImageKey = "(yok)";
             aracKiralamaBTN.ImageList = rentacar_imglist;
             aracKiralamaBTN.Location = new Point(420, 12);
             aracKiralamaBTN.Name = "aracKiralamaBTN";
             aracKiralamaBTN.Size = new Size(220, 47);
             aracKiralamaBTN.TabIndex = 2;
             aracKiralamaBTN.Text = "Araç Kiralama İşlemleri";
-            aracKiralamaBTN.TextAlign = ContentAlignment.MiddleRight;
             aracKiralamaBTN.UseVisualStyleBackColor = true;
             aracKiralamaBTN.Click += aracKiralamaBTN_Click;
             // 
@@ -148,28 +149,26 @@
             // crudBTN
             // 
             crudBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            crudBTN.ImageKey = "pngegg (2).png";
+            crudBTN.ImageKey = "(yok)";
             crudBTN.ImageList = arabaimglist;
             crudBTN.Location = new Point(218, 12);
             crudBTN.Name = "crudBTN";
             crudBTN.Size = new Size(196, 47);
             crudBTN.TabIndex = 1;
             crudBTN.Text = "Araç CRUD İşlemleri";
-            crudBTN.TextAlign = ContentAlignment.MiddleRight;
             crudBTN.UseVisualStyleBackColor = true;
             crudBTN.Click += crudBTN_Click;
             // 
             // aracEkleBTN
             // 
             aracEkleBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            aracEkleBTN.ImageKey = "pngegg (1).png";
+            aracEkleBTN.ImageKey = "(yok)";
             aracEkleBTN.ImageList = aracekleme_imglist;
             aracEkleBTN.Location = new Point(12, 12);
             aracEkleBTN.Name = "aracEkleBTN";
             aracEkleBTN.Size = new Size(200, 47);
             aracEkleBTN.TabIndex = 0;
             aracEkleBTN.Text = "Araç Ekleme İşlemleri";
-            aracEkleBTN.TextAlign = ContentAlignment.MiddleRight;
             aracEkleBTN.UseVisualStyleBackColor = true;
             aracEkleBTN.Click += aracEkleBTN_Click;
             // 
@@ -182,19 +181,22 @@
             // 
             // veriGoruntuleyici
             // 
+            veriGoruntuleyici.AllowUserToAddRows = false;
             veriGoruntuleyici.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             veriGoruntuleyici.Location = new Point(14, 80);
             veriGoruntuleyici.Name = "veriGoruntuleyici";
             veriGoruntuleyici.RowHeadersWidth = 51;
             veriGoruntuleyici.RowTemplate.Height = 29;
+            veriGoruntuleyici.RowTemplate.Resizable = DataGridViewTriState.False;
             veriGoruntuleyici.Size = new Size(1093, 270);
             veriGoruntuleyici.TabIndex = 6;
+            veriGoruntuleyici.CellClick += veriGoruntuleyici_CellClick;
             // 
             // label19
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label19.Location = new Point(90, 405);
+            label19.Location = new Point(221, 372);
             label19.Name = "label19";
             label19.Size = new Size(88, 32);
             label19.TabIndex = 1009;
@@ -202,37 +204,38 @@
             // 
             // plakaText
             // 
+            plakaText.Enabled = false;
             plakaText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            plakaText.Location = new Point(184, 407);
+            plakaText.Location = new Point(315, 374);
             plakaText.Margin = new Padding(3, 4, 3, 4);
             plakaText.Name = "plakaText";
             plakaText.Size = new Size(150, 32);
             plakaText.TabIndex = 7;
             // 
-            // anlikFiyatText
+            // gunlukFiyatText
             // 
-            anlikFiyatText.Enabled = false;
-            anlikFiyatText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            anlikFiyatText.Location = new Point(184, 447);
-            anlikFiyatText.Margin = new Padding(3, 4, 3, 4);
-            anlikFiyatText.Name = "anlikFiyatText";
-            anlikFiyatText.Size = new Size(150, 32);
-            anlikFiyatText.TabIndex = 8;
+            gunlukFiyatText.Enabled = false;
+            gunlukFiyatText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            gunlukFiyatText.Location = new Point(315, 414);
+            gunlukFiyatText.Margin = new Padding(3, 4, 3, 4);
+            gunlukFiyatText.Name = "gunlukFiyatText";
+            gunlukFiyatText.Size = new Size(150, 32);
+            gunlukFiyatText.TabIndex = 8;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(36, 445);
+            label1.Location = new Point(143, 412);
             label1.Name = "label1";
-            label1.Size = new Size(149, 32);
+            label1.Size = new Size(166, 32);
             label1.TabIndex = 1015;
-            label1.Text = "Anlık Fiyatı : ";
+            label1.Text = "Günlük Fiyat : ";
             // 
             // yeniFiyatText
             // 
             yeniFiyatText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            yeniFiyatText.Location = new Point(184, 487);
+            yeniFiyatText.Location = new Point(513, 541);
             yeniFiyatText.Margin = new Padding(3, 4, 3, 4);
             yeniFiyatText.Name = "yeniFiyatText";
             yeniFiyatText.Size = new Size(150, 32);
@@ -242,7 +245,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(44, 485);
+            label2.Location = new Point(373, 539);
             label2.Name = "label2";
             label2.Size = new Size(134, 32);
             label2.TabIndex = 1017;
@@ -250,17 +253,81 @@
             // 
             // guncelleBTN
             // 
-            guncelleBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            guncelleBTN.ImageKey = "pngegg (7).png";
+            guncelleBTN.ImageKey = "(yok)";
             guncelleBTN.ImageList = ımageList1;
-            guncelleBTN.Location = new Point(184, 539);
+            guncelleBTN.Location = new Point(463, 585);
             guncelleBTN.Name = "guncelleBTN";
             guncelleBTN.Size = new Size(150, 56);
             guncelleBTN.TabIndex = 10;
             guncelleBTN.Text = "Fiyatı Güncelle";
-            guncelleBTN.TextAlign = ContentAlignment.MiddleRight;
             guncelleBTN.UseVisualStyleBackColor = true;
             guncelleBTN.Click += guncelleBTN_Click;
+            // 
+            // haftalikFiyatText
+            // 
+            haftalikFiyatText.Enabled = false;
+            haftalikFiyatText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            haftalikFiyatText.Location = new Point(765, 374);
+            haftalikFiyatText.Margin = new Padding(3, 4, 3, 4);
+            haftalikFiyatText.Name = "haftalikFiyatText";
+            haftalikFiyatText.Size = new Size(150, 32);
+            haftalikFiyatText.TabIndex = 1018;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(588, 372);
+            label3.Name = "label3";
+            label3.Size = new Size(171, 32);
+            label3.TabIndex = 1019;
+            label3.Text = "Haftalık Fiyat : ";
+            // 
+            // kmBasinaText
+            // 
+            kmBasinaText.Enabled = false;
+            kmBasinaText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            kmBasinaText.Location = new Point(765, 414);
+            kmBasinaText.Margin = new Padding(3, 4, 3, 4);
+            kmBasinaText.Name = "kmBasinaText";
+            kmBasinaText.Size = new Size(150, 32);
+            kmBasinaText.TabIndex = 1020;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(491, 412);
+            label4.Name = "label4";
+            label4.Size = new Size(268, 32);
+            label4.TabIndex = 1021;
+            label4.Text = "Kilometre Başına Fiyat : ";
+            // 
+            // gunlukDegisimRB
+            // 
+            gunlukDegisimRB.AutoSize = true;
+            gunlukDegisimRB.Enabled = false;
+            gunlukDegisimRB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            gunlukDegisimRB.Location = new Point(315, 483);
+            gunlukDegisimRB.Name = "gunlukDegisimRB";
+            gunlukDegisimRB.Size = new Size(215, 32);
+            gunlukDegisimRB.TabIndex = 1022;
+            gunlukDegisimRB.TabStop = true;
+            gunlukDegisimRB.Text = "Günlük Fiyat Değiştir";
+            gunlukDegisimRB.UseVisualStyleBackColor = true;
+            // 
+            // kmBasinaDegisimRB
+            // 
+            kmBasinaDegisimRB.AutoSize = true;
+            kmBasinaDegisimRB.Enabled = false;
+            kmBasinaDegisimRB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            kmBasinaDegisimRB.Location = new Point(536, 483);
+            kmBasinaDegisimRB.Name = "kmBasinaDegisimRB";
+            kmBasinaDegisimRB.Size = new Size(183, 32);
+            kmBasinaDegisimRB.TabIndex = 1023;
+            kmBasinaDegisimRB.TabStop = true;
+            kmBasinaDegisimRB.Text = "KM Fiyat Değiştir";
+            kmBasinaDegisimRB.UseVisualStyleBackColor = true;
             // 
             // AracFiyatForm
             // 
@@ -268,10 +335,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
+            Controls.Add(kmBasinaDegisimRB);
+            Controls.Add(gunlukDegisimRB);
+            Controls.Add(kmBasinaText);
+            Controls.Add(label4);
+            Controls.Add(haftalikFiyatText);
+            Controls.Add(label3);
             Controls.Add(guncelleBTN);
             Controls.Add(yeniFiyatText);
             Controls.Add(label2);
-            Controls.Add(anlikFiyatText);
+            Controls.Add(gunlukFiyatText);
             Controls.Add(label1);
             Controls.Add(plakaText);
             Controls.Add(label19);
@@ -288,6 +361,7 @@
             Name = "AracFiyatForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AracFiyatForm";
+            FormClosed += AracFiyatForm_FormClosed;
             Load += AracFiyatForm_Load;
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).EndInit();
             ResumeLayout(false);
@@ -305,7 +379,7 @@
         private DataGridView veriGoruntuleyici;
         private Label label19;
         private TextBox plakaText;
-        private TextBox anlikFiyatText;
+        private TextBox gunlukFiyatText;
         private Label label1;
         private TextBox yeniFiyatText;
         private Label label2;
@@ -316,5 +390,11 @@
         private ImageList fiyat_imglist;
         private ImageList rentacar_imglist;
         private ImageList ımageList1;
+        private TextBox haftalikFiyatText;
+        private Label label3;
+        private TextBox kmBasinaText;
+        private Label label4;
+        private RadioButton gunlukDegisimRB;
+        private RadioButton kmBasinaDegisimRB;
     }
 }

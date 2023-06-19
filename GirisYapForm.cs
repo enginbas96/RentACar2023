@@ -28,14 +28,11 @@ namespace RentACar2023
             string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
-
-            String kullaniciAdi = GirisYapKullaniciAdiTextBox.Text;
-            String sifre = GirisYapSifreTextBox.Text;   
-            MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" +kullaniciAdi+ "' AND sifre ='"+ sifre+"'",cnn );
+            MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + GirisYapKullaniciAdiTextBox.Text + "' AND sifre ='"+ GirisYapSifreTextBox.Text + "'",cnn );
             MySqlDataReader tara = sorgu.ExecuteReader();
             if (tara.Read())
             {
-                AracEkleForm aracEkle = new AracEkleForm(kullaniciAdi);
+                AracEkleForm aracEkle = new AracEkleForm(GirisYapKullaniciAdiTextBox.Text);
                 aracEkle.Show();
                 cnn.Close();
                 this.Close();
