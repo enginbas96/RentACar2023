@@ -40,6 +40,8 @@
             // 
             // veriGoruntuleyici
             // 
+            veriGoruntuleyici.AllowUserToAddRows = false;
+            veriGoruntuleyici.AllowUserToDeleteRows = false;
             veriGoruntuleyici.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             veriGoruntuleyici.Location = new Point(12, 22);
             veriGoruntuleyici.Name = "veriGoruntuleyici";
@@ -47,6 +49,7 @@
             veriGoruntuleyici.RowTemplate.Height = 29;
             veriGoruntuleyici.Size = new Size(1093, 270);
             veriGoruntuleyici.TabIndex = 7;
+            veriGoruntuleyici.CellContentClick += veriGoruntuleyici_CellContentClick;
             // 
             // label1
             // 
@@ -65,6 +68,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(157, 32);
             textBox1.TabIndex = 9;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // cikisBTN
             // 

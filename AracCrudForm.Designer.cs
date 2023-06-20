@@ -248,6 +248,7 @@
             veriGoruntuleyici.Size = new Size(1093, 270);
             veriGoruntuleyici.TabIndex = 6;
             veriGoruntuleyici.CellClick += veriGoruntuleyici_CellClick;
+            veriGoruntuleyici.CellContentClick += veriGoruntuleyici_CellContentClick;
             // 
             // hasarText
             // 

@@ -205,6 +205,11 @@ namespace RentACar2023
         {
             islemBTN.Text = "Aracı Güncelle";
         }
+
+        private void veriGoruntuleyici_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 
