@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace RentACar2023
 {
@@ -20,6 +21,37 @@ namespace RentACar2023
         private void AracKiralaForm_Load(object sender, EventArgs e)
         {
             aracKiralamaBTN.Enabled = false;
+            plakacek();
+        }
+        void plakacek()
+        {
+            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            MySqlConnection cnn = new MySqlConnection(myConnectionString);
+            cnn.Open();
+            MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE isRent = '0'", cnn);
+            MySqlDataReader tara = sorgu.ExecuteReader();
+            while (tara.Read())
+            {
+                plakaCB.Items.Add(tara["plaka"]);
+
+
+
+            }
+            cnn.Close();
+        }
+        void kirala()
+        {
+            DateTime baslangic = kiralamaTarihi.Value;
+            DateTime bitis = teslimTarihi.Value;
+            string baslangicTarihi = baslangic.ToString("yyyy-MM-dd HH:mm:ss");
+            string bitisTarihi = bitis.ToString("yyyy-MM-dd HH:mm:ss");
+            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            MySqlConnection cnn = new MySqlConnection(myConnectionString);
+            cnn.Open();
+            MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO car_status(arac_id, musteri_id, start_time, end_time) VALUES('" + plaka_id + "','" + 2 + "', '" + baslangicTarihi +"','" + bitisTarihi + "')", cnn);
+            sorgu1.ExecuteNonQuery();
+            MessageBox.Show("Araba kiralama işlemi başarıyla tamamlandı.");
+            cnn.Close();
         }
 
         private void SayfaYonlendir(String sayfa)
@@ -93,10 +125,38 @@ namespace RentACar2023
             {
                 MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.");
             }
-            if (kiralamaTarihi.Value >= teslimTarihi.Value) 
+            else if (kiralamaTarihi.Value >= teslimTarihi.Value)
             {
                 MessageBox.Show("Tarihler arasında tutarsızlık var");
             }
+            else
+            {
+                kirala();
+            }
+        }
+        int plaka_id;
+        private void plakaCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            
+                string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+                MySqlConnection cnn = new MySqlConnection(myConnectionString);
+                cnn.Open();
+                MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE plaka = '" +plakaCB.Text+"'", cnn);
+                MySqlDataReader tara = sorgu.ExecuteReader();
+                while (tara.Read())
+                {
+                    
+                plaka_id = tara.GetInt32("id");
+
+                }
+                cnn.Close();
+
+        }
+
+        private void tcText_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

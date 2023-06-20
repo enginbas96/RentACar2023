@@ -218,6 +218,7 @@
             tcText.Name = "tcText";
             tcText.Size = new Size(150, 32);
             tcText.TabIndex = 7;
+            tcText.TextChanged += tcText_TextChanged;
             // 
             // label25
             // 
@@ -287,6 +288,7 @@
             plakaCB.Name = "plakaCB";
             plakaCB.Size = new Size(150, 33);
             plakaCB.TabIndex = 6;
+            plakaCB.SelectedIndexChanged += plakaCB_SelectedIndexChanged;
             // 
             // label19
             // 
@@ -302,7 +304,6 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
             Controls.Add(kiralaBTN);
