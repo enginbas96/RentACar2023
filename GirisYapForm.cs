@@ -17,12 +17,6 @@ namespace RentACar2023
         {
             InitializeComponent();
         }
-
-
-        private void GirisYapForm_Load(object sender, EventArgs e)
-        {
-
-        }
         private void GirisYapButton_Click(object sender, EventArgs e)
         {
             string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
@@ -37,12 +31,20 @@ namespace RentACar2023
                 cnn.Close();
                 this.Hide();
             }
+            else 
+            {
+                MessageBox.Show("Kullanıcı adı veya şifre hatalı, lütfen kontrol edip tekrar deneyiniz.");
+            }
         }
         private void SifreUnuttumLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FormSifremiUnuttum sifreUnut = new FormSifremiUnuttum();
             sifreUnut.Show();
             this.Hide();
+        }
+        private void GirisYapForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

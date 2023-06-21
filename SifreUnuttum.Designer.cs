@@ -28,100 +28,117 @@
         /// </summary>
         private void InitializeComponent()
         {
-            sifreGetirBTN = new Button();
-            girisSayfaBTN = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            kullaniciaditextbox = new TextBox();
-            Kurtarmakodutextbox = new TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSifremiUnuttum));
+            KullaniciPictureBox = new PictureBox();
+            kurtarmaKoduText = new TextBox();
+            kullanıcıAdıText = new TextBox();
+            SifreLabel = new Label();
+            KullaniciAdiLabel = new Label();
+            geriBTN = new Button();
+            kaydetBTN = new Button();
+            ((System.ComponentModel.ISupportInitialize)KullaniciPictureBox).BeginInit();
             SuspendLayout();
             // 
-            // sifreGetirBTN
+            // KullaniciPictureBox
             // 
-            sifreGetirBTN.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            sifreGetirBTN.Location = new Point(256, 312);
-            sifreGetirBTN.Name = "sifreGetirBTN";
-            sifreGetirBTN.Size = new Size(318, 73);
-            sifreGetirBTN.TabIndex = 0;
-            sifreGetirBTN.Text = "Şifremi Getir";
-            sifreGetirBTN.UseVisualStyleBackColor = true;
-            sifreGetirBTN.Click += sifreGetirBTN_Click;
+            KullaniciPictureBox.Image = (Image)resources.GetObject("KullaniciPictureBox.Image");
+            KullaniciPictureBox.Location = new Point(210, 37);
+            KullaniciPictureBox.Name = "KullaniciPictureBox";
+            KullaniciPictureBox.Size = new Size(173, 153);
+            KullaniciPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            KullaniciPictureBox.TabIndex = 111115;
+            KullaniciPictureBox.TabStop = false;
             // 
-            // girisSayfaBTN
+            // kurtarmaKoduText
             // 
-            girisSayfaBTN.Location = new Point(632, 12);
-            girisSayfaBTN.Name = "girisSayfaBTN";
-            girisSayfaBTN.Size = new Size(156, 45);
-            girisSayfaBTN.TabIndex = 1;
-            girisSayfaBTN.Text = "Giriş Sayfasına Dön";
-            girisSayfaBTN.UseVisualStyleBackColor = true;
-            girisSayfaBTN.Click += girisSayfaBTN_Click;
+            kurtarmaKoduText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            kurtarmaKoduText.Location = new Point(210, 281);
+            kurtarmaKoduText.Name = "kurtarmaKoduText";
+            kurtarmaKoduText.Size = new Size(173, 32);
+            kurtarmaKoduText.TabIndex = 111114;
             // 
-            // label1
+            // kullanıcıAdıText
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(216, 159);
-            label1.Name = "label1";
-            label1.Size = new Size(185, 41);
-            label1.TabIndex = 2;
-            label1.Text = "Kullanıcı Adı:";
+            kullanıcıAdıText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            kullanıcıAdıText.Location = new Point(210, 229);
+            kullanıcıAdıText.Name = "kullanıcıAdıText";
+            kullanıcıAdıText.Size = new Size(173, 32);
+            kullanıcıAdıText.TabIndex = 111113;
             // 
-            // label2
+            // SifreLabel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(179, 222);
-            label2.Name = "label2";
-            label2.Size = new Size(222, 41);
-            label2.TabIndex = 3;
-            label2.Text = "Kurtarma Kodu:";
+            SifreLabel.AutoSize = true;
+            SifreLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SifreLabel.Location = new Point(45, 281);
+            SifreLabel.Name = "SifreLabel";
+            SifreLabel.Size = new Size(159, 28);
+            SifreLabel.TabIndex = 111117;
+            SifreLabel.Text = "Kurtarma Kodu : ";
             // 
-            // kullaniciaditextbox
+            // KullaniciAdiLabel
             // 
-            kullaniciaditextbox.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            kullaniciaditextbox.Location = new Point(407, 159);
-            kullaniciaditextbox.Name = "kullaniciaditextbox";
-            kullaniciaditextbox.Size = new Size(199, 43);
-            kullaniciaditextbox.TabIndex = 4;
+            KullaniciAdiLabel.AutoSize = true;
+            KullaniciAdiLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            KullaniciAdiLabel.Location = new Point(70, 229);
+            KullaniciAdiLabel.Name = "KullaniciAdiLabel";
+            KullaniciAdiLabel.Size = new Size(134, 28);
+            KullaniciAdiLabel.TabIndex = 111116;
+            KullaniciAdiLabel.Text = "Kullanıcı Adı : ";
             // 
-            // Kurtarmakodutextbox
+            // geriBTN
             // 
-            Kurtarmakodutextbox.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            Kurtarmakodutextbox.Location = new Point(407, 222);
-            Kurtarmakodutextbox.Name = "Kurtarmakodutextbox";
-            Kurtarmakodutextbox.Size = new Size(199, 43);
-            Kurtarmakodutextbox.TabIndex = 5;
+            geriBTN.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            geriBTN.Location = new Point(333, 364);
+            geriBTN.Name = "geriBTN";
+            geriBTN.Size = new Size(173, 41);
+            geriBTN.TabIndex = 111119;
+            geriBTN.Text = "Geri";
+            geriBTN.UseVisualStyleBackColor = true;
+            geriBTN.Click += geriBTN_Click;
+            // 
+            // kaydetBTN
+            // 
+            kaydetBTN.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            kaydetBTN.Location = new Point(51, 364);
+            kaydetBTN.Name = "kaydetBTN";
+            kaydetBTN.Size = new Size(173, 41);
+            kaydetBTN.TabIndex = 111118;
+            kaydetBTN.Text = "Şifremi Kurtar";
+            kaydetBTN.UseVisualStyleBackColor = true;
+            kaydetBTN.Click += kaydetBTN_Click;
             // 
             // FormSifremiUnuttum
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 450);
-            Controls.Add(Kurtarmakodutextbox);
-            Controls.Add(kullaniciaditextbox);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(girisSayfaBTN);
-            Controls.Add(sifreGetirBTN);
+            ClientSize = new Size(568, 426);
+            Controls.Add(geriBTN);
+            Controls.Add(kaydetBTN);
+            Controls.Add(KullaniciPictureBox);
+            Controls.Add(kurtarmaKoduText);
+            Controls.Add(kullanıcıAdıText);
+            Controls.Add(SifreLabel);
+            Controls.Add(KullaniciAdiLabel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormSifremiUnuttum";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Şifremi Unuttum";
+            FormClosed += FormSifremiUnuttum_FormClosed_1;
+            ((System.ComponentModel.ISupportInitialize)KullaniciPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button sifreGetirBTN;
-        private Button girisSayfaBTN;
-        private Label label1;
-        private Label label2;
-        private TextBox kullaniciaditextbox;
-        private TextBox Kurtarmakodutextbox;
+        private PictureBox KullaniciPictureBox;
+        private TextBox kurtarmaKoduText;
+        private TextBox kullanıcıAdıText;
+        private Label SifreLabel;
+        private Label KullaniciAdiLabel;
+        private Button geriBTN;
+        private Button kaydetBTN;
     }
 }

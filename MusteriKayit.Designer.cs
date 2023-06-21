@@ -48,7 +48,7 @@
             kaydetBTN.Location = new Point(78, 359);
             kaydetBTN.Name = "kaydetBTN";
             kaydetBTN.Size = new Size(173, 41);
-            kaydetBTN.TabIndex = 5;
+            kaydetBTN.TabIndex = 6;
             kaydetBTN.Text = "Kaydet";
             kaydetBTN.UseVisualStyleBackColor = true;
             kaydetBTN.Click += kaydetBTN_Click;
@@ -59,7 +59,7 @@
             geriBTN.Location = new Point(360, 359);
             geriBTN.Name = "geriBTN";
             geriBTN.Size = new Size(173, 41);
-            geriBTN.TabIndex = 6;
+            geriBTN.TabIndex = 7;
             geriBTN.Text = "Geri";
             geriBTN.UseVisualStyleBackColor = true;
             geriBTN.Click += geriBTN_Click;
@@ -68,7 +68,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(165, 92);
+            label1.Location = new Point(165, 80);
             label1.Name = "label1";
             label1.Size = new Size(47, 28);
             label1.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(147, 140);
+            label2.Location = new Point(147, 128);
             label2.Name = "label2";
             label2.Size = new Size(65, 28);
             label2.TabIndex = 3;
@@ -88,7 +88,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(161, 188);
+            label3.Location = new Point(161, 176);
             label3.Name = "label3";
             label3.Size = new Size(51, 28);
             label3.TabIndex = 4;
@@ -98,7 +98,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(131, 236);
+            label4.Location = new Point(131, 224);
             label4.Name = "label4";
             label4.Size = new Size(81, 28);
             label4.TabIndex = 5;
@@ -107,7 +107,7 @@
             // tcText
             // 
             tcText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            tcText.Location = new Point(218, 92);
+            tcText.Location = new Point(218, 80);
             tcText.Name = "tcText";
             tcText.Size = new Size(173, 32);
             tcText.TabIndex = 1;
@@ -115,7 +115,7 @@
             // sifreText
             // 
             sifreText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            sifreText.Location = new Point(218, 140);
+            sifreText.Location = new Point(218, 128);
             sifreText.Name = "sifreText";
             sifreText.Size = new Size(173, 32);
             sifreText.TabIndex = 2;
@@ -123,7 +123,7 @@
             // adText
             // 
             adText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            adText.Location = new Point(218, 188);
+            adText.Location = new Point(218, 176);
             adText.Name = "adText";
             adText.Size = new Size(173, 32);
             adText.TabIndex = 3;
@@ -131,7 +131,7 @@
             // soyadText
             // 
             soyadText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            soyadText.Location = new Point(218, 236);
+            soyadText.Location = new Point(218, 224);
             soyadText.Name = "soyadText";
             soyadText.Size = new Size(173, 32);
             soyadText.TabIndex = 4;
@@ -139,16 +139,16 @@
             // telNoText
             // 
             telNoText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            telNoText.Location = new Point(218, 284);
+            telNoText.Location = new Point(218, 272);
             telNoText.Name = "telNoText";
             telNoText.Size = new Size(173, 32);
-            telNoText.TabIndex = 7;
+            telNoText.TabIndex = 5;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(124, 284);
+            label5.Location = new Point(124, 272);
             label5.Name = "label5";
             label5.Size = new Size(88, 28);
             label5.TabIndex = 8;
