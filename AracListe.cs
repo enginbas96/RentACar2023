@@ -16,20 +16,15 @@ namespace RentACar2023
         {
             InitializeComponent();
         }
-
         private void AracListe_Load(object sender, EventArgs e)
         {
             veriYukleyici();
         }
-
         private void cikisBTN_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void veriGoruntuleyici_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            GirisSayfasi geriDon = new GirisSayfasi();
+            geriDon.Show();
+            this.Hide();
         }
         void veriYukleyici()
         {
@@ -55,7 +50,6 @@ namespace RentACar2023
             veriGoruntuleyici.Columns[7].HeaderText = "Vites";
             veriGoruntuleyici.Columns[8].HeaderText = "Koltuk Sayısı";
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             veriGoruntuleyici.ReadOnly = true;
@@ -79,6 +73,10 @@ namespace RentACar2023
             veriGoruntuleyici.Columns[6].HeaderText = "KM";
             veriGoruntuleyici.Columns[7].HeaderText = "Vites";
             veriGoruntuleyici.Columns[8].HeaderText = "Koltuk Sayısı";
+        }
+        private void AracListe_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

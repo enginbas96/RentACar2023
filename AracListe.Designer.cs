@@ -28,34 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AracListe));
             veriGoruntuleyici = new DataGridView();
             label1 = new Label();
             textBox1 = new TextBox();
             cikisBTN = new Button();
-            ımageList1 = new ImageList(components);
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             SuspendLayout();
             // 
             // veriGoruntuleyici
             // 
             veriGoruntuleyici.AllowUserToAddRows = false;
-            veriGoruntuleyici.AllowUserToDeleteRows = false;
+            veriGoruntuleyici.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             veriGoruntuleyici.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             veriGoruntuleyici.Location = new Point(12, 22);
             veriGoruntuleyici.Name = "veriGoruntuleyici";
             veriGoruntuleyici.RowHeadersWidth = 51;
             veriGoruntuleyici.RowTemplate.Height = 29;
-            veriGoruntuleyici.Size = new Size(1093, 270);
+            veriGoruntuleyici.Size = new Size(1093, 526);
             veriGoruntuleyici.TabIndex = 7;
-            veriGoruntuleyici.CellContentClick += veriGoruntuleyici_CellContentClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(27, 363);
+            label1.Location = new Point(605, 580);
             label1.Name = "label1";
             label1.Size = new Size(88, 32);
             label1.TabIndex = 8;
@@ -64,7 +60,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(121, 365);
+            textBox1.Location = new Point(699, 582);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(157, 32);
             textBox1.TabIndex = 9;
@@ -73,22 +69,14 @@
             // cikisBTN
             // 
             cikisBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            cikisBTN.ImageKey = "cikisyap.png";
-            cikisBTN.ImageList = ımageList1;
-            cikisBTN.Location = new Point(121, 462);
+            cikisBTN.ImageKey = "(yok)";
+            cikisBTN.Location = new Point(916, 578);
             cikisBTN.Name = "cikisBTN";
             cikisBTN.Size = new Size(157, 43);
             cikisBTN.TabIndex = 10;
             cikisBTN.Text = "Çıkış";
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
-            // 
-            // ımageList1
-            // 
-            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
-            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
-            ımageList1.TransparentColor = Color.Transparent;
-            ımageList1.Images.SetKeyName(0, "cikisyap.png");
             // 
             // AracListe
             // 
@@ -105,6 +93,7 @@
             Name = "AracListe";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AracListe";
+            FormClosed += AracListe_FormClosed;
             Load += AracListe_Load;
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).EndInit();
             ResumeLayout(false);
@@ -117,6 +106,5 @@
         private Label label1;
         private TextBox textBox1;
         private Button cikisBTN;
-        private ImageList ımageList1;
     }
 }
