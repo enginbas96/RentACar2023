@@ -61,6 +61,7 @@
             // 
             plakaText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             plakaText.Location = new Point(699, 582);
+            plakaText.MaxLength = 10;
             plakaText.Name = "plakaText";
             plakaText.Size = new Size(157, 32);
             plakaText.TabIndex = 1;
