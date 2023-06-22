@@ -33,7 +33,6 @@
             cikisBTN = new Button();
             ımageList1 = new ImageList(components);
             profilBTN = new Button();
-            aracFiyatBTN = new Button();
             aracKiralamaBTN = new Button();
             crudBTN = new Button();
             aracEkleBTN = new Button();
@@ -59,6 +58,7 @@
             label12 = new Label();
             label10 = new Label();
             label11 = new Label();
+            aracFiyatBTN = new Button();
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             SuspendLayout();
             // 
@@ -103,20 +103,6 @@
             profilBTN.TextAlign = ContentAlignment.MiddleRight;
             profilBTN.UseVisualStyleBackColor = true;
             profilBTN.Click += profilBTN_Click;
-            // 
-            // aracFiyatBTN
-            // 
-            aracFiyatBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            aracFiyatBTN.ImageKey = "pngegg (4).png";
-            aracFiyatBTN.ImageList = ımageList1;
-            aracFiyatBTN.Location = new Point(618, 12);
-            aracFiyatBTN.Name = "aracFiyatBTN";
-            aracFiyatBTN.Size = new Size(177, 47);
-            aracFiyatBTN.TabIndex = 3;
-            aracFiyatBTN.Text = "Araç Fiyat İşlemleri";
-            aracFiyatBTN.TextAlign = ContentAlignment.MiddleRight;
-            aracFiyatBTN.UseVisualStyleBackColor = true;
-            aracFiyatBTN.Click += aracFiyatBTN_Click;
             // 
             // aracKiralamaBTN
             // 
@@ -240,6 +226,7 @@
             // veriGoruntuleyici
             // 
             veriGoruntuleyici.AllowUserToAddRows = false;
+            veriGoruntuleyici.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             veriGoruntuleyici.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             veriGoruntuleyici.Location = new Point(16, 74);
             veriGoruntuleyici.Name = "veriGoruntuleyici";
@@ -248,31 +235,37 @@
             veriGoruntuleyici.Size = new Size(1093, 270);
             veriGoruntuleyici.TabIndex = 6;
             veriGoruntuleyici.CellClick += veriGoruntuleyici_CellClick;
-            veriGoruntuleyici.CellContentClick += veriGoruntuleyici_CellContentClick;
             // 
             // hasarText
             // 
             hasarText.Location = new Point(902, 366);
+            hasarText.MaxLength = 1000;
             hasarText.Name = "hasarText";
             hasarText.Size = new Size(175, 128);
             hasarText.TabIndex = 15;
             hasarText.Text = "";
+            hasarText.TextChanged += hasarText_TextChanged;
             // 
             // kmText
             // 
             kmText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             kmText.Location = new Point(551, 402);
+            kmText.MaxLength = 10;
             kmText.Name = "kmText";
             kmText.Size = new Size(150, 34);
             kmText.TabIndex = 12;
+            kmText.KeyPress += kmText_KeyPress;
             // 
             // renkText
             // 
             renkText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             renkText.Location = new Point(551, 360);
+            renkText.MaxLength = 30;
             renkText.Name = "renkText";
             renkText.Size = new Size(150, 34);
             renkText.TabIndex = 11;
+            renkText.TextChanged += renkText_TextChanged;
+            renkText.KeyPress += renkText_KeyPress;
             // 
             // modelText
             // 
@@ -391,11 +384,22 @@
             label11.TabIndex = 1008;
             label11.Text = "Plaka : ";
             // 
+            // aracFiyatBTN
+            // 
+            aracFiyatBTN.Location = new Point(618, 12);
+            aracFiyatBTN.Name = "aracFiyatBTN";
+            aracFiyatBTN.Size = new Size(177, 47);
+            aracFiyatBTN.TabIndex = 1017;
+            aracFiyatBTN.Text = "Araç Fiyat İşlemleri";
+            aracFiyatBTN.UseVisualStyleBackColor = true;
+            aracFiyatBTN.Click += aracFiyatBTN_Click;
+            // 
             // AracCrudForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1119, 653);
+            Controls.Add(aracFiyatBTN);
             Controls.Add(islemBTN);
             Controls.Add(guncelleRB);
             Controls.Add(silRB);
@@ -420,7 +424,6 @@
             Controls.Add(label11);
             Controls.Add(cikisBTN);
             Controls.Add(profilBTN);
-            Controls.Add(aracFiyatBTN);
             Controls.Add(aracKiralamaBTN);
             Controls.Add(crudBTN);
             Controls.Add(aracEkleBTN);
@@ -430,6 +433,7 @@
             Name = "AracCrudForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CRUD İşlemleri";
+            FormClosed += AracCrudForm_FormClosed;
             Load += AracCrudForm_Load;
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).EndInit();
             ResumeLayout(false);
@@ -439,7 +443,6 @@
         #endregion
         private Button cikisBTN;
         private Button profilBTN;
-        private Button aracFiyatBTN;
         private Button aracKiralamaBTN;
         private Button crudBTN;
         private Button aracEkleBTN;
@@ -466,5 +469,6 @@
         private Label label10;
         private Label label11;
         private ImageList ımageList1;
+        private Button aracFiyatBTN;
     }
 }

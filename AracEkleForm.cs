@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RentACar2023
 {
@@ -17,17 +18,14 @@ namespace RentACar2023
         {
             InitializeComponent();
         }
-
         public AracEkleForm(String kullaniciAdi)
         {
             InitializeComponent();
         }
-
         private void AracEkleForm_Load(object sender, EventArgs e)
         {
             aracEkleBTN.Enabled = false;
         }
-
         private void SayfaYonlendir(String sayfa)
         {
             if (sayfa == "aracEkle")
@@ -61,37 +59,30 @@ namespace RentACar2023
                 this.Hide();
             }
         }
-
         private void crudBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("crudIslem");
         }
-
         private void aracKiralamaBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("kiralama");
         }
-
         private void aracFiyatBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("fiyatIslem");
         }
-
         private void profilBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("profil");
         }
-
         private void aracEkleBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("aracEkle");
         }
-
         private void cikisBTN_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void ekleBTN_Click(object sender, EventArgs e)
         {
             if (plakaText.Text == "" || markaText.Text == "" || modelText.Text == "" || yakitTuruCB.Text == "" || hasarText.Text == ""
@@ -123,10 +114,56 @@ namespace RentACar2023
                 }
             }
         }
-
         private void AracEkleForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+        private void plakaText_TextChanged(object sender, EventArgs e)
+        {
+            plakaText.Text = plakaText.Text.ToUpper();
+            plakaText.SelectionStart = plakaText.Text.Length;
+        }
+        private void kmText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void markaText_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(markaText.Text))
+            {
+                string text = markaText.Text;
+                markaText.Text = char.ToUpper(text[0]) + text.Substring(1);
+                markaText.SelectionStart = markaText.Text.Length;
+            }
+        }
+        private void modelText_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(modelText.Text))
+            {
+                string text = modelText.Text;
+                modelText.Text = char.ToUpper(text[0]) + text.Substring(1);
+                modelText.SelectionStart = modelText.Text.Length;
+            }
+        }
+        private void hasarText_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(hasarText.Text))
+            {
+                string text = hasarText.Text;
+                hasarText.Text = char.ToUpper(text[0]) + text.Substring(1);
+                hasarText.SelectionStart = hasarText.Text.Length;
+            }
+        }        private void renkText_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(renkText.Text))
+            {
+                string text = renkText.Text;
+                renkText.Text = char.ToUpper(text[0]) + text.Substring(1);
+                renkText.SelectionStart = renkText.Text.Length;
+            }
         }
     }
 }

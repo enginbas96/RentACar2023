@@ -38,6 +38,7 @@
             SifreUnuttumLinkLabel = new LinkLabel();
             ımageList1 = new ImageList(components);
             KullaniciPictureBox = new PictureBox();
+            girisSayfasiLink = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)KullaniciPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             // 
             GirisYapButton.ImageAlign = ContentAlignment.MiddleLeft;
             GirisYapButton.ImageKey = "(yok)";
-            GirisYapButton.Location = new Point(200, 324);
+            GirisYapButton.Location = new Point(200, 323);
             GirisYapButton.Name = "GirisYapButton";
             GirisYapButton.Size = new Size(173, 41);
             GirisYapButton.TabIndex = 3;
@@ -88,6 +89,7 @@
             GirisYapSifreTextBox.Name = "GirisYapSifreTextBox";
             GirisYapSifreTextBox.Size = new Size(173, 32);
             GirisYapSifreTextBox.TabIndex = 2;
+            GirisYapSifreTextBox.UseSystemPasswordChar = true;
             // 
             // SifreUnuttumLinkLabel
             // 
@@ -117,12 +119,24 @@
             KullaniciPictureBox.TabIndex = 6;
             KullaniciPictureBox.TabStop = false;
             // 
+            // girisSayfasiLink
+            // 
+            girisSayfasiLink.AutoSize = true;
+            girisSayfasiLink.Location = new Point(12, 9);
+            girisSayfasiLink.Name = "girisSayfasiLink";
+            girisSayfasiLink.Size = new Size(29, 20);
+            girisSayfasiLink.TabIndex = 111113;
+            girisSayfasiLink.TabStop = true;
+            girisSayfasiLink.Text = "<<";
+            girisSayfasiLink.LinkClicked += girisSayfasiLink_LinkClicked;
+            // 
             // GirisYapForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(568, 426);
+            Controls.Add(girisSayfasiLink);
             Controls.Add(KullaniciPictureBox);
             Controls.Add(SifreUnuttumLinkLabel);
             Controls.Add(GirisYapSifreTextBox);
@@ -152,5 +166,6 @@
         private LinkLabel SifreUnuttumLinkLabel;
         private ImageList ımageList1;
         private PictureBox KullaniciPictureBox;
+        private LinkLabel girisSayfasiLink;
     }
 }

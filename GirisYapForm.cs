@@ -31,7 +31,7 @@ namespace RentACar2023
                 cnn.Close();
                 this.Hide();
             }
-            else 
+            else
             {
                 MessageBox.Show("Kullanıcı adı veya şifre hatalı, lütfen kontrol edip tekrar deneyiniz.");
             }
@@ -45,6 +45,12 @@ namespace RentACar2023
         private void GirisYapForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+        private void girisSayfasiLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            GirisSayfasi giris = new GirisSayfasi();
+            giris.Show();
+            this.Hide();
         }
     }
 }

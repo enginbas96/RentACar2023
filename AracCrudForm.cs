@@ -17,14 +17,11 @@ namespace RentACar2023
         {
             InitializeComponent();
         }
-
-
         private void AracCrudForm_Load(object sender, EventArgs e)
         {
+            crudBTN.Enabled = false;
             veriYukleyici();
         }
-
-
         private void SayfaYonlendir(String sayfa)
         {
             if (sayfa == "aracEkle")
@@ -58,37 +55,30 @@ namespace RentACar2023
                 this.Hide();
             }
         }
-
         private void crudBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("crudIslem");
         }
-
         private void aracKiralamaBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("kiralama");
         }
-
-        private void aracFiyatBTN_Click(object sender, EventArgs e)
-        {
-            SayfaYonlendir("fiyatIslem");
-        }
-
         private void profilBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("profil");
         }
-
+        private void aracFiyatBTN_Click(object sender, EventArgs e)
+        {
+            SayfaYonlendir("fiyatIslem");
+        }
         private void aracEkleBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("aracEkle");
         }
-
         private void cikisBTN_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void islemBTN_Click(object sender, EventArgs e)
         {
             if (plakaText.Text == "" || markaText.Text == "" || modelText.Text == "" || yakitTuruCB.Text == "" || hasarText.Text == ""
@@ -118,6 +108,7 @@ namespace RentACar2023
                         sorgu1.ExecuteNonQuery();
                         MessageBox.Show("Bilgiler Güncellendi");
                         cnn.Close();
+                        temizle();
                         veriYukleyici();
                     }
                     else
@@ -142,21 +133,18 @@ namespace RentACar2023
                         MessageBox.Show("Araç başarı ile silindi.");
                         cnn.Close();
                         veriYukleyici();
+                        temizle();
                     }
                     else
                     {
                         MessageBox.Show("Böyle bir araç yok");
                         cnn.Close();
                     }
-
                 }
             }
-
         }
-
         void veriYukleyici()
         {
-            aracFiyatBTN.Enabled = false;
             veriGoruntuleyici.ReadOnly = true;
             veriGoruntuleyici.AllowUserToDeleteRows = false;
             string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
@@ -179,39 +167,84 @@ namespace RentACar2023
             veriGoruntuleyici.Columns[7].HeaderText = "Vites";
             veriGoruntuleyici.Columns[8].HeaderText = "Koltuk Sayısı";
         }
-
         private void veriGoruntuleyici_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = veriGoruntuleyici.Rows[e.RowIndex];
-            plakaText.Text = row.Cells[0].Value.ToString();
-            markaText.Text = row.Cells[1].Value.ToString();
-            modelText.Text = row.Cells[2].Value.ToString();
-            yakitTuruCB.Text = row.Cells[3].Value.ToString();
-            renkText.Text = row.Cells[4].Value.ToString();
-            hasarText.Text = row.Cells[5].Value.ToString();
-            kmText.Text = row.Cells[6].Value.ToString();
-            vitesCB.Text = row.Cells[7].Value.ToString();
-            koltukSayiCB.Text = row.Cells[8].Value.ToString();
-            silRB.Enabled = true;
-            guncelleRB.Enabled = true;
+            try
+            {
+                DataGridViewRow row = veriGoruntuleyici.Rows[e.RowIndex];
+                plakaText.Text = row.Cells[0].Value.ToString();
+                markaText.Text = row.Cells[1].Value.ToString();
+                modelText.Text = row.Cells[2].Value.ToString();
+                yakitTuruCB.Text = row.Cells[3].Value.ToString();
+                renkText.Text = row.Cells[4].Value.ToString();
+                hasarText.Text = row.Cells[5].Value.ToString();
+                kmText.Text = row.Cells[6].Value.ToString();
+                vitesCB.Text = row.Cells[7].Value.ToString();
+                koltukSayiCB.Text = row.Cells[8].Value.ToString();
+                silRB.Enabled = true;
+                guncelleRB.Enabled = true;
+            }
+            catch { }
         }
-
         private void silRB_CheckedChanged(object sender, EventArgs e)
         {
             islemBTN.Text = "Aracı Sil";
         }
-
         private void guncelleRB_CheckedChanged(object sender, EventArgs e)
         {
             islemBTN.Text = "Aracı Güncelle";
         }
-
-        private void veriGoruntuleyici_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        void temizle()
         {
+            plakaText.Clear();
+            markaText.Clear();
+            modelText.Clear();
+            yakitTuruCB.Text = "";
+            renkText.Clear();
+            kmText.Clear();
+            koltukSayiCB.Text = "";
+            vitesCB.Text = "";
+            hasarText.Clear();
+            guncelleRB.Enabled = false;
+            silRB.Enabled = false;
+        }
+        private void renkText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void renkText_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(renkText.Text))
+            {
+                string text = renkText.Text;
+                renkText.Text = char.ToUpper(text[0]) + text.Substring(1);
+                renkText.SelectionStart = renkText.Text.Length;
+            }
+        }
+        private void hasarText_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(hasarText.Text))
+            {
+                string text = hasarText.Text;
+                hasarText.Text = char.ToUpper(text[0]) + text.Substring(1);
+                hasarText.SelectionStart = hasarText.Text.Length;
+            }
 
         }
+        private void kmText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void AracCrudForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
-
-
 }
 

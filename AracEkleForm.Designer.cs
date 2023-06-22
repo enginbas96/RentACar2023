@@ -179,17 +179,21 @@
             // 
             kmText.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             kmText.Location = new Point(784, 192);
+            kmText.MaxLength = 10;
             kmText.Name = "kmText";
             kmText.Size = new Size(217, 47);
             kmText.TabIndex = 12;
+            kmText.KeyPress += kmText_KeyPress;
             // 
             // renkText
             // 
             renkText.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             renkText.Location = new Point(784, 136);
+            renkText.MaxLength = 50;
             renkText.Name = "renkText";
             renkText.Size = new Size(216, 47);
             renkText.TabIndex = 11;
+            renkText.TextChanged += renkText_TextChanged;
             // 
             // hasarText
             // 
@@ -198,6 +202,7 @@
             hasarText.Name = "hasarText";
             hasarText.Size = new Size(216, 47);
             hasarText.TabIndex = 10;
+            hasarText.TextChanged += hasarText_TextChanged;
             // 
             // yakitTuruCB
             // 
@@ -214,25 +219,31 @@
             // 
             modelText.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             modelText.Location = new Point(263, 248);
+            modelText.MaxLength = 20;
             modelText.Name = "modelText";
             modelText.Size = new Size(216, 47);
             modelText.TabIndex = 8;
+            modelText.TextChanged += modelText_TextChanged;
             // 
             // markaText
             // 
             markaText.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             markaText.Location = new Point(263, 191);
+            markaText.MaxLength = 20;
             markaText.Name = "markaText";
             markaText.Size = new Size(216, 47);
             markaText.TabIndex = 7;
+            markaText.TextChanged += markaText_TextChanged;
             // 
             // plakaText
             // 
             plakaText.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             plakaText.Location = new Point(263, 135);
+            plakaText.MaxLength = 10;
             plakaText.Name = "plakaText";
             plakaText.Size = new Size(216, 47);
             plakaText.TabIndex = 6;
+            plakaText.TextChanged += plakaText_TextChanged;
             // 
             // label9
             // 
