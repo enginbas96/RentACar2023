@@ -240,6 +240,7 @@
             yeniFiyatText.Name = "yeniFiyatText";
             yeniFiyatText.Size = new Size(150, 32);
             yeniFiyatText.TabIndex = 9;
+            yeniFiyatText.KeyPress += yeniFiyatText_KeyPress;
             // 
             // label2
             // 

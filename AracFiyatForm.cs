@@ -55,37 +55,30 @@ namespace RentACar2023
                 this.Hide();
             }
         }
-
         private void crudBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("crudIslem");
         }
-
         private void aracKiralamaBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("kiralama");
         }
-
         private void aracFiyatBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("fiyatIslem");
         }
-
         private void profilBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("profil");
         }
-
         private void aracEkleBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("aracEkle");
         }
-
         private void cikisBTN_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void guncelleBTN_Click(object sender, EventArgs e)
         {
             if (plakaText.Text == "")
@@ -128,16 +121,21 @@ namespace RentACar2023
                 }
             }
         }
-
         public void veriGoruntuleyici_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = veriGoruntuleyici.Rows[e.RowIndex];
-            plakaText.Text = row.Cells[0].Value.ToString();
-            gunlukFiyatText.Text = row.Cells[1].Value.ToString();
-            haftalikFiyatText.Text = row.Cells[2].Value.ToString();
-            kmBasinaText.Text = row.Cells[3].Value.ToString();
-            gunlukDegisimRB.Enabled = true;
-            kmBasinaDegisimRB.Enabled = true;
+            try
+            {
+                DataGridViewRow row = veriGoruntuleyici.Rows[e.RowIndex];
+                plakaText.Text = row.Cells[0].Value.ToString();
+                gunlukFiyatText.Text = row.Cells[1].Value.ToString();
+                haftalikFiyatText.Text = row.Cells[2].Value.ToString();
+                kmBasinaText.Text = row.Cells[3].Value.ToString();
+                gunlukDegisimRB.Enabled = true;
+                kmBasinaDegisimRB.Enabled = true;
+            }
+            catch
+            {
+            }
         }
         void veriYukleyici()
         {
@@ -178,6 +176,13 @@ namespace RentACar2023
         private void AracFiyatForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+        private void yeniFiyatText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

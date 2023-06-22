@@ -17,7 +17,6 @@ namespace RentACar2023
         {
             InitializeComponent();
         }
-
         private void AracKiralaForm_Load(object sender, EventArgs e)
         {
             aracKiralamaBTN.Enabled = false;
@@ -46,7 +45,7 @@ namespace RentACar2023
             string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
-            MySqlCommand sorgu = new MySqlCommand("SELECT * FROM users WHERE TC= '"+tcText.Text+"'", cnn);
+            MySqlCommand sorgu = new MySqlCommand("SELECT * FROM users WHERE TC= '" + tcText.Text + "'", cnn);
             MySqlDataReader tara = sorgu.ExecuteReader();
             if (tara.Read())
             {
@@ -61,16 +60,13 @@ namespace RentACar2023
                     cnn.Close();
                 }
             }
-            else 
+            else
             {
                 MessageBox.Show("Bu TC kimlik numarasına ait kullanıcı bulunamadı. Kullanıcı kaydını yapıp tekrar deneyiniz.");
             }
             cnn.Close();
             MessageBox.Show(musteriID.ToString());
-            
-            
         }
-
         private void SayfaYonlendir(String sayfa)
         {
             if (sayfa == "aracEkle")
@@ -104,41 +100,33 @@ namespace RentACar2023
                 this.Hide();
             }
         }
-
         private void crudBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("crudIslem");
         }
-
         private void aracKiralamaBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("kiralama");
         }
-
         private void aracFiyatBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("fiyatIslem");
         }
-
         private void profilBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("profil");
         }
-
         private void aracEkleBTN_Click(object sender, EventArgs e)
         {
             SayfaYonlendir("aracEkle");
         }
-
         private void cikisBTN_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void kiralaBTN_Click(object sender, EventArgs e)
         {
             if (plakaCB.Text == "" || tcText.Text == "" || adText.Text == "" || soyadText.Text == "" || telefonText.Text == "")
-
             {
                 MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.");
             }
@@ -154,29 +142,66 @@ namespace RentACar2023
         int plaka_id;
         private void plakaCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            
-                string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
-                MySqlConnection cnn = new MySqlConnection(myConnectionString);
-                cnn.Open();
-                MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE plaka = '" +plakaCB.Text+"'", cnn);
-                MySqlDataReader tara = sorgu.ExecuteReader();
-                while (tara.Read())
-                {
-                    
+            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            MySqlConnection cnn = new MySqlConnection(myConnectionString);
+            cnn.Open();
+            MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE plaka = '" + plakaCB.Text + "'", cnn);
+            MySqlDataReader tara = sorgu.ExecuteReader();
+            while (tara.Read())
+            {
                 plaka_id = tara.GetInt32("id");
-
-                }
-                cnn.Close();
-
+            }
+            cnn.Close();
         }
-
-        private void tcText_TextChanged(object sender, EventArgs e)
+        private void adText_TextChanged(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(adText.Text))
+            {
+                string text = adText.Text;
+                adText.Text = char.ToUpper(text[0]) + text.Substring(1);
+                adText.SelectionStart = adText.Text.Length;
+            }
+        }
+        private void soyadText_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(soyadText.Text))
+            {
+                string text = soyadText.Text;
+                soyadText.Text = char.ToUpper(text[0]) + text.Substring(1);
+                soyadText.SelectionStart = soyadText.Text.Length;
+            }
+        }
+        private void tcText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void telefonText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void adText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void soyadText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void AracKiralaForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
-
-
-
 }

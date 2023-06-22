@@ -188,37 +188,47 @@
             telefonText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             telefonText.Location = new Point(228, 340);
             telefonText.Margin = new Padding(3, 4, 3, 4);
+            telefonText.MaxLength = 11;
             telefonText.Name = "telefonText";
+            telefonText.PlaceholderText = "05XXxxxXXxx";
             telefonText.Size = new Size(150, 32);
             telefonText.TabIndex = 10;
+            telefonText.KeyPress += telefonText_KeyPress;
             // 
             // soyadText
             // 
             soyadText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             soyadText.Location = new Point(228, 288);
             soyadText.Margin = new Padding(3, 4, 3, 4);
+            soyadText.MaxLength = 50;
             soyadText.Name = "soyadText";
             soyadText.Size = new Size(150, 32);
             soyadText.TabIndex = 9;
+            soyadText.TextChanged += soyadText_TextChanged;
+            soyadText.KeyPress += soyadText_KeyPress;
             // 
             // adText
             // 
             adText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             adText.Location = new Point(228, 243);
             adText.Margin = new Padding(3, 4, 3, 4);
+            adText.MaxLength = 50;
             adText.Name = "adText";
             adText.Size = new Size(150, 32);
             adText.TabIndex = 8;
+            adText.TextChanged += adText_TextChanged;
+            adText.KeyPress += adText_KeyPress;
             // 
             // tcText
             // 
             tcText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             tcText.Location = new Point(228, 198);
             tcText.Margin = new Padding(3, 4, 3, 4);
+            tcText.MaxLength = 11;
             tcText.Name = "tcText";
             tcText.Size = new Size(150, 32);
             tcText.TabIndex = 7;
-            tcText.TextChanged += tcText_TextChanged;
+            tcText.KeyPress += tcText_KeyPress;
             // 
             // label25
             // 
@@ -333,6 +343,7 @@
             Name = "AracKiralaForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AracKiralaForm";
+            FormClosed += AracKiralaForm_FormClosed;
             Load += AracKiralaForm_Load;
             ResumeLayout(false);
             PerformLayout();

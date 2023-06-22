@@ -79,7 +79,6 @@ namespace RentACar2023
         {
             Application.Exit();
         }
-
         private void kullaniciSilBTN_Click(object sender, EventArgs e)
         {
             if (deleteKullaniciAdi.Text == "")
@@ -110,7 +109,6 @@ namespace RentACar2023
                 }
             }
         }
-
         private void sifreDegistirBTN_Click(object sender, EventArgs e)
         {
             if (sifreDegisKullaniciAdi.Text == "" || sifreDegisSifre.Text == "")
@@ -138,16 +136,13 @@ namespace RentACar2023
                     MessageBox.Show("Böyle bir kullanıcı bulunamadı.");
                     cnn.Close();
                 }
-
             }
         }
-
         private void kullaniciOlusturBTN_Click(object sender, EventArgs e)
         {
             if (olusturKullaniciAdi.Text == "" || olusturSifre.Text == "" || olusturAd.Text == "" || olusturSoyad.Text == "")
             {
                 MessageBox.Show("Lütfen boş alanları doldurup tekrar deneyiniz.");
-
             }
             else
             {
@@ -172,7 +167,6 @@ namespace RentACar2023
                 }
             }
         }
-
         void resetle()
         {
             silGB.Enabled = false;
@@ -203,7 +197,39 @@ namespace RentACar2023
         private void olusturRB_CheckedChanged(object sender, EventArgs e)
         {
             resetle();
-            olusturGB.Enabled= true;
+            olusturGB.Enabled = true;
+        }
+        private void olusturAd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void olusturSoyad_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(olusturSoyad.Text))
+            {
+                string text = olusturSoyad.Text;
+                olusturSoyad.Text = char.ToUpper(text[0]) + text.Substring(1);
+                olusturSoyad.SelectionStart = olusturSoyad.Text.Length;
+            }
+        }
+        private void olusturSoyad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void olusturAd_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(olusturAd.Text))
+            {
+                string text = olusturAd.Text;
+                olusturAd.Text = char.ToUpper(text[0]) + text.Substring(1);
+                olusturAd.SelectionStart = olusturAd.Text.Length;
+            }
         }
     }
 }

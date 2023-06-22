@@ -156,7 +156,8 @@ namespace RentACar2023
                 hasarText.Text = char.ToUpper(text[0]) + text.Substring(1);
                 hasarText.SelectionStart = hasarText.Text.Length;
             }
-        }        private void renkText_TextChanged(object sender, EventArgs e)
+        }
+        private void renkText_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(renkText.Text))
             {

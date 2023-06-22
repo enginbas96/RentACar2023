@@ -175,6 +175,7 @@
             // 
             deleteKullaniciAdi.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             deleteKullaniciAdi.Location = new Point(60, 186);
+            deleteKullaniciAdi.MaxLength = 30;
             deleteKullaniciAdi.Name = "deleteKullaniciAdi";
             deleteKullaniciAdi.Size = new Size(211, 32);
             deleteKullaniciAdi.TabIndex = 6;
@@ -220,9 +221,11 @@
             // 
             sifreDegisSifre.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             sifreDegisSifre.Location = new Point(60, 218);
+            sifreDegisSifre.MaxLength = 30;
             sifreDegisSifre.Name = "sifreDegisSifre";
             sifreDegisSifre.Size = new Size(211, 32);
             sifreDegisSifre.TabIndex = 9;
+            sifreDegisSifre.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -238,6 +241,7 @@
             // 
             sifreDegisKullaniciAdi.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             sifreDegisKullaniciAdi.Location = new Point(60, 136);
+            sifreDegisKullaniciAdi.MaxLength = 30;
             sifreDegisKullaniciAdi.Name = "sifreDegisKullaniciAdi";
             sifreDegisKullaniciAdi.Size = new Size(211, 32);
             sifreDegisKullaniciAdi.TabIndex = 8;
@@ -287,9 +291,12 @@
             // 
             olusturSoyad.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             olusturSoyad.Location = new Point(62, 286);
+            olusturSoyad.MaxLength = 30;
             olusturSoyad.Name = "olusturSoyad";
             olusturSoyad.Size = new Size(211, 32);
             olusturSoyad.TabIndex = 17;
+            olusturSoyad.TextChanged += olusturSoyad_TextChanged;
+            olusturSoyad.KeyPress += olusturSoyad_KeyPress;
             // 
             // label7
             // 
@@ -305,9 +312,12 @@
             // 
             olusturAd.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             olusturAd.Location = new Point(62, 211);
+            olusturAd.MaxLength = 30;
             olusturAd.Name = "olusturAd";
             olusturAd.Size = new Size(211, 32);
             olusturAd.TabIndex = 15;
+            olusturAd.TextChanged += olusturAd_TextChanged;
+            olusturAd.KeyPress += olusturAd_KeyPress;
             // 
             // label6
             // 
@@ -323,9 +333,11 @@
             // 
             olusturSifre.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             olusturSifre.Location = new Point(62, 136);
+            olusturSifre.MaxLength = 30;
             olusturSifre.Name = "olusturSifre";
             olusturSifre.Size = new Size(211, 32);
             olusturSifre.TabIndex = 12;
+            olusturSifre.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -341,6 +353,7 @@
             // 
             olusturKullaniciAdi.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             olusturKullaniciAdi.Location = new Point(62, 61);
+            olusturKullaniciAdi.MaxLength = 30;
             olusturKullaniciAdi.Name = "olusturKullaniciAdi";
             olusturKullaniciAdi.Size = new Size(211, 32);
             olusturKullaniciAdi.TabIndex = 11;
