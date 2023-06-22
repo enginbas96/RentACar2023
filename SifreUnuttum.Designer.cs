@@ -56,6 +56,7 @@
             kurtarmaKoduText.Name = "kurtarmaKoduText";
             kurtarmaKoduText.Size = new Size(173, 32);
             kurtarmaKoduText.TabIndex = 111114;
+            kurtarmaKoduText.UseSystemPasswordChar = true;
             // 
             // kullanıcıAdıText
             // 

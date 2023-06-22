@@ -30,7 +30,7 @@
         {
             veriGoruntuleyici = new DataGridView();
             label1 = new Label();
-            textBox1 = new TextBox();
+            plakaText = new TextBox();
             cikisBTN = new Button();
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             SuspendLayout();
@@ -45,7 +45,7 @@
             veriGoruntuleyici.RowHeadersWidth = 51;
             veriGoruntuleyici.RowTemplate.Height = 29;
             veriGoruntuleyici.Size = new Size(1093, 526);
-            veriGoruntuleyici.TabIndex = 7;
+            veriGoruntuleyici.TabIndex = 0;
             // 
             // label1
             // 
@@ -57,14 +57,14 @@
             label1.TabIndex = 8;
             label1.Text = "Plaka : ";
             // 
-            // textBox1
+            // plakaText
             // 
-            textBox1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(699, 582);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(157, 32);
-            textBox1.TabIndex = 9;
-            textBox1.TextChanged += textBox1_TextChanged;
+            plakaText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            plakaText.Location = new Point(699, 582);
+            plakaText.Name = "plakaText";
+            plakaText.Size = new Size(157, 32);
+            plakaText.TabIndex = 1;
+            plakaText.TextChanged += textBox1_TextChanged;
             // 
             // cikisBTN
             // 
@@ -73,7 +73,7 @@
             cikisBTN.Location = new Point(916, 578);
             cikisBTN.Name = "cikisBTN";
             cikisBTN.Size = new Size(157, 43);
-            cikisBTN.TabIndex = 10;
+            cikisBTN.TabIndex = 2;
             cikisBTN.Text = "Çıkış";
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
@@ -84,7 +84,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1119, 653);
             Controls.Add(cikisBTN);
-            Controls.Add(textBox1);
+            Controls.Add(plakaText);
             Controls.Add(label1);
             Controls.Add(veriGoruntuleyici);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -104,7 +104,7 @@
 
         private DataGridView veriGoruntuleyici;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox plakaText;
         private Button cikisBTN;
     }
 }

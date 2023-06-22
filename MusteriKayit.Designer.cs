@@ -108,9 +108,11 @@
             // 
             tcText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             tcText.Location = new Point(218, 80);
+            tcText.MaxLength = 11;
             tcText.Name = "tcText";
             tcText.Size = new Size(173, 32);
             tcText.TabIndex = 1;
+            tcText.KeyPress += tcText_KeyPress;
             // 
             // sifreText
             // 
@@ -119,6 +121,7 @@
             sifreText.Name = "sifreText";
             sifreText.Size = new Size(173, 32);
             sifreText.TabIndex = 2;
+            sifreText.UseSystemPasswordChar = true;
             // 
             // adText
             // 
@@ -127,6 +130,8 @@
             adText.Name = "adText";
             adText.Size = new Size(173, 32);
             adText.TabIndex = 3;
+            adText.TextChanged += adText_TextChanged;
+            adText.KeyPress += adText_KeyPress;
             // 
             // soyadText
             // 
@@ -135,14 +140,19 @@
             soyadText.Name = "soyadText";
             soyadText.Size = new Size(173, 32);
             soyadText.TabIndex = 4;
+            soyadText.TextChanged += soyadText_TextChanged;
+            soyadText.KeyPress += soyadText_KeyPress;
             // 
             // telNoText
             // 
             telNoText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             telNoText.Location = new Point(218, 272);
+            telNoText.MaxLength = 11;
             telNoText.Name = "telNoText";
+            telNoText.PlaceholderText = "05XXxxxXXxx";
             telNoText.Size = new Size(173, 32);
             telNoText.TabIndex = 5;
+            telNoText.KeyPress += telNoText_KeyPress;
             // 
             // label5
             // 

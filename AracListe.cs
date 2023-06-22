@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 namespace RentACar2023
 {
     public partial class AracListe : Form
@@ -19,6 +21,7 @@ namespace RentACar2023
         private void AracListe_Load(object sender, EventArgs e)
         {
             veriYukleyici();
+            plakaText.Focus();
         }
         private void cikisBTN_Click(object sender, EventArgs e)
         {
@@ -52,12 +55,15 @@ namespace RentACar2023
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            plakaText.Text = plakaText.Text.ToUpper();
+            plakaText.SelectionStart = plakaText.Text.Length;
+
             veriGoruntuleyici.ReadOnly = true;
             veriGoruntuleyici.AllowUserToDeleteRows = false;
             string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
-            MySqlCommand sorgu = new MySqlCommand("SELECT plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi  FROM cars WHERE plaka LIKE '%" + textBox1.Text + "%' AND isRent = '0' ", cnn);
+            MySqlCommand sorgu = new MySqlCommand("SELECT plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi  FROM cars WHERE plaka LIKE '%" + plakaText.Text + "%' AND isRent = '0' ", cnn);
             MySqlDataAdapter DA = new MySqlDataAdapter(sorgu);
             DataTable DT = new DataTable();
             DT.Clear();
