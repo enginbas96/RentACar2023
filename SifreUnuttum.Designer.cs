@@ -99,7 +99,6 @@
             geriBTN.Size = new Size(162, 51);
             geriBTN.TabIndex = 111119;
             geriBTN.Text = "Geri";
-            geriBTN.TextAlign = ContentAlignment.MiddleRight;
             geriBTN.UseVisualStyleBackColor = true;
             geriBTN.Click += geriBTN_Click;
             // 

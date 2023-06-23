@@ -35,7 +35,11 @@
             plakaText = new TextBox();
             cikisBTN = new Button();
             ımageList1 = new ImageList(components);
+            kiralanmısData = new DataGridView();
+            label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)kiralanmısData).BeginInit();
             SuspendLayout();
             // 
             // veriGoruntuleyici
@@ -43,18 +47,18 @@
             veriGoruntuleyici.AllowUserToAddRows = false;
             veriGoruntuleyici.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             veriGoruntuleyici.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            veriGoruntuleyici.Location = new Point(12, 22);
+            veriGoruntuleyici.Location = new Point(12, 52);
             veriGoruntuleyici.Name = "veriGoruntuleyici";
             veriGoruntuleyici.RowHeadersWidth = 51;
             veriGoruntuleyici.RowTemplate.Height = 29;
-            veriGoruntuleyici.Size = new Size(1093, 526);
+            veriGoruntuleyici.Size = new Size(1093, 230);
             veriGoruntuleyici.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(605, 580);
+            label1.Location = new Point(605, 589);
             label1.Name = "label1";
             label1.Size = new Size(88, 32);
             label1.TabIndex = 8;
@@ -63,7 +67,7 @@
             // plakaText
             // 
             plakaText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            plakaText.Location = new Point(699, 582);
+            plakaText.Location = new Point(699, 591);
             plakaText.MaxLength = 10;
             plakaText.Name = "plakaText";
             plakaText.Size = new Size(157, 32);
@@ -75,7 +79,7 @@
             cikisBTN.ImageAlign = ContentAlignment.MiddleLeft;
             cikisBTN.ImageKey = "cikisyap.png";
             cikisBTN.ImageList = ımageList1;
-            cikisBTN.Location = new Point(924, 578);
+            cikisBTN.Location = new Point(924, 587);
             cikisBTN.Name = "cikisBTN";
             cikisBTN.Size = new Size(104, 43);
             cikisBTN.TabIndex = 2;
@@ -91,11 +95,44 @@
             ımageList1.TransparentColor = Color.Transparent;
             ımageList1.Images.SetKeyName(0, "cikisyap.png");
             // 
+            // kiralanmısData
+            // 
+            kiralanmısData.AllowUserToAddRows = false;
+            kiralanmısData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            kiralanmısData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            kiralanmısData.Location = new Point(12, 328);
+            kiralanmısData.Name = "kiralanmısData";
+            kiralanmısData.RowHeadersWidth = 51;
+            kiralanmısData.RowTemplate.Height = 29;
+            kiralanmısData.Size = new Size(1093, 230);
+            kiralanmısData.TabIndex = 9;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 24);
+            label2.Name = "label2";
+            label2.Size = new Size(206, 20);
+            label2.TabIndex = 10;
+            label2.Text = "Kiralanmamış Araçların Listesi";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 300);
+            label3.Name = "label3";
+            label3.Size = new Size(185, 20);
+            label3.TabIndex = 11;
+            label3.Text = "Kiralanmış Araçların Listesi";
+            // 
             // AracListe
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1119, 653);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(kiralanmısData);
             Controls.Add(cikisBTN);
             Controls.Add(plakaText);
             Controls.Add(label1);
@@ -109,6 +146,7 @@
             FormClosed += AracListe_FormClosed;
             Load += AracListe_Load;
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).EndInit();
+            ((System.ComponentModel.ISupportInitialize)kiralanmısData).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -120,5 +158,8 @@
         private TextBox plakaText;
         private Button cikisBTN;
         private ImageList ımageList1;
+        private DataGridView kiralanmısData;
+        private Label label2;
+        private Label label3;
     }
 }

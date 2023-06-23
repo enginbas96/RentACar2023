@@ -58,6 +58,10 @@ namespace RentACar2023
                     sorgu1.ExecuteNonQuery();
                     MessageBox.Show("Araba kiralama işlemi başarıyla tamamlandı.");
                     cnn.Close();
+                    cnn.Open();
+                    MySqlCommand sorgu2 = new MySqlCommand("UPDATE cars SET isRent = '1' WHERE id = '" + plaka_id + "'", cnn);
+                    sorgu2.ExecuteNonQuery();
+                    cnn.Close();
                 }
             }
             else
@@ -65,7 +69,6 @@ namespace RentACar2023
                 MessageBox.Show("Bu TC kimlik numarasına ait kullanıcı bulunamadı. Kullanıcı kaydını yapıp tekrar deneyiniz.");
             }
             cnn.Close();
-            MessageBox.Show(musteriID.ToString());
         }
         private void SayfaYonlendir(String sayfa)
         {

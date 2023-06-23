@@ -21,7 +21,7 @@ namespace RentACar2023
         private void AracListe_Load(object sender, EventArgs e)
         {
             veriYukleyici();
-            plakaText.Focus();
+            veriYukleyiciKiralanmis();
         }
         private void cikisBTN_Click(object sender, EventArgs e)
         {
@@ -52,6 +52,28 @@ namespace RentACar2023
             veriGoruntuleyici.Columns[6].HeaderText = "KM";
             veriGoruntuleyici.Columns[7].HeaderText = "Vites";
             veriGoruntuleyici.Columns[8].HeaderText = "Koltuk Sayısı";
+        }
+        void veriYukleyiciKiralanmis()
+        {
+            kiralanmısData.ReadOnly = true;
+            kiralanmısData.AllowUserToDeleteRows = false;
+            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            MySqlConnection cnn = new MySqlConnection(myConnectionString);
+            cnn.Open();
+            MySqlCommand sorgu1 = new MySqlCommand("SELECT users.TC, cars.plaka, car_status.start_time, car_status.end_time  FROM car_status INNER JOIN users ON car_status.musteri_id = users.id INNER JOIN cars ON car_status.arac_id = cars.id WHERE cars.isRent = 1", cnn);
+            MySqlDataAdapter DA = new MySqlDataAdapter(sorgu1);
+            DataTable DT = new DataTable();
+            DT.Clear();
+            DA.Fill(DT);
+            kiralanmısData.DataSource = DT;
+            cnn.Close();
+            kiralanmısData.Columns[0].HeaderText = "TC kimlik numarası";
+            kiralanmısData.Columns[1].HeaderText = "Arabanın Plakası";
+            kiralanmısData.Columns[2].HeaderText = "Kiralanma Tarihi";
+            kiralanmısData.Columns[3].HeaderText = "Teslim Tarihi";
+
+
+            veriGoruntuleyici.Columns[0].HeaderText = "Plaka";
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
