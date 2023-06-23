@@ -170,12 +170,12 @@
                                                 <span class="text-secondary text-xs font-weight-bold">{{$user->tel_no}}</span>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="" class="text-danger font-weight-bold text-xs" data-toggle="tooltip">
+                                                <a href="{{route('admin_user_banned', $user->id)}}" class="text-danger font-weight-bold text-xs" data-toggle="tooltip">
                                                     Banla
                                                 </a>
                                             </td>
                                             <td>
-                                                <a href="" class="text-dark font-weight-bold text-xs"
+                                                <a href="{{route('admin_user_delete', $user->id)}}" class="text-dark font-weight-bold text-xs"
                                                    data-toggle="tooltip">
                                                     Sil
                                                 </a>

@@ -37,6 +37,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('admin_profile');
     Route::get('/users', [UserController::class, 'index'])->name('admin_users');
     Route::get('/admin-cars', [AdminCarsController::class, 'index'])->name('admin_cars');
+    Route::get('/user/banned/{id}', [UserController::class, 'banned'])->name('admin_user_banned');
+    Route::get('/user/delete/{id}', [UserController::class, 'delete'])->name('admin_user_delete');
 });
 
 /*User Pages*/
