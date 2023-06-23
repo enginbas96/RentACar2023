@@ -25,7 +25,7 @@ class UserLoginController extends Controller
 
         if ($user) {
             $hashedPassword = $user->password;
-            if (Hash::check($password, $hashedPassword)) {
+            if (Hash::check($password, $hashedPassword) and $user->isBanned != 1) {
                 $request->session()->regenerate();
                 session(["user_id" => $user->id]);
 //                $inputs = [
