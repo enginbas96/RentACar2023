@@ -34,7 +34,7 @@ namespace RentACar2023
             {
                 MessageBox.Show("Lütfen boş alanları doldurup tekrar deneyiniz.");
             }
-            else if(tcText.Text.Length != 11)
+            else if (tcText.Text.Length != 11)
             {
                 MessageBox.Show("Lütfen TC kimlik numaranızı eksiksiz bir şekilde giriniz.");
             }

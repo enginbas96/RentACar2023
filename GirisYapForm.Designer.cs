@@ -45,12 +45,14 @@
             // GirisYapButton
             // 
             GirisYapButton.ImageAlign = ContentAlignment.MiddleLeft;
-            GirisYapButton.ImageKey = "(yok)";
-            GirisYapButton.Location = new Point(200, 323);
+            GirisYapButton.ImageKey = "girisyap.png";
+            GirisYapButton.ImageList = ımageList1;
+            GirisYapButton.Location = new Point(226, 315);
             GirisYapButton.Name = "GirisYapButton";
-            GirisYapButton.Size = new Size(173, 41);
+            GirisYapButton.Size = new Size(125, 41);
             GirisYapButton.TabIndex = 3;
             GirisYapButton.Text = "Giriş Yap";
+            GirisYapButton.TextAlign = ContentAlignment.MiddleRight;
             GirisYapButton.UseVisualStyleBackColor = true;
             GirisYapButton.Click += GirisYapButton_Click;
             // 
@@ -94,7 +96,7 @@
             // SifreUnuttumLinkLabel
             // 
             SifreUnuttumLinkLabel.AutoSize = true;
-            SifreUnuttumLinkLabel.Location = new Point(202, 386);
+            SifreUnuttumLinkLabel.Location = new Point(208, 386);
             SifreUnuttumLinkLabel.Name = "SifreUnuttumLinkLabel";
             SifreUnuttumLinkLabel.Size = new Size(165, 20);
             SifreUnuttumLinkLabel.TabIndex = 4;
@@ -107,7 +109,8 @@
             ımageList1.ColorDepth = ColorDepth.Depth32Bit;
             ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
             ımageList1.TransparentColor = Color.Transparent;
-            ımageList1.Images.SetKeyName(0, "cikisyap.png");
+            ımageList1.Images.SetKeyName(0, "geridon.png");
+            ımageList1.Images.SetKeyName(1, "girisyap.png");
             // 
             // KullaniciPictureBox
             // 
@@ -122,7 +125,8 @@
             // girisSayfasiLink
             // 
             girisSayfasiLink.AutoSize = true;
-            girisSayfasiLink.Location = new Point(12, 9);
+            girisSayfasiLink.ImageList = ımageList1;
+            girisSayfasiLink.Location = new Point(12, 27);
             girisSayfasiLink.Name = "girisSayfasiLink";
             girisSayfasiLink.Size = new Size(29, 20);
             girisSayfasiLink.TabIndex = 111113;

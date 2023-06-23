@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSifremiUnuttum));
             KullaniciPictureBox = new PictureBox();
             kurtarmaKoduText = new TextBox();
@@ -35,6 +36,7 @@
             SifreLabel = new Label();
             KullaniciAdiLabel = new Label();
             geriBTN = new Button();
+            ımageList1 = new ImageList(components);
             kaydetBTN = new Button();
             ((System.ComponentModel.ISupportInitialize)KullaniciPictureBox).BeginInit();
             SuspendLayout();
@@ -89,22 +91,38 @@
             // geriBTN
             // 
             geriBTN.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            geriBTN.Location = new Point(333, 364);
+            geriBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            geriBTN.ImageKey = "geridon.png";
+            geriBTN.ImageList = ımageList1;
+            geriBTN.Location = new Point(333, 354);
             geriBTN.Name = "geriBTN";
-            geriBTN.Size = new Size(173, 41);
+            geriBTN.Size = new Size(162, 51);
             geriBTN.TabIndex = 111119;
             geriBTN.Text = "Geri";
+            geriBTN.TextAlign = ContentAlignment.MiddleRight;
             geriBTN.UseVisualStyleBackColor = true;
             geriBTN.Click += geriBTN_Click;
+            // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "sifremikurtar.png");
+            ımageList1.Images.SetKeyName(1, "geridon.png");
             // 
             // kaydetBTN
             // 
             kaydetBTN.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            kaydetBTN.Location = new Point(51, 364);
+            kaydetBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            kaydetBTN.ImageKey = "sifremikurtar.png";
+            kaydetBTN.ImageList = ımageList1;
+            kaydetBTN.Location = new Point(51, 354);
             kaydetBTN.Name = "kaydetBTN";
-            kaydetBTN.Size = new Size(173, 41);
+            kaydetBTN.Size = new Size(186, 51);
             kaydetBTN.TabIndex = 111118;
             kaydetBTN.Text = "Şifremi Kurtar";
+            kaydetBTN.TextAlign = ContentAlignment.MiddleRight;
             kaydetBTN.UseVisualStyleBackColor = true;
             kaydetBTN.Click += kaydetBTN_Click;
             // 
@@ -141,5 +159,6 @@
         private Label KullaniciAdiLabel;
         private Button geriBTN;
         private Button kaydetBTN;
+        private ImageList ımageList1;
     }
 }

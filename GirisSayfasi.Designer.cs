@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GirisSayfasi));
             aracListeBTN = new Button();
             girisBTN = new Button();
             label1 = new Label();
             label2 = new Label();
             musteriKayitBTN = new Button();
+            ımageList1 = new ImageList(components);
             SuspendLayout();
             // 
             // aracListeBTN
@@ -40,12 +43,14 @@
             aracListeBTN.BackgroundImageLayout = ImageLayout.None;
             aracListeBTN.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             aracListeBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            aracListeBTN.ImageKey = "(yok)";
-            aracListeBTN.Location = new Point(172, 235);
+            aracListeBTN.ImageKey = "araclistele.png";
+            aracListeBTN.ImageList = ımageList1;
+            aracListeBTN.Location = new Point(152, 235);
             aracListeBTN.Name = "aracListeBTN";
-            aracListeBTN.Size = new Size(207, 75);
+            aracListeBTN.Size = new Size(235, 75);
             aracListeBTN.TabIndex = 2;
             aracListeBTN.Text = "Araçları Listele";
+            aracListeBTN.TextAlign = ContentAlignment.MiddleRight;
             aracListeBTN.UseVisualStyleBackColor = true;
             aracListeBTN.Click += aracListeBTN_Click;
             // 
@@ -53,12 +58,14 @@
             // 
             girisBTN.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             girisBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            girisBTN.ImageKey = "(yok)";
-            girisBTN.Location = new Point(172, 149);
+            girisBTN.ImageKey = "kullanıcıicon.png";
+            girisBTN.ImageList = ımageList1;
+            girisBTN.Location = new Point(152, 154);
             girisBTN.Name = "girisBTN";
-            girisBTN.Size = new Size(207, 75);
+            girisBTN.Size = new Size(235, 75);
             girisBTN.TabIndex = 1;
             girisBTN.Text = "Kullanıcı Girişi";
+            girisBTN.TextAlign = ContentAlignment.MiddleRight;
             girisBTN.UseVisualStyleBackColor = true;
             girisBTN.Click += girisBTN_Click;
             // 
@@ -89,14 +96,25 @@
             musteriKayitBTN.BackgroundImageLayout = ImageLayout.None;
             musteriKayitBTN.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             musteriKayitBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            musteriKayitBTN.ImageKey = "(yok)";
-            musteriKayitBTN.Location = new Point(172, 321);
+            musteriKayitBTN.ImageKey = "musteriicon.png";
+            musteriKayitBTN.ImageList = ımageList1;
+            musteriKayitBTN.Location = new Point(152, 316);
             musteriKayitBTN.Name = "musteriKayitBTN";
-            musteriKayitBTN.Size = new Size(207, 75);
+            musteriKayitBTN.Size = new Size(235, 75);
             musteriKayitBTN.TabIndex = 3;
             musteriKayitBTN.Text = "Müşteri Kaydet";
+            musteriKayitBTN.TextAlign = ContentAlignment.MiddleRight;
             musteriKayitBTN.UseVisualStyleBackColor = true;
             musteriKayitBTN.Click += musteriKayitBTN_Click;
+            // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "araclistele.png");
+            ımageList1.Images.SetKeyName(1, "kullanıcıicon.png");
+            ımageList1.Images.SetKeyName(2, "musteriicon.png");
             // 
             // GirisSayfasi
             // 
@@ -126,5 +144,6 @@
         private Label label1;
         private Label label2;
         private Button musteriKayitBTN;
+        private ImageList ımageList1;
     }
 }

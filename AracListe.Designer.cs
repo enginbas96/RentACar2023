@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AracListe));
             veriGoruntuleyici = new DataGridView();
             label1 = new Label();
             plakaText = new TextBox();
             cikisBTN = new Button();
+            ımageList1 = new ImageList(components);
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             SuspendLayout();
             // 
@@ -70,14 +73,23 @@
             // cikisBTN
             // 
             cikisBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            cikisBTN.ImageKey = "(yok)";
-            cikisBTN.Location = new Point(916, 578);
+            cikisBTN.ImageKey = "cikisyap.png";
+            cikisBTN.ImageList = ımageList1;
+            cikisBTN.Location = new Point(924, 578);
             cikisBTN.Name = "cikisBTN";
-            cikisBTN.Size = new Size(157, 43);
+            cikisBTN.Size = new Size(104, 43);
             cikisBTN.TabIndex = 2;
             cikisBTN.Text = "Çıkış";
+            cikisBTN.TextAlign = ContentAlignment.MiddleRight;
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
+            // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "cikisyap.png");
             // 
             // AracListe
             // 
@@ -107,5 +119,6 @@
         private Label label1;
         private TextBox plakaText;
         private Button cikisBTN;
+        private ImageList ımageList1;
     }
 }
