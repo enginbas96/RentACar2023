@@ -216,7 +216,7 @@
                                 <td class="w-30">
                                     <div class="d-flex px-2 py-1 align-items-center">
                                         <div>
-                                            <img src="{{asset($rentCar->getCar->img_url)}}" style="width: 40px; height: 40px" alt="Country flag">
+                                            <img src="data:image/png;base64,{{base64_encode($rentCar->getCar->img)}}" style="width: 40px; height: 40px" alt="Country flag">
                                         </div>
                                         <div class="ms-4">
                                             <p class="text-xs font-weight-bold mb-0">Araba(Marka):</p>
@@ -250,7 +250,7 @@
                                 </td>
                                 <td class="align-middle text-sm">
                                     <div class="col text-center">
-                                        <a href="" class="text-success font-weight-bold text-s">Teslim alındı</a>
+                                        <a href="{{route('admin_received',$rentCar->id)}}" class="text-success font-weight-bold text-s">Teslim alındı</a>
                                     </div>
                                 </td>
                             </tr>

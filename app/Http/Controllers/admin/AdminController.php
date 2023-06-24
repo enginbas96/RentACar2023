@@ -16,6 +16,15 @@ class AdminController extends Controller
         $rentCarCount = Car::where('isRent', 1)->count();
         $userCount = User::count();
         $rentCars = CarStatus::all();
+
         return view('admin.pages.dashboard', compact('username','carsCount','rentCarCount','userCount','rentCars'));
+    }
+    public function received($id){
+        $carStatus = CarStatus::where('id', $id)->first();
+        $car = Car::where('id',$carStatus->arac_id)->first();
+        $car->isRent = 0;
+        $car->save();
+        $carStatus->delete();
+        return redirect()->route('admin_dashboard');
     }
 }
