@@ -72,16 +72,11 @@ namespace RentACar2023
             kiralanmısData.Columns[2].HeaderText = "Kiralanma Tarihi";
             kiralanmısData.Columns[3].HeaderText = "Teslim Tarihi";
 
-
-            veriGoruntuleyici.Columns[0].HeaderText = "Plaka";
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             plakaText.Text = plakaText.Text.ToUpper();
             plakaText.SelectionStart = plakaText.Text.Length;
-
-            veriGoruntuleyici.ReadOnly = true;
-            veriGoruntuleyici.AllowUserToDeleteRows = false;
             string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
@@ -101,10 +96,58 @@ namespace RentACar2023
             veriGoruntuleyici.Columns[6].HeaderText = "KM";
             veriGoruntuleyici.Columns[7].HeaderText = "Vites";
             veriGoruntuleyici.Columns[8].HeaderText = "Koltuk Sayısı";
+
+            /*-------------------------------------------------------------------------------------*/
+
+            cnn.Open();
+            MySqlCommand sorgu1 = new MySqlCommand("SELECT users.TC, cars.plaka, car_status.start_time, car_status.end_time  FROM car_status INNER JOIN users ON car_status.musteri_id = users.id INNER JOIN cars ON car_status.arac_id = cars.id WHERE cars.isRent = 1 AND cars.plaka LIKE '%" + plakaText.Text + "%'", cnn);
+            MySqlDataAdapter DA1 = new MySqlDataAdapter(sorgu1);
+            DataTable DT1 = new DataTable();
+            DT1.Clear();
+            DA1.Fill(DT1);
+            kiralanmısData.DataSource = DT1;
+            cnn.Close();
+            kiralanmısData.Columns[0].HeaderText = "TC kimlik numarası";
+            kiralanmısData.Columns[1].HeaderText = "Arabanın Plakası";
+            kiralanmısData.Columns[2].HeaderText = "Kiralanma Tarihi";
+            kiralanmısData.Columns[3].HeaderText = "Teslim Tarihi";
         }
         private void AracListe_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+        private void erkenTeslimBTN_Click(object sender, EventArgs e)
+        {
+            int aracID = 0;
+            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            MySqlConnection cnn = new MySqlConnection(myConnectionString);
+            cnn.Open();
+            MySqlCommand sorgu = new MySqlCommand("SELECT *  FROM car_status INNER JOIN cars ON car_status.arac_id = cars.id WHERE cars.isRent = 1 AND cars.plaka = '" + plakaText.Text + "'", cnn);
+            MySqlDataReader tara = sorgu.ExecuteReader();
+            if (tara.Read())
+            {
+                aracID = tara.GetInt32("arac_id");
+                cnn.Close();
+
+                cnn.Open();
+                MySqlCommand sorgu1 = new MySqlCommand("UPDATE cars SET isRent = '0' WHERE id ='" + aracID + "' ", cnn);
+                sorgu1.ExecuteNonQuery();
+                cnn.Close();
+
+                cnn.Open();
+                MySqlCommand sorgu2 = new MySqlCommand("DELETE FROM car_status WHERE arac_id ='" + aracID + "' ", cnn);
+                sorgu2.ExecuteNonQuery();
+                cnn.Close();
+                MessageBox.Show("Araç başarıyla teslim alımıştır");
+                plakaText.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Böyle bir araç bulunamadı. Plakayı kontrol edip işleminizi tekrar gerçekleştiriniz.");
+                cnn.Close();
+            }
+            veriYukleyici();
+            veriYukleyiciKiralanmis();
         }
     }
 }

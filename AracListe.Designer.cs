@@ -38,6 +38,7 @@
             kiralanmısData = new DataGridView();
             label2 = new Label();
             label3 = new Label();
+            erkenTeslimBTN = new Button();
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             ((System.ComponentModel.ISupportInitialize)kiralanmısData).BeginInit();
             SuspendLayout();
@@ -58,7 +59,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(605, 589);
+            label1.Location = new Point(378, 589);
             label1.Name = "label1";
             label1.Size = new Size(88, 32);
             label1.TabIndex = 8;
@@ -67,7 +68,7 @@
             // plakaText
             // 
             plakaText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            plakaText.Location = new Point(699, 591);
+            plakaText.Location = new Point(472, 591);
             plakaText.MaxLength = 10;
             plakaText.Name = "plakaText";
             plakaText.Size = new Size(157, 32);
@@ -125,11 +126,22 @@
             label3.TabIndex = 11;
             label3.Text = "Kiralanmış Araçların Listesi";
             // 
+            // erkenTeslimBTN
+            // 
+            erkenTeslimBTN.Location = new Point(715, 591);
+            erkenTeslimBTN.Name = "erkenTeslimBTN";
+            erkenTeslimBTN.Size = new Size(177, 39);
+            erkenTeslimBTN.TabIndex = 12;
+            erkenTeslimBTN.Text = "Araç Teslim Alındı";
+            erkenTeslimBTN.UseVisualStyleBackColor = true;
+            erkenTeslimBTN.Click += erkenTeslimBTN_Click;
+            // 
             // AracListe
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1119, 653);
+            Controls.Add(erkenTeslimBTN);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(kiralanmısData);
@@ -161,5 +173,6 @@
         private DataGridView kiralanmısData;
         private Label label2;
         private Label label3;
+        private Button erkenTeslimBTN;
     }
 }
