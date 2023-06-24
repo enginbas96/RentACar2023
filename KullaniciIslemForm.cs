@@ -87,7 +87,7 @@ namespace RentACar2023
             }
             else
             {
-                string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
                 MySqlConnection cnn = new MySqlConnection(myConnectionString);
                 cnn.Open();
                 MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + deleteKullaniciAdi.Text + "'", cnn);
@@ -117,7 +117,7 @@ namespace RentACar2023
             }
             else
             {
-                string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
                 MySqlConnection cnn = new MySqlConnection(myConnectionString);
                 cnn.Open();
                 MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + sifreDegisKullaniciAdi.Text + "'", cnn);
@@ -146,7 +146,7 @@ namespace RentACar2023
             }
             else
             {
-                string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
                 MySqlConnection cnn = new MySqlConnection(myConnectionString);
                 cnn.Open();
                 MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + olusturKullaniciAdi.Text + "'", cnn);

@@ -24,7 +24,7 @@ namespace RentACar2023
         }
         void plakacek()
         {
-            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
             MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE isRent = '0'", cnn);
@@ -42,7 +42,7 @@ namespace RentACar2023
             DateTime bitis = teslimTarihi.Value;
             string baslangicTarihi = baslangic.ToString("yyyy-MM-dd HH:mm:ss");
             string bitisTarihi = bitis.ToString("yyyy-MM-dd HH:mm:ss");
-            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
             MySqlCommand sorgu = new MySqlCommand("SELECT * FROM users WHERE TC= '" + tcText.Text + "'", cnn);
@@ -145,7 +145,7 @@ namespace RentACar2023
         int plaka_id;
         private void plakaCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
             MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE plaka = '" + plakaCB.Text + "'", cnn);

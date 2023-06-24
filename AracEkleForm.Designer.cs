@@ -56,6 +56,10 @@
             label2 = new Label();
             label1 = new Label();
             koltukSayiCB = new ComboBox();
+            kmFiyat = new TextBox();
+            label10 = new Label();
+            gunlukFiyat = new TextBox();
+            label11 = new Label();
             SuspendLayout();
             // 
             // aracEkleBTN
@@ -160,10 +164,10 @@
             ekleBTN.ImageAlign = ContentAlignment.MiddleLeft;
             ekleBTN.ImageKey = "aracekle.png";
             ekleBTN.ImageList = ımageList1;
-            ekleBTN.Location = new Point(464, 541);
+            ekleBTN.Location = new Point(442, 545);
             ekleBTN.Name = "ekleBTN";
             ekleBTN.Size = new Size(234, 72);
-            ekleBTN.TabIndex = 15;
+            ekleBTN.TabIndex = 17;
             ekleBTN.Text = "Aracı Ekle";
             ekleBTN.TextAlign = ContentAlignment.MiddleRight;
             ekleBTN.UseVisualStyleBackColor = true;
@@ -175,38 +179,38 @@
             vitesCB.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             vitesCB.FormattingEnabled = true;
             vitesCB.Items.AddRange(new object[] { "Otomatik", "Yarı Otomatik", "Manuel" });
-            vitesCB.Location = new Point(784, 307);
+            vitesCB.Location = new Point(784, 322);
             vitesCB.Name = "vitesCB";
             vitesCB.Size = new Size(217, 46);
-            vitesCB.TabIndex = 14;
+            vitesCB.TabIndex = 15;
             // 
             // kmText
             // 
             kmText.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            kmText.Location = new Point(784, 192);
+            kmText.Location = new Point(783, 197);
             kmText.MaxLength = 10;
             kmText.Name = "kmText";
             kmText.Size = new Size(217, 47);
-            kmText.TabIndex = 12;
+            kmText.TabIndex = 13;
             kmText.KeyPress += kmText_KeyPress;
             // 
             // renkText
             // 
             renkText.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            renkText.Location = new Point(784, 136);
+            renkText.Location = new Point(783, 134);
             renkText.MaxLength = 50;
             renkText.Name = "renkText";
             renkText.Size = new Size(216, 47);
-            renkText.TabIndex = 11;
+            renkText.TabIndex = 12;
             renkText.TextChanged += renkText_TextChanged;
             // 
             // hasarText
             // 
             hasarText.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            hasarText.Location = new Point(263, 360);
+            hasarText.Location = new Point(784, 384);
             hasarText.Name = "hasarText";
             hasarText.Size = new Size(216, 47);
-            hasarText.TabIndex = 10;
+            hasarText.TabIndex = 16;
             hasarText.TextChanged += hasarText_TextChanged;
             // 
             // yakitTuruCB
@@ -215,7 +219,7 @@
             yakitTuruCB.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             yakitTuruCB.FormattingEnabled = true;
             yakitTuruCB.Items.AddRange(new object[] { "Benzin", "Dizel", "Elektirikli", "Hibrit" });
-            yakitTuruCB.Location = new Point(263, 306);
+            yakitTuruCB.Location = new Point(263, 324);
             yakitTuruCB.Name = "yakitTuruCB";
             yakitTuruCB.Size = new Size(216, 46);
             yakitTuruCB.TabIndex = 9;
@@ -223,7 +227,7 @@
             // modelText
             // 
             modelText.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            modelText.Location = new Point(263, 248);
+            modelText.Location = new Point(263, 261);
             modelText.MaxLength = 20;
             modelText.Name = "modelText";
             modelText.Size = new Size(216, 47);
@@ -233,7 +237,7 @@
             // markaText
             // 
             markaText.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            markaText.Location = new Point(263, 191);
+            markaText.Location = new Point(263, 198);
             markaText.MaxLength = 20;
             markaText.Name = "markaText";
             markaText.Size = new Size(216, 47);
@@ -254,7 +258,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(583, 305);
+            label9.Location = new Point(583, 320);
             label9.Name = "label9";
             label9.Size = new Size(195, 46);
             label9.TabIndex = 27;
@@ -264,7 +268,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(548, 249);
+            label8.Location = new Point(548, 258);
             label8.Name = "label8";
             label8.Size = new Size(230, 46);
             label8.TabIndex = 26;
@@ -274,7 +278,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(682, 192);
+            label7.Location = new Point(682, 197);
             label7.Name = "label7";
             label7.Size = new Size(96, 46);
             label7.TabIndex = 25;
@@ -284,7 +288,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(660, 136);
+            label6.Location = new Point(660, 134);
             label6.Name = "label6";
             label6.Size = new Size(118, 46);
             label6.TabIndex = 24;
@@ -294,7 +298,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(38, 360);
+            label5.Location = new Point(559, 384);
             label5.Name = "label5";
             label5.Size = new Size(219, 46);
             label5.TabIndex = 23;
@@ -304,7 +308,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(65, 304);
+            label4.Location = new Point(65, 322);
             label4.Name = "label4";
             label4.Size = new Size(192, 46);
             label4.TabIndex = 22;
@@ -314,7 +318,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(115, 248);
+            label3.Location = new Point(115, 261);
             label3.Name = "label3";
             label3.Size = new Size(142, 46);
             label3.TabIndex = 21;
@@ -324,7 +328,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(118, 191);
+            label2.Location = new Point(118, 198);
             label2.Name = "label2";
             label2.Size = new Size(139, 46);
             label2.TabIndex = 20;
@@ -346,10 +350,48 @@
             koltukSayiCB.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             koltukSayiCB.FormattingEnabled = true;
             koltukSayiCB.Items.AddRange(new object[] { "2", "4", "5" });
-            koltukSayiCB.Location = new Point(784, 251);
+            koltukSayiCB.Location = new Point(784, 260);
             koltukSayiCB.Name = "koltukSayiCB";
             koltukSayiCB.Size = new Size(216, 46);
-            koltukSayiCB.TabIndex = 13;
+            koltukSayiCB.TabIndex = 14;
+            // 
+            // kmFiyat
+            // 
+            kmFiyat.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            kmFiyat.Location = new Point(263, 386);
+            kmFiyat.Name = "kmFiyat";
+            kmFiyat.Size = new Size(216, 47);
+            kmFiyat.TabIndex = 10;
+            kmFiyat.KeyPress += kmFiyat_KeyPress;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(58, 386);
+            label10.Name = "label10";
+            label10.Size = new Size(199, 46);
+            label10.TabIndex = 29;
+            label10.Text = "KM Başına : ";
+            // 
+            // gunlukFiyat
+            // 
+            gunlukFiyat.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            gunlukFiyat.Location = new Point(263, 449);
+            gunlukFiyat.Name = "gunlukFiyat";
+            gunlukFiyat.Size = new Size(216, 47);
+            gunlukFiyat.TabIndex = 11;
+            gunlukFiyat.KeyPress += gunlukFiyat_KeyPress;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.Location = new Point(28, 449);
+            label11.Name = "label11";
+            label11.Size = new Size(229, 46);
+            label11.TabIndex = 31;
+            label11.Text = "Günlük Fiyat : ";
             // 
             // AracEkleForm
             // 
@@ -357,6 +399,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
+            Controls.Add(gunlukFiyat);
+            Controls.Add(label11);
+            Controls.Add(kmFiyat);
+            Controls.Add(label10);
             Controls.Add(koltukSayiCB);
             Controls.Add(ekleBTN);
             Controls.Add(vitesCB);
@@ -422,5 +468,9 @@
         private Label label1;
         private ComboBox koltukSayiCB;
         private ImageList ımageList1;
+        private TextBox kmFiyat;
+        private Label label10;
+        private TextBox gunlukFiyat;
+        private Label label11;
     }
 }

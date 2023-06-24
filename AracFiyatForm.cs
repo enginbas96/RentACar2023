@@ -80,7 +80,7 @@ namespace RentACar2023
             Application.Exit();
         }
         private void guncelleBTN_Click(object sender, EventArgs e)
-        {
+        {            
             if (plakaText.Text == "")
             {
                 MessageBox.Show("Lütfen aracınızı seçiniz.");
@@ -91,9 +91,9 @@ namespace RentACar2023
             }
             else
             {
-                string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
                 MySqlConnection cnn = new MySqlConnection(myConnectionString);
-                cnn.Open();
+                cnn.Open();        
                 if (gunlukDegisimRB.Checked == true)
                 {
                     float haftalikFiyat = float.Parse(yeniFiyatText.Text) * 6;
@@ -142,10 +142,10 @@ namespace RentACar2023
             aracFiyatBTN.Enabled = false;
             veriGoruntuleyici.ReadOnly = true;
             veriGoruntuleyici.AllowUserToDeleteRows = false;
-            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
-            MySqlCommand sorgu = new MySqlCommand("SELECT arac_id, daily_price, weekly_price, daily_km_limit  FROM prices ", cnn);
+            MySqlCommand sorgu = new MySqlCommand("SELECT cars.plaka, prices.daily_price, prices.weekly_price, prices.daily_km_limit  FROM prices INNER JOIN cars ON cars.id = prices.arac_id  ", cnn);
             MySqlDataAdapter DA = new MySqlDataAdapter(sorgu);
             DataTable DT = new DataTable();
             DT.Clear();

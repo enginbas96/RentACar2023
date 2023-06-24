@@ -95,7 +95,7 @@ namespace RentACar2023
             {
                 if (guncelleRB.Checked)
                 {
-                    string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+                    string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
                     MySqlConnection cnn = new MySqlConnection(myConnectionString);
                     cnn.Open();
                     MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE plaka= '" + plakaText.Text + "'", cnn);
@@ -119,7 +119,7 @@ namespace RentACar2023
                 }
                 else if (silRB.Checked)
                 {
-                    string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+                    string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
                     MySqlConnection cnn = new MySqlConnection(myConnectionString);
                     cnn.Open();
                     MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE plaka= '" + plakaText.Text + "'", cnn);
@@ -147,7 +147,7 @@ namespace RentACar2023
         {
             veriGoruntuleyici.ReadOnly = true;
             veriGoruntuleyici.AllowUserToDeleteRows = false;
-            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
             MySqlCommand sorgu = new MySqlCommand("SELECT plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi  FROM cars ", cnn);

@@ -33,7 +33,7 @@ namespace RentACar2023
         {
             veriGoruntuleyici.ReadOnly = true;
             veriGoruntuleyici.AllowUserToDeleteRows = false;
-            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
             MySqlCommand sorgu = new MySqlCommand("SELECT plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi  FROM cars WHERE isRent = '0' ", cnn);
@@ -57,7 +57,7 @@ namespace RentACar2023
         {
             kiralanmısData.ReadOnly = true;
             kiralanmısData.AllowUserToDeleteRows = false;
-            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
             MySqlCommand sorgu1 = new MySqlCommand("SELECT users.TC, cars.plaka, car_status.start_time, car_status.end_time  FROM car_status INNER JOIN users ON car_status.musteri_id = users.id INNER JOIN cars ON car_status.arac_id = cars.id WHERE cars.isRent = 1", cnn);
@@ -77,7 +77,7 @@ namespace RentACar2023
         {
             plakaText.Text = plakaText.Text.ToUpper();
             plakaText.SelectionStart = plakaText.Text.Length;
-            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
             MySqlCommand sorgu = new MySqlCommand("SELECT plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi  FROM cars WHERE plaka LIKE '%" + plakaText.Text + "%' AND isRent = '0' ", cnn);
@@ -119,7 +119,7 @@ namespace RentACar2023
         private void erkenTeslimBTN_Click(object sender, EventArgs e)
         {
             int aracID = 0;
-            string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
+            string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
             MySqlConnection cnn = new MySqlConnection(myConnectionString);
             cnn.Open();
             MySqlCommand sorgu = new MySqlCommand("SELECT *  FROM car_status INNER JOIN cars ON car_status.arac_id = cars.id WHERE cars.isRent = 1 AND cars.plaka = '" + plakaText.Text + "'", cnn);
