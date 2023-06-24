@@ -87,6 +87,16 @@ namespace RentACar2023
         }
         private void ekleBTN_Click(object sender, EventArgs e)
         {
+                byte[] imageData = ImageToByteArray(aracResim.Image);
+
+            // Diğer kodlar...
+
+            // Resmi veritabanına kaydetmeden önce byte dizisinden yeniden bir resim oluşturun
+            Image resim = ByteArrayToImage(imageData);
+
+            // Resmi görüntülemek için PictureBox kontrolüne ata
+            aracResim.Image = resim;
+
             int aracID = 0;
             if (plakaText.Text == "" || markaText.Text == "" || modelText.Text == "" || yakitTuruCB.Text == "" || hasarText.Text == ""
                 || renkText.Text == "" || kmText.Text == "" || koltukSayiCB.Text == "" || vitesCB.Text == "" || kmFiyat.Text == "" || gunlukFiyat.Text == "")
@@ -102,7 +112,7 @@ namespace RentACar2023
                 MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE plaka= '" + plakaText.Text + "'", cnn);
                 MySqlDataReader tara = sorgu.ExecuteReader();
                 if (tara.Read())
-                {                    
+                {
                     MessageBox.Show("Bu plakaya ait bir araç zaten var.");
                     cnn.Close();
                 }
@@ -111,20 +121,20 @@ namespace RentACar2023
                     int haftalik = 6 * (int.Parse(gunlukFiyat.Text));
                     cnn.Close();
                     cnn.Open();
-                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO cars(plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi, img, isRent) VALUES('" + plakaText.Text + "','" + markaText.Text + "','" + modelText.Text + "','" + yakitTuruCB.Text + "','" + renkText.Text + "','" + hasarText.Text + "','" + kmText.Text + "','" + vitesCB.Text + "','" + koltukSayiCB.Text + "','null','0')", cnn);
+                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO cars(plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi, img, isRent) VALUES('" + plakaText.Text + "','" + markaText.Text + "','" + modelText.Text + "','" + yakitTuruCB.Text + "','" + renkText.Text + "','" + hasarText.Text + "','" + kmText.Text + "','" + vitesCB.Text + "','" + koltukSayiCB.Text + "','"+ imageData +"','0')", cnn);
                     sorgu1.ExecuteNonQuery();
                     cnn.Close();
                     cnn.Open();
                     MySqlCommand sorgu2 = new MySqlCommand("SELECT * FROM cars WHERE plaka = '" + plakaText.Text + "'", cnn);
                     sorgu2.ExecuteNonQuery();
                     MySqlDataReader tara2 = sorgu.ExecuteReader();
-                    while (tara2.Read()) 
+                    while (tara2.Read())
                     {
                         aracID = tara2.GetInt32("id");
                     }
                     cnn.Close();
                     cnn.Open();
-                    MySqlCommand sorgu3 = new MySqlCommand("INSERT INTO prices(arac_id,daily_price,weekly_price,daily_km_limit) VALUES('" + aracID + "','" + gunlukFiyat.Text + "','" + haftalik.ToString() + "','" + kmFiyat.Text + "')", cnn) ;
+                    MySqlCommand sorgu3 = new MySqlCommand("INSERT INTO prices(arac_id,daily_price,weekly_price,daily_km_limit) VALUES('" + aracID + "','" + gunlukFiyat.Text + "','" + haftalik.ToString() + "','" + kmFiyat.Text + "')", cnn);
                     sorgu3.ExecuteNonQuery();
                     MessageBox.Show("Yeni araba veritabanına eklendi.");
                     cnn.Close();
@@ -197,5 +207,27 @@ namespace RentACar2023
                 e.Handled = true;
             }
         }
+
+        private void resimSecBtn_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            aracResim.ImageLocation = openFileDialog1.FileName;
+        }
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return memoryStream.ToArray();
+            }
+        }
+        private Image ByteArrayToImage(byte[] byteArray)
+        {
+            using (MemoryStream memoryStream = new MemoryStream(byteArray))
+            {
+                return Image.FromStream(memoryStream);
+            }
+        }
     }
+
 }

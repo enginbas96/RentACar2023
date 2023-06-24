@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+using BCryptNet = BCrypt.Net.BCrypt;
+
 namespace RentACar2023
 {
     public partial class KullaniciIslemForm : Form
@@ -87,7 +89,7 @@ namespace RentACar2023
             }
             else
             {
-                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
                 MySqlConnection cnn = new MySqlConnection(myConnectionString);
                 cnn.Open();
                 MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + deleteKullaniciAdi.Text + "'", cnn);
@@ -124,9 +126,10 @@ namespace RentACar2023
                 MySqlDataReader tara = sorgu.ExecuteReader();
                 if (tara.Read())
                 {
+                    string hashedPassword = BCrypt.Net.BCrypt.HashPassword(sifreDegisSifre.Text);
                     cnn.Close();
                     cnn.Open();
-                    MySqlCommand sorgu1 = new MySqlCommand("UPDATE employees SET sifre ='" + sifreDegisSifre.Text + "' WHERE kullanici_adi ='" + sifreDegisKullaniciAdi.Text + "' ", cnn);
+                    MySqlCommand sorgu1 = new MySqlCommand("UPDATE employees SET sifre ='" + hashedPassword + "' WHERE kullanici_adi ='" + sifreDegisKullaniciAdi.Text + "' ", cnn);
                     sorgu1.ExecuteNonQuery();
                     MessageBox.Show("Şifreniz başarıyla değiştirildi");
                     cnn.Close();
@@ -160,12 +163,19 @@ namespace RentACar2023
                 {
                     cnn.Close();
                     cnn.Open();
-                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO employees(name, surname, kullanici_adi, sifre, isAdmin) VALUES('" + olusturAd.Text + "','" + olusturSoyad.Text + "','" + olusturKullaniciAdi.Text + "','" + olusturSifre.Text + "','1')", cnn);
+                    string hashedPassword = HashPassword(olusturSifre.Text); // Şifreyi bcrypt ile hashle
+                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO employees(name, surname, kullanici_adi, sifre, isAdmin) VALUES('" + olusturAd.Text + "','" + olusturSoyad.Text + "','" + olusturKullaniciAdi.Text + "','" + hashedPassword + "','1')", cnn);
                     sorgu1.ExecuteNonQuery();
                     MessageBox.Show("Yeni kullanıcı oluşturuldu.");
                     cnn.Close();
                 }
             }
+        }
+        private string HashPassword(string password)
+        {
+            string salt = BCryptNet.GenerateSalt();
+            string hashedPassword = BCryptNet.HashPassword(password, salt);
+            return hashedPassword;
         }
         void resetle()
         {
