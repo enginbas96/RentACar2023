@@ -35,6 +35,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('admin_logout');
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin_dashboard');
     Route::get('/profile', [ProfileController::class, 'index'])->name('admin_profile');
+    Route::post('/update-profile', [ProfileController::class, 'update'])->name('admin_update');
     Route::get('/users', [UserController::class, 'index'])->name('admin_users');
     Route::get('/admin-cars', [AdminCarsController::class, 'index'])->name('admin_cars');
     Route::get('/user/banned/{id}', [UserController::class, 'banned'])->name('admin_user_banned');

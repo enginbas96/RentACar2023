@@ -37,7 +37,7 @@ class LoginController extends Controller
 }
 
     public function logout(Request $request){
-        Auth::guard('employees')->logout();
+        Auth::logout();
         $request->session()->flush();
         return redirect()->route('login');
     }
