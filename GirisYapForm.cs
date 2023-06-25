@@ -22,26 +22,38 @@ namespace RentACar2023
         }
         private void GirisYapButton_Click(object sender, EventArgs e)
         {
-            string gelenSifre = GirisYapSifreTextBox.Text;
-            string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
-            MySqlConnection cnn = new MySqlConnection(myConnectionString);
-            cnn.Open();
-            MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + GirisYapKullaniciAdiTextBox.Text + "'", cnn);
-            MySqlDataReader tara = sorgu.ExecuteReader();
-            if (tara.Read())
+            if (GirisYapKullaniciAdiTextBox.Text == "" || GirisYapSifreTextBox.Text == "")
             {
-                string hashedPasswordFromDB = tara["sifre"].ToString();
-                bool isPasswordCorrect = BCrypt.Net.BCrypt.Verify(gelenSifre, hashedPasswordFromDB);
-                if (isPasswordCorrect)
+                MessageBox.Show("Lütfen boş alanları doldurup tekrar deneyiniz.");
+            }
+            else 
+            {
+                string gelenSifre = GirisYapSifreTextBox.Text;
+                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                MySqlConnection cnn = new MySqlConnection(myConnectionString);
+                cnn.Open();
+                MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + GirisYapKullaniciAdiTextBox.Text + "'", cnn);
+                MySqlDataReader tara = sorgu.ExecuteReader();
+                if (tara.Read())
                 {
-                    AracEkleForm aracEkle = new AracEkleForm(GirisYapKullaniciAdiTextBox.Text);
-                    aracEkle.Show();
-                    cnn.Close();
-                    this.Hide();
+                    string hashedPasswordFromDB = tara["sifre"].ToString();
+                    bool isPasswordCorrect = BCrypt.Net.BCrypt.Verify(gelenSifre, hashedPasswordFromDB);
+                    if (isPasswordCorrect)
+                    {
+                        AracEkleForm aracEkle = new AracEkleForm(GirisYapKullaniciAdiTextBox.Text);
+                        aracEkle.Show();
+                        cnn.Close();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kullanıcı adı veya şifre hatalı, lütfen kontrol edip tekrar deneyiniz.");
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Kullanıcı adı veya şifre hatalı, lütfen kontrol edip tekrar deneyiniz.");
+                    cnn.Close();
                 }
             }
         }

@@ -97,7 +97,7 @@ namespace RentACar2023
                 if (gunlukDegisimRB.Checked == true)
                 {
                     float haftalikFiyat = float.Parse(yeniFiyatText.Text) * 6;
-                    MySqlCommand sorgu = new MySqlCommand("UPDATE prices SET daily_price ='" + yeniFiyatText.Text + "',weekly_price ='" + haftalikFiyat + "'  WHERE arac_id ='" + plakaText.Text + "' ", cnn);
+                    MySqlCommand sorgu = new MySqlCommand("UPDATE prices JOIN cars ON prices.arac_id = cars.id SET prices.daily_price ='" + yeniFiyatText.Text + "',prices.weekly_price ='" + haftalikFiyat + "' WHERE cars.plaka ='" + plakaText.Text + "'", cnn);
                     sorgu.ExecuteNonQuery();
                     MessageBox.Show("Günlük fiyatınız başarıyla değiştirildi.");
                     cnn.Close();
@@ -107,7 +107,7 @@ namespace RentACar2023
                 else if (kmBasinaDegisimRB.Checked == true)
                 {
                     float haftalikFiyat = float.Parse(yeniFiyatText.Text) * 6;
-                    MySqlCommand sorgu = new MySqlCommand("UPDATE prices SET daily_km_limit ='" + yeniFiyatText.Text + "' WHERE arac_id ='" + plakaText.Text + "' ", cnn);
+                    MySqlCommand sorgu = new MySqlCommand("UPDATE prices JOIN cars ON prices.arac_id = cars.id SET prices.daily_km_limit ='" + yeniFiyatText.Text + "',prices.weekly_price ='" + haftalikFiyat + "' WHERE cars.plaka ='" + plakaText.Text + "'", cnn);
                     sorgu.ExecuteNonQuery();
                     MessageBox.Show("Kilometre başına fiyatınız başarıyla değiştirildi.");
                     cnn.Close();
@@ -155,7 +155,7 @@ namespace RentACar2023
             veriGoruntuleyici.Columns[0].HeaderText = "Arac Plakası";
             veriGoruntuleyici.Columns[1].HeaderText = "Günlük fiyat";
             veriGoruntuleyici.Columns[2].HeaderText = "Haftalık Fiyat";
-            veriGoruntuleyici.Columns[3].HeaderText = "Günlük Kilometre Sınırı";
+            veriGoruntuleyici.Columns[3].HeaderText = "Aşımda KM Başına Fiyat";
             veriGoruntuleyici.Columns[0].Width = 273;
             veriGoruntuleyici.Columns[1].Width = 273;
             veriGoruntuleyici.Columns[2].Width = 273;
