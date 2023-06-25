@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin-cars', [AdminCarsController::class, 'index'])->name('admin_cars');
     Route::get('/user/banned/{id}', [UserController::class, 'banned'])->name('admin_user_banned');
     Route::get('/user/delete/{id}', [UserController::class, 'delete'])->name('admin_user_delete');
+    Route::get('/received/{id}', [AdminController::class, 'received'])->name('admin_received');
 });
 
 /*User Pages*/
