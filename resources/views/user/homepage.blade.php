@@ -88,7 +88,7 @@
                     @foreach($cars as $car)
                     <div class="item">
                         <div class="car-wrap rounded ftco-animate">
-                            <div class="img rounded d-flex align-items-end" style="background-image: url({{asset($car->img_url)}});">
+                            <div class="img rounded d-flex align-items-end" style="background-image: url('data:image/png;base64,{{base64_encode($car->img)}}');">
                             </div>
                             <div class="text">
                                 <h2 class="mb-0"><a href="#">{{$car->marka}}</a></h2>

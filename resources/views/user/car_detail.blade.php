@@ -103,7 +103,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="car-details">
-                    <div class="img rounded" style="background-image: url({{asset($car->img_url)}});"></div>
+                    <div class="img rounded" style="background-image: url('data:image/png;base64,{{base64_encode($car->img)}}');"></div>
                     <div class="text text-center">
                         <h2>{{$car->marka}}</h2>
                         <span class="subheading"></span>
@@ -211,7 +211,7 @@
                 <div class="col-md-4">
                     <div class="car-wrap rounded ftco-animate">
                         <div class="img rounded d-flex align-items-end"
-                             style="background-image: url({{asset($car->img_url)}});">
+                             style="background-image: url('data:image/png;base64,{{base64_encode($car->img)}}');">
                         </div>
                         <div class="text">
                             <h2 class="mb-0"><a href="car-single.html">{{$car->marka}}</a></h2>

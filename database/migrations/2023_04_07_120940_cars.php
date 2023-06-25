@@ -19,7 +19,10 @@ return new class extends Migration
             $table->string('yakit_turu');
             $table->string('renk');
             $table->string('hasar_kaydi');
-            $table->string('img_url');
+            $table->string('km');
+            $table->string('vites');
+            $table->string('koltuk_sayisi');
+            $table->binary('img');
             $table->boolean('isRent')->withComment('0 ise kiralanmamış 1 ise kiralanmış');
             $table->timestamps();
         });

@@ -106,7 +106,7 @@
                     </div>
                     <div class="col-md-5 d-flex">
                         <div class="services w-100">
-                            <img style="width: 600px; height: 450px" src="{{asset($car->img_url)}}" alt="">
+                            <img style="width: 600px; height: 450px" src="data:image/png;base64,{{base64_encode($car->img)}}" alt="">
                         </div>
                     </div>
                 </div>
