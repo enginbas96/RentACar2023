@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
 using BCryptNet = BCrypt.Net.BCrypt;
 
 namespace RentACar2023
@@ -163,7 +162,7 @@ namespace RentACar2023
                 {
                     cnn.Close();
                     cnn.Open();
-                    string hashedPassword = HashPassword(olusturSifre.Text); // Şifreyi bcrypt ile hashle
+                    string hashedPassword = HashPassword(olusturSifre.Text); 
                     MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO employees(name, surname, kullanici_adi, sifre, isAdmin) VALUES('" + olusturAd.Text + "','" + olusturSoyad.Text + "','" + olusturKullaniciAdi.Text + "','" + hashedPassword + "','1')", cnn);
                     sorgu1.ExecuteNonQuery();
                     MessageBox.Show("Yeni kullanıcı oluşturuldu.");

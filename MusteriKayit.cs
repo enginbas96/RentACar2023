@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using BCryptNet = BCrypt.Net.BCrypt;
 
 namespace RentACar2023
 {
@@ -44,6 +45,7 @@ namespace RentACar2023
             }
             else
             {
+                string hashedPassword = HashPassword(sifreText.Text);
                 string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
                 MySqlConnection cnn = new MySqlConnection(myConnectionString);
                 cnn.Open();
@@ -64,6 +66,11 @@ namespace RentACar2023
                     cnn.Close();
                 }
             }
+        }        private string HashPassword(string password)
+        {
+            string salt = BCryptNet.GenerateSalt();
+            string hashedPassword = BCryptNet.HashPassword(password, salt);
+            return hashedPassword;
         }
         private void tcText_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -94,7 +101,6 @@ namespace RentACar2023
             }
 
         }
-
         private void adText_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(adText.Text))
@@ -104,7 +110,6 @@ namespace RentACar2023
                 adText.SelectionStart = adText.Text.Length;
             }
         }
-
         private void soyadText_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(soyadText.Text))

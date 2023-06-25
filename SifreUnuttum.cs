@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using BCryptNet = BCrypt.Net.BCrypt;
 
 namespace RentACar2023
 {
@@ -27,14 +28,21 @@ namespace RentACar2023
         {
             Application.Exit();
         }
+        private string HashPassword(string password)
+        {
+            string salt = BCryptNet.GenerateSalt();
+            string hashedPassword = BCryptNet.HashPassword(password, salt);
+            return hashedPassword;
+        }
         private void kaydetBTN_Click(object sender, EventArgs e)
         {
-            if (kurtarmaKoduText.Text == "" || kullanıcıAdıText.Text == "")
+            if (kurtarmaKoduText.Text == "" || kullanıcıAdıText.Text == "" || yeniSifre.Text == "")
             {
                 MessageBox.Show("Lütfen boş alanları doldurunuz.");
             }
             else
             {
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(yeniSifre.Text);
                 string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
                 MySqlConnection cnn = new MySqlConnection(myConnectionString);
                 cnn.Open();
@@ -42,7 +50,11 @@ namespace RentACar2023
                 MySqlDataReader tara = sorgu.ExecuteReader();
                 if (tara.Read() && kurtarmaKoduText.Text == "kurtarbeni!")
                 {
-                    MessageBox.Show(kullanıcıAdıText.Text + " kullanıcı adına ait şifreniz : " + tara.GetString("sifre"));
+                    cnn.Close();
+                    cnn.Open();
+                    MySqlCommand sorgu1 = new MySqlCommand("UPDATE employees SET sifre ='" + hashedPassword + "' WHERE kullanici_adi ='" + kullanıcıAdıText.Text + "' ", cnn);
+                    sorgu1.ExecuteNonQuery();
+                    MessageBox.Show("Şifreniz başarıyla değiştirildi");
                     cnn.Close();
                 }
                 else

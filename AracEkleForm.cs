@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -86,17 +87,7 @@ namespace RentACar2023
             Application.Exit();
         }
         private void ekleBTN_Click(object sender, EventArgs e)
-        {
-                byte[] imageData = ImageToByteArray(aracResim.Image);
-
-            // Diğer kodlar...
-
-            // Resmi veritabanına kaydetmeden önce byte dizisinden yeniden bir resim oluşturun
-            Image resim = ByteArrayToImage(imageData);
-
-            // Resmi görüntülemek için PictureBox kontrolüne ata
-            aracResim.Image = resim;
-
+        {       
             int aracID = 0;
             if (plakaText.Text == "" || markaText.Text == "" || modelText.Text == "" || yakitTuruCB.Text == "" || hasarText.Text == ""
                 || renkText.Text == "" || kmText.Text == "" || koltukSayiCB.Text == "" || vitesCB.Text == "" || kmFiyat.Text == "" || gunlukFiyat.Text == "")
@@ -121,7 +112,7 @@ namespace RentACar2023
                     int haftalik = 6 * (int.Parse(gunlukFiyat.Text));
                     cnn.Close();
                     cnn.Open();
-                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO cars(plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi, img, isRent) VALUES('" + plakaText.Text + "','" + markaText.Text + "','" + modelText.Text + "','" + yakitTuruCB.Text + "','" + renkText.Text + "','" + hasarText.Text + "','" + kmText.Text + "','" + vitesCB.Text + "','" + koltukSayiCB.Text + "','"+ imageData +"','0')", cnn);
+                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO cars(plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi, img_path, isRent) VALUES('" + plakaText.Text + "','" + markaText.Text + "','" + modelText.Text + "','" + yakitTuruCB.Text + "','" + renkText.Text + "','" + hasarText.Text + "','" + kmText.Text + "','" + vitesCB.Text + "','" + koltukSayiCB.Text + "','"+ resimYolu + "','0')", cnn);
                     sorgu1.ExecuteNonQuery();
                     cnn.Close();
                     cnn.Open();
@@ -208,25 +199,16 @@ namespace RentACar2023
             }
         }
 
+        string resimYolu;
         private void resimSecBtn_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            aracResim.ImageLocation = openFileDialog1.FileName;
-        }
-        private byte[] ImageToByteArray(Image image)
-        {
-            using (MemoryStream memoryStream = new MemoryStream())
+            openFileDialog1.Title = "Resim seç";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Jpeg);
-                return memoryStream.ToArray();
-            }
-        }
-        private Image ByteArrayToImage(byte[] byteArray)
-        {
-            using (MemoryStream memoryStream = new MemoryStream(byteArray))
-            {
-                return Image.FromStream(memoryStream);
-            }
+
+                aracResim.Image = Image.FromFile(openFileDialog1.FileName);
+                resimYolu = "img/user/" + Path.GetFileName(openFileDialog1.FileName);
+            }            
         }
     }
 

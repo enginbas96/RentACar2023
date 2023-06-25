@@ -38,13 +38,15 @@
             geriBTN = new Button();
             ımageList1 = new ImageList(components);
             kaydetBTN = new Button();
+            yeniSifre = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)KullaniciPictureBox).BeginInit();
             SuspendLayout();
             // 
             // KullaniciPictureBox
             // 
             KullaniciPictureBox.Image = (Image)resources.GetObject("KullaniciPictureBox.Image");
-            KullaniciPictureBox.Location = new Point(210, 37);
+            KullaniciPictureBox.Location = new Point(210, 24);
             KullaniciPictureBox.Name = "KullaniciPictureBox";
             KullaniciPictureBox.Size = new Size(173, 153);
             KullaniciPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -54,25 +56,25 @@
             // kurtarmaKoduText
             // 
             kurtarmaKoduText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            kurtarmaKoduText.Location = new Point(210, 281);
+            kurtarmaKoduText.Location = new Point(210, 245);
             kurtarmaKoduText.Name = "kurtarmaKoduText";
             kurtarmaKoduText.Size = new Size(173, 32);
-            kurtarmaKoduText.TabIndex = 111114;
+            kurtarmaKoduText.TabIndex = 2;
             kurtarmaKoduText.UseSystemPasswordChar = true;
             // 
             // kullanıcıAdıText
             // 
             kullanıcıAdıText.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            kullanıcıAdıText.Location = new Point(210, 229);
+            kullanıcıAdıText.Location = new Point(210, 193);
             kullanıcıAdıText.Name = "kullanıcıAdıText";
             kullanıcıAdıText.Size = new Size(173, 32);
-            kullanıcıAdıText.TabIndex = 111113;
+            kullanıcıAdıText.TabIndex = 1;
             // 
             // SifreLabel
             // 
             SifreLabel.AutoSize = true;
             SifreLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            SifreLabel.Location = new Point(45, 281);
+            SifreLabel.Location = new Point(45, 245);
             SifreLabel.Name = "SifreLabel";
             SifreLabel.Size = new Size(159, 28);
             SifreLabel.TabIndex = 111117;
@@ -82,7 +84,7 @@
             // 
             KullaniciAdiLabel.AutoSize = true;
             KullaniciAdiLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            KullaniciAdiLabel.Location = new Point(70, 229);
+            KullaniciAdiLabel.Location = new Point(70, 193);
             KullaniciAdiLabel.Name = "KullaniciAdiLabel";
             KullaniciAdiLabel.Size = new Size(134, 28);
             KullaniciAdiLabel.TabIndex = 111116;
@@ -94,10 +96,10 @@
             geriBTN.ImageAlign = ContentAlignment.MiddleLeft;
             geriBTN.ImageKey = "geridon.png";
             geriBTN.ImageList = ımageList1;
-            geriBTN.Location = new Point(333, 354);
+            geriBTN.Location = new Point(333, 357);
             geriBTN.Name = "geriBTN";
             geriBTN.Size = new Size(162, 51);
-            geriBTN.TabIndex = 111119;
+            geriBTN.TabIndex = 5;
             geriBTN.Text = "Geri";
             geriBTN.UseVisualStyleBackColor = true;
             geriBTN.Click += geriBTN_Click;
@@ -116,14 +118,33 @@
             kaydetBTN.ImageAlign = ContentAlignment.MiddleLeft;
             kaydetBTN.ImageKey = "sifremikurtar.png";
             kaydetBTN.ImageList = ımageList1;
-            kaydetBTN.Location = new Point(51, 354);
+            kaydetBTN.Location = new Point(51, 357);
             kaydetBTN.Name = "kaydetBTN";
             kaydetBTN.Size = new Size(186, 51);
-            kaydetBTN.TabIndex = 111118;
+            kaydetBTN.TabIndex = 4;
             kaydetBTN.Text = "Şifremi Kurtar";
             kaydetBTN.TextAlign = ContentAlignment.MiddleRight;
             kaydetBTN.UseVisualStyleBackColor = true;
             kaydetBTN.Click += kaydetBTN_Click;
+            // 
+            // yeniSifre
+            // 
+            yeniSifre.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            yeniSifre.Location = new Point(210, 298);
+            yeniSifre.Name = "yeniSifre";
+            yeniSifre.Size = new Size(173, 32);
+            yeniSifre.TabIndex = 3;
+            yeniSifre.UseSystemPasswordChar = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(99, 298);
+            label1.Name = "label1";
+            label1.Size = new Size(105, 28);
+            label1.TabIndex = 111121;
+            label1.Text = "Yeni Şifre : ";
             // 
             // FormSifremiUnuttum
             // 
@@ -131,6 +152,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(568, 426);
+            Controls.Add(yeniSifre);
+            Controls.Add(label1);
             Controls.Add(geriBTN);
             Controls.Add(kaydetBTN);
             Controls.Add(KullaniciPictureBox);
@@ -159,5 +182,7 @@
         private Button geriBTN;
         private Button kaydetBTN;
         private ImageList ımageList1;
+        private TextBox yeniSifre;
+        private Label label1;
     }
 }
