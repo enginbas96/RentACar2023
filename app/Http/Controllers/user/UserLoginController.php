@@ -34,10 +34,10 @@ class UserLoginController extends Controller
 //                return redirect()->route('user_homepage', Helper::encryptInputs($inputs)); -> url'e gönderdiğim user id'yi hashlememe yarıyor.
                   return redirect()->route('user_homepage');
             } else {
-                return redirect()->route('login');
+                return redirect()->route('user_login_page');
             }
         } else {
-            return redirect()->route('login');
+            return redirect()->route('user_login_page');
         }
 
     }
@@ -59,6 +59,11 @@ class UserLoginController extends Controller
         $user->tel_no = strip_tags($request->tel_no);
         $user->isBanned = 0;
         $user->save();
-        return redirect()->route('login');
+        return redirect()->route('user_login_page');
+    }
+
+    public function logout(Request $request){
+        $request->session()->flush();
+        return redirect()->route('user_login_page');
     }
 }

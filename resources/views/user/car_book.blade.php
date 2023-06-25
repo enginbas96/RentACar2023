@@ -43,6 +43,8 @@
                 <li class="nav-item"><a href="{{route('user_about')}}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{route('user_cars')}}" class="nav-link">Cars</a></li>
                 <li class="nav-item active"><a href="{{route('user_contact')}}" class="nav-link">Contact</a></li>
+                <li class="nav-item active"><a href="{{route('user_logout')}}" class="nav-link">Logout</a></li>
+
             </ul>
         </div>
     </div>
@@ -106,7 +108,7 @@
                     </div>
                     <div class="col-md-5 d-flex">
                         <div class="services w-100">
-                            <img style="width: 600px; height: 450px" src="data:image/png;base64,{{base64_encode($car->img)}}" alt="">
+                            <img style="width: 600px; height: 450px" src="{{asset($car->img_path)}}" alt="">
                         </div>
                     </div>
                 </div>

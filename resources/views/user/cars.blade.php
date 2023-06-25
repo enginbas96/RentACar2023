@@ -42,6 +42,7 @@
                 <li class="nav-item"><a href="{{route('user_about')}}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{route('user_cars')}}" class="nav-link">Cars</a></li>
                 <li class="nav-item active"><a href="{{route('user_contact')}}" class="nav-link">Contact</a></li>
+                <li class="nav-item active"><a href="{{route('user_logout')}}" class="nav-link">Logout</a></li>
             </ul>
         </div>
     </div>
@@ -65,20 +66,25 @@
     <div class="container">
         <div class="row justify-content-md-center">
             @foreach($cars as $car)
+                @if($car->isRent == 0)
             <div class="col-md-4">
                 <div class="car-wrap rounded ftco-animate">
-                    <div class="img rounded d-flex align-items-end" style="background-image: url('data:image/png;base64,{{base64_encode($car->img)}}');">
+                    <div class="img rounded d-flex align-items-end" style="background-image: url({{asset($car->img_path)}});">
                     </div>
                     <div class="text">
                         <h2 class="mb-0"><a href="car-single.html">{{$car->marka}}</a></h2>
                         <div class="d-flex mb-3">
                             <span class="cat">{{$car->model}}</span>
-                            <p class="price ml-auto">$500 <span>/day</span></p>
+                            <p class="price ml-auto">{{$car->getPrice->daily_price}} <span>/günlük</span></p>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <p class="price ml-auto">{{$car->getPrice->weekly_price}} <span>/haftalık</span></p>
                         </div>
                         <p class="d-flex mb-0 d-block"><a href="{{route('user_car_book', $car->id)}}" class="btn btn-primary py-2 mr-1">Rezerve et</a> <a href="{{route('user_car_detail', $car->id)}}" class="btn btn-secondary py-2 ml-1">Detaylar</a></p>
                     </div>
                 </div>
             </div>
+                @endif
             @endforeach
         </div>
         <div class="row mt-5">

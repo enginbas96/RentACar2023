@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
+    protected $table = 'cars';
+    public function getPrice(){
+        return $this->hasOne('App\Models\Price','arac_id','id');
+    }
     use HasFactory;
 }

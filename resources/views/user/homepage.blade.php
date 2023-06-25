@@ -46,6 +46,8 @@
                 <li class="nav-item"><a href="{{route('user_about')}}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{route('user_cars')}}" class="nav-link">Cars</a></li>
                 <li class="nav-item active"><a href="{{route('user_contact')}}" class="nav-link">Contact</a></li>
+                <li class="nav-item active"><a href="{{route('user_logout')}}" class="nav-link">Logout</a></li>
+
             </ul>
         </div>
     </div>
@@ -58,14 +60,13 @@
         <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
             <div class="col-lg-8 ftco-animate">
                 <div class="text w-100 text-center mb-md-5 pb-md-5">
-                    <h1 class="mb-4">Fast &amp; Easy Way To Rent A Car</h1>
-                    <p style="font-size: 18px;">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts</p>
+                    <h1 class="mb-4">Hızlı ve kolay araç kiralamanın yolu</h1>
                     <a href="https://vimeo.com/45830194" class="icon-wrap popup-vimeo d-flex align-items-center mt-4 justify-content-center">
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="ion-ios-play"></span>
                         </div>
                         <div class="heading-title ml-5">
-                            <span>Easy steps for renting a car</span>
+                            <span>Araç kiralama için kolay adım</span>
                         </div>
                     </a>
                 </div>
@@ -88,13 +89,16 @@
                     @foreach($cars as $car)
                     <div class="item">
                         <div class="car-wrap rounded ftco-animate">
-                            <div class="img rounded d-flex align-items-end" style="background-image: url('data:image/png;base64,{{base64_encode($car->img)}}');">
+                            <div class="img rounded d-flex align-items-end" style="background-image: url({{asset($car->img_path)}});">
                             </div>
                             <div class="text">
                                 <h2 class="mb-0"><a href="#">{{$car->marka}}</a></h2>
                                 <div class="d-flex mb-3">
                                     <span class="cat">{{$car->model}}</span>
-                                    <p class="price ml-auto">₺500 <span>/günlük</span></p>
+                                    <p class="price ml-auto">{{$car->getPrice->daily_price}} <span>/günlük</span></p>
+                                </div>
+                                <div class="d-flex mb-3">
+                                    <p class="price ml-auto">{{$car->getPrice->weekly_price}} <span>/haftalık</span></p>
                                 </div>
                                 <p class="d-flex mb-0 d-block"><a href="{{route('user_car_book', $car->id)}}" class="btn btn-primary py-2 mr-1">Rezerve et</a> <a href="{{route('user_car_detail', $car->id)}}" class="btn btn-secondary py-2 ml-1">Detaylar</a></p>
                             </div>

@@ -111,7 +111,7 @@
                         <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
                             <i class="fa fa-user me-sm-1"></i>
 
-                                <span class="d-sm-inline d-none">{{auth()->user()->name }}</span>
+                                <span class="d-sm-inline d-none">{{auth()->user()->name." ".auth()->user()->surname}}</span>
 
                         </a>
                     </li>
@@ -215,7 +215,6 @@
                 <div class="card-header pb-0 p-3">
                     <div class="d-flex justify-content-between">
                         <h6 class="mb-2">Araçlar</h6>
-                        {{--                        <a class="btn btn-success btn-xs" href="{{route('add_cars')}}"><i class="fa-solid fa-plus"></i></a>--}}
                     </div>
 
 
@@ -229,7 +228,7 @@
                                     <td class="w-30">
                                         <div class="d-flex px-2 py-1 align-items-center">
                                             <div>
-                                                <img src="{{asset($car->img_url)}}" style="width: 40px; height: 40px"
+                                                <img src="{{asset($car->img_path)}}" style="width: 40px; height: 40px"
                                                      alt="Country flag">
                                             </div>
                                             <div class="ms-4">

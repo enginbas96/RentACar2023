@@ -76,6 +76,8 @@
                 <li class="nav-item"><a href="{{route('user_about')}}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{route('user_cars')}}" class="nav-link">Cars</a></li>
                 <li class="nav-item active"><a href="{{route('user_contact')}}" class="nav-link">Contact</a></li>
+                <li class="nav-item active"><a href="{{route('user_logout')}}" class="nav-link">Logout</a></li>
+
             </ul>
         </div>
     </div>
@@ -103,7 +105,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="car-details">
-                    <div class="img rounded" style="background-image: url('data:image/png;base64,{{base64_encode($car->img)}}');"></div>
+                    <div class="img rounded" style="background-image: url({{asset($car->img_path)}});"></div>
                     <div class="text text-center">
                         <h2>{{$car->marka}}</h2>
                         <span class="subheading"></span>
@@ -195,7 +197,8 @@
         </div>
     </div>
     </div>
-    </div>
+    <p class="d-flex mb-0 justify-content-center"><a href="{{route('user_car_book', $car->id)}}" class="btn btn-primary py-2 mr-1">Rezerve et</a></p>
+        </div>
 </section>
 
 <section class="ftco-section ftco-no-pt">
@@ -211,13 +214,16 @@
                 <div class="col-md-4">
                     <div class="car-wrap rounded ftco-animate">
                         <div class="img rounded d-flex align-items-end"
-                             style="background-image: url('data:image/png;base64,{{base64_encode($car->img)}}');">
+                             style="background-image: url({{asset($car->img_path)}});">
                         </div>
                         <div class="text">
                             <h2 class="mb-0"><a href="car-single.html">{{$car->marka}}</a></h2>
                             <div class="d-flex mb-3">
                                 <span class="cat">{{$car->model}}</span>
-                                <p class="price ml-auto">$500 <span>/günlük</span></p>
+                                <p class="price ml-auto">{{$car->getPrice->daily_price}} <span>/günlük</span></p>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <p class="price ml-auto">{{$car->getPrice->weekly_price}} <span>/haftalık</span></p>
                             </div>
                             <p class="d-flex mb-0 d-block"><a href="{{route('user_car_book', $car->id)}}" class="btn btn-primary py-2 mr-1">Rezerve et</a>
                                 <a

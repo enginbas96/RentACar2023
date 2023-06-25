@@ -44,6 +44,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 /*User Pages*/
+Route::get('/user-logout', [UserLoginController::class, 'logout'])->name('user_logout');
 Route::get('/user-login',[UserLoginController::class,'index'])->name('user_login_page');
 Route::get('/anasayfa',[HomePageController::class,'index'])->name('user_homepage');
 Route::get('/iletişim',[ContactController::class,'index'])->name('user_contact');

@@ -48,6 +48,7 @@
                             <input type="submit" value="Giriş">
                         </div>
                         <div class="text sign-up-text">Hesabınız yok mu? <label for="flip">Hemen kaydolun</label></div>
+                        <div class="text sign-up-text">Admin girişi için <a href="{{route('login')}}">Tıklayın</a></div>
                     </div>
                     @if ($errors->any())
                         <div class="alert alert-danger">

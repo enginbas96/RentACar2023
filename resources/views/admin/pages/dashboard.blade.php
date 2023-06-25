@@ -96,9 +96,9 @@
                     <li class="nav-item d-flex align-items-center">
                         <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
                             <i class="fa fa-user me-sm-1"></i>
-                            @auth()
-                                <span class="d-sm-inline d-none">{{ $username }}</span>
-                            @endauth
+
+                                <span class="d-sm-inline d-none">{{auth()->user()->name." ".auth()->user()->surname}}</span>
+
                         </a>
                     </li>
                     <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -216,7 +216,7 @@
                                 <td class="w-30">
                                     <div class="d-flex px-2 py-1 align-items-center">
                                         <div>
-                                            <img src="data:image/png;base64,{{base64_encode($rentCar->getCar->img)}}" style="width: 40px; height: 40px" alt="Country flag">
+                                            <img src="{{asset($rentCar->getCar->img_path)}}" style="width: 40px; height: 40px" alt="Country flag">
                                         </div>
                                         <div class="ms-4">
                                             <p class="text-xs font-weight-bold mb-0">Araba(Marka):</p>
