@@ -19,12 +19,14 @@ class CarBookController extends Controller
 
     public function carBook(Request $request, $id)
     {
+        $car = Car::where('id', $id)->first();
         //$userId = Crypt::decrypt($userId);
         $userId = session('user_id');
         //dd($userId['id']);
         $now = Carbon::now('Europe/Istanbul')->format('Y-m-d H:i:s');
         $start_time = Carbon::parse($request->kiralanan_tarih . ' ' . $request->kiralanan_saat);
         $end_time = Carbon::parse($request->teslim_tarihi . ' ' . $request->teslim_saati);
+        if($car->isRent == 0){
         if ($start_time < $now) {
             return redirect()->route('user_car_book',$id)->withErrors('Kiralanan tarih şimdiki zamandan önce olamaz');
         } elseif ($end_time <= $start_time) {
@@ -41,7 +43,10 @@ class CarBookController extends Controller
             $car->save();
             return redirect()->route('user_cars');
         }
+        } else {
+            return redirect()->route('user_car_book',$id)->withErrors('Bu araç zaten kiralanmış');
 
+        }
 
     }
 }
