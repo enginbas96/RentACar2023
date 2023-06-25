@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('km');
             $table->string('vites');
             $table->string('koltuk_sayisi');
-            $table->binary('img');
+            $table->string('img_path');
             $table->boolean('isRent')->withComment('0 ise kiralanmamış 1 ise kiralanmış');
             $table->timestamps();
         });
