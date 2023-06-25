@@ -60,7 +60,7 @@ namespace RentACar2023
                 {
                     cnn.Close();
                     cnn.Open();
-                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO users(TC, password, name, surname, tel_no, isBanned) VALUES('" + tcText.Text + "','" + sifreText.Text + "','" + adText.Text + "','" + soyadText.Text + "','" + telNoText.Text + "','0')", cnn);
+                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO users(TC, password, name, surname, tel_no, isBanned) VALUES('" + tcText.Text + "','" + hashedPassword + "','" + adText.Text + "','" + soyadText.Text + "','" + telNoText.Text + "','0')", cnn);
                     sorgu1.ExecuteNonQuery();
                     MessageBox.Show("Müşteri kaydı başarıyla gerçekleşmiştir.");
                     cnn.Close();
