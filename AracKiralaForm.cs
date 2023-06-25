@@ -140,6 +140,8 @@ namespace RentACar2023
             else
             {
                 kirala();
+                temizle();
+                plakacek();
             }
         }
         int plaka_id;
@@ -205,6 +207,15 @@ namespace RentACar2023
         private void AracKiralaForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+        void temizle() 
+        {
+            plakaCB.Text = "";
+            plakaCB.Items.Clear();
+            tcText.Clear();
+            adText.Clear();
+            soyadText.Clear();
+            telefonText.Clear();
         }
     }
 }
