@@ -31,11 +31,11 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GirisSayfasi));
             aracListeBTN = new Button();
+            ımageList1 = new ImageList(components);
             girisBTN = new Button();
             label1 = new Label();
             label2 = new Label();
             musteriKayitBTN = new Button();
-            ımageList1 = new ImageList(components);
             SuspendLayout();
             // 
             // aracListeBTN
@@ -53,6 +53,15 @@
             aracListeBTN.TextAlign = ContentAlignment.MiddleRight;
             aracListeBTN.UseVisualStyleBackColor = true;
             aracListeBTN.Click += aracListeBTN_Click;
+            // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "araclistele.png");
+            ımageList1.Images.SetKeyName(1, "kullanıcıicon.png");
+            ımageList1.Images.SetKeyName(2, "musteriicon.png");
             // 
             // girisBTN
             // 
@@ -102,19 +111,9 @@
             musteriKayitBTN.Name = "musteriKayitBTN";
             musteriKayitBTN.Size = new Size(235, 75);
             musteriKayitBTN.TabIndex = 3;
-            musteriKayitBTN.Text = "Müşteri Kaydet";
-            musteriKayitBTN.TextAlign = ContentAlignment.MiddleRight;
+            musteriKayitBTN.Text = "Müşteri";
             musteriKayitBTN.UseVisualStyleBackColor = true;
             musteriKayitBTN.Click += musteriKayitBTN_Click;
-            // 
-            // ımageList1
-            // 
-            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
-            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
-            ımageList1.TransparentColor = Color.Transparent;
-            ımageList1.Images.SetKeyName(0, "araclistele.png");
-            ımageList1.Images.SetKeyName(1, "kullanıcıicon.png");
-            ımageList1.Images.SetKeyName(2, "musteriicon.png");
             // 
             // GirisSayfasi
             // 

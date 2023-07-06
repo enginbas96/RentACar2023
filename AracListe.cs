@@ -23,7 +23,7 @@ namespace RentACar2023
             veriYukleyici();
             veriYukleyiciKiralanmis();
         }
-        private void cikisBTN_Click(object sender, EventArgs e)
+        private void anaMenuButton_Click(object sender, EventArgs e)
         {
             GirisSayfasi geriDon = new GirisSayfasi();
             geriDon.Show();

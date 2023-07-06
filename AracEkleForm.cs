@@ -21,13 +21,16 @@ namespace RentACar2023
         {
             InitializeComponent();
         }
+        string kadi;
         public AracEkleForm(String kullaniciAdi)
         {
             InitializeComponent();
+            kadi = kullaniciAdi;
         }
         private void AracEkleForm_Load(object sender, EventArgs e)
         {
             aracEkleBTN.Enabled = false;
+            kullaniciAdi.Text = kadi;
         }
         private void SayfaYonlendir(String sayfa)
         {
@@ -87,7 +90,7 @@ namespace RentACar2023
             Application.Exit();
         }
         private void ekleBTN_Click(object sender, EventArgs e)
-        {       
+        {
             int aracID = 0;
             if (plakaText.Text == "" || markaText.Text == "" || modelText.Text == "" || yakitTuruCB.Text == "" || hasarText.Text == ""
                 || renkText.Text == "" || kmText.Text == "" || koltukSayiCB.Text == "" || vitesCB.Text == "" || kmFiyat.Text == "" || gunlukFiyat.Text == "")
@@ -112,7 +115,7 @@ namespace RentACar2023
                     int haftalik = 6 * (int.Parse(gunlukFiyat.Text));
                     cnn.Close();
                     cnn.Open();
-                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO cars(plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi, img_path, isRent) VALUES('" + plakaText.Text + "','" + markaText.Text + "','" + modelText.Text + "','" + yakitTuruCB.Text + "','" + renkText.Text + "','" + hasarText.Text + "','" + kmText.Text + "','" + vitesCB.Text + "','" + koltukSayiCB.Text + "','"+ resimYolu + "','0')", cnn);
+                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO cars(plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi, img_path, isRent) VALUES('" + plakaText.Text + "','" + markaText.Text + "','" + modelText.Text + "','" + yakitTuruCB.Text + "','" + renkText.Text + "','" + hasarText.Text + "','" + kmText.Text + "','" + vitesCB.Text + "','" + koltukSayiCB.Text + "','" + resimYolu + "','0')", cnn);
                     sorgu1.ExecuteNonQuery();
                     cnn.Close();
                     cnn.Open();
@@ -208,7 +211,7 @@ namespace RentACar2023
 
                 aracResim.Image = Image.FromFile(openFileDialog1.FileName);
                 resimYolu = "img/user/" + Path.GetFileName(openFileDialog1.FileName);
-            }            
+            }
         }
     }
 

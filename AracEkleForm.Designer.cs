@@ -64,6 +64,7 @@
             resimSecBtn = new Button();
             openFileDialog1 = new OpenFileDialog();
             aracResim = new PictureBox();
+            kullaniciAdi = new Label();
             ((System.ComponentModel.ISupportInitialize)aracResim).BeginInit();
             SuspendLayout();
             // 
@@ -431,12 +432,21 @@
             aracResim.TabIndex = 34;
             aracResim.TabStop = false;
             // 
+            // kullaniciAdi
+            // 
+            kullaniciAdi.AutoSize = true;
+            kullaniciAdi.Location = new Point(1032, 624);
+            kullaniciAdi.Name = "kullaniciAdi";
+            kullaniciAdi.Size = new Size(0, 20);
+            kullaniciAdi.TabIndex = 35;
+            // 
             // AracEkleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
+            Controls.Add(kullaniciAdi);
             Controls.Add(aracResim);
             Controls.Add(resimSecBtn);
             Controls.Add(label12);
@@ -518,5 +528,6 @@
         private Button resimSecBtn;
         private OpenFileDialog openFileDialog1;
         private PictureBox aracResim;
+        private Label kullaniciAdi;
     }
 }

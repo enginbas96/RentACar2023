@@ -8,7 +8,7 @@ namespace RentACar2023
         }
         private void musteriKayitBTN_Click(object sender, EventArgs e)
         {
-            MusteriKayit form2 = new MusteriKayit();
+            MusteriForm form2 = new MusteriForm();
             form2.Show();
             this.Hide();
         }
