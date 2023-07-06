@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AracFiyatForm));
             cikisBTN = new Button();
+            ımageList1 = new ImageList(components);
             profilBTN = new Button();
             aracFiyatBTN = new Button();
             aracKiralamaBTN = new Button();
@@ -44,14 +45,14 @@
             yeniFiyatText = new TextBox();
             label2 = new Label();
             guncelleBTN = new Button();
+            ımageList2 = new ImageList(components);
             haftalikFiyatText = new TextBox();
             label3 = new Label();
             kmBasinaText = new TextBox();
             label4 = new Label();
             gunlukDegisimRB = new RadioButton();
             kmBasinaDegisimRB = new RadioButton();
-            ımageList1 = new ImageList(components);
-            ımageList2 = new ImageList(components);
+            kullaniciAdi = new Label();
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             SuspendLayout();
             // 
@@ -68,6 +69,18 @@
             cikisBTN.TextAlign = ContentAlignment.MiddleRight;
             cikisBTN.UseVisualStyleBackColor = true;
             cikisBTN.Click += cikisBTN_Click;
+            // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "araccrud.png");
+            ımageList1.Images.SetKeyName(1, "aracekle.png");
+            ımageList1.Images.SetKeyName(2, "aracfiyat.png");
+            ımageList1.Images.SetKeyName(3, "arackiralama.png");
+            ımageList1.Images.SetKeyName(4, "cikisyap.png");
+            ımageList1.Images.SetKeyName(5, "kullanıcıicon.png");
             // 
             // profilBTN
             // 
@@ -226,6 +239,13 @@
             guncelleBTN.UseVisualStyleBackColor = true;
             guncelleBTN.Click += guncelleBTN_Click;
             // 
+            // ımageList2
+            // 
+            ımageList2.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList2.ImageStream = (ImageListStreamer)resources.GetObject("ımageList2.ImageStream");
+            ımageList2.TransparentColor = Color.Transparent;
+            ımageList2.Images.SetKeyName(0, "aracıguncelle.png");
+            // 
             // haftalikFiyatText
             // 
             haftalikFiyatText.Enabled = false;
@@ -292,24 +312,13 @@
             kmBasinaDegisimRB.Text = "KM Fiyat Değiştir";
             kmBasinaDegisimRB.UseVisualStyleBackColor = true;
             // 
-            // ımageList1
+            // kullaniciAdi
             // 
-            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
-            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
-            ımageList1.TransparentColor = Color.Transparent;
-            ımageList1.Images.SetKeyName(0, "araccrud.png");
-            ımageList1.Images.SetKeyName(1, "aracekle.png");
-            ımageList1.Images.SetKeyName(2, "aracfiyat.png");
-            ımageList1.Images.SetKeyName(3, "arackiralama.png");
-            ımageList1.Images.SetKeyName(4, "cikisyap.png");
-            ımageList1.Images.SetKeyName(5, "kullanıcıicon.png");
-            // 
-            // ımageList2
-            // 
-            ımageList2.ColorDepth = ColorDepth.Depth32Bit;
-            ımageList2.ImageStream = (ImageListStreamer)resources.GetObject("ımageList2.ImageStream");
-            ımageList2.TransparentColor = Color.Transparent;
-            ımageList2.Images.SetKeyName(0, "aracıguncelle.png");
+            kullaniciAdi.AutoSize = true;
+            kullaniciAdi.Location = new Point(34, 612);
+            kullaniciAdi.Name = "kullaniciAdi";
+            kullaniciAdi.Size = new Size(0, 20);
+            kullaniciAdi.TabIndex = 1024;
             // 
             // AracFiyatForm
             // 
@@ -317,6 +326,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
+            Controls.Add(kullaniciAdi);
             Controls.Add(kmBasinaDegisimRB);
             Controls.Add(gunlukDegisimRB);
             Controls.Add(kmBasinaText);
@@ -374,5 +384,6 @@
         private RadioButton kmBasinaDegisimRB;
         private ImageList ımageList1;
         private ImageList ımageList2;
+        private Label kullaniciAdi;
     }
 }

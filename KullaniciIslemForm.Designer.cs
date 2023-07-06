@@ -41,6 +41,7 @@
             deleteKullaniciAdi = new TextBox();
             label1 = new Label();
             kullaniciSilBTN = new Button();
+            ımageList2 = new ImageList(components);
             sifreDegistirGB = new GroupBox();
             sifreDegisSifre = new TextBox();
             label3 = new Label();
@@ -60,7 +61,7 @@
             silRB = new RadioButton();
             sifreDegistirRB = new RadioButton();
             olusturRB = new RadioButton();
-            ımageList2 = new ImageList(components);
+            kullaniciAdi = new Label();
             silGB.SuspendLayout();
             sifreDegistirGB.SuspendLayout();
             olusturGB.SuspendLayout();
@@ -206,6 +207,15 @@
             kullaniciSilBTN.TextAlign = ContentAlignment.MiddleRight;
             kullaniciSilBTN.UseVisualStyleBackColor = true;
             kullaniciSilBTN.Click += kullaniciSilBTN_Click;
+            // 
+            // ımageList2
+            // 
+            ımageList2.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList2.ImageStream = (ImageListStreamer)resources.GetObject("ımageList2.ImageStream");
+            ımageList2.TransparentColor = Color.Transparent;
+            ımageList2.Images.SetKeyName(0, "aracıguncelle.png");
+            ımageList2.Images.SetKeyName(1, "kullaniciolustur.png");
+            ımageList2.Images.SetKeyName(2, "kullanicisil.png");
             // 
             // sifreDegistirGB
             // 
@@ -426,14 +436,13 @@
             olusturRB.UseVisualStyleBackColor = true;
             olusturRB.CheckedChanged += olusturRB_CheckedChanged;
             // 
-            // ımageList2
+            // kullaniciAdi
             // 
-            ımageList2.ColorDepth = ColorDepth.Depth32Bit;
-            ımageList2.ImageStream = (ImageListStreamer)resources.GetObject("ımageList2.ImageStream");
-            ımageList2.TransparentColor = Color.Transparent;
-            ımageList2.Images.SetKeyName(0, "aracıguncelle.png");
-            ımageList2.Images.SetKeyName(1, "kullaniciolustur.png");
-            ımageList2.Images.SetKeyName(2, "kullanicisil.png");
+            kullaniciAdi.AutoSize = true;
+            kullaniciAdi.Location = new Point(20, 613);
+            kullaniciAdi.Name = "kullaniciAdi";
+            kullaniciAdi.Size = new Size(0, 20);
+            kullaniciAdi.TabIndex = 18;
             // 
             // KullaniciIslemForm
             // 
@@ -441,6 +450,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
+            Controls.Add(kullaniciAdi);
             Controls.Add(olusturRB);
             Controls.Add(sifreDegistirRB);
             Controls.Add(silRB);
@@ -504,5 +514,6 @@
         private RadioButton sifreDegistirRB;
         private RadioButton olusturRB;
         private ImageList ımageList2;
+        private Label kullaniciAdi;
     }
 }

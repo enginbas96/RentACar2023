@@ -18,9 +18,17 @@ namespace RentACar2023
         {
             InitializeComponent();
         }
+        public static string kadi;
+
+        public AracFiyatForm(string kullaniciAdi)
+        {
+            InitializeComponent();
+            kadi = kullaniciAdi;
+        }
         private void AracFiyatForm_Load(object sender, EventArgs e)
         {
             veriYukleyici();
+            kullaniciAdi.Text = kadi;
         }
         private void SayfaYonlendir(String sayfa)
         {
@@ -80,7 +88,7 @@ namespace RentACar2023
             Application.Exit();
         }
         private void guncelleBTN_Click(object sender, EventArgs e)
-        {            
+        {
             if (plakaText.Text == "")
             {
                 MessageBox.Show("Lütfen aracınızı seçiniz.");
@@ -93,7 +101,7 @@ namespace RentACar2023
             {
                 string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
                 MySqlConnection cnn = new MySqlConnection(myConnectionString);
-                cnn.Open();        
+                cnn.Open();
                 if (gunlukDegisimRB.Checked == true)
                 {
                     float haftalikFiyat = float.Parse(yeniFiyatText.Text) * 6;

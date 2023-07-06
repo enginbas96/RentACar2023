@@ -17,10 +17,18 @@ namespace RentACar2023
         {
             InitializeComponent();
         }
+        public static string kadi;
+        public AracCrudForm(string kullaniciAd)
+        {
+            InitializeComponent();
+            kadi = kullaniciAd;
+        }
         private void AracCrudForm_Load(object sender, EventArgs e)
         {
             crudBTN.Enabled = false;
+            kullaniciAd.Text = kadi;
             veriYukleyici();
+            
         }
         private void SayfaYonlendir(String sayfa)
         {

@@ -38,6 +38,7 @@
             aracEkleBTN = new Button();
             islemBTN = new Button();
             guncelleRB = new RadioButton();
+            ımageList2 = new ImageList(components);
             silRB = new RadioButton();
             vitesCB = new ComboBox();
             koltukSayiCB = new ComboBox();
@@ -59,7 +60,8 @@
             label10 = new Label();
             label11 = new Label();
             aracFiyatBTN = new Button();
-            ımageList2 = new ImageList(components);
+            label1 = new Label();
+            kullaniciAd = new Label();
             ((System.ComponentModel.ISupportInitialize)veriGoruntuleyici).BeginInit();
             SuspendLayout();
             // 
@@ -165,7 +167,7 @@
             guncelleRB.ImageList = ımageList2;
             guncelleRB.Location = new Point(900, 531);
             guncelleRB.Name = "guncelleRB";
-            guncelleRB.Size = new Size(187, 32);
+            guncelleRB.Size = new Size(182, 32);
             guncelleRB.TabIndex = 17;
             guncelleRB.TabStop = true;
             guncelleRB.Text = "Aracı Güncelle";
@@ -173,6 +175,14 @@
             guncelleRB.TextImageRelation = TextImageRelation.ImageBeforeText;
             guncelleRB.UseVisualStyleBackColor = true;
             guncelleRB.CheckedChanged += guncelleRB_CheckedChanged;
+            // 
+            // ımageList2
+            // 
+            ımageList2.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList2.ImageStream = (ImageListStreamer)resources.GetObject("ımageList2.ImageStream");
+            ımageList2.TransparentColor = Color.Transparent;
+            ımageList2.Images.SetKeyName(0, "aracıguncelle.png");
+            ımageList2.Images.SetKeyName(1, "aracısil.png");
             // 
             // silRB
             // 
@@ -184,7 +194,7 @@
             silRB.ImageList = ımageList2;
             silRB.Location = new Point(739, 531);
             silRB.Name = "silRB";
-            silRB.Size = new Size(133, 32);
+            silRB.Size = new Size(128, 32);
             silRB.TabIndex = 16;
             silRB.TabStop = true;
             silRB.Text = "Aracı Sil";
@@ -397,19 +407,29 @@
             aracFiyatBTN.UseVisualStyleBackColor = true;
             aracFiyatBTN.Click += aracFiyatBTN_Click;
             // 
-            // ımageList2
+            // label1
             // 
-            ımageList2.ColorDepth = ColorDepth.Depth32Bit;
-            ımageList2.ImageStream = (ImageListStreamer)resources.GetObject("ımageList2.ImageStream");
-            ımageList2.TransparentColor = Color.Transparent;
-            ımageList2.Images.SetKeyName(0, "aracıguncelle.png");
-            ımageList2.Images.SetKeyName(1, "aracısil.png");
+            label1.AutoSize = true;
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 20);
+            label1.TabIndex = 1018;
+            // 
+            // kullaniciAd
+            // 
+            kullaniciAd.AutoSize = true;
+            kullaniciAd.Location = new Point(18, 600);
+            kullaniciAd.Name = "kullaniciAd";
+            kullaniciAd.Size = new Size(0, 20);
+            kullaniciAd.TabIndex = 1019;
             // 
             // AracCrudForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1119, 653);
+            Controls.Add(kullaniciAd);
+            Controls.Add(label1);
             Controls.Add(aracFiyatBTN);
             Controls.Add(islemBTN);
             Controls.Add(guncelleRB);
@@ -482,5 +502,7 @@
         private ImageList ımageList1;
         private Button aracFiyatBTN;
         private ImageList ımageList2;
+        private Label label1;
+        private Label kullaniciAd;
     }
 }

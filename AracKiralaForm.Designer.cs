@@ -36,6 +36,7 @@
             crudBTN = new Button();
             aracEkleBTN = new Button();
             kiralaBTN = new Button();
+            ımageList2 = new ImageList(components);
             teslimTarihi = new DateTimePicker();
             kiralamaTarihi = new DateTimePicker();
             telefonText = new TextBox();
@@ -50,7 +51,7 @@
             label20 = new Label();
             plakaCB = new ComboBox();
             label19 = new Label();
-            ımageList2 = new ImageList(components);
+            kullaniciAdi = new Label();
             SuspendLayout();
             // 
             // cikisBTN
@@ -163,6 +164,13 @@
             kiralaBTN.TextAlign = ContentAlignment.MiddleRight;
             kiralaBTN.UseVisualStyleBackColor = true;
             kiralaBTN.Click += kiralaBTN_Click;
+            // 
+            // ımageList2
+            // 
+            ımageList2.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList2.ImageStream = (ImageListStreamer)resources.GetObject("ımageList2.ImageStream");
+            ımageList2.TransparentColor = Color.Transparent;
+            ımageList2.Images.SetKeyName(0, "kaydet.png");
             // 
             // teslimTarihi
             // 
@@ -309,12 +317,13 @@
             label19.TabIndex = 22;
             label19.Text = "Plaka : ";
             // 
-            // ımageList2
+            // kullaniciAdi
             // 
-            ımageList2.ColorDepth = ColorDepth.Depth32Bit;
-            ımageList2.ImageStream = (ImageListStreamer)resources.GetObject("ımageList2.ImageStream");
-            ımageList2.TransparentColor = Color.Transparent;
-            ımageList2.Images.SetKeyName(0, "kaydet.png");
+            kullaniciAdi.AutoSize = true;
+            kullaniciAdi.Location = new Point(35, 611);
+            kullaniciAdi.Name = "kullaniciAdi";
+            kullaniciAdi.Size = new Size(0, 20);
+            kullaniciAdi.TabIndex = 29;
             // 
             // AracKiralaForm
             // 
@@ -322,6 +331,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
+            Controls.Add(kullaniciAdi);
             Controls.Add(kiralaBTN);
             Controls.Add(teslimTarihi);
             Controls.Add(kiralamaTarihi);
@@ -379,5 +389,6 @@
         private Label label19;
         private ImageList ımageList1;
         private ImageList ımageList2;
+        private Label kullaniciAdi;
     }
 }

@@ -17,9 +17,17 @@ namespace RentACar2023
         {
             InitializeComponent();
         }
+        public static string kadi;
+
+        public AracKiralaForm(string kullaniciAdi)
+        {
+            InitializeComponent();
+            kadi = kullaniciAdi;
+        }
         private void AracKiralaForm_Load(object sender, EventArgs e)
         {
             aracKiralamaBTN.Enabled = false;
+            kullaniciAdi.Text = kadi;
             plakacek();
         }
         void plakacek()
@@ -208,7 +216,7 @@ namespace RentACar2023
         {
             Application.Exit();
         }
-        void temizle() 
+        void temizle()
         {
             plakaCB.Text = "";
             plakaCB.Items.Clear();

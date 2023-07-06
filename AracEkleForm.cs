@@ -21,7 +21,7 @@ namespace RentACar2023
         {
             InitializeComponent();
         }
-        string kadi;
+        public static string kadi;
         public AracEkleForm(String kullaniciAdi)
         {
             InitializeComponent();

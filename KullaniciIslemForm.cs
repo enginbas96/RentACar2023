@@ -19,9 +19,16 @@ namespace RentACar2023
             InitializeComponent();
             resetle();
         }
+        public static string kadi;
+        public KullaniciIslemForm(string kullaniciAdi)
+        {
+            InitializeComponent();
+            kadi = kullaniciAdi;
+        }
         private void KullaniciIslemForm_Load(object sender, EventArgs e)
         {
             profilBTN.Enabled = false;
+            kullaniciAdi.Text = kadi;
         }
         private void SayfaYonlendir(String sayfa)
         {
@@ -162,7 +169,7 @@ namespace RentACar2023
                 {
                     cnn.Close();
                     cnn.Open();
-                    string hashedPassword = HashPassword(olusturSifre.Text); 
+                    string hashedPassword = HashPassword(olusturSifre.Text);
                     MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO employees(name, surname, kullanici_adi, sifre, isAdmin) VALUES('" + olusturAd.Text + "','" + olusturSoyad.Text + "','" + olusturKullaniciAdi.Text + "','" + hashedPassword + "','1')", cnn);
                     sorgu1.ExecuteNonQuery();
                     MessageBox.Show("Yeni kullanıcı oluşturuldu.");

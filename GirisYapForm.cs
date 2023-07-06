@@ -42,6 +42,11 @@ namespace RentACar2023
                     {
                         AracEkleForm aracEkle = new AracEkleForm(GirisYapKullaniciAdiTextBox.Text);
                         aracEkle.Show();
+                        AracCrudForm aracCrud = new AracCrudForm(GirisYapKullaniciAdiTextBox.Text);
+                        AracKiralaForm aracKirala = new AracKiralaForm(GirisYapKullaniciAdiTextBox.Text);
+                        AracFiyatForm aracFiyat = new AracFiyatForm(GirisYapKullaniciAdiTextBox.Text);
+                        KullaniciIslemForm kullaniciIslem = new KullaniciIslemForm(GirisYapKullaniciAdiTextBox.Text);
+                        
                         cnn.Close();
                         this.Hide();
                     }
