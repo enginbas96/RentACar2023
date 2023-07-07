@@ -215,6 +215,7 @@
                 <div class="card-header pb-0 p-3">
                     <div class="d-flex justify-content-between">
                         <h6 class="mb-2">Araçlar</h6>
+                        <a href="{{route('add_car_page')}}"><i class="fa-solid fa-plus"></i></a>
                     </div>
 
 
