@@ -13,11 +13,12 @@ using BCryptNet = BCrypt.Net.BCrypt;
 
 namespace RentACar2023
 {
-    public partial class MusteriKayit : Form
+    public partial class Musteriİslemleri : Form
     {
-        public MusteriKayit()
+        public Musteriİslemleri()
         {
             InitializeComponent();
+            resetle();
         }
         private void geriBTN_Click(object sender, EventArgs e)
         {
@@ -66,7 +67,8 @@ namespace RentACar2023
                     cnn.Close();
                 }
             }
-        }        private string HashPassword(string password)
+        }
+        private string HashPassword(string password)
         {
             string salt = BCryptNet.GenerateSalt();
             string hashedPassword = BCryptNet.HashPassword(password, salt);
@@ -118,6 +120,11 @@ namespace RentACar2023
                 soyadText.Text = char.ToUpper(text[0]) + text.Substring(1);
                 soyadText.SelectionStart = soyadText.Text.Length;
             }
+        }
+
+        private void kullaniciOlusturBTN_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

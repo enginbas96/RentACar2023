@@ -19,7 +19,7 @@ namespace RentACar2023
 
         private void musteriKaydetButton_Click(object sender, EventArgs e)
         {
-            MusteriKayit form2 = new MusteriKayit();
+            Musteriİslemleri form2 = new Musteriİslemleri();
             form2.Show();
             this.Hide();
         }
