@@ -170,7 +170,7 @@
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-md-8">
-                <form method="post" action="" enctype="multipart/form-data">
+                <form method="post" action="{{route('add_car')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="card">
                         <div class="card-header pb-0">
@@ -229,13 +229,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">Vites Türü</label>
-                                        <input class="form-control" type="text" name="vites" value="">
+                                        <input class="form-control" type="text" name="vites">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">Koltuk Sayısı</label>
-                                        <input class="form-control" type="text" name="koltuk" value="">
+                                        <input class="form-control" type="text" name="koltuk">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -246,7 +246,20 @@
                                 </div>
                             </div>
                             <hr class="horizontal dark">
-
+                            @if($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            @if(session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </form>

@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\LoginController;
 use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\AdminCarsController;
+use App\Http\Controllers\admin\AddCarController;
 
 use App\Http\Controllers\user\AboutController;
 use App\Http\Controllers\user\CarBookController;
@@ -41,6 +42,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user/banned/{id}', [UserController::class, 'banned'])->name('admin_user_banned');
     Route::get('/user/delete/{id}', [UserController::class, 'delete'])->name('admin_user_delete');
     Route::get('/received/{id}', [AdminController::class, 'received'])->name('admin_received');
+    Route::get('/add-car', [AddCarController::class, 'index'])->name('add_car_page');
+    Route::post('/add-car-post', [AddCarController::class, 'addCar'])->name('add_car');
 });
 
 /*User Pages*/
