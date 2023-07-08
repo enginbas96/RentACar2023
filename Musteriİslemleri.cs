@@ -126,5 +126,42 @@ namespace RentACar2023
         {
 
         }
+
+        private void msifreDegistirBTN_Click(object sender, EventArgs e)
+        {
+            if (sifreDegisTC.Text == "" || sifreDegisSifre.Text == "")
+            {
+                MessageBox.Show("Lütfen boş alan bırakmayınız.");
+            }
+            else
+            {
+                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                MySqlConnection cnn = new MySqlConnection(myConnectionString);
+                cnn.Open();
+                MySqlCommand sorgu = new MySqlCommand("SELECT * FROM users WHERE TC= '" + sifreDegisTC.Text + "'", cnn);
+                MySqlDataReader tara = sorgu.ExecuteReader();
+                if (tara.Read())
+                {
+                    string hashedPassword = BCrypt.Net.BCrypt.HashPassword(sifreDegisSifre.Text);
+                    cnn.Close();
+                    cnn.Open();
+                    MySqlCommand sorgu1 = new MySqlCommand("UPDATE users SET sifre ='" + hashedPassword + "' WHERE TC ='" + sifreDegisTC.Text + "' ", cnn);
+                    sorgu1.ExecuteNonQuery();
+                    MessageBox.Show("Şifreniz başarıyla değiştirildi");
+                    cnn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Böyle bir kullanıcı bulunamadı.");
+                    cnn.Close();
+                }
+            }
+        }
+        private void msifreDegistirRB_CheckedChanged(object sender, EventArgs e)
+        {
+            resetle();
+            sifreDegistirGB.Enabled = true;
+        }
     }
+
 }

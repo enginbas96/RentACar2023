@@ -311,6 +311,7 @@
             msifreDegistirBTN.Text = "Şifre Değiştir";
             msifreDegistirBTN.TextAlign = ContentAlignment.MiddleRight;
             msifreDegistirBTN.UseVisualStyleBackColor = true;
+            msifreDegistirBTN.Click += msifreDegistirBTN_Click;
             // 
             // silGB
             // 
