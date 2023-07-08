@@ -35,7 +35,7 @@
             olusturRB = new RadioButton();
             sifreDegistirRB = new RadioButton();
             silRB = new RadioButton();
-            olusturGB = new GroupBox();
+            molusturGB = new GroupBox();
             molusturTelNo = new TextBox();
             label8 = new Label();
             molusturSoyad = new TextBox();
@@ -47,19 +47,19 @@
             molusturTC = new TextBox();
             label5 = new Label();
             musteriOlusturBTN = new Button();
-            sifreDegistirGB = new GroupBox();
+            mSifreDegistirGB = new GroupBox();
             sifreDegisSifre = new TextBox();
             label3 = new Label();
             sifreDegisTC = new TextBox();
             label2 = new Label();
             msifreDegistirBTN = new Button();
-            silGB = new GroupBox();
+            mSilGB = new GroupBox();
             deleteTC = new TextBox();
             label1 = new Label();
             musteriSilBTN = new Button();
-            olusturGB.SuspendLayout();
-            sifreDegistirGB.SuspendLayout();
-            silGB.SuspendLayout();
+            molusturGB.SuspendLayout();
+            mSifreDegistirGB.SuspendLayout();
+            mSilGB.SuspendLayout();
             SuspendLayout();
             // 
             // ımageList1
@@ -116,25 +116,25 @@
             silRB.Text = "Müşteri Sil";
             silRB.UseVisualStyleBackColor = true;
             // 
-            // olusturGB
+            // molusturGB
             // 
-            olusturGB.Controls.Add(molusturTelNo);
-            olusturGB.Controls.Add(label8);
-            olusturGB.Controls.Add(molusturSoyad);
-            olusturGB.Controls.Add(label7);
-            olusturGB.Controls.Add(molusturAd);
-            olusturGB.Controls.Add(label6);
-            olusturGB.Controls.Add(molusturSifre);
-            olusturGB.Controls.Add(label4);
-            olusturGB.Controls.Add(molusturTC);
-            olusturGB.Controls.Add(label5);
-            olusturGB.Controls.Add(musteriOlusturBTN);
-            olusturGB.Location = new Point(733, 123);
-            olusturGB.Name = "olusturGB";
-            olusturGB.Size = new Size(338, 484);
-            olusturGB.TabIndex = 21;
-            olusturGB.TabStop = false;
-            olusturGB.Text = "Müşteri Oluştur";
+            molusturGB.Controls.Add(molusturTelNo);
+            molusturGB.Controls.Add(label8);
+            molusturGB.Controls.Add(molusturSoyad);
+            molusturGB.Controls.Add(label7);
+            molusturGB.Controls.Add(molusturAd);
+            molusturGB.Controls.Add(label6);
+            molusturGB.Controls.Add(molusturSifre);
+            molusturGB.Controls.Add(label4);
+            molusturGB.Controls.Add(molusturTC);
+            molusturGB.Controls.Add(label5);
+            molusturGB.Controls.Add(musteriOlusturBTN);
+            molusturGB.Location = new Point(733, 123);
+            molusturGB.Name = "molusturGB";
+            molusturGB.Size = new Size(338, 484);
+            molusturGB.TabIndex = 21;
+            molusturGB.TabStop = false;
+            molusturGB.Text = "Müşteri Oluştur";
             // 
             // molusturTelNo
             // 
@@ -244,21 +244,21 @@
             musteriOlusturBTN.Text = "Müşteri Oluştur";
             musteriOlusturBTN.TextAlign = ContentAlignment.MiddleRight;
             musteriOlusturBTN.UseVisualStyleBackColor = true;
-            musteriOlusturBTN.Click += kullaniciOlusturBTN_Click;
+            musteriOlusturBTN.Click += musteriOlusturBTN_Click;
             // 
-            // sifreDegistirGB
+            // mSifreDegistirGB
             // 
-            sifreDegistirGB.Controls.Add(sifreDegisSifre);
-            sifreDegistirGB.Controls.Add(label3);
-            sifreDegistirGB.Controls.Add(sifreDegisTC);
-            sifreDegistirGB.Controls.Add(label2);
-            sifreDegistirGB.Controls.Add(msifreDegistirBTN);
-            sifreDegistirGB.Location = new Point(367, 123);
-            sifreDegistirGB.Name = "sifreDegistirGB";
-            sifreDegistirGB.Size = new Size(338, 484);
-            sifreDegistirGB.TabIndex = 20;
-            sifreDegistirGB.TabStop = false;
-            sifreDegistirGB.Text = "Şifre Değiştir";
+            mSifreDegistirGB.Controls.Add(sifreDegisSifre);
+            mSifreDegistirGB.Controls.Add(label3);
+            mSifreDegistirGB.Controls.Add(sifreDegisTC);
+            mSifreDegistirGB.Controls.Add(label2);
+            mSifreDegistirGB.Controls.Add(msifreDegistirBTN);
+            mSifreDegistirGB.Location = new Point(367, 123);
+            mSifreDegistirGB.Name = "mSifreDegistirGB";
+            mSifreDegistirGB.Size = new Size(338, 484);
+            mSifreDegistirGB.TabIndex = 20;
+            mSifreDegistirGB.TabStop = false;
+            mSifreDegistirGB.Text = "Şifre Değiştir";
             // 
             // sifreDegisSifre
             // 
@@ -313,17 +313,17 @@
             msifreDegistirBTN.UseVisualStyleBackColor = true;
             msifreDegistirBTN.Click += msifreDegistirBTN_Click;
             // 
-            // silGB
+            // mSilGB
             // 
-            silGB.Controls.Add(deleteTC);
-            silGB.Controls.Add(label1);
-            silGB.Controls.Add(musteriSilBTN);
-            silGB.Location = new Point(1, 123);
-            silGB.Name = "silGB";
-            silGB.Size = new Size(338, 484);
-            silGB.TabIndex = 19;
-            silGB.TabStop = false;
-            silGB.Text = "Müşteri Sil";
+            mSilGB.Controls.Add(deleteTC);
+            mSilGB.Controls.Add(label1);
+            mSilGB.Controls.Add(musteriSilBTN);
+            mSilGB.Location = new Point(1, 123);
+            mSilGB.Name = "mSilGB";
+            mSilGB.Size = new Size(338, 484);
+            mSilGB.TabIndex = 19;
+            mSilGB.TabStop = false;
+            mSilGB.Text = "Müşteri Sil";
             // 
             // deleteTC
             // 
@@ -366,9 +366,9 @@
             Controls.Add(olusturRB);
             Controls.Add(sifreDegistirRB);
             Controls.Add(silRB);
-            Controls.Add(olusturGB);
-            Controls.Add(sifreDegistirGB);
-            Controls.Add(silGB);
+            Controls.Add(molusturGB);
+            Controls.Add(mSifreDegistirGB);
+            Controls.Add(mSilGB);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -376,12 +376,12 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Müşteri İşlemleri";
             FormClosed += MusteriKayit_FormClosed;
-            olusturGB.ResumeLayout(false);
-            olusturGB.PerformLayout();
-            sifreDegistirGB.ResumeLayout(false);
-            sifreDegistirGB.PerformLayout();
-            silGB.ResumeLayout(false);
-            silGB.PerformLayout();
+            molusturGB.ResumeLayout(false);
+            molusturGB.PerformLayout();
+            mSifreDegistirGB.ResumeLayout(false);
+            mSifreDegistirGB.PerformLayout();
+            mSilGB.ResumeLayout(false);
+            mSilGB.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -392,7 +392,7 @@
         private RadioButton olusturRB;
         private RadioButton sifreDegistirRB;
         private RadioButton silRB;
-        private GroupBox olusturGB;
+        private GroupBox molusturGB;
         private TextBox molusturTelNo;
         private Label label8;
         private TextBox molusturSoyad;
@@ -404,13 +404,13 @@
         private TextBox molusturTC;
         private Label label5;
         private Button musteriOlusturBTN;
-        private GroupBox sifreDegistirGB;
+        private GroupBox mSifreDegistirGB;
         private TextBox sifreDegisSifre;
         private Label label3;
         private TextBox sifreDegisTC;
         private Label label2;
         private Button msifreDegistirBTN;
-        private GroupBox silGB;
+        private GroupBox mSilGB;
         private TextBox deleteTC;
         private Label label1;
         private Button musteriSilBTN;

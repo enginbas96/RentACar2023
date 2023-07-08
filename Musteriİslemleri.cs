@@ -30,44 +30,7 @@ namespace RentACar2023
         {
             Application.Exit();
         }
-        private void kaydetBTN_Click(object sender, EventArgs e)
-        {
-            if (tcText.Text == "" || sifreText.Text == "" || adText.Text == "" || soyadText.Text == "")
-            {
-                MessageBox.Show("Lütfen boş alanları doldurup tekrar deneyiniz.");
-            }
-            else if (tcText.Text.Length != 11)
-            {
-                MessageBox.Show("Lütfen TC kimlik numaranızı eksiksiz bir şekilde giriniz.");
-            }
-            else if (telNoText.Text.Length != 11)
-            {
-                MessageBox.Show("Lütfen telefon numaranızı eksiksiz bir şekilde giriniz.");
-            }
-            else
-            {
-                string hashedPassword = HashPassword(sifreText.Text);
-                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
-                MySqlConnection cnn = new MySqlConnection(myConnectionString);
-                cnn.Open();
-                MySqlCommand sorgu = new MySqlCommand("SELECT * FROM users WHERE TC= '" + tcText.Text + "'", cnn);
-                MySqlDataReader tara = sorgu.ExecuteReader();
-                if (tara.Read())
-                {
-                    MessageBox.Show("Bu TC kimlik numarasına ait bir kullanıcı zaten var.");
-                    cnn.Close();
-                }
-                else
-                {
-                    cnn.Close();
-                    cnn.Open();
-                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO users(TC, password, name, surname, tel_no, isBanned) VALUES('" + tcText.Text + "','" + hashedPassword + "','" + adText.Text + "','" + soyadText.Text + "','" + telNoText.Text + "','0')", cnn);
-                    sorgu1.ExecuteNonQuery();
-                    MessageBox.Show("Müşteri kaydı başarıyla gerçekleşmiştir.");
-                    cnn.Close();
-                }
-            }
-        }
+       
         private string HashPassword(string password)
         {
             string salt = BCryptNet.GenerateSalt();
@@ -122,10 +85,7 @@ namespace RentACar2023
             }
         }
 
-        private void kullaniciOlusturBTN_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void msifreDegistirBTN_Click(object sender, EventArgs e)
         {
@@ -160,7 +120,46 @@ namespace RentACar2023
         private void msifreDegistirRB_CheckedChanged(object sender, EventArgs e)
         {
             resetle();
-            sifreDegistirGB.Enabled = true;
+            mSifreDegistirGB.Enabled = true;
+        }
+
+        private void musteriOlusturBTN_Click(object sender, EventArgs e)
+        {
+            if (molusturTC.Text == "" || molusturSifre.Text == "" || molusturAd.Text == "" || molusturSoyad.Text == "" || molusturTelNo.Text == "")
+            {
+                MessageBox.Show("Lütfen boş alanları doldurup tekrar deneyiniz.");
+            }
+            else if (molusturTC.Text.Length != 11)
+            {
+                MessageBox.Show("Lütfen TC kimlik numaranızı eksiksiz bir şekilde giriniz.");
+            }
+            else if (molusturTelNo.Text.Length != 11)
+            {
+                MessageBox.Show("Lütfen telefon numaranızı eksiksiz bir şekilde giriniz.");
+            }
+            else
+            {
+                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                MySqlConnection cnn = new MySqlConnection(myConnectionString);
+                cnn.Open();
+                MySqlCommand sorgu = new MySqlCommand("SELECT * FROM users WHERE TC= '" + molusturTC.Text + "'", cnn);
+                MySqlDataReader tara = sorgu.ExecuteReader();
+                if (tara.Read())
+                {
+                    MessageBox.Show("Böyle bir müşteri zaten mevcut, şifresini unuttuysanız yan taraftan şifresini değiştirebilirsiniz veya müşteriyi kaldırabilirsiniz.");
+                    cnn.Close();
+                }
+                else
+                {
+                    cnn.Close();
+                    cnn.Open();
+                    string hashedPassword = HashPassword(molusturSifre.Text);
+                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO users(TC, password, name, surname, tel_no, isBanned) VALUES('" + molusturTC.Text + "', '" + hashedPassword + "', '" + molusturAd.Text + "','" + molusturSoyad.Text + "', '" + molusturTelNo.Text + "', '0')", cnn);
+                    sorgu1.ExecuteNonQuery();
+                    MessageBox.Show("Yeni müşteri oluşturuldu.");
+                    cnn.Close();
+                }
+            }
         }
     }
 
