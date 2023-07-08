@@ -56,5 +56,6 @@ Route::post('/araç-rezerve-post/{id}',[CarBookController::class,'carBook'])->na
 Route::get('/hakkında',[AboutController::class,'index'])->name('user_about');
 Route::get('/araba-detayı/{id}',[CarsController::class,'carDetail'])->name('user_car_detail');
 Route::get('/arabalar',[CarsController::class,'index'])->name('user_cars');
+Route::post('/comment-post/{id}',[CarsController::class,'comment'])->name('user_comment');
 Route::post('/login-post',[UserLoginController::class,'login'])->name('user_login');
 Route::post('/register',[UserLoginController::class,'register'])->name('user_register');

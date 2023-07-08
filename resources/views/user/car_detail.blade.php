@@ -241,15 +241,17 @@
     <div class="container">
         <div class="comments">
             <h2>Yorumlar</h2>
-            <form id="comment-form">
-                <textarea id="comment" placeholder="Yorumunuz" required></textarea>
+            <form id="comment-form" action="{{route('user_comment', $car->id)}}" method="post">
+                @csrf
+                <textarea id="comment" name="comment" placeholder="Yorumunuz" required></textarea>
                 <button type="submit">Yorum Yap</button>
             </form>
+            @foreach($comments as $com)
             <div id="comment-list">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ea earum fuga pariatur perspiciatis
-                    veniam, vitae. Modi nihil reiciendis similique temporibus? Ea fugiat minus necessitatibus nihil nisi
-                    nobis perspiciatis ut?</p>
+                <label for="" style="font-weight: bold; color: black">{{$com->getComment->name. " ". $com->getComment->surname}}</label>
+                <p>{{$com->comment}}</p>
             </div>
+            @endforeach
         </div>
     </div>
 
