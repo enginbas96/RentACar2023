@@ -91,6 +91,7 @@
             olusturRB.TabStop = true;
             olusturRB.Text = "Müşteri Oluştur";
             olusturRB.UseVisualStyleBackColor = true;
+            olusturRB.CheckedChanged += olusturRB_CheckedChanged;
             // 
             // sifreDegistirRB
             // 
@@ -103,6 +104,7 @@
             sifreDegistirRB.TabStop = true;
             sifreDegistirRB.Text = "Şifre Değiştir";
             sifreDegistirRB.UseVisualStyleBackColor = true;
+            sifreDegistirRB.CheckedChanged += sifreDegistirRB_CheckedChanged;
             // 
             // silRB
             // 
@@ -115,6 +117,7 @@
             silRB.TabStop = true;
             silRB.Text = "Müşteri Sil";
             silRB.UseVisualStyleBackColor = true;
+            silRB.CheckedChanged += silRB_CheckedChanged;
             // 
             // molusturGB
             // 
@@ -140,10 +143,11 @@
             // 
             molusturTelNo.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             molusturTelNo.Location = new Point(62, 373);
-            molusturTelNo.MaxLength = 30;
+            molusturTelNo.MaxLength = 11;
             molusturTelNo.Name = "molusturTelNo";
             molusturTelNo.Size = new Size(211, 32);
             molusturTelNo.TabIndex = 19;
+            molusturTelNo.KeyPress += molusturTelNo_KeyPress;
             // 
             // label8
             // 
@@ -163,6 +167,8 @@
             molusturSoyad.Name = "molusturSoyad";
             molusturSoyad.Size = new Size(211, 32);
             molusturSoyad.TabIndex = 17;
+            molusturSoyad.TextChanged += molusturSoyad_TextChanged;
+            molusturSoyad.KeyPress += molusturSoyad_KeyPress;
             // 
             // label7
             // 
@@ -182,6 +188,8 @@
             molusturAd.Name = "molusturAd";
             molusturAd.Size = new Size(211, 32);
             molusturAd.TabIndex = 15;
+            molusturAd.TextChanged += molusturAd_TextChanged;
+            molusturAd.KeyPress += molusturAd_KeyPress;
             // 
             // label6
             // 
@@ -197,7 +205,7 @@
             // 
             molusturSifre.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             molusturSifre.Location = new Point(62, 136);
-            molusturSifre.MaxLength = 30;
+            molusturSifre.MaxLength = 11;
             molusturSifre.Name = "molusturSifre";
             molusturSifre.Size = new Size(211, 32);
             molusturSifre.TabIndex = 12;
@@ -217,10 +225,11 @@
             // 
             molusturTC.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             molusturTC.Location = new Point(62, 61);
-            molusturTC.MaxLength = 30;
+            molusturTC.MaxLength = 11;
             molusturTC.Name = "molusturTC";
             molusturTC.Size = new Size(211, 32);
             molusturTC.TabIndex = 11;
+            molusturTC.KeyPress += molusturTC_KeyPress;
             // 
             // label5
             // 
@@ -264,7 +273,7 @@
             // 
             sifreDegisSifre.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             sifreDegisSifre.Location = new Point(60, 218);
-            sifreDegisSifre.MaxLength = 30;
+            sifreDegisSifre.MaxLength = 11;
             sifreDegisSifre.Name = "sifreDegisSifre";
             sifreDegisSifre.Size = new Size(211, 32);
             sifreDegisSifre.TabIndex = 9;
@@ -284,7 +293,7 @@
             // 
             sifreDegisTC.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             sifreDegisTC.Location = new Point(60, 136);
-            sifreDegisTC.MaxLength = 30;
+            sifreDegisTC.MaxLength = 11;
             sifreDegisTC.Name = "sifreDegisTC";
             sifreDegisTC.Size = new Size(211, 32);
             sifreDegisTC.TabIndex = 8;
@@ -329,7 +338,7 @@
             // 
             deleteTC.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             deleteTC.Location = new Point(60, 186);
-            deleteTC.MaxLength = 30;
+            deleteTC.MaxLength = 11;
             deleteTC.Name = "deleteTC";
             deleteTC.Size = new Size(211, 32);
             deleteTC.TabIndex = 6;
@@ -356,6 +365,7 @@
             musteriSilBTN.Text = "Müşteriyi Sil";
             musteriSilBTN.TextAlign = ContentAlignment.MiddleRight;
             musteriSilBTN.UseVisualStyleBackColor = true;
+            musteriSilBTN.Click += musteriSilBTN_Click;
             // 
             // Musteriİslemleri
             // 

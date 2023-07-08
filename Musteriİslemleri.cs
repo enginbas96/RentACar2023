@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using BCryptNet = BCrypt.Net.BCrypt;
 
 namespace RentACar2023
@@ -30,68 +29,15 @@ namespace RentACar2023
         {
             Application.Exit();
         }
-       
-        private string HashPassword(string password)
-        {
-            string salt = BCryptNet.GenerateSalt();
-            string hashedPassword = BCryptNet.HashPassword(password, salt);
-            return hashedPassword;
-        }
-        private void tcText_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-        private void telNoText_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-        private void adText_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-        private void soyadText_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-        }
-        private void adText_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(adText.Text))
-            {
-                string text = adText.Text;
-                adText.Text = char.ToUpper(text[0]) + text.Substring(1);
-                adText.SelectionStart = adText.Text.Length;
-            }
-        }
-        private void soyadText_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(soyadText.Text))
-            {
-                string text = soyadText.Text;
-                soyadText.Text = char.ToUpper(text[0]) + text.Substring(1);
-                soyadText.SelectionStart = soyadText.Text.Length;
-            }
-        }
-
-
-
         private void msifreDegistirBTN_Click(object sender, EventArgs e)
         {
             if (sifreDegisTC.Text == "" || sifreDegisSifre.Text == "")
             {
                 MessageBox.Show("Lütfen boş alan bırakmayınız.");
+            }
+            else if (sifreDegisTC.Text.Length != 11)
+            {
+                MessageBox.Show("Lütfen TC kimlik numaranızı eksiksiz bir şekilde giriniz.");
             }
             else
             {
@@ -105,7 +51,7 @@ namespace RentACar2023
                     string hashedPassword = BCrypt.Net.BCrypt.HashPassword(sifreDegisSifre.Text);
                     cnn.Close();
                     cnn.Open();
-                    MySqlCommand sorgu1 = new MySqlCommand("UPDATE users SET sifre ='" + hashedPassword + "' WHERE TC ='" + sifreDegisTC.Text + "' ", cnn);
+                    MySqlCommand sorgu1 = new MySqlCommand("UPDATE users SET password ='" + hashedPassword + "' WHERE TC ='" + sifreDegisTC.Text + "' ", cnn);
                     sorgu1.ExecuteNonQuery();
                     MessageBox.Show("Şifreniz başarıyla değiştirildi");
                     cnn.Close();
@@ -116,11 +62,6 @@ namespace RentACar2023
                     cnn.Close();
                 }
             }
-        }
-        private void msifreDegistirRB_CheckedChanged(object sender, EventArgs e)
-        {
-            resetle();
-            mSifreDegistirGB.Enabled = true;
         }
 
         private void musteriOlusturBTN_Click(object sender, EventArgs e)
@@ -161,6 +102,133 @@ namespace RentACar2023
                 }
             }
         }
+
+        private void musteriSilBTN_Click(object sender, EventArgs e)
+        {
+            if (deleteTC.Text == "")
+            {
+                MessageBox.Show("TC'yi giriniz.");
+            }
+            else if (deleteTC.Text.Length != 11)
+            {
+                MessageBox.Show("Lütfen TC kimlik numaranızı eksiksiz bir şekilde giriniz.");
+            }
+            else
+            {
+                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                MySqlConnection cnn = new MySqlConnection(myConnectionString);
+                cnn.Open();
+                MySqlCommand sorgu = new MySqlCommand("SELECT * FROM users WHERE TC= '" + deleteTC.Text + "'", cnn);
+                MySqlDataReader tara = sorgu.ExecuteReader();
+                if (tara.Read())
+                {
+                    cnn.Close();
+                    cnn.Open();
+                    MySqlCommand sorgu1 = new MySqlCommand("DELETE FROM users WHERE TC= '" + deleteTC.Text + "'", cnn);
+                    MySqlDataReader tara1 = sorgu1.ExecuteReader();
+                    MessageBox.Show("Müşteri başarı ile silindi.");
+                    deleteTC.Clear();
+                    cnn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Böyle bir müşteri yok", "asd", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    cnn.Close();
+                }
+            }
+        
+        }
+        private string HashPassword(string password)
+        {
+            string salt = BCryptNet.GenerateSalt();
+            string hashedPassword = BCryptNet.HashPassword(password, salt);
+            return hashedPassword;
+        }
+        void resetle()
+        {
+            mSilGB.Enabled = false;
+            mSifreDegistirGB.Enabled = false;
+            molusturGB.Enabled = false;
+            deleteTC.Clear();
+            sifreDegisTC.Clear();
+            sifreDegisSifre.Clear();
+            molusturTC.Clear();
+            molusturSifre.Clear();
+            molusturAd.Clear();
+            molusturSoyad.Clear();
+            molusturTelNo.Clear();
+        }
+
+        private void silRB_CheckedChanged(object sender, EventArgs e)
+        {
+            resetle();
+            mSilGB.Enabled = true;
+        }
+
+        private void sifreDegistirRB_CheckedChanged(object sender, EventArgs e)
+        {
+            resetle();
+            mSifreDegistirGB.Enabled = true;
+        }
+
+        private void olusturRB_CheckedChanged(object sender, EventArgs e)
+        {
+            resetle();
+            molusturGB.Enabled = true;
+        }
+
+        private void molusturTC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void molusturTelNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void molusturAd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void molusturSoyad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void molusturSoyad_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(molusturSoyad.Text))
+            {
+                string text = molusturSoyad.Text;
+                molusturSoyad.Text = char.ToUpper(text[0]) + text.Substring(1);
+                molusturSoyad.SelectionStart = molusturSoyad.Text.Length;
+            }
+        }
+
+        private void molusturAd_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(molusturAd.Text))
+            {
+                string text = molusturAd.Text;
+                molusturAd.Text = char.ToUpper(text[0]) + text.Substring(1);
+                molusturAd.SelectionStart = molusturAd.Text.Length;
+            }
+        }
+
     }
 
 }
