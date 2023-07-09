@@ -62,6 +62,7 @@
             sifreDegistirRB = new RadioButton();
             olusturRB = new RadioButton();
             kullaniciAdi = new Label();
+            kullaniciListeleBTN = new Button();
             silGB.SuspendLayout();
             sifreDegistirGB.SuspendLayout();
             olusturGB.SuspendLayout();
@@ -92,6 +93,7 @@
             ımageList1.Images.SetKeyName(3, "arackiralama.png");
             ımageList1.Images.SetKeyName(4, "cikisyap.png");
             ımageList1.Images.SetKeyName(5, "kullanıcıicon.png");
+            ımageList1.Images.SetKeyName(6, "liste.png");
             // 
             // profilBTN
             // 
@@ -277,7 +279,7 @@
             sifreDegistirBTN.ImageList = ımageList2;
             sifreDegistirBTN.Location = new Point(83, 338);
             sifreDegistirBTN.Name = "sifreDegistirBTN";
-            sifreDegistirBTN.Size = new Size(158, 52);
+            sifreDegistirBTN.Size = new Size(171, 52);
             sifreDegistirBTN.TabIndex = 10;
             sifreDegistirBTN.Text = "Şifre Değiştir";
             sifreDegistirBTN.TextAlign = ContentAlignment.MiddleRight;
@@ -444,12 +446,26 @@
             kullaniciAdi.Size = new Size(0, 20);
             kullaniciAdi.TabIndex = 18;
             // 
+            // kullaniciListeleBTN
+            // 
+            kullaniciListeleBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            kullaniciListeleBTN.ImageKey = "liste.png";
+            kullaniciListeleBTN.ImageList = ımageList1;
+            kullaniciListeleBTN.Location = new Point(470, 572);
+            kullaniciListeleBTN.Name = "kullaniciListeleBTN";
+            kullaniciListeleBTN.Size = new Size(174, 61);
+            kullaniciListeleBTN.TabIndex = 11117;
+            kullaniciListeleBTN.Text = "Kullanıcı Listele";
+            kullaniciListeleBTN.TextAlign = ContentAlignment.MiddleRight;
+            kullaniciListeleBTN.UseVisualStyleBackColor = true;
+            // 
             // KullaniciIslemForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 653);
+            Controls.Add(kullaniciListeleBTN);
             Controls.Add(kullaniciAdi);
             Controls.Add(olusturRB);
             Controls.Add(sifreDegistirRB);
@@ -515,5 +531,6 @@
         private RadioButton olusturRB;
         private ImageList ımageList2;
         private Label kullaniciAdi;
+        private Button kullaniciListeleBTN;
     }
 }

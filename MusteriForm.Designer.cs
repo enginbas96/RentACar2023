@@ -42,7 +42,7 @@
             musteriKaydetButton.ImageAlign = ContentAlignment.MiddleLeft;
             musteriKaydetButton.ImageKey = "kullaniciolustur.png";
             musteriKaydetButton.ImageList = ımageList1;
-            musteriKaydetButton.Location = new Point(207, 238);
+            musteriKaydetButton.Location = new Point(189, 204);
             musteriKaydetButton.Name = "musteriKaydetButton";
             musteriKaydetButton.Size = new Size(164, 62);
             musteriKaydetButton.TabIndex = 0;
@@ -58,13 +58,15 @@
             ımageList1.TransparentColor = Color.Transparent;
             ımageList1.Images.SetKeyName(0, "kullaniciolustur.png");
             ımageList1.Images.SetKeyName(1, "araclistele.png");
+            ımageList1.Images.SetKeyName(2, "liste.png");
+            ımageList1.Images.SetKeyName(3, "cikisyap.png");
             // 
             // musteriListeleButton
             // 
             musteriListeleButton.ImageAlign = ContentAlignment.MiddleLeft;
             musteriListeleButton.ImageKey = "araclistele.png";
             musteriListeleButton.ImageList = ımageList1;
-            musteriListeleButton.Location = new Point(430, 238);
+            musteriListeleButton.Location = new Point(419, 204);
             musteriListeleButton.Name = "musteriListeleButton";
             musteriListeleButton.Size = new Size(165, 61);
             musteriListeleButton.TabIndex = 1;
@@ -79,7 +81,7 @@
             label2.BackColor = SystemColors.Control;
             label2.Font = new Font("Segoe UI", 12.2F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.Red;
-            label2.Location = new Point(218, 169);
+            label2.Location = new Point(219, 118);
             label2.Name = "label2";
             label2.Size = new Size(365, 30);
             label2.TabIndex = 11113;
@@ -87,11 +89,15 @@
             // 
             // anaSayfaBtn
             // 
-            anaSayfaBtn.Location = new Point(321, 335);
+            anaSayfaBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            anaSayfaBtn.ImageKey = "cikisyap.png";
+            anaSayfaBtn.ImageList = ımageList1;
+            anaSayfaBtn.Location = new Point(296, 321);
             anaSayfaBtn.Name = "anaSayfaBtn";
-            anaSayfaBtn.Size = new Size(157, 58);
+            anaSayfaBtn.Size = new Size(181, 58);
             anaSayfaBtn.TabIndex = 11115;
             anaSayfaBtn.Text = "Ana Sayfaya Dön";
+            anaSayfaBtn.TextAlign = ContentAlignment.MiddleRight;
             anaSayfaBtn.UseVisualStyleBackColor = true;
             anaSayfaBtn.Click += anaSayfaBtn_Click;
             // 

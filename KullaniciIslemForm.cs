@@ -184,31 +184,31 @@ namespace RentACar2023
                 if (result == DialogResult.Yes)
                 {
                     string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
-                MySqlConnection cnn = new MySqlConnection(myConnectionString);
-                cnn.Open();
-                MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + olusturKullaniciAdi.Text + "'", cnn);
-                MySqlDataReader tara = sorgu.ExecuteReader();
-                if (tara.Read())
-                {
-                    MessageBox.Show("Böyle bir kullanıcı zaten mevcut, şifresini unuttuysanız yan taraftan şifresini değiştirebilirsiniz veya kullanıcıyı kaldırabilirsiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cnn.Close();
-                }
-                else
-                {
-                    cnn.Close();
+                    MySqlConnection cnn = new MySqlConnection(myConnectionString);
                     cnn.Open();
-                    string hashedPassword = HashPassword(olusturSifre.Text);
-                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO employees(name, surname, kullanici_adi, sifre, isAdmin) VALUES('" + olusturAd.Text + "','" + olusturSoyad.Text + "','" + olusturKullaniciAdi.Text + "','" + hashedPassword + "','1')", cnn);
-                    sorgu1.ExecuteNonQuery();
-                    MessageBox.Show("Yeni kullanıcı oluşturuldu.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    cnn.Close();
+                    MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + olusturKullaniciAdi.Text + "'", cnn);
+                    MySqlDataReader tara = sorgu.ExecuteReader();
+                    if (tara.Read())
+                    {
+                        MessageBox.Show("Böyle bir kullanıcı zaten mevcut, şifresini unuttuysanız yan taraftan şifresini değiştirebilirsiniz veya kullanıcıyı kaldırabilirsiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cnn.Close();
+                    }
+                    else
+                    {
+                        cnn.Close();
+                        cnn.Open();
+                        string hashedPassword = HashPassword(olusturSifre.Text);
+                        MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO employees(name, surname, kullanici_adi, sifre, isAdmin) VALUES('" + olusturAd.Text + "','" + olusturSoyad.Text + "','" + olusturKullaniciAdi.Text + "','" + hashedPassword + "','1')", cnn);
+                        sorgu1.ExecuteNonQuery();
+                        MessageBox.Show("Yeni kullanıcı oluşturuldu.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cnn.Close();
+                    }
                 }
-            }
-            else if (result == DialogResult.No)
-            {
+                else if (result == DialogResult.No)
+                {
+                }
             }
         }
-    }
         private string HashPassword(string password)
         {
             string salt = BCryptNet.GenerateSalt();
