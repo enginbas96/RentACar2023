@@ -279,5 +279,12 @@ namespace RentACar2023
                 olusturAd.SelectionStart = olusturAd.Text.Length;
             }
         }
+
+        private void kullaniciListeleBTN_Click(object sender, EventArgs e)
+        {
+            KullaniciListele form = new KullaniciListele();
+            form.Show();
+            this.Hide();
+        }
     }
 }

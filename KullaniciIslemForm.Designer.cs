@@ -458,6 +458,7 @@
             kullaniciListeleBTN.Text = "Kullanıcı Listele";
             kullaniciListeleBTN.TextAlign = ContentAlignment.MiddleRight;
             kullaniciListeleBTN.UseVisualStyleBackColor = true;
+            kullaniciListeleBTN.Click += kullaniciListeleBTN_Click;
             // 
             // KullaniciIslemForm
             // 

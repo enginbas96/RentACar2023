@@ -30,22 +30,23 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KullaniciListele));
-            dataGridView1 = new DataGridView();
+            kullaniciData = new DataGridView();
             anaMenuButton = new Button();
-            label1 = new Label();
             ımageList1 = new ImageList(components);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)kullaniciData).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // kullaniciData
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 49);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1036, 314);
-            dataGridView1.TabIndex = 0;
+            kullaniciData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            kullaniciData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            kullaniciData.Location = new Point(12, 49);
+            kullaniciData.Name = "kullaniciData";
+            kullaniciData.RowHeadersWidth = 51;
+            kullaniciData.RowTemplate.Height = 29;
+            kullaniciData.Size = new Size(1036, 314);
+            kullaniciData.TabIndex = 0;
             // 
             // anaMenuButton
             // 
@@ -59,6 +60,14 @@
             anaMenuButton.Text = "Ana Menüye Dön";
             anaMenuButton.TextAlign = ContentAlignment.MiddleRight;
             anaMenuButton.UseVisualStyleBackColor = true;
+            anaMenuButton.Click += anaMenuButton_Click;
+            // 
+            // ımageList1
+            // 
+            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
+            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
+            ımageList1.TransparentColor = Color.Transparent;
+            ımageList1.Images.SetKeyName(0, "cikisyap.png");
             // 
             // label1
             // 
@@ -69,13 +78,6 @@
             label1.TabIndex = 4;
             label1.Text = "Kullanıcılar";
             // 
-            // ımageList1
-            // 
-            ımageList1.ColorDepth = ColorDepth.Depth32Bit;
-            ımageList1.ImageStream = (ImageListStreamer)resources.GetObject("ımageList1.ImageStream");
-            ımageList1.TransparentColor = Color.Transparent;
-            ımageList1.Images.SetKeyName(0, "cikisyap.png");
-            // 
             // KullaniciListele
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -83,17 +85,18 @@
             ClientSize = new Size(1060, 579);
             Controls.Add(label1);
             Controls.Add(anaMenuButton);
-            Controls.Add(dataGridView1);
+            Controls.Add(kullaniciData);
             Name = "KullaniciListele";
             Text = "KullaniciListele";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += KullaniciListele_Load;
+            ((System.ComponentModel.ISupportInitialize)kullaniciData).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView kullaniciData;
         private Button anaMenuButton;
         private Label label1;
         private ImageList ımageList1;
