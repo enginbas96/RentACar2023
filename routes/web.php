@@ -46,7 +46,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/received/{id}', [AdminController::class, 'received'])->name('admin_received');
     Route::get('/add-car', [AddCarController::class, 'index'])->name('add_car_page');
     Route::post('/add-car-post', [AddCarController::class, 'addCar'])->name('add_car');
-
+    Route::get('/ticket', [TicketsController::class, 'index'])->name('admin_ticket');
+    Route::get('/ticket/{id}', [TicketsController::class, 'deleteTicket'])->name('admin_ticket_delete');
 });
 
 /*User Pages*/

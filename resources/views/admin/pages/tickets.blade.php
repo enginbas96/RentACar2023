@@ -176,38 +176,36 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-
-
+                                @foreach($tickets as $ticket)
                                         <tr>
-
                                             <td>
                                                 <div class="d-flex px-2 py-1">
                                                     <div class="d-flex flex-column justify-content-center" style="padding: 8px">
-                                                        <h6 class="mb-0 text-sm"></h6>
+                                                        <h6 class="mb-0 text-sm">{{$ticket->getUser->name ." ". $ticket->getUser->surname}}</h6>
                                                     </div>
                                                 </div>
                                             </td>
-
+                                            @if($ticket->category == 0)
                                             <td>
                                                 <p class="text-xs font-weight-bold mb-0">Araç</p>
                                             </td>
-
+                                                @else
                                                 <td>
                                                     <p class="text-xs font-weight-bold mb-0">Site</p>
                                                 </td>
-
+                                            @endif
 
                                             <td class="align-middle text-center" >
                                                 <span id="ticket" class="text-secondary text-xs font-weight-bold">{{$ticket->sikayet}}</span>
                                             </td>
                                             <td>
-                                                <a href="" class="text-danger font-weight-bold text-xs"
+                                                <a href="{{route('admin_ticket_delete', $ticket->id)}}" class="text-danger font-weight-bold text-xs"
                                                    data-toggle="tooltip">
                                                     Sil
                                                 </a>
                                             </td>
                                         </tr>
-
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
