@@ -91,41 +91,49 @@ namespace RentACar2023
         {
             if (plakaText.Text == "")
             {
-                MessageBox.Show("Lütfen aracınızı seçiniz.");
+                MessageBox.Show("Lütfen aracınızı seçiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (yeniFiyatText.Text == "")
             {
-                MessageBox.Show("Lütfen yeni fiyat alanını doldurunuz.");
+                MessageBox.Show("Lütfen yeni fiyat alanını doldurunuz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
-                MySqlConnection cnn = new MySqlConnection(myConnectionString);
-                cnn.Open();
-                if (gunlukDegisimRB.Checked == true)
+                DialogResult result = MessageBox.Show("Fiyatı güncellemek istediğinize emin misiniz?", "Fiyat Güncelleme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
                 {
-                    float haftalikFiyat = float.Parse(yeniFiyatText.Text) * 6;
-                    MySqlCommand sorgu = new MySqlCommand("UPDATE prices JOIN cars ON prices.arac_id = cars.id SET prices.daily_price ='" + yeniFiyatText.Text + "',prices.weekly_price ='" + haftalikFiyat + "' WHERE cars.plaka ='" + plakaText.Text + "'", cnn);
-                    sorgu.ExecuteNonQuery();
-                    MessageBox.Show("Günlük fiyatınız başarıyla değiştirildi.");
-                    cnn.Close();
-                    veriYukleyici();
-                    veriTemizle();
+                    string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                    MySqlConnection cnn = new MySqlConnection(myConnectionString);
+                    cnn.Open();
+                    if (gunlukDegisimRB.Checked == true)
+                    {
+                        float haftalikFiyat = float.Parse(yeniFiyatText.Text) * 6;
+                        MySqlCommand sorgu = new MySqlCommand("UPDATE prices JOIN cars ON prices.arac_id = cars.id SET prices.daily_price ='" + yeniFiyatText.Text + "',prices.weekly_price ='" + haftalikFiyat + "' WHERE cars.plaka ='" + plakaText.Text + "'", cnn);
+                        sorgu.ExecuteNonQuery();
+                        MessageBox.Show("Günlük fiyatınız başarıyla değiştirildi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cnn.Close();
+                        veriYukleyici();
+                        veriTemizle();
+                    }
+                    else if (kmBasinaDegisimRB.Checked == true)
+                    {
+                        float haftalikFiyat = float.Parse(yeniFiyatText.Text) * 6;
+                        MySqlCommand sorgu = new MySqlCommand("UPDATE prices JOIN cars ON prices.arac_id = cars.id SET prices.daily_km_limit ='" + yeniFiyatText.Text + "',prices.weekly_price ='" + haftalikFiyat + "' WHERE cars.plaka ='" + plakaText.Text + "'", cnn);
+                        sorgu.ExecuteNonQuery();
+                        MessageBox.Show("Kilometre başına fiyatınız başarıyla değiştirildi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cnn.Close();
+                        veriYukleyici();
+                        veriTemizle();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lütfen önce yapmak istediğiniz işlemi seçiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cnn.Close();
+                    }
                 }
-                else if (kmBasinaDegisimRB.Checked == true)
+                else if (result == DialogResult.No)
                 {
-                    float haftalikFiyat = float.Parse(yeniFiyatText.Text) * 6;
-                    MySqlCommand sorgu = new MySqlCommand("UPDATE prices JOIN cars ON prices.arac_id = cars.id SET prices.daily_km_limit ='" + yeniFiyatText.Text + "',prices.weekly_price ='" + haftalikFiyat + "' WHERE cars.plaka ='" + plakaText.Text + "'", cnn);
-                    sorgu.ExecuteNonQuery();
-                    MessageBox.Show("Kilometre başına fiyatınız başarıyla değiştirildi.");
-                    cnn.Close();
-                    veriYukleyici();
-                    veriTemizle();
-                }
-                else
-                {
-                    MessageBox.Show("Lütfen önce yapmak istediğiniz işlemi seçiniz");
-                    cnn.Close();
                 }
             }
         }

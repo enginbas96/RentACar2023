@@ -38,28 +38,36 @@ namespace RentACar2023
         {
             if (kurtarmaKoduText.Text == "" || kullanıcıAdıText.Text == "" || yeniSifre.Text == "")
             {
-                MessageBox.Show("Lütfen boş alanları doldurunuz.");
+                MessageBox.Show("Lütfen boş alanları doldurunuz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(yeniSifre.Text);
-                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
-                MySqlConnection cnn = new MySqlConnection(myConnectionString);
-                cnn.Open();
-                MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + kullanıcıAdıText.Text + "'", cnn);
-                MySqlDataReader tara = sorgu.ExecuteReader();
-                if (tara.Read() && kurtarmaKoduText.Text == "kurtarbeni!")
+                DialogResult result = MessageBox.Show("Şifreyi değiştirmek istediğinize emin misiniz?", "Şifre Değiştirme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
                 {
-                    cnn.Close();
+                    string hashedPassword = BCrypt.Net.BCrypt.HashPassword(yeniSifre.Text);
+                    string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                    MySqlConnection cnn = new MySqlConnection(myConnectionString);
                     cnn.Open();
-                    MySqlCommand sorgu1 = new MySqlCommand("UPDATE employees SET sifre ='" + hashedPassword + "' WHERE kullanici_adi ='" + kullanıcıAdıText.Text + "' ", cnn);
-                    sorgu1.ExecuteNonQuery();
-                    MessageBox.Show("Şifreniz başarıyla değiştirildi");
-                    cnn.Close();
+                    MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + kullanıcıAdıText.Text + "'", cnn);
+                    MySqlDataReader tara = sorgu.ExecuteReader();
+                    if (tara.Read() && kurtarmaKoduText.Text == "kurtarbeni!")
+                    {
+                        cnn.Close();
+                        cnn.Open();
+                        MySqlCommand sorgu1 = new MySqlCommand("UPDATE employees SET sifre ='" + hashedPassword + "' WHERE kullanici_adi ='" + kullanıcıAdıText.Text + "' ", cnn);
+                        sorgu1.ExecuteNonQuery();
+                        MessageBox.Show("Şifreniz başarıyla değiştirildi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cnn.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kullanıcı adınızı ve kurtarma kodunuzu doğrulayıp tekrar deneyiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                else if (result == DialogResult.No)
                 {
-                    MessageBox.Show("Kullanıcı adınızı ve kurtarma kodunuzu doğrulayıp tekrar deneyiniz.");
                 }
             }
         }

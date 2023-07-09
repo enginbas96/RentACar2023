@@ -87,6 +87,7 @@
             cikisBTN.Text = "Çıkış";
             cikisBTN.TextAlign = ContentAlignment.MiddleRight;
             cikisBTN.UseVisualStyleBackColor = true;
+            cikisBTN.Click += cikisBTN_Click;
             // 
             // ımageList1
             // 

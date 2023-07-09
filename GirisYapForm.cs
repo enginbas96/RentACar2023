@@ -24,7 +24,7 @@ namespace RentACar2023
         {
             if (GirisYapKullaniciAdiTextBox.Text == "" || GirisYapSifreTextBox.Text == "")
             {
-                MessageBox.Show("Lütfen boş alanları doldurup tekrar deneyiniz.");
+                MessageBox.Show("Lütfen boş alanları doldurup tekrar deneyiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else 
             {
@@ -52,12 +52,12 @@ namespace RentACar2023
                     }
                     else
                     {
-                        MessageBox.Show("Kullanıcı adı veya şifre hatalı, lütfen kontrol edip tekrar deneyiniz.");
+                        MessageBox.Show("Kullanıcı adı veya şifre hatalı, lütfen kontrol edip tekrar deneyiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Kullanıcı adı veya şifre hatalı, lütfen kontrol edip tekrar deneyiniz.");
+                    MessageBox.Show("Kullanıcı adı veya şifre hatalı, lütfen kontrol edip tekrar deneyiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     cnn.Close();
                 }
             }

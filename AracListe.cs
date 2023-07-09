@@ -118,36 +118,51 @@ namespace RentACar2023
         }
         private void erkenTeslimBTN_Click(object sender, EventArgs e)
         {
-            int aracID = 0;
-            string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
-            MySqlConnection cnn = new MySqlConnection(myConnectionString);
-            cnn.Open();
-            MySqlCommand sorgu = new MySqlCommand("SELECT *  FROM car_status INNER JOIN cars ON car_status.arac_id = cars.id WHERE cars.isRent = 1 AND cars.plaka = '" + plakaText.Text + "'", cnn);
-            MySqlDataReader tara = sorgu.ExecuteReader();
-            if (tara.Read())
-            {
-                aracID = tara.GetInt32("arac_id");
-                cnn.Close();
+            DialogResult result = MessageBox.Show("Aracı teslim almak istediğinize emin misiniz?", "Aracı Teslim Alma Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                cnn.Open();
-                MySqlCommand sorgu1 = new MySqlCommand("UPDATE cars SET isRent = '0' WHERE id ='" + aracID + "' ", cnn);
-                sorgu1.ExecuteNonQuery();
-                cnn.Close();
-
-                cnn.Open();
-                MySqlCommand sorgu2 = new MySqlCommand("DELETE FROM car_status WHERE arac_id ='" + aracID + "' ", cnn);
-                sorgu2.ExecuteNonQuery();
-                cnn.Close();
-                MessageBox.Show("Araç başarıyla teslim alımıştır");
-                plakaText.Clear();
-            }
-            else
+            if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Böyle bir araç bulunamadı. Plakayı kontrol edip işleminizi tekrar gerçekleştiriniz.");
-                cnn.Close();
+                int aracID = 0;
+                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                MySqlConnection cnn = new MySqlConnection(myConnectionString);
+                cnn.Open();
+                MySqlCommand sorgu = new MySqlCommand("SELECT *  FROM car_status INNER JOIN cars ON car_status.arac_id = cars.id WHERE cars.isRent = 1 AND cars.plaka = '" + plakaText.Text + "'", cnn);
+                MySqlDataReader tara = sorgu.ExecuteReader();
+                if (tara.Read())
+                {
+                    aracID = tara.GetInt32("arac_id");
+                    cnn.Close();
+
+                    cnn.Open();
+                    MySqlCommand sorgu1 = new MySqlCommand("UPDATE cars SET isRent = '0' WHERE id ='" + aracID + "' ", cnn);
+                    sorgu1.ExecuteNonQuery();
+                    cnn.Close();
+
+                    cnn.Open();
+                    MySqlCommand sorgu2 = new MySqlCommand("DELETE FROM car_status WHERE arac_id ='" + aracID + "' ", cnn);
+                    sorgu2.ExecuteNonQuery();
+                    cnn.Close();
+                    MessageBox.Show("Araç başarıyla teslim alımıştır", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    plakaText.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Böyle bir araç bulunamadı. Plakayı kontrol edip işleminizi tekrar gerçekleştiriniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cnn.Close();
+                }
+                veriYukleyici();
+                veriYukleyiciKiralanmis();
             }
-            veriYukleyici();
-            veriYukleyiciKiralanmis();
+            else if (result == DialogResult.No)
+            {
+            }
+        }
+
+            private void cikisBTN_Click(object sender, EventArgs e)
+        {
+            GirisSayfasi girisSayfa = new GirisSayfasi();
+            girisSayfa.Show();
+            this.Hide();
         }
     }
 }

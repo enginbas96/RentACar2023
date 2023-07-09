@@ -57,6 +57,7 @@
             deleteTC = new TextBox();
             label1 = new Label();
             musteriSilBTN = new Button();
+            geriBTN = new Button();
             molusturGB.SuspendLayout();
             mSifreDegistirGB.SuspendLayout();
             mSilGB.SuspendLayout();
@@ -367,11 +368,22 @@
             musteriSilBTN.UseVisualStyleBackColor = true;
             musteriSilBTN.Click += musteriSilBTN_Click;
             // 
+            // geriBTN
+            // 
+            geriBTN.Location = new Point(461, 623);
+            geriBTN.Name = "geriBTN";
+            geriBTN.Size = new Size(130, 29);
+            geriBTN.TabIndex = 26;
+            geriBTN.Text = "Geri Dön";
+            geriBTN.UseVisualStyleBackColor = true;
+            geriBTN.Click += geriBTN_Click_1;
+            // 
             // Musteriİslemleri
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1089, 664);
+            Controls.Add(geriBTN);
             Controls.Add(kullaniciAdi);
             Controls.Add(olusturRB);
             Controls.Add(sifreDegistirRB);
@@ -424,5 +436,6 @@
         private TextBox deleteTC;
         private Label label1;
         private Button musteriSilBTN;
+        private Button geriBTN;
     }
 }

@@ -64,7 +64,7 @@ namespace RentACar2023
                     cnn.Open();
                     MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO car_status(arac_id, musteri_id, start_time, end_time) VALUES('" + plaka_id + "','" + musteriID + "', '" + baslangicTarihi + "','" + bitisTarihi + "')", cnn);
                     sorgu1.ExecuteNonQuery();
-                    MessageBox.Show("Araba kiralama işlemi başarıyla tamamlandı.");
+                    MessageBox.Show("Araba kiralama işlemi başarıyla tamamlandı.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cnn.Close();
                     cnn.Open();
                     MySqlCommand sorgu2 = new MySqlCommand("UPDATE cars SET isRent = '1' WHERE id = '" + plaka_id + "'", cnn);
@@ -74,7 +74,7 @@ namespace RentACar2023
             }
             else
             {
-                MessageBox.Show("Bu TC kimlik numarasına ait kullanıcı bulunamadı. Kullanıcı kaydını yapıp tekrar deneyiniz.");
+                MessageBox.Show("Bu TC kimlik numarasına ait kullanıcı bulunamadı. Kullanıcı kaydını yapıp tekrar deneyiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             cnn.Close();
         }
@@ -139,17 +139,25 @@ namespace RentACar2023
         {
             if (plakaCB.Text == "" || tcText.Text == "" || adText.Text == "" || soyadText.Text == "" || telefonText.Text == "")
             {
-                MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.");
+                MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (kiralamaTarihi.Value >= teslimTarihi.Value)
             {
-                MessageBox.Show("Tarihler arasında tutarsızlık var");
+                MessageBox.Show("Tarihler arasında tutarsızlık var", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                kirala();
-                temizle();
-                plakacek();
+                DialogResult result = MessageBox.Show("Aracı kiralamak istediğinize emin misiniz?", "Kiralama Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    kirala();
+                    temizle();
+                    plakacek();
+                }
+                else if (result == DialogResult.No)
+                {
+                }
             }
         }
         int plaka_id;

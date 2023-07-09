@@ -96,42 +96,50 @@ namespace RentACar2023
                 || renkText.Text == "" || kmText.Text == "" || koltukSayiCB.Text == "" || vitesCB.Text == "" || kmFiyat.Text == "" || gunlukFiyat.Text == "")
 
             {
-                MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.");
+                MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
-                MySqlConnection cnn = new MySqlConnection(myConnectionString);
-                cnn.Open();
-                MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE plaka= '" + plakaText.Text + "'", cnn);
-                MySqlDataReader tara = sorgu.ExecuteReader();
-                if (tara.Read())
+                DialogResult result = MessageBox.Show("Araç eklemek istediğinize emin misiniz?", "Araç Ekleme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Bu plakaya ait bir araç zaten var.");
-                    cnn.Close();
-                }
-                else
-                {
-                    int haftalik = 6 * (int.Parse(gunlukFiyat.Text));
-                    cnn.Close();
+                    string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                    MySqlConnection cnn = new MySqlConnection(myConnectionString);
                     cnn.Open();
-                    MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO cars(plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi, img_path, isRent) VALUES('" + plakaText.Text + "','" + markaText.Text + "','" + modelText.Text + "','" + yakitTuruCB.Text + "','" + renkText.Text + "','" + hasarText.Text + "','" + kmText.Text + "','" + vitesCB.Text + "','" + koltukSayiCB.Text + "','" + resimYolu + "','0')", cnn);
-                    sorgu1.ExecuteNonQuery();
-                    cnn.Close();
-                    cnn.Open();
-                    MySqlCommand sorgu2 = new MySqlCommand("SELECT * FROM cars WHERE plaka = '" + plakaText.Text + "'", cnn);
-                    sorgu2.ExecuteNonQuery();
-                    MySqlDataReader tara2 = sorgu.ExecuteReader();
-                    while (tara2.Read())
+                    MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE plaka= '" + plakaText.Text + "'", cnn);
+                    MySqlDataReader tara = sorgu.ExecuteReader();
+                    if (tara.Read())
                     {
-                        aracID = tara2.GetInt32("id");
+                        MessageBox.Show("Bu plakaya ait bir araç zaten var.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cnn.Close();
                     }
-                    cnn.Close();
-                    cnn.Open();
-                    MySqlCommand sorgu3 = new MySqlCommand("INSERT INTO prices(arac_id,daily_price,weekly_price,daily_km_limit) VALUES('" + aracID + "','" + gunlukFiyat.Text + "','" + haftalik.ToString() + "','" + kmFiyat.Text + "')", cnn);
-                    sorgu3.ExecuteNonQuery();
-                    MessageBox.Show("Yeni araba veritabanına eklendi.");
-                    cnn.Close();
+                    else
+                    {
+                        int haftalik = 6 * (int.Parse(gunlukFiyat.Text));
+                        cnn.Close();
+                        cnn.Open();
+                        MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO cars(plaka, marka, model, yakit_turu, renk, hasar_kaydi, km, vites, koltuk_sayisi, img_path, isRent) VALUES('" + plakaText.Text + "','" + markaText.Text + "','" + modelText.Text + "','" + yakitTuruCB.Text + "','" + renkText.Text + "','" + hasarText.Text + "','" + kmText.Text + "','" + vitesCB.Text + "','" + koltukSayiCB.Text + "','" + resimYolu + "','0')", cnn);
+                        sorgu1.ExecuteNonQuery();
+                        cnn.Close();
+                        cnn.Open();
+                        MySqlCommand sorgu2 = new MySqlCommand("SELECT * FROM cars WHERE plaka = '" + plakaText.Text + "'", cnn);
+                        sorgu2.ExecuteNonQuery();
+                        MySqlDataReader tara2 = sorgu.ExecuteReader();
+                        while (tara2.Read())
+                        {
+                            aracID = tara2.GetInt32("id");
+                        }
+                        cnn.Close();
+                        cnn.Open();
+                        MySqlCommand sorgu3 = new MySqlCommand("INSERT INTO prices(arac_id,daily_price,weekly_price,daily_km_limit) VALUES('" + aracID + "','" + gunlukFiyat.Text + "','" + haftalik.ToString() + "','" + kmFiyat.Text + "')", cnn);
+                        sorgu3.ExecuteNonQuery();
+                        MessageBox.Show("Yeni araba veritabanına eklendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cnn.Close();
+                    }
+                }
+                else if (result == DialogResult.No)
+                {
                 }
             }
         }

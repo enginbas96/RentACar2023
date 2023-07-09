@@ -46,7 +46,7 @@
             musteriKaydetButton.Name = "musteriKaydetButton";
             musteriKaydetButton.Size = new Size(164, 62);
             musteriKaydetButton.TabIndex = 0;
-            musteriKaydetButton.Text = "Müşteri Kaydet";
+            musteriKaydetButton.Text = "Müşteri İşlemleri";
             musteriKaydetButton.TextAlign = ContentAlignment.MiddleRight;
             musteriKaydetButton.UseVisualStyleBackColor = true;
             musteriKaydetButton.Click += musteriKaydetButton_Click;

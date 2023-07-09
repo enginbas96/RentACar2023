@@ -93,41 +93,53 @@ namespace RentACar2023
                 || renkText.Text == "" || kmText.Text == "" || koltukSayiCB.Text == "" || vitesCB.Text == "")
 
             {
-                MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.");
+                MessageBox.Show("Lütfen bilgileri tam olarak doldurunuz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (silRB.Checked == false && guncelleRB.Checked == false)
             {
-                MessageBox.Show("Lütfen yapılacak işlemi seçiniz.");
+                MessageBox.Show("Lütfen yapılacak işlemi seçiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 if (guncelleRB.Checked)
                 {
-                    string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
-                    MySqlConnection cnn = new MySqlConnection(myConnectionString);
-                    cnn.Open();
-                    MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE plaka= '" + plakaText.Text + "'", cnn);
-                    MySqlDataReader tara = sorgu.ExecuteReader();
-                    if (tara.Read())
+                    DialogResult result = MessageBox.Show("Bilgileri güncellemek istediğinize emin misiniz?", "Araç Bilgileri Güncelleme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
                     {
-                        cnn.Close();
+                        string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                        MySqlConnection cnn = new MySqlConnection(myConnectionString);
                         cnn.Open();
-                        MySqlCommand sorgu1 = new MySqlCommand("UPDATE cars SET renk ='" + renkText.Text + "', km ='" + kmText.Text + "', hasar_kaydi = '" + hasarText.Text + "' WHERE plaka ='" + plakaText.Text + "' ", cnn);
-                        sorgu1.ExecuteNonQuery();
-                        MessageBox.Show("Bilgiler Güncellendi");
-                        cnn.Close();
-                        temizle();
-                        veriYukleyici();
+                        MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE plaka= '" + plakaText.Text + "'", cnn);
+                        MySqlDataReader tara = sorgu.ExecuteReader();
+                        if (tara.Read())
+                        {
+                            cnn.Close();
+                            cnn.Open();
+                            MySqlCommand sorgu1 = new MySqlCommand("UPDATE cars SET renk ='" + renkText.Text + "', km ='" + kmText.Text + "', hasar_kaydi = '" + hasarText.Text + "' WHERE plaka ='" + plakaText.Text + "' ", cnn);
+                            sorgu1.ExecuteNonQuery();
+                            MessageBox.Show("Bilgiler Güncellendi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            cnn.Close();
+                            temizle();
+                            veriYukleyici();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Güncelleme Gerçekleştirilemedi.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            cnn.Close();
+                        }
                     }
-                    else
+                    else if (result == DialogResult.No)
                     {
-                        MessageBox.Show("Güncelleme Gerçekleştirilemedi.");
-                        cnn.Close();
                     }
                 }
                 else if (silRB.Checked)
                 {
-                    string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                    DialogResult result = MessageBox.Show("Aracı silmek istediğinize emin misiniz?", "Araç Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
                     MySqlConnection cnn = new MySqlConnection(myConnectionString);
                     cnn.Open();
                     MySqlCommand sorgu = new MySqlCommand("SELECT * FROM cars WHERE plaka= '" + plakaText.Text + "'", cnn);
@@ -138,15 +150,19 @@ namespace RentACar2023
                         cnn.Open();
                         MySqlCommand sorgu1 = new MySqlCommand("DELETE FROM cars WHERE plaka= '" + plakaText.Text + "'", cnn);
                         MySqlDataReader tara1 = sorgu1.ExecuteReader();
-                        MessageBox.Show("Araç başarı ile silindi.");
+                        MessageBox.Show("Araç başarı ile silindi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cnn.Close();
                         veriYukleyici();
                         temizle();
                     }
                     else
                     {
-                        MessageBox.Show("Böyle bir araç yok");
+                        MessageBox.Show("Böyle bir araç yok", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         cnn.Close();
+                    }
+                }
+                    else if (result == DialogResult.No)
+                    {
                     }
                 }
             }

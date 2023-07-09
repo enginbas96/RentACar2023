@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
 using BCryptNet = BCrypt.Net.BCrypt;
 
 namespace RentACar2023
@@ -91,36 +92,44 @@ namespace RentACar2023
         {
             if (deleteKullaniciAdi.Text == "")
             {
-                MessageBox.Show("Kullanıcı adını doldurunuz.");
+                MessageBox.Show("Kullanıcı adını doldurunuz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
-                MySqlConnection cnn = new MySqlConnection(myConnectionString);
-                cnn.Open();
-                if (deleteKullaniciAdi.Text == kadi)
-                {
-                    MessageBox.Show("Şu an giriş yapmış olduğunuz kullanıcıyı silemezsiniz.");
-                    cnn.Close();
-                    return;
-                }
+                DialogResult result = MessageBox.Show("Kullanıcıyı silmek istediğinize emin misiniz?", "Kullanıcı Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + deleteKullaniciAdi.Text + "'", cnn);
-                MySqlDataReader tara = sorgu.ExecuteReader();
-                if (tara.Read())
+                if (result == DialogResult.Yes)
                 {
-                    cnn.Close();
+                    string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                    MySqlConnection cnn = new MySqlConnection(myConnectionString);
                     cnn.Open();
-                    MySqlCommand sorgu1 = new MySqlCommand("DELETE FROM employees WHERE kullanici_adi= '" + deleteKullaniciAdi.Text + "'", cnn);
-                    MySqlDataReader tara1 = sorgu1.ExecuteReader();
-                    MessageBox.Show("Kullanıcı başarı ile silindi.");
-                    deleteKullaniciAdi.Clear();
-                    cnn.Close();
+                    if (deleteKullaniciAdi.Text == kadi)
+                    {
+                        MessageBox.Show("Şu an giriş yapmış olduğunuz kullanıcıyı silemezsiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cnn.Close();
+                        return;
+                    }
+
+                    MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + deleteKullaniciAdi.Text + "'", cnn);
+                    MySqlDataReader tara = sorgu.ExecuteReader();
+                    if (tara.Read())
+                    {
+                        cnn.Close();
+                        cnn.Open();
+                        MySqlCommand sorgu1 = new MySqlCommand("DELETE FROM employees WHERE kullanici_adi= '" + deleteKullaniciAdi.Text + "'", cnn);
+                        MySqlDataReader tara1 = sorgu1.ExecuteReader();
+                        MessageBox.Show("Kullanıcı başarı ile silindi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        deleteKullaniciAdi.Clear();
+                        cnn.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Böyle bir kullanıcı yok", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cnn.Close();
+                    }
                 }
-                else
+                else if (result == DialogResult.No)
                 {
-                    MessageBox.Show("Böyle bir kullanıcı yok");
-                    cnn.Close();
                 }
             }
         }
@@ -128,29 +137,37 @@ namespace RentACar2023
         {
             if (sifreDegisKullaniciAdi.Text == "" || sifreDegisSifre.Text == "")
             {
-                MessageBox.Show("Lütfen boş alan bırakmayınız.");
+                MessageBox.Show("Lütfen boş alan bırakmayınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
-                MySqlConnection cnn = new MySqlConnection(myConnectionString);
-                cnn.Open();
-                MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + sifreDegisKullaniciAdi.Text + "'", cnn);
-                MySqlDataReader tara = sorgu.ExecuteReader();
-                if (tara.Read())
+                DialogResult result = MessageBox.Show("Şifreyi değiştirmek istediğinize emin misiniz?", "Şifre Değiştirme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
                 {
-                    string hashedPassword = BCrypt.Net.BCrypt.HashPassword(sifreDegisSifre.Text);
-                    cnn.Close();
+                    string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                    MySqlConnection cnn = new MySqlConnection(myConnectionString);
                     cnn.Open();
-                    MySqlCommand sorgu1 = new MySqlCommand("UPDATE employees SET sifre ='" + hashedPassword + "' WHERE kullanici_adi ='" + sifreDegisKullaniciAdi.Text + "' ", cnn);
-                    sorgu1.ExecuteNonQuery();
-                    MessageBox.Show("Şifreniz başarıyla değiştirildi");
-                    cnn.Close();
+                    MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + sifreDegisKullaniciAdi.Text + "'", cnn);
+                    MySqlDataReader tara = sorgu.ExecuteReader();
+                    if (tara.Read())
+                    {
+                        string hashedPassword = BCrypt.Net.BCrypt.HashPassword(sifreDegisSifre.Text);
+                        cnn.Close();
+                        cnn.Open();
+                        MySqlCommand sorgu1 = new MySqlCommand("UPDATE employees SET sifre ='" + hashedPassword + "' WHERE kullanici_adi ='" + sifreDegisKullaniciAdi.Text + "' ", cnn);
+                        sorgu1.ExecuteNonQuery();
+                        MessageBox.Show("Şifreniz başarıyla değiştirildi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cnn.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Böyle bir kullanıcı bulunamadı.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cnn.Close();
+                    }
                 }
-                else
+                else if (result == DialogResult.No)
                 {
-                    MessageBox.Show("Böyle bir kullanıcı bulunamadı.");
-                    cnn.Close();
                 }
             }
         }
@@ -158,18 +175,22 @@ namespace RentACar2023
         {
             if (olusturKullaniciAdi.Text == "" || olusturSifre.Text == "" || olusturAd.Text == "" || olusturSoyad.Text == "")
             {
-                MessageBox.Show("Lütfen boş alanları doldurup tekrar deneyiniz.");
+                MessageBox.Show("Lütfen boş alanları doldurup tekrar deneyiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
+                DialogResult result = MessageBox.Show("Kullanıcı oluşturmak istediğinize emin misiniz?", "Kullanıcı Oluşturma Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    string myConnectionString = "server=7xz.h.filess.io;database=rentacar_wastesugar;uid=rentacar_wastesugar;pwd=d150c35368dc92fa3cc2c09bde449b384fb6b4c3;port=3307;";
                 MySqlConnection cnn = new MySqlConnection(myConnectionString);
                 cnn.Open();
                 MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + olusturKullaniciAdi.Text + "'", cnn);
                 MySqlDataReader tara = sorgu.ExecuteReader();
                 if (tara.Read())
                 {
-                    MessageBox.Show("Böyle bir kullanıcı zaten mevcut, şifresini unuttuysanız yan taraftan şifresini değiştirebilirsiniz veya kullanıcıyı kaldırabilirsiniz.");
+                    MessageBox.Show("Böyle bir kullanıcı zaten mevcut, şifresini unuttuysanız yan taraftan şifresini değiştirebilirsiniz veya kullanıcıyı kaldırabilirsiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     cnn.Close();
                 }
                 else
@@ -179,11 +200,15 @@ namespace RentACar2023
                     string hashedPassword = HashPassword(olusturSifre.Text);
                     MySqlCommand sorgu1 = new MySqlCommand("INSERT INTO employees(name, surname, kullanici_adi, sifre, isAdmin) VALUES('" + olusturAd.Text + "','" + olusturSoyad.Text + "','" + olusturKullaniciAdi.Text + "','" + hashedPassword + "','1')", cnn);
                     sorgu1.ExecuteNonQuery();
-                    MessageBox.Show("Yeni kullanıcı oluşturuldu.");
+                    MessageBox.Show("Yeni kullanıcı oluşturuldu.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cnn.Close();
                 }
             }
+            else if (result == DialogResult.No)
+            {
+            }
         }
+    }
         private string HashPassword(string password)
         {
             string salt = BCryptNet.GenerateSalt();
