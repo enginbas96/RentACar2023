@@ -98,6 +98,13 @@ namespace RentACar2023
                 string myConnectionString = "server=db4free.net;database=rentacar;uid=keremcan;pwd=kutluhanengin23;";
                 MySqlConnection cnn = new MySqlConnection(myConnectionString);
                 cnn.Open();
+                if (deleteKullaniciAdi.Text == kadi)
+                {
+                    MessageBox.Show("Şu an giriş yapmış olduğunuz kullanıcıyı silemezsiniz.");
+                    cnn.Close();
+                    return;
+                }
+
                 MySqlCommand sorgu = new MySqlCommand("SELECT * FROM employees WHERE kullanici_adi= '" + deleteKullaniciAdi.Text + "'", cnn);
                 MySqlDataReader tara = sorgu.ExecuteReader();
                 if (tara.Read())
