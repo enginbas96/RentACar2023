@@ -77,6 +77,7 @@
                 <li class="nav-item"><a href="{{route('user_about')}}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{route('user_cars')}}" class="nav-link">Cars</a></li>
                 <li class="nav-item active"><a href="{{route('user_contact')}}" class="nav-link">Contact</a></li>
+                <li class="nav-item active"><a href="{{route('user_ticket')}}" class="nav-link">Ticket</a></li>
                 <li class="nav-item active"><a href="{{route('user_logout')}}" class="nav-link">Logout</a></li>
 
             </ul>
@@ -108,7 +109,7 @@
 
         <div class="comments">
             <h2>Dilek veya Şikayet</h2>
-            <form id="comment-form" action="" method="post">
+            <form id="comment-form" action="{{route('user_ticket_post')}}" method="post">
                 @csrf
                 <select style="width: 50%;margin: 20px 0" class="form-select" name='category' aria-label="Default select example">
                     <option value="0">Araç</option>

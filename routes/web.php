@@ -7,10 +7,12 @@ use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\AdminCarsController;
 use App\Http\Controllers\admin\AddCarController;
+use App\Http\Controllers\admin\TicketsController;
 
 use App\Http\Controllers\user\AboutController;
 use App\Http\Controllers\user\CarBookController;
 use App\Http\Controllers\user\CarsController;
+use App\Http\Controllers\user\TicketController;
 use App\Http\Controllers\user\ContactController;
 use App\Http\Controllers\user\HomePageController;
 use App\Http\Controllers\user\UserLoginController;
@@ -44,6 +46,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/received/{id}', [AdminController::class, 'received'])->name('admin_received');
     Route::get('/add-car', [AddCarController::class, 'index'])->name('add_car_page');
     Route::post('/add-car-post', [AddCarController::class, 'addCar'])->name('add_car');
+
 });
 
 /*User Pages*/
@@ -59,3 +62,5 @@ Route::get('/arabalar',[CarsController::class,'index'])->name('user_cars');
 Route::post('/comment-post/{id}',[CarsController::class,'comment'])->name('user_comment');
 Route::post('/login-post',[UserLoginController::class,'login'])->name('user_login');
 Route::post('/register',[UserLoginController::class,'register'])->name('user_register');
+Route::get('/user-ticket',[TicketController::class,'index'])->name('user_ticket');
+Route::post('/ticket-post',[TicketController::class,'sendTicket'])->name('user_ticket_post');
